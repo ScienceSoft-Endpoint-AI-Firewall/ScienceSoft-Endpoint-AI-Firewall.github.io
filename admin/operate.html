@@ -97,9 +97,6 @@
             
             
   
-  <strong>DRAFT — internal preview.</strong>
-  Items marked [TBC] are still open questions and will be removed before publication.
-  
 
           </div>
           
@@ -1357,7 +1354,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>[TBC: confirm the exact output and purpose of <code>doctor</code> and <code>security-audit</code> for the current version.]</strong></p>
+<p><code>aifw security-audit</code> checks the safety of the server: the firewall, the SSH settings, file permissions, the license, the sign-in service settings and pending system updates. It changes nothing. <code>aifw doctor</code> runs the machine checks, the health checks and the security checks, and prints one numbered list of findings with a fix beside each. It changes nothing too. Both end with a summary line, and return a non-zero exit code if a requirement is not met.</p>
 <h2 id="backups">Backups<a class="headerlink" href="#backups" title="Permanent link">&para;</a></h2>
 <p>The database holds everything: workspaces, devices, audit history and usage statistics. Back it up and keep the backups <strong>away from the server</strong>.</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>aifw<span class="w"> </span>backup
@@ -1378,17 +1375,22 @@ sudo<span class="w"> </span>aifw<span class="w"> </span>status
 <li>Take a snapshot or a backup first. <code>aifw upgrade</code> also makes a backup before it changes anything, and stops if that backup fails.</li>
 <li>The database is upgraded automatically. Updates are additive, so a server upgrade does not reject or lose data from computers that already use AI Firewall.</li>
 <li>After the upgrade, check <code>https://&lt;your-address&gt;/health</code>.</li>
+<li><code>aifw upgrade</code> does not apply new sign-in settings. After an upgrade that adds them, run <code>sudo aifw setup</code> once. See <a href="aifw-reference.html#aifw-upgrade">aifw commands</a>.</li>
 </ul>
 <h2 id="roll-back">Roll back<a class="headerlink" href="#roll-back" title="Permanent link">&para;</a></h2>
 <p>If the new version does not work, go back to the previous one:</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>aifw<span class="w"> </span>upgrade<span class="w"> </span>--version<span class="w"> </span>&lt;previous-version&gt;
 </code></pre></div>
-<p>There is no separate rollback command.</p>
+<p>There is no separate rollback command. In a terminal the command warns that older software will run against data that the newer version already changed, and asks you to confirm. In a script it refuses. If you must go back, restore the snapshot or the backup that you took before the upgrade.</p>
 <h2 id="re-running-setup">Re-running setup<a class="headerlink" href="#re-running-setup" title="Permanent link">&para;</a></h2>
-<p>Running <code>aifw setup</code> again is safe. It checks every part of the installation and repairs what has drifted, without touching your data, and offers your previous answers. Use <code>aifw setup --check</code> first to see what would change. If a basic answer must change (the public address, the HTTPS handling, the version or the license), take a snapshot first. See <a href="install.html#step-4-run-setup">Install the server</a>.</p>
+<p>Running <code>aifw setup</code> again is safe. It checks every part of the installation and repairs what has drifted, without touching your data, and offers your previous answers. Use <code>aifw setup --check</code> first to see what would change. Setup does not change the public address, the version or the administrator e-mail of a server that is already set up. It stops and names the setting. To move to a newer version, use <code>aifw upgrade</code>. See <a href="install.html#step-4-run-setup">Install the server</a>.</p>
 <h2 id="monitoring">Monitoring<a class="headerlink" href="#monitoring" title="Permanent link">&para;</a></h2>
-<p>The installation includes Grafana dashboards and Prometheus metrics. The Grafana password is in <code>credentials.txt</code>.</p>
-<p><strong>[TBC: describe how to open the dashboards and which alerts matter.]</strong></p>
+<p>The installation includes Grafana (dashboards) and Prometheus (metrics, kept for 30 days). They are not on the public address. The Grafana user is <code>admin</code>, and its password is in <code>credentials.txt</code>.</p>
+<ul>
+<li><strong>The dashboard</strong> "ai-firewall — Production Overview" shows whether the server answers, how long <code>/health</code> takes, the database connections and size, and how many computers are in a degraded protection state.</li>
+<li><strong>One alert rule ships.</strong> It fires when a computer's protection has been degraded for more than 10 minutes: its traffic is sent unprotected or is blocked. Alerts are not sent by e-mail. Look at them in Prometheus under <em>Status</em>, then <em>Alerts</em>, or add your own alerting.</li>
+<li><strong>How to open them.</strong> Grafana and Prometheus have no port on the server's network, so a tunnel to port 3000 on the server itself does not reach them in the shipped configuration. Ask your ScienceSoft representative how to open them in your installation.</li>
+</ul>
 
 
 

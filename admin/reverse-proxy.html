@@ -97,9 +97,6 @@
             
             
   
-  <strong>DRAFT — internal preview.</strong>
-  Items marked [TBC] are still open questions and will be removed before publication.
-  
 
           </div>
           
@@ -1372,6 +1369,10 @@
 <td>Buffering</td>
 <td>Streamed responses (<code>text/event-stream</code>) must reach the client as they are written, not when the response ends</td>
 </tr>
+<tr>
+<td>Request size</td>
+<td>Allow request bodies of at least 8 MB. Computers upload audit data in bodies of up to 8 MB. nginx refuses bodies over 1 MB by default</td>
+</tr>
 </tbody>
 </table>
 <p>You do not need to do anything for the sign-in service console. The server refuses it on the public address. Administrators reach it through an SSH tunnel (see <a href="sign-in.html">Sign-in and roles</a>).</p>
@@ -1384,12 +1385,13 @@
 </ul>
 <p>Because of the keep-alive signals, a timeout of 60 seconds is enough for most streams. Setup generates 600 seconds, which also covers the stream without a keep-alive. A proxy that buffers responses holds events back, so computers get policy changes late. The server tells the proxy not to buffer its streams (<code>X-Accel-Buffering: no</code>).</p>
 <h2 id="nginx">nginx<a class="headerlink" href="#nginx" title="Permanent link">&para;</a></h2>
-<p>Setup writes this file for you when you choose your own proxy: <code>&lt;install folder&gt;/proxy-snippets/nginx-server-block.conf</code>. nginx waits only 60 seconds by default, so the two timeout lines are required.</p>
+<p>Setup writes this file for you when you choose your own proxy: <code>&lt;install folder&gt;/proxy-snippets/nginx-server-block.conf</code>. nginx waits only 60 seconds by default, so the two timeout lines are required. The file that setup writes has no <code>client_max_body_size</code> line. Add it, as shown.</p>
 <div class="highlight"><pre><span></span><code><span class="k">server</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kn">listen</span><span class="w"> </span><span class="mi">443</span><span class="w"> </span><span class="s">ssl</span><span class="p">;</span>
 <span class="w">    </span><span class="kn">server_name</span><span class="w"> </span><span class="s">ai-firewall.example.com</span><span class="p">;</span>
 <span class="w">    </span><span class="kn">ssl_certificate</span><span class="w">     </span><span class="s">/path/to/fullchain.pem</span><span class="p">;</span>
 <span class="w">    </span><span class="kn">ssl_certificate_key</span><span class="w"> </span><span class="s">/path/to/privkey.pem</span><span class="p">;</span>
+<span class="w">    </span><span class="kn">client_max_body_size</span><span class="w"> </span><span class="mi">8m</span><span class="p">;</span>
 
 <span class="w">    </span><span class="kn">location</span><span class="w"> </span><span class="s">/</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="kn">proxy_pass</span><span class="w"> </span><span class="s">http://&lt;server-ip&gt;:8090</span><span class="p">;</span>
@@ -1413,7 +1415,7 @@
 <p>Turn on the ARR proxy and set its timeout to 600 seconds or more. In IIS Manager, open the server node, then <em>Application Request Routing Cache</em>, then <em>Server Proxy Settings</em>. Or run:</p>
 <div class="highlight"><pre><span></span><code>%windir%\system32\inetsrv\appcmd.exe set config -section:system.webServer/proxy /enabled:&quot;True&quot; /timeout:&quot;00:10:00&quot; /commit:apphost
 </code></pre></div>
-<p>If computers receive policy changes late, set <strong>Response buffer threshold</strong> in the same place to 0.</p>
+<p>The server tells proxies not to buffer its event streams, but IIS ARR does not read that header. If computers receive policy changes late, set <strong>Response buffer threshold</strong> in the same place to 0, then check again. ScienceSoft has not verified this setting on a customer installation.</p>
 </li>
 <li>
 <p>In the site's URL Rewrite settings, add <code>HTTP_X_FORWARDED_PROTO</code> and <code>HTTP_X_FORWARDED_HOST</code> to the <strong>Allowed Server Variables</strong>. Without them the rule below fails.</p>
@@ -1439,7 +1441,6 @@
 </code></pre></div>
 </li>
 </ol>
-<p><strong>[TBC: the buffer-threshold advice for IIS has not been verified in a customer environment.]</strong></p>
 <h2 id="haproxy">HAProxy<a class="headerlink" href="#haproxy" title="Permanent link">&para;</a></h2>
 <p>Setup does not write a file for HAProxy. This is the equivalent of the nginx block. HAProxy does not buffer responses and passes WebSocket upgrades by itself. After the upgrade, <code>timeout tunnel</code> applies instead of <code>timeout server</code>.</p>
 <div class="highlight"><pre><span></span><code>frontend aifw_https

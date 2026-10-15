@@ -97,9 +97,6 @@
             
             
   
-  <strong>DRAFT — internal preview.</strong>
-  Items marked [TBC] are still open questions and will be removed before publication.
-  
 
           </div>
           
@@ -1427,17 +1424,17 @@
 <tr>
 <td><strong>Your own certificate</strong></td>
 <td>22, 443</td>
-<td></td>
+<td>Setup also opens port 80. This mode does not need it. Close it yourself if you want.</td>
 </tr>
 <tr>
 <td><strong>Your own load balancer or proxy</strong></td>
 <td>22, and 8090 <strong>only from the proxy's address</strong></td>
-<td>You configure the proxy yourself. See <a href="reverse-proxy.html">Reverse proxy</a>.</td>
+<td>You configure the proxy yourself. See <a href="reverse-proxy.html">Reverse proxy</a>. Give the proxy's address to setup. If you leave it empty, port 8090 is open to every address.</td>
 </tr>
 </tbody>
 </table>
 <p>The ports must be free before setup. Setup turns on the server's firewall (<code>ufw</code>) with these rules.</p>
-<p><strong>[TBC: confirm the port list for each HTTPS mode with the product team.]</strong></p>
+<p>Setup always allows SSH first, on the port that <code>sshd</code> uses. If you give setup one address for SSH, only that address can connect. The port of the sign-in console (8080) is never opened to the network. It is reachable only on the server itself, through an SSH tunnel.</p>
 <h3 id="a-name-for-the-server">A name for the server<a class="headerlink" href="#a-name-for-the-server" title="Permanent link">&para;</a></h3>
 <p>Choose the address users and devices will use, for example <code>https://ai-firewall.example.com</code>. It must be a full <code>https://</code> address, with no path and no trailing slash. A DNS record for it must exist.</p>
 <h2 id="before-you-start">Before you start<a class="headerlink" href="#before-you-start" title="Permanent link">&para;</a></h2>

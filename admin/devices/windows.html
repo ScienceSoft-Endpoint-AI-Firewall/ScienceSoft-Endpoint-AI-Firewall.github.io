@@ -97,9 +97,6 @@
             
             
   
-  <strong>DRAFT — internal preview.</strong>
-  Items marked [TBC] are still open questions and will be removed before publication.
-  
 
           </div>
           
@@ -1367,7 +1364,7 @@
 </tr>
 <tr>
 <td><code>/D=&lt;folder&gt;</code></td>
-<td>Optional. The install folder. It must be the last switch. A drive root or a system folder is refused.</td>
+<td>Optional. The install folder. It must be the last switch. Use the default folder. A folder that is a link to another place, or is inside a user's profile folder, is refused on a new install. A drive root or a system folder is not locked down.</td>
 </tr>
 </tbody>
 </table>
@@ -1389,29 +1386,28 @@
 <tr>
 <td>0</td>
 <td>Installed</td>
-<td>Success.</td>
+<td>Success. Check that the computer joined in the portal.</td>
 </tr>
 <tr>
 <td>1</td>
 <td>Cancelled</td>
-<td>Someone stopped the wizard.</td>
+<td>Someone stopped the installer.</td>
 </tr>
 <tr>
 <td>2</td>
-<td>Failed</td>
-<td>The install folder was refused, or the previous version could not be removed. Try again, and look at the installer log.</td>
+<td>Not installed</td>
+<td>The previous version could not be removed, or the install folder is a link to another place or is inside a user's profile folder, or the folder <code>%ProgramData%\ai-firewall</code> could not be secured. Choose a folder under Program Files. If a file was held open, restart the computer and run the installer again.</td>
 </tr>
 <tr>
 <td>3</td>
-<td>Installed, with a warning</td>
-<td>The app is installed, but part of the protection could not be locked down. Review the warning in the Windows event log (source "AI Firewall").</td>
+<td>Installed, but not locked down</td>
+<td>The app is installed, but the install folder was not locked, or the protection service may not have been registered. This happens on an update, with the folder problems described for code 2. Treat it as success for the rollout, then reinstall into the default folder.</td>
 </tr>
 </tbody>
 </table>
-<p>A deployment with no server address still returns 0. Check the result with <a href="verify.html">Check that computers joined</a>.</p>
-<p><strong>[TBC: product team to confirm the exit codes for the current version.]</strong></p>
+<p>A missing or incomplete server address still returns 0, and the computer then works on its own. The reason is written to <code>%ProgramData%\ai-firewall\install-enrolment.log</code>. Check the result with <a href="verify.html">Check that computers joined</a>.</p>
+<p>The reason for code 3 is shown only in the installer window, which is hidden in a silent install. It is not written to the Windows event log.</p>
 <h2 id="microsoft-intune">Microsoft Intune<a class="headerlink" href="#microsoft-intune" title="Permanent link">&para;</a></h2>
-<p><code class="screenshot">[screenshot: Intune Win32 app: the program page with the install command]</code></p>
 <p>The installer is an <code>.exe</code>, not an <code>.msi</code>. Deploy it as a <strong>Windows app (Win32)</strong>.</p>
 <ol>
 <li>Put the <code>.exe</code> alone in an empty folder.</li>
@@ -1433,7 +1429,7 @@
 </tr>
 <tr>
 <td>Uninstall command</td>
-<td><code>"%ProgramFiles%\AI Firewall\Uninstall AI Firewall.exe" /S</code></td>
+<td><code>"%ProgramFiles%\AI Firewall\Uninstall AI Firewall.exe" /allusers /S</code></td>
 </tr>
 <tr>
 <td>Install behavior</td>
@@ -1447,9 +1443,9 @@
 </table>
 </li>
 <li>
-<p><strong>Detection rule:</strong> a file exists, <code>%ProgramFiles%\AI Firewall\AI Firewall.exe</code>.</p>
+<p><strong>Detection rule:</strong> a file exists, <code>%ProgramFiles%\AI Firewall\AI Firewall.exe</code>. This works when the default folder is used. You can also use the installer's uninstall entry in the registry (<code>HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall</code>, 64-bit view). Its <code>DisplayName</code> is "AI Firewall" followed by the version, so do not match it exactly, and its <code>DisplayVersion</code> is the app version.</p>
 </li>
-<li><strong>Requirements:</strong> 64-bit, Windows 10 21H2 or newer.</li>
+<li><strong>Requirements:</strong> 64-bit, Windows 10 or Windows 11.</li>
 <li><strong>Return codes:</strong> add code <code>3</code> as <strong>Success</strong>, in addition to the defaults.</li>
 <li>Assign the app to a pilot group first.</li>
 </ol>
@@ -1457,7 +1453,7 @@
 <p class="admonition-title">The key is visible in Intune</p>
 <p>The install command is stored in Intune with the key in it. Limit who can read the app's settings, and replace the key after the pilot if you are concerned.</p>
 </div>
-<p><strong>[TBC: confirm the uninstall command and the detection rule on a pilot computer. The installer's uninstall entry in the registry can also be used for detection.]</strong></p>
+<p>Try the install, the uninstall and the detection rule on a pilot computer before you assign the app widely.</p>
 <h2 id="group-policy-startup-script">Group Policy (startup script)<a class="headerlink" href="#group-policy-startup-script" title="Permanent link">&para;</a></h2>
 <p>AI Firewall has <strong>no Group Policy template</strong> (<code>.admx</code>). To use Group Policy, run the installer from a computer <strong>startup script</strong>:</p>
 <ol>
@@ -1468,10 +1464,11 @@
 <p>The enrolment key is on the command line of the script. Protect the share, so that only computer accounts can read it.</p>
 <h2 id="remove-the-agent">Remove the agent<a class="headerlink" href="#remove-the-agent" title="Permanent link">&para;</a></h2>
 <p>The uninstaller needs administrator rights.</p>
-<div class="highlight"><pre><span></span><code>&quot;%ProgramFiles%\AI Firewall\Uninstall AI Firewall.exe&quot; /S
+<div class="highlight"><pre><span></span><code>&quot;%ProgramFiles%\AI Firewall\Uninstall AI Firewall.exe&quot; /allusers /S
 </code></pre></div>
+<p>This is the quiet uninstall command that the installer registers. Run it as an administrator or as the system account. Without administrator rights it asks for elevation.</p>
 <p>It removes the app, the services, the certificate and the settings that AI Firewall added. It does <strong>not</strong> restore a computer-wide proxy setting that existed before AI Firewall was installed. Local data of every user on the computer is deleted. See the <a href="../../uninstall.html">User Guide</a> for what is removed.</p>
-<p>When your deployment tool runs the uninstaller as the system account, no notice is sent to your server. The computer stops reporting. Remove it from the portal.</p>
+<p>In version 2.2.7, an uninstall run by a deployment tool sends no notice to your server. The computer stops reporting. Remove it from the portal. Newer versions report the removal to the server when the uninstaller runs as the system account on a computer that has the protection service. An uninstall that an administrator starts by hand sends nothing.</p>
 
 
 

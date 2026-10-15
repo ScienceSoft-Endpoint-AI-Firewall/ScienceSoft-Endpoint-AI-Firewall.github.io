@@ -97,9 +97,6 @@
             
             
   
-  <strong>DRAFT — internal preview.</strong>
-  Items marked [TBC] are still open questions and will be removed before publication.
-  
 
           </div>
           
@@ -1375,7 +1372,9 @@
 <ul>
 <li>The address must be <code>https://</code>. The key must be plain text without spaces.</li>
 <li>The file must belong to <code>root</code>, group <code>wheel</code>, and be readable by <code>root</code> only (mode <code>0600</code>). It holds the key.</li>
-<li>The installer reads the file once, and moves the values into a protected settings file.</li>
+<li>The installer copies the address and the key into a protected settings file. The file <code>enrollment.json</code> stays on the Mac with the key in it. Keep it readable by <code>root</code> only, or delete it after the install if your policy asks for that.</li>
+<li>The installer ignores an address or key that it considers invalid, and the Mac is then not enrolled. Use printable ASCII only. The key can be up to 4096 characters and the address up to 2048. The address must not contain <code>?</code>, <code>#</code>, <code>@</code> or <code>..</code>.</li>
+<li>The file is read when the package is installed. To change the address or the key later, write the new file and install the package again.</li>
 </ul>
 <p>A script that writes this file is on the <a href="downloads.html">downloads page</a>.</p>
 <h2 id="install">Install<a class="headerlink" href="#install" title="Permanent link">&para;</a></h2>
@@ -1399,16 +1398,22 @@
 <li>installs the background services;</li>
 <li>sets the <strong>automatic proxy configuration</strong> of every network connection to the local firewall. <strong>This replaces an automatic proxy setting that your company already has.</strong></li>
 </ul>
-<p>No special permissions (Full Disk Access and similar) need to be granted.</p>
-<p><strong>[TBC: confirm that no privacy permissions or system extension approvals are needed in the current version.]</strong></p>
+<p>The agent needs no Full Disk Access, Accessibility, Screen Recording or other privacy permission, and it installs no system extension or network extension. It installs launch daemons from the package. The one approval it can need is trust for its certificate, as described above: from an install script, macOS does not let the certificate be trusted without an MDM trust profile or an administrator's approval. On macOS 13 and later the system may also show a notice that background items were added. That notice is not a request for approval.</p>
 <p>AI Firewall does not provide a configuration profile (<code>.mobileconfig</code>). The profiles that you may find for other ScienceSoft products do not work with it.</p>
 <h2 id="remove-the-agent">Remove the agent<a class="headerlink" href="#remove-the-agent" title="Permanent link">&para;</a></h2>
 <p>Run the uninstall script that comes with the app, as root:</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span><span class="s2">&quot;/Applications/AI Firewall.app/Contents/Resources/uninstall.command&quot;</span>
 </code></pre></div>
-<p>It removes the app, the services, the certificate and the proxy setting if it points at AI Firewall. When it is run as root by your management tool, it skips the steps that belong to a single user.</p>
-<p><strong>[TBC: confirm how the script behaves without a person at the keyboard (it asks for a confirmation when run in a terminal), and its two known issues. See the User Guide.]</strong></p>
-<p>When the script is run by your management tool, no notice reaches your server. The Mac stops reporting. Remove it from the portal.</p>
+<p>It removes the app, the services, the certificate and the proxy setting if it points at AI Firewall.</p>
+<p><strong>The script asks you to type <code>remove</code>, and there is no switch to skip that.</strong> If it runs with no terminal, as it does in many management tools, it stops without changing anything, and it still returns exit code 0, so your tool shows success. Give it the answer on standard input:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span>remove<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span><span class="s2">&quot;/Applications/AI Firewall.app/Contents/Resources/uninstall.command&quot;</span>
+</code></pre></div>
+<p>Try this on a pilot Mac first.</p>
+<ul>
+<li><strong>The script always returns 0.</strong> Check the result in its output: for each item the last lines say that it is gone, or <code>STILL PRESENT</code> followed by the path.</li>
+<li><strong>Run by a tool as root, it cannot clean the home folders of the people who use the Mac.</strong> It removes the app, the services, the certificate in the System keychain and the proxy setting. The per-user data of each user (history, preferences, logs and the user's keychain entry) stays, and the user can remove it.</li>
+<li><strong>Notice to your server.</strong> In version 2.2.7, an uninstall run by a management tool sends no notice to your server. The Mac stops reporting. Remove it from the portal. Newer versions report the removal when the uninstall runs as root on a Mac that was installed from the package.</li>
+</ul>
 
 
 

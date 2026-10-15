@@ -97,9 +97,6 @@
             
             
   
-  <strong>DRAFT — internal preview.</strong>
-  Items marked [TBC] are still open questions and will be removed before publication.
-  
 
           </div>
           
@@ -1056,6 +1053,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#network-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network access
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#what-the-employee-sees" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1284,6 +1292,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#network-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network access
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#what-the-employee-sees" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1344,7 +1363,7 @@
 </tr>
 <tr>
 <td><strong>The device enrolment key</strong></td>
-<td>Shown by server setup in <code>credentials.txt</code>. It is also in the admin portal under <em>Settings</em>, <em>Enrolment</em>.</td>
+<td>Shown by server setup in <code>credentials.txt</code>. You can also make a new one in the admin portal: open <em>Tenants</em>, select your workspace, open the <em>Tokens</em> tab and choose <em>Mint token</em>. The portal shows a new key only once, so copy it at once. Later it shows only a short hash.</td>
 </tr>
 <tr>
 <td><strong>A way to deploy software</strong></td>
@@ -1352,7 +1371,6 @@
 </tr>
 </tbody>
 </table>
-<p><strong>[TBC: confirm where the enrolment key is shown in the admin portal in the current version.]</strong></p>
 <h2 id="supported-computers">Supported computers<a class="headerlink" href="#supported-computers" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1363,7 +1381,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Windows 10 (21H2 or newer) and Windows 11, 64-bit Intel or AMD</td>
+<td>Windows 10 and Windows 11, 64-bit Intel or AMD</td>
 <td>Yes</td>
 </tr>
 <tr>
@@ -1380,16 +1398,18 @@
 </tr>
 </tbody>
 </table>
-<p><strong>[TBC: confirm the minimum Windows and macOS versions.]</strong></p>
+<p>These are the lowest versions of the platform that the app is built on: Windows 10, and macOS 13 (Ventura) or later. ScienceSoft has tested the agent on Windows 11 and on current macOS releases. Windows on ARM computers run the 64-bit Intel build under emulation. That has been tested only in a virtual machine.</p>
 <h2 id="the-enrolment-key">The enrolment key<a class="headerlink" href="#the-enrolment-key" title="Permanent link">&para;</a></h2>
 <p>The key joins a computer to your workspace. It is one key for the whole organisation. When a computer joins, it gets its own credential and stores it in the system keychain. The shared key is not used again by that computer.</p>
 <ul>
 <li><strong>Anyone who has the key can join a computer to your workspace.</strong> Keep it in a password manager or a secret store. Do not put it in a ticket, a chat, or a script on a shared drive that everyone can read.</li>
 <li>Pass it to the installer when you deploy. After the pilot, consider replacing the key (see below).</li>
 <li>If the key is wrong, the computer does not appear in the portal. It keeps working on its own, with the local default settings. Nothing is blocked, but the policy does not reach it.</li>
-<li>If you replace the key on the server, installers that you already built or scripted with the old key no longer join computers. Update your deployment. For computers that are already installed, the address is read only at installation, so reinstall them to change it.</li>
+<li><strong>To replace the key,</strong> make a new one in <em>Tenants</em>, your workspace, <em>Tokens</em>, update your deployment, and then revoke the old key. More than one key can be active at once, so there is no gap.</li>
+<li><strong>A revoked or expired key stops only new joins.</strong> Computers that already joined keep working and keep their own credential. A computer that is reinstalled or enrolled again needs a key that is still active. A computer that tries a revoked key appears under <em>Join failures</em> in the portal.</li>
+<li>Installers or scripts that you already built with the old key no longer join computers. Update your deployment. The address and the key are read only when the agent is installed, so reinstall a computer to change them.</li>
+<li>To stop one computer, revoke that device in the portal. Revoking a key does not remove any computer.</li>
 </ul>
-<p><strong>[TBC: product team to confirm key rotation and what happens to installed computers.]</strong></p>
 <h2 id="what-the-installer-changes-on-a-computer">What the installer changes on a computer<a class="headerlink" href="#what-the-installer-changes-on-a-computer" title="Permanent link">&para;</a></h2>
 <p>Tell your security team about this before the pilot. AI Firewall is installed on <strong>your own managed computers</strong>, to check traffic to AI services.</p>
 <p><strong>On Windows:</strong></p>
@@ -1406,8 +1426,16 @@
 <li>Creates a certificate for this Mac and trusts it in the System keychain.</li>
 <li>Installs background services, and sets the automatic proxy setting of every network connection to the local firewall. <strong>This replaces an automatic proxy setting that your company already has.</strong></li>
 </ul>
-<p><strong>Network:</strong> the agent talks to your server address. It also downloads its detection models and updates. <strong>[TBC: list the hosts the models are downloaded from, so network teams can allow them.]</strong></p>
+<p><strong>Network:</strong> the agent talks to your server address. It also downloads its detection models and updates. See <a href="#network-access">Network access</a> below.</p>
 <p>Uninstalling removes the certificate and the settings that AI Firewall added. See <a href="windows.html#remove-the-agent">Windows</a> and <a href="macos.html#remove-the-agent">macOS</a>.</p>
+<h2 id="network-access">Network access<a class="headerlink" href="#network-access" title="Permanent link">&para;</a></h2>
+<p>The agent needs outbound HTTPS (port 443) to:</p>
+<ul>
+<li><strong>Your server address.</strong></li>
+<li><strong>The update address.</strong> This is your server address followed by <code>/updates/generic</code>, unless you set another one with <code>/UPDATE_URL</code> on Windows.</li>
+<li><strong><code>huggingface.co</code>,</strong> where it downloads its detection models. Hugging Face also serves large files from its own download addresses, under <code>huggingface.co</code> and <code>hf.co</code>. Allow those names too. Test this from a pilot computer on a network that blocks everything by default. The agent checks every model file against a fixed hash after the download.</li>
+</ul>
+<p>The agent opens no inbound connections from the network. It listens only on the computer itself (<code>127.0.0.1</code>).</p>
 <h2 id="what-the-employee-sees">What the employee sees<a class="headerlink" href="#what-the-employee-sees" title="Permanent link">&para;</a></h2>
 <p>With a silent installation, the employee sees nothing during the installation. The app starts in the tray (the Windows notification area, or the macOS menu bar), and the tray icon shows the protection state. The employee cannot stop protection or remove it. See the <a href="../../index.html">User Guide</a> for what the app shows.</p>
 <h2 id="next">Next<a class="headerlink" href="#next" title="Permanent link">&para;</a></h2>

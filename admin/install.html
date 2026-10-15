@@ -97,9 +97,6 @@
             
             
   
-  <strong>DRAFT — internal preview.</strong>
-  Items marked [TBC] are still open questions and will be removed before publication.
-  
 
           </div>
           
@@ -1525,7 +1522,7 @@ chmod<span class="w"> </span>+x<span class="w"> </span>./install.sh
 <p>Check that it worked:</p>
 <div class="highlight"><pre><span></span><code>aifw<span class="w"> </span>--version
 </code></pre></div>
-<p>To install a specific version of the <code>aifw</code> command, set <code>AIFW_VERSION</code> when you run the script, for example <code>AIFW_VERSION=&lt;version&gt; bash install.sh</code>. By default the script takes the version that this server already runs, or the newest version on a new server. All the settings of the script and its error messages are on <a href="install-script.html">The installer script</a>. Every <code>aifw</code> command is described on <a href="aifw-reference.html">aifw commands</a>.</p>
+<p>To install a specific version of the <code>aifw</code> command, set <code>AIFW_VERSION</code> when you run the script, for example <code>AIFW_VERSION=&lt;version&gt; bash install.sh</code>. By default the script takes the newest published version. To upgrade a server that already works, do not run the script again: use <code>aifw upgrade</code>. All the settings of the script and its error messages are on <a href="install-script.html">The installer script</a>. Every <code>aifw</code> command is described on <a href="aifw-reference.html">aifw commands</a>.</p>
 <h2 id="step-3-check-the-server-optional-recommended">Step 3. Check the server (optional, recommended)<a class="headerlink" href="#step-3-check-the-server-optional-recommended" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>aifw<span class="w"> </span>preflight
 </code></pre></div>
@@ -1549,8 +1546,7 @@ chmod<span class="w"> </span>+x<span class="w"> </span>./install.sh
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Before you change a basic answer</p>
-<p>If a basic answer has to change (the public address, the HTTPS handling, the version or the license), take a snapshot of the server first.</p>
-<p><strong>[TBC: product team to confirm how setup behaves when a basic answer is changed. The installation runbook says to restore the pre-installation snapshot first; the command reference and the quick start say a repeat run is safe.]</strong></p>
+<p>Setup does not change the public address, the version or the administrator e-mail of a server that is already set up. It stops and names the setting. If one of them is wrong and the server is not in use yet, restore the snapshot taken before the installation, then run setup again. To change the version, use <code>aifw upgrade</code>. You can change how HTTPS is handled by running setup again. Do not rely on setup to apply a new license file to an existing server. Take a snapshot of the server before you change anything.</p>
 </div>
 <h3 id="the-answers">The answers<a class="headerlink" href="#the-answers" title="Permanent link">&para;</a></h3>
 <table>
@@ -1765,7 +1761,7 @@ chmod<span class="w"> </span>+x<span class="w"> </span>./install.sh
 </tr>
 </tbody>
 </table>
-<p><strong>[TBC: confirm the container names and the list for the current version.]</strong></p>
+<p><code>ai-firewall-init-keycloak</code> runs once when the server starts, creates the sign-in database and stops. It does not appear in <code>docker ps</code>. That is normal.</p>
 <p>From the server, ask the service if it is healthy:</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-fsS<span class="w"> </span>http://127.0.0.1:8090/health
 curl<span class="w"> </span>-fsS<span class="w"> </span>http://127.0.0.1:8090/ready

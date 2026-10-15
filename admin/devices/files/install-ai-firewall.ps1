@@ -31,7 +31,9 @@ param(
 )
 
 $ErrorActionPreference = 'Stop'
-$installedExe = Join-Path $env:ProgramFiles 'AI Firewall\AI Firewall.exe'
+# A 32-bit PowerShell sees Program Files (x86) in ProgramFiles. ProgramW6432 is the 64-bit folder.
+$programFiles = if ($env:ProgramW6432) { $env:ProgramW6432 } else { $env:ProgramFiles }
+$installedExe = Join-Path $programFiles 'AI Firewall\AI Firewall.exe'
 
 if (Test-Path $installedExe) {
   Write-Output 'AI Firewall is already installed. Nothing to do.'
@@ -59,6 +61,6 @@ $code = $process.ExitCode
 
 switch ($code) {
   0 { Write-Output 'AI Firewall installed.'; exit 0 }
-  3 { Write-Warning 'AI Firewall installed, with a warning. See the Windows event log, source "AI Firewall".'; exit 0 }
+  3 { Write-Warning 'AI Firewall installed, but the install folder was not locked down (installer code 3). Reinstall into the default folder.'; exit 0 }
   default { Write-Error "The installer returned code $code."; exit 1 }
 }

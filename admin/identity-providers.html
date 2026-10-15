@@ -97,9 +97,6 @@
             
             
   
-  <strong>DRAFT — internal preview.</strong>
-  Items marked [TBC] are still open questions and will be removed before publication.
-  
 
           </div>
           
@@ -1378,7 +1375,11 @@
 
 <h1 id="single-sign-on-with-your-company-directory">Single sign-on with your company directory<a class="headerlink" href="#single-sign-on-with-your-company-directory" title="Permanent link">&para;</a></h1>
 <p>An identity provider (IdP) lets people sign in to the admin portal with the accounts they already have, for example their Microsoft Entra ID account.</p>
-<p><strong>[TBC: the product notes call this federation a preview. Decide whether to publish this page, and with what warning.]</strong></p>
+<div class="admonition warning">
+<p class="admonition-title">Preview</p>
+<p>Single sign-on is provided by Keycloak's own identity brokering. AI Firewall does not set it up for you and has no Microsoft-specific settings. You set it up in the Keycloak console. It is offered as a preview: the steps below follow Keycloak and Microsoft documentation, and ScienceSoft has not tested them with every directory setup. Test with a test account before you tell people.</p>
+<p>Creating an identity provider needs the built-in Keycloak administrator account (<code>kcadmin</code>). The personal console account that setup creates cannot do it.</p>
+</div>
 <h2 id="why-use-one">Why use one<a class="headerlink" href="#why-use-one" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>One account and one password.</strong> People do not get a separate portal password, and you do not have to deliver passwords.</li>
@@ -1401,7 +1402,7 @@
 <li>
 <p><strong>Create the provider in Keycloak</strong> with the client ID and the client secret from the IdP.</p>
 </li>
-<li><strong>Plan how people get access.</strong> A person who signs in through the IdP for the first time is created in the <code>ai-firewall</code> realm <strong>without a role and without a workspace group</strong>, so the portal does not work for them yet. Either give them the role and the group by hand after the first sign-in, or add mappers that do it automatically. <strong>Never map anyone to <code>fleet-operators</code> automatically.</strong></li>
+<li><strong>Plan how people get access.</strong> A person who signs in through the IdP for the first time is created in the <code>ai-firewall</code> realm <strong>without a role</strong>, so the portal does not work for them yet. The realm can also add new people to its default workspace group (<code>default-tenant</code>). Check the group of each new person, because it may not be the workspace that you want. Either give them the role and the group by hand after the first sign-in, or add mappers that do it automatically. <strong>Never map anyone to <code>fleet-operators</code> automatically.</strong></li>
 <li><strong>Test</strong> with a test account before you tell people: open the portal, choose the IdP, and check that the person sees the right workspace.</li>
 <li><strong>Optional: skip the Keycloak page.</strong> Set the IdP as the default provider of the <em>Identity Provider Redirector</em> step in the <code>browser</code> authentication flow of the realm. <strong>Keep at least one local administrator account</strong> for when the IdP is not available.</li>
 </ol>

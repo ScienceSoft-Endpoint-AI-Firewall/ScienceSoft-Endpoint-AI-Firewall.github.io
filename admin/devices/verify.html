@@ -97,9 +97,6 @@
             
             
   
-  <strong>DRAFT — internal preview.</strong>
-  Items marked [TBC] are still open questions and will be removed before publication.
-  
 
           </div>
           
@@ -1280,7 +1277,6 @@
 
 <h1 id="check-that-computers-joined">Check that computers joined<a class="headerlink" href="#check-that-computers-joined" title="Permanent link">&para;</a></h1>
 <h2 id="in-the-admin-portal">In the admin portal<a class="headerlink" href="#in-the-admin-portal" title="Permanent link">&para;</a></h2>
-<p><code class="screenshot">[screenshot: admin portal: the Devices list]</code></p>
 <p>Open the admin portal at <code>https://&lt;your-server&gt;/admin</code> and go to <strong>Devices</strong>. A computer that has joined appears within a few seconds. Check:</p>
 <ul>
 <li>that it is <strong>online</strong>;</li>
@@ -1375,7 +1371,7 @@
 </table>
 <p>An installation that is wrong in one computer does not stop protection on that computer. See the <a href="../../check-status.html">User Guide</a> for the status messages the user sees.</p>
 <h2 id="for-security-teams">For security teams<a class="headerlink" href="#for-security-teams" title="Permanent link">&para;</a></h2>
-<p>The agent asks for no inbound connections. It needs outbound access to your server address, plus the update address on your server and the download addresses for its detection models. <strong>[TBC: list the model download addresses.]</strong></p>
+<p>The agent asks for no inbound connections. It needs outbound access to your server address, plus the update address on your server and <code>huggingface.co</code> for its detection models. The full list is under <a href="index.html#network-access">Network access</a>. It listens only on the computer itself (<code>127.0.0.1</code>).</p>
 
 
 

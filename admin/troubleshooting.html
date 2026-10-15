@@ -97,9 +97,6 @@
             
             
   
-  <strong>DRAFT — internal preview.</strong>
-  Items marked [TBC] are still open questions and will be removed before publication.
-  
 
           </div>
           
@@ -1447,11 +1444,26 @@ bash<span class="w"> </span>install.sh
 <p>Fix the cause. If nothing about the answers has to change, run <code>sudo aifw setup</code> again.</p>
 <h2 id="the-server-answers-but-the-sign-in-page-redirects-to-the-wrong-address-or-shows-an-error">The server answers, but the sign-in page redirects to the wrong address or shows an error<a class="headerlink" href="#the-server-answers-but-the-sign-in-page-redirects-to-the-wrong-address-or-shows-an-error" title="Permanent link">&para;</a></h2>
 <p>The single sign-on service may have been set up for a different public address than the one your server uses.</p>
-<p>Contact your ScienceSoft representative with the public address you gave to setup. <strong>[TBC: replace this with a fix in the product, or with a support procedure.]</strong></p>
+<p>There is no command that changes the public address of a server that is already set up. Setup refuses a different address.</p>
+<ul>
+<li>If you have not used the server yet, restore the snapshot that you took before the installation, and run <code>aifw setup</code> again with the right address.</li>
+<li>If the server is in use (computers are enrolled and people have signed in), do not change the address by hand. Send your ScienceSoft representative the output of <code>sudo aifw status</code> and <code>sudo aifw doctor</code>, and the public address you gave to setup.</li>
+</ul>
 <h2 id="computers-get-policy-changes-late">Computers get policy changes late<a class="headerlink" href="#computers-get-policy-changes-late" title="Permanent link">&para;</a></h2>
 <p>A proxy that buffers responses, or an idle timeout that is too short, delays the streams. See <a href="reverse-proxy.html#what-the-proxy-must-do">Reverse proxy</a>.</p>
 <h2 id="i-lost-credentialstxt">I lost <code>credentials.txt</code><a class="headerlink" href="#i-lost-credentialstxt" title="Permanent link">&para;</a></h2>
-<p>The file is meant to be deleted after you save its contents. If a value is lost, contact your ScienceSoft representative. <strong>[TBC: describe how to reset the administrator password and read the enrolment key.]</strong></p>
+<p>The file is meant to be deleted after you save its contents. Running <code>aifw setup</code> again writes a new <code>credentials.txt</code> from the current settings. Delete it again after you copy what you need.</p>
+<ul>
+<li>
+<p><strong>The enrolment key and the emergency token</strong> are kept in the settings file <code>/opt/ai-firewall/docker/.env</code>, which only the administrator can read. To read the enrolment key:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;^AIFW_ENROL_TOKEN=&#39;</span><span class="w"> </span>/opt/ai-firewall/docker/.env
+</code></pre></div>
+</li>
+<li>
+<p><strong>A forgotten portal password.</strong> Another administrator can set a new temporary password in the Keycloak console, or with <code>kcadm.sh</code>. See <a href="sign-in.html#the-same-from-the-command-line">Sign-in and roles</a>.</p>
+</li>
+<li><strong>The temporary password from the sheet</strong> works only for the first sign-in. After the administrator has changed it, the sheet shows an old value.</li>
+</ul>
 <h2 id="getting-help">Getting help<a class="headerlink" href="#getting-help" title="Permanent link">&para;</a></h2>
 <p>Send your ScienceSoft representative:</p>
 <ul>

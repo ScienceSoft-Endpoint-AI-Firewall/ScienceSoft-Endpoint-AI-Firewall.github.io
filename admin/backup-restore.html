@@ -97,9 +97,6 @@
             
             
   
-  <strong>DRAFT — internal preview.</strong>
-  Items marked [TBC] are still open questions and will be removed before publication.
-  
 
           </div>
           
@@ -1541,7 +1538,6 @@
 <div class="admonition warning">
 <p class="admonition-title">Restore is a manual procedure</p>
 <p>The product has a backup command (<code>aifw backup</code>) but <strong>no restore command</strong>. The restore steps below are put together from how the server works. They have been proven only in part. <strong>Rehearse the whole procedure on a test server before you rely on it.</strong></p>
-<p><strong>[TBC: product team to confirm the restore procedure, and to say whether a restore command is planned.]</strong></p>
 </div>
 <h2 id="what-holds-your-data">What holds your data<a class="headerlink" href="#what-holds-your-data" title="Permanent link">&para;</a></h2>
 <table>
@@ -1683,8 +1679,9 @@ sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </sp
 <span class="w">    </span>tar<span class="w"> </span>czf<span class="w"> </span>/backup/<span class="si">${</span><span class="nv">v</span><span class="si">}</span>.tgz<span class="w"> </span>--numeric-owner<span class="w"> </span>-C<span class="w"> </span>/data<span class="w"> </span>.
 <span class="k">done</span>
 
-<span class="c1"># configuration, and the installation files</span>
+<span class="c1"># configuration, the compose files, and the installation files</span>
 sudo<span class="w"> </span>tar<span class="w"> </span>czf<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$BK</span><span class="s2">/files.tgz&quot;</span><span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$STACK</span><span class="s2">&quot;</span><span class="w"> </span>presets<span class="w"> </span>secrets<span class="w"> </span>caddy
+sudo<span class="w"> </span>cp<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$STACK</span><span class="s2">&quot;</span>/docker-compose*.yml<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$BK</span><span class="s2">&quot;</span>/
 sudo<span class="w"> </span>tar<span class="w"> </span>czf<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$BK</span><span class="s2">/install-files.tgz&quot;</span><span class="w"> </span>-C<span class="w"> </span>/opt/ai-firewall<span class="w"> </span>provision-manifest.json<span class="w"> </span>proxy-snippets
 </code></pre></div>
 <p>Then copy <code>$BK</code> and the <code>.env</code> copy to storage outside the server.</p>
@@ -1746,11 +1743,13 @@ sudo<span class="w"> </span>tar<span class="w"> </span>czf<span class="w"> </spa
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/opt/ai-firewall/docker
 sudo<span class="w"> </span>install<span class="w"> </span>-m<span class="w"> </span><span class="m">600</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$BK</span><span class="s2">&quot;</span>/backup-*.env<span class="w"> </span>/opt/ai-firewall/docker/.env
 sudo<span class="w"> </span>tar<span class="w"> </span>xzf<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$BK</span><span class="s2">/files.tgz&quot;</span><span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$STACK</span><span class="s2">&quot;</span>
+sudo<span class="w"> </span>cp<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$BK</span><span class="s2">&quot;</span>/docker-compose*.yml<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$STACK</span><span class="s2">&quot;</span>/
 sudo<span class="w"> </span>tar<span class="w"> </span>xzf<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$BK</span><span class="s2">/install-files.tgz&quot;</span><span class="w"> </span>-C<span class="w"> </span>/opt/ai-firewall
 </code></pre></div>
+<p>The compose files (<code>docker-compose.prod.yml</code>, and <code>docker-compose.tls.yml</code> for bundled HTTPS) are not part of <code>aifw backup</code>. On a new server they exist only after setup has run, so step 4 needs the copies that you saved.</p>
 </li>
 <li>
-<p><strong>Sign in to the registry</strong> with the access details from your welcome email, so the images can be downloaded.</p>
+<p><strong>Sign in to the registry</strong> with the access details from your welcome email, so the images can be downloaded. <code>install.sh</code> does this.</p>
 </li>
 <li>
 <p><strong>Start only the database,</strong> and wait until it is ready. On an empty volume it starts, restarts once and sets itself up, so wait twice:</p>
@@ -1783,7 +1782,8 @@ sudo<span class="w"> </span>aifw<span class="w"> </span>setup
 </li>
 <li><strong>Check</strong> (see <a href="#check-after-a-restore">Check after a restore</a>). Switch off the old server only when the checks pass.</li>
 </ol>
-<p><strong>[TBC: confirm the steps for loading images and for running setup again after a restore.]</strong></p>
+<p>Images are not loaded from a file. They are downloaded from the software registry, with the registry sign-in that <code>install.sh</code> stored, when you run <code>aifw setup</code> or <code>docker compose up</code>.</p>
+<p>When you run <code>sudo aifw setup</code> in step 7, give the same public address, version and administrator e-mail that the restored <code>.env</code> holds. Setup keeps the restored <code>.env</code> and refuses a different address, version or e-mail. Setup writes <code>credentials.txt</code> again. Delete it after you save what you need.</p>
 <h3 id="scenario-b-the-same-server-damaged-data">Scenario B: the same server, damaged data<a class="headerlink" href="#scenario-b-the-same-server-damaged-data" title="Permanent link">&para;</a></h3>
 <ol>
 <li>

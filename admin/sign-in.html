@@ -97,9 +97,6 @@
             
             
   
-  <strong>DRAFT — internal preview.</strong>
-  Items marked [TBC] are still open questions and will be removed before publication.
-  
 
           </div>
           
@@ -1503,11 +1500,10 @@
 </tbody>
 </table>
 <h2 id="first-sign-in">First sign-in<a class="headerlink" href="#first-sign-in" title="Permanent link">&para;</a></h2>
-<p><code class="screenshot">[screenshot: the admin portal sign-in page]</code></p>
 <ol>
 <li>Open <code>https://&lt;your-address&gt;/admin</code>.</li>
 <li>Select the single sign-on button. Sign in with the administrator email that you gave to setup and the <strong>temporary password</strong> from <code>credentials.txt</code>.</li>
-<li>You are asked to choose a new password.</li>
+<li>You are asked to choose a new password, and to register an authenticator app for one-time codes.</li>
 </ol>
 <p>If you set <code>authMode</code> to <code>compat</code> (the recommended value), the sign-in page also has an <strong>emergency token field</strong>. Use it only in an emergency, and keep the token in your password manager. With <code>keycloak</code>, the page has the single sign-on button only.</p>
 <h2 id="roles">Roles<a class="headerlink" href="#roles" title="Permanent link">&para;</a></h2>
@@ -1543,7 +1539,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>[TBC: the <code>super-admin</code> role is described in the product notes as being for ScienceSoft operators of a shared installation. Say who needs it on a server that belongs to one organisation, for example to create workspaces.]</strong></p>
+<p>On a server that belongs to one organisation, the people who run the whole installation need <code>super-admin</code>. Only they can create workspaces, see all workspaces, and use the platform audit log, the releases view and the other all-workspace views. Setup gives <code>super-admin</code> to the first administrator. Give it to others only by adding them to the <code>fleet-operators</code> group, and only to people you trust with every workspace. Everyone else needs one base role and one workspace group. The emergency token always has this level.</p>
 <p>A role is not enough. A person also needs a <strong>workspace group</strong>. Without it the portal shows no workspace.</p>
 <h3 id="the-default-role">The default role<a class="headerlink" href="#the-default-role" title="Permanent link">&para;</a></h3>
 <p>Give new portal users the <code>auditor</code> role. It has the fewest rights, so a person who gets it by mistake cannot change anything. Give <code>analyst</code> or <code>admin</code> only when the work needs it.</p>
@@ -1569,9 +1565,8 @@
 <li>Sign in with your <code>master</code> realm account. A one-time code from an authenticator app is required. The first time, you register the app. Every later sign-in asks for the code.</li>
 <li>Close the tunnel when you finish.</li>
 </ol>
-<p><strong>[TBC: the quick start that ships with the installer uses port 8080 on the server side of the tunnel. A separate server note for version 2.2.6 uses port 18080 and says a one-time server change is needed first. Confirm the correct command for the current version.]</strong></p>
+<p>The tunnel command is the same on every server installed with <code>aifw</code>: port 8080 is on the server, and 18080 is on your own computer. If the console does not load after an upgrade from an older version, run <code>sudo aifw setup</code> once.</p>
 <h2 id="add-a-person-to-the-admin-portal">Add a person to the admin portal<a class="headerlink" href="#add-a-person-to-the-admin-portal" title="Permanent link">&para;</a></h2>
-<p><code class="screenshot">[screenshot: Keycloak console: Add user, Credentials and Role mapping]</code></p>
 <p>In the Keycloak console:</p>
 <ol>
 <li>Switch the realm (top left) from <code>master</code> to <strong><code>ai-firewall</code></strong>. A person created in <code>master</code> cannot sign in to the portal.</li>
@@ -1642,7 +1637,7 @@
 <tr>
 <td>Roles</td>
 <td><code>admin</code>, <code>analyst</code>, <code>auditor</code>, <code>super-admin</code></td>
-<td>One base role for each person. <code>super-admin</code> is extra</td>
+<td>One base role for each person. <code>super-admin</code> is extra. A fifth role, <code>trial</code>, is used only on trial servers</td>
 </tr>
 <tr>
 <td>Groups</td>
@@ -1676,8 +1671,7 @@
 </tr>
 </tbody>
 </table>
-<p>A running server does not read the realm file again. All other settings keep the Keycloak defaults.</p>
-<p><strong>[TBC: confirm with the product team that these names and settings are final for the current version.]</strong></p>
+<p>A running server does not read the realm file again. The realm also sets a minimum password length of 12, a lockout after 5 failed sign-ins and a one-time-code policy for the administrator. <code>aifw setup</code> applies the same rules to servers that were set up earlier. Do not weaken them.</p>
 
 
 

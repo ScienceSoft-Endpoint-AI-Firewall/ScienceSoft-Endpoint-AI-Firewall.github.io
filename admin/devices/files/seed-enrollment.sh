@@ -39,6 +39,18 @@ case "$FLEET_URL$ENROLL_KEY" in
   *[[:space:]\"\\]*) echo "The address and the key must not contain spaces, quotes or backslashes." >&2; exit 1 ;;
 esac
 
+# The package ignores an address or key that it considers invalid, and the Mac is then not enrolled.
+# Use the same rules here: printable ASCII only, limited length, and no ? # @ .. in the address.
+case "$FLEET_URL" in
+  *\?*|*\#*|*@*|*..*) echo "The server address must not contain ?, #, @ or .." >&2; exit 1 ;;
+esac
+if [ "${#FLEET_URL}" -gt 2048 ] || [ "${#ENROLL_KEY}" -gt 4096 ]; then
+  echo "The address is limited to 2048 characters and the key to 4096." >&2; exit 1
+fi
+if printf '%s%s' "$FLEET_URL" "$ENROLL_KEY" | LC_ALL=C grep -q '[^ -~]'; then
+  echo "The address and the key must use printable ASCII characters only." >&2; exit 1
+fi
+
 mkdir -p "$DIR"
 chown root:wheel "$DIR"
 chmod 0755 "$DIR"
