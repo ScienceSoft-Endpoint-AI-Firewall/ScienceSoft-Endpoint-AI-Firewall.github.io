@@ -1,0 +1,4 @@
+# Draft preview: keep out of search engines until the [TBC] items are resolved.
+# Delete this file when the documentation is final.
+User-agent: *
+Disallow: /
