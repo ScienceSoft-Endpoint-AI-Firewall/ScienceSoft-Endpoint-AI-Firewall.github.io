@@ -1511,7 +1511,7 @@
 <p>At the bottom of the menu, a status card shows if protection is on, for example "Protection is on". It also shows who sets the rules ("Managed by IT" or "Local settings") and the mode. Below it you see the app version and a button to switch between light and dark theme. The button at the top of the menu folds it to icons.</p>
 <p><strong>There is no on/off switch in the app.</strong> Your company decides when protection is on. You can close the app from the tray menu (<strong>Quit</strong>), but then protection stops. See <a href="coverage.html#when-ai-firewall-is-not-running">When AI Firewall is not running</a>.</p>
 <p>The <strong>i</strong> button at the top of every screen ("Why this status?") shows the checks behind the current status. For the meaning of each status, see <a href="check-status.html">Check status</a>.</p>
-<p><code class="screenshot">[screenshot: app overview with menu]</code></p>
+<p><img alt="The AI Firewall window on the Dashboard. The menu on the left lists Dashboard, Activity, Protection, AI tools protection, Detection engine, Device &amp; coverage, Updates and Help. The status &quot;Protection is on&quot; is at the bottom of the menu." src="assets/screenshots/app-overview.png" /></p>
 <h2 id="who-is-in-charge-you-or-your-it-team">Who is in charge: you or your IT team<a class="headerlink" href="#who-is-in-charge-you-or-your-it-team" title="Permanent link">&para;</a></h2>
 <p>Your IT team sets the rules. <strong>You cannot change the mode or the list of data types in the app.</strong> You can see them, so you know what protects you. Where a rule is set by your IT team, the screen says "Set by your IT team. To change it, contact them."</p>
 <p>Things you can change on your own computer:</p>
@@ -1523,7 +1523,7 @@
 </ul>
 <p>Restoring or resetting your settings never changes the rules set by your IT team.</p>
 <h2 id="dashboard">Dashboard<a class="headerlink" href="#dashboard" title="Permanent link">&para;</a></h2>
-<p><code class="screenshot">[screenshot: Dashboard, protection on and requests inspected]</code></p>
+<p><img alt="The Dashboard: a headline saying how much company data the firewall kept from leaving the laptop today, a bar of today's requests by outcome, and cards for the most common find, the busiest AI tool, the median scan time and the AI tools inspected." src="assets/screenshots/dashboard.png" /></p>
 <p>Shows today's picture:</p>
 <ul>
 <li>A headline, for example "No AI traffic was inspected on this laptop today."</li>
@@ -1543,7 +1543,7 @@
 </ul>
 <p>If the list is empty, the screen tells you why. For example, protection may be paused, or AI traffic is not reaching the firewall yet. In that case open <strong>Device &amp; coverage</strong> to see which part is missing.</p>
 <h2 id="protection">Protection<a class="headerlink" href="#protection" title="Permanent link">&para;</a></h2>
-<p><code class="screenshot">[screenshot: Protection: the three modes and the data types]</code></p>
+<p><img alt="The Protection screen: the three modes Record only, Replace (recommended) and Block, and below them the data types the firewall looks for, grouped, each with a switch and today's count. A banner says the settings are managed by your IT team." src="assets/screenshots/protection.png" /></p>
 <p>This screen shows what is protecting you. <strong>The mode and the data types are read-only.</strong> You can look, but not change them.</p>
 <p><strong>When sensitive data is found in a request.</strong> Three modes:</p>
 <table>
@@ -1583,9 +1583,9 @@
 <li>For each item you see its name, type (MCP server or skill), the tool it belongs to, where it is configured, and a risk level (high, medium, low) with the reason.</li>
 <li>"Could not be read" means a configuration file could not be parsed.</li>
 </ul>
-<p>This is a list, not an approval. Nobody has reviewed these items, and an MCP server that opens its own connection is not inspected by the firewall. <strong>[TBC: confirm wording with the product team.]</strong></p>
+<p>This is a list, not an approval. Nobody has reviewed these items, and an MCP server that opens its own connection is not inspected by the firewall.</p>
 <h2 id="detection-engine">Detection engine<a class="headerlink" href="#detection-engine" title="Permanent link">&para;</a></h2>
-<p><code class="screenshot">[screenshot: Detection engine]</code></p>
+<p><img alt="The Detection engine screen: pattern matching and the language model run on every request, and a list of models with their size, languages and download state." src="assets/screenshots/detection-engine.png" /></p>
 <p>Shows how the firewall finds data. Two things run on every request: pattern matching (always on) and a language model that finds names, addresses and similar free text.</p>
 <ul>
 <li><strong>Model in use</strong>: the models you can choose from, with size, languages and download state. You can choose a model on your own computer.</li>
@@ -1593,7 +1593,7 @@
 </ul>
 <p>These choices are local to your computer. Your IT team does not lock them.</p>
 <h2 id="device-coverage">Device &amp; coverage<a class="headerlink" href="#device-coverage" title="Permanent link">&para;</a></h2>
-<p><code class="screenshot">[screenshot: Device and coverage: This device and Coverage]</code></p>
+<p><img alt="The Device &amp; coverage screen. The card This device shows the status, enrolment, check times, policy version, inspection engine, certificate trust and system proxy. The card Coverage shows browsers and desktop apps, command-line tools and tools those tools start. Addresses and identifiers are hidden." src="assets/screenshots/device-coverage.png" /></p>
 <p>Shows the state of this computer.</p>
 <p><strong>This device</strong>: status, your company's server, enrolment state, when the app last checked in, device ID, policy version, app version, and whether the certificate is trusted ("Yes — installed"). If the connection to your company's server fails, the screen explains why and offers <strong>Try connecting again</strong>. Protection keeps running either way. The connection only affects settings and reports.</p>
 <p><strong>Coverage</strong>: which AI traffic passes through the firewall.</p>
@@ -1606,7 +1606,6 @@
 <p><strong>AI services covered</strong>: the services and addresses that are inspected.</p>
 <p><strong>Install certificate.</strong> If the certificate is missing, a banner appears at the top: AI Firewall needs to install a security certificate to inspect AI traffic. Select <strong>Install certificate</strong> and approve the prompt.</p>
 <p><strong>Connect a command-line tool.</strong> Claude Code, Codex and Kimi Code do not follow the system proxy, so they are off until you turn them on. Select this button, choose the tool, and follow the three steps. AI Firewall then changes that tool's own settings so its requests go through the firewall. Turning protection off, or uninstalling, puts the settings back. Start a new session of the tool afterwards. Your IT team can also turn tools on for the whole company.</p>
-<p><strong>[TBC: the footer text of this screen says command-line steering is applied automatically. The code says it is opt-in. The text in the app needs a fix.]</strong></p>
 <p><strong>What you are told about.</strong> Choose which notifications you get. Some are always on and cannot be turned off, for example "A request was not sent" and "Protection stopped".</p>
 <p><strong>This laptop.</strong> Start with this laptop, save a copy of your settings, restore from a copy, or reset to defaults.</p>
 <h2 id="updates">Updates<a class="headerlink" href="#updates" title="Permanent link">&para;</a></h2>
@@ -1620,7 +1619,7 @@
 </ul>
 <p><img alt="The orange notice at the top of the app: the app cannot update itself on this computer. It offers Check now, Copy details and Show details, and asks you to contact your IT administrator." src="assets/screenshots/updates-cannot-update-notice.png" /></p>
 <h2 id="help-and-contact-us">Help and Contact us<a class="headerlink" href="#help-and-contact-us" title="Permanent link">&para;</a></h2>
-<p><code class="screenshot">[screenshot: Help]</code></p>
+<p><img alt="The right-hand side of the Help screen: Copy details and Contact us, the fleet server that manages this device (hidden here), and the About text." src="assets/screenshots/help.png" /></p>
 <p><strong>Help</strong> has troubleshooting steps and common questions, including:</p>
 <ul>
 <li>Protection is on but nothing appears in Activity</li>
@@ -1666,7 +1665,7 @@
 </tbody>
 </table>
 <h2 id="trial-only">Trial only<a class="headerlink" href="#trial-only" title="Permanent link">&para;</a></h2>
-<p>In a trial build, the app asks for a server address and an enrollment code from your welcome email. It shows a notice when the trial is about to end, and says that when it ends the device stops reporting to the workspace, while protection on the computer continues. See the <strong>[Trial] User and Role Guide</strong>.</p>
+<p>In a trial build, the app asks for a server address and an enrollment code from your welcome email. It shows a notice when the trial is about to end, and says that when it ends the device stops reporting to the workspace, while protection on the computer continues. Your ScienceSoft representative can send you the trial guide.</p>
 
 
 

@@ -1455,7 +1455,6 @@
 </tr>
 </tbody>
 </table>
-<p><strong>[TBC: the shared status text offers buttons such as "Try again" or "Check again now". Confirm which of them appear in the AI Firewall app. The table above avoids relying on them.]</strong></p>
 <h2 id="if-you-see-mode-not-confirmed">If you see "Mode not confirmed"<a class="headerlink" href="#if-you-see-mode-not-confirmed" title="Permanent link">&para;</a></h2>
 <p>Your AI traffic is still being checked. What is not certain is <strong>which mode</strong> is in use. Until the status goes back to normal, treat the chosen mode (for example Replace) as not applied: private data might not be replaced or blocked.</p>
 <p>The app asks the engine to confirm the mode, and tries three times. The status appears when the engine does not answer in time. Common reasons:</p>
@@ -1466,11 +1465,10 @@
 </ul>
 <p>What to do:</p>
 <ol>
-<li>Wait a minute. In many cases the app sets the mode again by itself when the engine is back.</li>
+<li>Wait a minute. When the app sees that the engine is answering again, it sends the mode again by itself.</li>
 <li>Restart the app.</li>
 <li>If the status stays, tell your IT team. Copy the details from <strong>Help</strong> (see <a href="#how-to-report-a-problem">How to report a problem</a>).</li>
 </ol>
-<p><strong>[TBC: product team to confirm the list of reasons and whether the app has a button for this in the AI Firewall app.]</strong></p>
 <h2 id="when-protection-has-stopped">When protection has stopped<a class="headerlink" href="#when-protection-has-stopped" title="Permanent link">&para;</a></h2>
 <p>What happens to your AI requests depends on how AI Firewall was installed.</p>
 <ul>
@@ -1480,11 +1478,12 @@
 <p>In both cases the app is trying to restart the protection by itself.</p>
 <h2 id="when-protection-is-paused">When protection is paused<a class="headerlink" href="#when-protection-is-paused" title="Permanent link">&para;</a></h2>
 <p>A pause always comes from your organisation. There is no button for you to turn protection back on.</p>
+<p>The title is the same in both cases: <strong>Protection is paused by your organisation</strong>. The sentence under it tells them apart:</p>
 <ul>
-<li>If traffic is still routed through the app, nothing is checked, but the connection is not broken.</li>
-<li>If it is not routed, AI traffic goes out without being checked.</li>
+<li><strong>"Traffic is still routed through the app, but nothing is being inspected."</strong> Nothing is checked, but the connection is not broken.</li>
+<li><strong>"AI traffic from this device is going out without being inspected."</strong> Nothing is routed through the app. AI traffic goes out without being checked.</li>
 </ul>
-<p><strong>[TBC: how does the user know which of the two cases applies? The app gives a different sentence for each.]</strong></p>
+<p>In both cases, do not send private data to AI tools until your IT team turns protection back on.</p>
 <h2 id="how-to-report-a-problem">How to report a problem<a class="headerlink" href="#how-to-report-a-problem" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Open <strong>Help</strong> and select <strong>Copy details</strong>.</li>

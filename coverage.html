@@ -609,17 +609,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#open-questions-for-this-page" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Open questions for this page
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1438,17 +1427,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#open-questions-for-this-page" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Open questions for this page
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1503,21 +1481,25 @@
 <tr>
 <td>Mask</td>
 <td>Replace (recommended)</td>
-<td>Private details are swapped for placeholders before sending. They are put back in the answer you read. The AI can still help you. A detection is replaced only when the firewall is at least <strong>80% sure</strong>.</td>
+<td>Private details are swapped for placeholders before sending. They are put back in the answer you read. The AI can still help you. A detection is replaced only when the firewall is sure enough (see below).</td>
 <td>Everyday use.</td>
 </tr>
 <tr>
 <td>Protect</td>
 <td>Block</td>
-<td>A request is not sent when the firewall is at least <strong>80% sure</strong> that it holds private data. You see what was found. You can edit your prompt and try again.</td>
+<td>A request is not sent when the firewall is sure enough (see below) that it holds private data. You see what was found. You can edit your prompt and try again.</td>
 <td>When private data must never leave your computer.</td>
 </tr>
 </tbody>
 </table>
-<p>The 80% level is fixed. You and your company cannot change it.</p>
+<p><strong>How sure is "sure enough"?</strong> Each finding has a confidence score, and two checks use it differently:</p>
+<ul>
+<li><strong>Names, organisations and addresses</strong> (found by the language model). A finding below the model's cutoff is dropped: it is not replaced and it is not recorded as a detection. The cutoff is set for each kind of finding. The model ScienceSoft ships is tuned to lean towards catching names, so a name it is only fairly sure about is still replaced. Your IT team can change the cutoff for each kind.</li>
+<li><strong>Numbers and codes found by patterns</strong> (cards, account numbers, ID numbers, e-mail addresses). In <strong>Replace</strong> and <strong>Block</strong> a weak match, for example an ordinary word that looks like a bank code, is not replaced and does not block a request. It stays in the record of what was found, and the log on this computer shows it. In <strong>Record only</strong> every match is recorded.</li>
+</ul>
+<p>You cannot change this on your computer. Ask your IT team what is set.</p>
 <p><strong>Detection of passwords and other credentials is always on.</strong> It cannot be switched off. What happens to a credential still depends on the mode: it is blocked in Block mode, replaced in Replace mode, and recorded in Record only mode (except machine secrets, which are replaced).</p>
 <p>Because Monitor is the default, a new team is not yet replacing most private data. Ask your IT team which mode is set for you.</p>
-<p><strong>[TBC: is a finding below 80% still recorded (visible to your IT team)?]</strong></p>
 <h3 id="who-chooses-the-mode">Who chooses the mode<a class="headerlink" href="#who-chooses-the-mode" title="Permanent link">&para;</a></h3>
 <p>Your company decides. Your IT team sets the rules for all computers. <strong>You cannot change the mode or the list of data types in the app.</strong> The Protection screen shows them, so you know what protects you, and shows how long ago your rules were last updated. If the computer is not connected to a company, the app uses the default: Record only.</p>
 <p>What you can change on your own computer:</p>
@@ -1572,7 +1554,6 @@
 <li>Claude Code and Kimi Code cannot both be covered at once.</li>
 <li>On <strong>Device &amp; coverage</strong>, the row <strong>Command-line tools</strong> shows if they are covered.</li>
 </ul>
-<p><strong>[TBC: the footer text of the Device &amp; coverage screen says this is applied automatically. The code says it is opt-in. The text in the app needs a fix.]</strong></p>
 <p>At the time of writing, AI Firewall covers 38 AI services in the browser, including Claude, ChatGPT, Gemini, Microsoft Copilot, GitHub Copilot, Perplexity and Grok. The list grows with new versions.</p>
 <h3 id="what-is-checked-inside-a-request">What is checked inside a request<a class="headerlink" href="#what-is-checked-inside-a-request" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1607,7 +1588,7 @@
 <ul>
 <li><strong>Languages:</strong> the detection model, the <strong>ScienceSoft PII Encoder</strong>, supports 7 languages: English, Russian, Arabic, Spanish, German, Italian and French. Images in these languages are read on your computer.</li>
 <li><strong>Images:</strong> the app reads one language group at a time (Latin, Cyrillic or Arabic letters). A picture in a different language may be read badly, <strong>without a warning</strong>. Reading text from blurry or low-quality images is less accurate.</li>
-<li><strong>Arabic person names</strong> are not found yet. <strong>[TBC: the code shows no detector for Arabic person names yet. Confirm.]</strong></li>
+<li><strong>Arabic person names</strong> are not found yet.</li>
 </ul>
 <h2 id="what-is-recorded">What is recorded<a class="headerlink" href="#what-is-recorded" title="Permanent link">&para;</a></h2>
 <p>Protection happens on your computer. The private values that were found are not collected.</p>
@@ -1638,13 +1619,6 @@
 <p>Whose workspace it is matters. Normally it belongs to your company. If your computer is connected to a server run by ScienceSoft, as in a trial, ScienceSoft can see what that workspace records. ScienceSoft can disconnect a computer on request.</p>
 <p>A computer that is not connected to a workspace sends nothing.</p>
 <p>What the AI service receives depends on the mode (see the table above).</p>
-<hr />
-<h2 id="open-questions-for-this-page">Open questions for this page<a class="headerlink" href="#open-questions-for-this-page" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Is a finding below 80% still recorded?</li>
-<li>Arabic person names: is there a detector yet?</li>
-<li>Footer text of Device &amp; coverage says command-line tools are automatic, the code says opt-in. Fix the app text.</li>
-</ol>
 
 
 

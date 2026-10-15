@@ -639,10 +639,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#known-issues-on-macos" class="md-nav__link">
+  <a href="#if-something-is-left-behind-on-macos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Known issues on macOS
+        If something is left behind on macOS
       
     </span>
   </a>
@@ -692,17 +692,6 @@
     <span class="md-ellipsis">
       
         Common questions
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#open-questions-for-this-page" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Open questions for this page
       
     </span>
   </a>
@@ -1389,10 +1378,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#known-issues-on-macos" class="md-nav__link">
+  <a href="#if-something-is-left-behind-on-macos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Known issues on macOS
+        If something is left behind on macOS
       
     </span>
   </a>
@@ -1448,17 +1437,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#open-questions-for-this-page" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Open questions for this page
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1494,7 +1472,7 @@
 <li>Select the three-dot menu, then <strong>Uninstall</strong>. (<strong>Modify</strong> is greyed out. You cannot change the installation.)</li>
 <li>Approve the administrator prompt (UAC).</li>
 </ol>
-<p><strong>[TBC: what does a standard user see when they select Uninstall? Not yet tested.]</strong></p>
+<p>AI Firewall is installed for every user of the computer, so removing it needs an administrator. If you are signed in as a standard user, Windows asks for the name and password of an administrator. Without them nothing is removed. If you do not have them, ask your IT team.</p>
 <p><img alt="AI Firewall in Settings &gt; Apps, with the three-dot menu open: Modify is greyed out, Uninstall is available" src="assets/screenshots/uninstall-settings-apps.png" /></p>
 <h3 id="what-the-uninstaller-removes">What the uninstaller removes<a class="headerlink" href="#what-the-uninstaller-removes" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1534,12 +1512,12 @@
 <li>Your local data and the connection to your company.</li>
 </ul>
 <p>The script removes data only for the user who runs it. Another user on the same Mac keeps their local data.</p>
-<h3 id="known-issues-on-macos">Known issues on macOS<a class="headerlink" href="#known-issues-on-macos" title="Permanent link">&para;</a></h3>
+<h3 id="if-something-is-left-behind-on-macos">If something is left behind on macOS<a class="headerlink" href="#if-something-is-left-behind-on-macos" title="Permanent link">&para;</a></h3>
+<p>The script says on screen what it did and what it left. Read its last lines.</p>
 <ul>
-<li><strong>The proxy setting may stay switched on.</strong> On some Macs, the automatic proxy setting can remain on with an empty address after the script. If AI sites do not load afterwards, open <strong>System Settings</strong> &gt; <strong>Network</strong>, select your connection, open <strong>Details</strong> &gt; <strong>Proxies</strong>, and switch off <strong>Automatic proxy configuration</strong>.</li>
-<li><strong>The Claude Code settings file is not restored by the script.</strong> If Claude Code still points at the firewall, remove the address that points at <code>127.0.0.1</code> from your Claude Code settings. Quitting AI Firewall before the uninstall avoids this.</li>
+<li><strong>The proxy setting.</strong> The script switches off the automatic proxy setting on every network connection that points at AI Firewall. A connection whose setting it cannot confirm as its own, for example your company's own proxy, it leaves alone, and says so in a line that starts with "Left the auto-proxy". If AI sites do not load afterwards, open <strong>System Settings</strong> &gt; <strong>Network</strong>, select your connection, open <strong>Details</strong> &gt; <strong>Proxies</strong>, and switch off <strong>Automatic proxy configuration</strong>.</li>
+<li><strong>Your own Claude Code settings.</strong> The script removes the settings that AI Firewall added for Claude Code at the system level. It does not edit your own Claude Code settings file. If Claude Code still points at the firewall, remove the address that points at <code>127.0.0.1</code> from your Claude Code settings.</li>
 </ul>
-<p><strong>[TBC: product team to confirm both issues for the current version, and whether they are fixed.]</strong></p>
 <h2 id="what-happens-to-your-data">What happens to your data<a class="headerlink" href="#what-happens-to-your-data" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>On your computer:</strong> the activity history is deleted, and so is the list of replaced values. Once it is gone, replaced values cannot be turned back into the original text. The connection to your company is deleted too. If you install AI Firewall again, it is a fresh start.</li>
@@ -1555,20 +1533,13 @@
 <h2 id="things-that-may-stay-behind">Things that may stay behind<a class="headerlink" href="#things-that-may-stay-behind" title="Permanent link">&para;</a></h2>
 <ul>
 <li>An empty <code>C:\Program Files\AI Firewall</code> folder on Windows.</li>
-<li>Settings for other tools that AI Firewall did not add. AI Firewall does not set up Aider, Continue, Cursor or Visual Studio Code, so there is nothing to remove. <strong>[TBC: a note that AI Firewall may have added to the Claude Code instructions file is not cleaned up. Confirm, and tell the user how to check.]</strong></li>
+<li>Settings for other tools that AI Firewall did not add. AI Firewall does not set up Aider, Continue, Cursor or Visual Studio Code, so there is nothing to remove. AI Firewall does not write to the Claude Code instructions file (<code>CLAUDE.md</code>), so there is no note of ours to remove there.</li>
 <li>On macOS, other users' local data (see above).</li>
 </ul>
 <h2 id="common-questions">Common questions<a class="headerlink" href="#common-questions" title="Permanent link">&para;</a></h2>
 <p><strong>Can I remove it to reinstall a newer version?</strong> You do not need to. Install the new version over the old one. Your data and your connection to your company stay.</p>
 <p><strong>I want to reconnect to a different company workspace.</strong> Uninstall, then install again. The connection to the old workspace is removed on purpose, so a new install does not join it again by itself.</p>
 <p><strong>Does uninstalling delete what my company has recorded about me?</strong> No. Those records stay on your company's server.</p>
-<hr />
-<h2 id="open-questions-for-this-page">Open questions for this page<a class="headerlink" href="#open-questions-for-this-page" title="Permanent link">&para;</a></h2>
-<ol>
-<li>What happens when a standard user selects Uninstall in Settings &gt; Apps?</li>
-<li>macOS: are the two known issues fixed in the current script?</li>
-<li>A note that AI Firewall may add to the Claude Code instructions file: is it removed?</li>
-</ol>
 
 
 

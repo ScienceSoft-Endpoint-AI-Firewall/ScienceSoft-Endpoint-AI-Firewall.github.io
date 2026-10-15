@@ -770,17 +770,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#open-questions-for-this-page" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Open questions for this page
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1648,17 +1637,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#open-questions-for-this-page" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Open questions for this page
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1685,7 +1663,7 @@
 <ul>
 <li>The workspace's administrators can see what was <strong>detected</strong>: how many values were found, and which types. They cannot see the values themselves.</li>
 <li>If your computer is connected to a workspace, the message is also recorded there, by default, with those values replaced. So they can read what you wrote, but not the personal data that was found in it. An administrator can choose to keep less (a short excerpt, or no message text at all). The setting is called <strong>Data Capture Mode</strong>.</li>
-<li>What the AI service receives depends on your company's setting. In <strong>Replace</strong> mode, values that the firewall is at least 80% sure about are replaced before sending. In <strong>Record only</strong> mode, your message is sent as typed, apart from machine secrets such as API keys.</li>
+<li>What the AI service receives depends on your company's setting. In <strong>Replace</strong> mode, values that the firewall is sure enough about are replaced before sending. In <strong>Record only</strong> mode, your message is sent as typed, apart from machine secrets such as API keys.</li>
 <li>A computer that is not connected to a workspace sends nothing.</li>
 </ul>
 <h3 id="is-my-data-sent-anywhere-to-be-scanned">Is my data sent anywhere to be scanned?<a class="headerlink" href="#is-my-data-sent-anywhere-to-be-scanned" title="Permanent link">&para;</a></h3>
@@ -1726,17 +1704,12 @@
 <p>Word, Excel, PowerPoint, PDF and OpenDocument files are opened on your computer and their text is checked. For images and screenshots, the text inside the picture is read on your computer. In Replace mode, a cleaned copy of a file is sent instead of the original.</p>
 <p>A file that cannot be read (for example an encrypted file) is recorded as <strong>not checked</strong>. By default it is still sent. Your IT team can choose to refuse such files instead.</p>
 <h3 id="which-languages-does-it-support">Which languages does it support?<a class="headerlink" href="#which-languages-does-it-support" title="Permanent link">&para;</a></h3>
-<p>The detection model, the ScienceSoft PII Encoder, supports 7 languages: English, Russian, Arabic, Spanish, German, Italian and French. <strong>[TBC: the code shows no detector for Arabic person names yet. Confirm.]</strong></p>
+<p>The detection model, the ScienceSoft PII Encoder, supports 7 languages: English, Russian, Arabic, Spanish, German, Italian and French. Arabic person names are not detected yet (see <a href="coverage.html">What is protected</a>).</p>
 <h3 id="what-is-not-protected">What is not protected?<a class="headerlink" href="#what-is-not-protected" title="Permanent link">&para;</a></h3>
 <p>An AI tool that is not named on <a href="coverage.html">What is protected</a> is not protected. Examples: other command-line tools, scripts, and the JetBrains AI Assistant.</p>
 <h2 id="updates">Updates<a class="headerlink" href="#updates" title="Permanent link">&para;</a></h2>
 <h3 id="does-the-app-update-itself">Does the app update itself?<a class="headerlink" href="#does-the-app-update-itself" title="Permanent link">&para;</a></h3>
 <p>Yes, or your IT team delivers updates, if they manage them. Every update must be signed by ScienceSoft and newer than the version you have, and the app never asks you for a password. When an update is ready, select <strong>Restart now</strong>. The restart takes a few seconds, and AI traffic pauses briefly.</p>
-<hr />
-<h2 id="open-questions-for-this-page">Open questions for this page<a class="headerlink" href="#open-questions-for-this-page" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Arabic person names: is there a detector yet?</li>
-</ol>
 
 
 
