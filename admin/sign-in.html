@@ -1,0 +1,1725 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="User guide for ScienceSoft On-Device AI Firewall">
+      
+      
+      
+      
+        <link rel="prev" href="reverse-proxy.html">
+      
+      
+        <link rel="next" href="identity-providers.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Sign-in and roles - AI Firewall Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="https://unpkg.com/iframe-worker/shim"></script>
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Open Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sign-in-and-roles" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+  
+  <strong>DRAFT — internal preview.</strong>
+  Items marked [TBC] are still open questions and will be removed before publication.
+  
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="AI Firewall Documentation" class="md-header__button md-logo" aria-label="AI Firewall Documentation" data-md-component="logo">
+      
+  <img src="../assets/logo-white.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Firewall Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Sign-in and roles
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AI Firewall Documentation" class="md-nav__button md-logo" aria-label="AI Firewall Documentation" data-md-component="logo">
+      
+  <img src="../assets/logo-white.svg" alt="logo">
+
+    </a>
+    AI Firewall Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../management.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using the app
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../check-status.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Check status
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coverage.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What is protected
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uninstall.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uninstall
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Admin Guide
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Admin Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="prerequisites.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prerequisites
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="install.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install the server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reverse-proxy.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reverse proxy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sign-in and roles
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="sign-in.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sign-in and roles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-people-and-devices-are-identified" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How people and devices are identified
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-sign-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        First sign-in
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Roles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Roles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-default-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The default role
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#two-accounts-for-an-administrator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two accounts for an administrator
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-the-keycloak-console" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open the Keycloak console
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-a-person-to-the-admin-portal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add a person to the admin portal
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Add a person to the admin portal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-same-from-the-command-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The same from the command line
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-a-keycloak-administrator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add a Keycloak administrator
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connect-your-companys-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connect your company's directory
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#required-realm-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required realm settings
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="identity-providers.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Single sign-on
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="operate.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operate and upgrade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="backup-restore.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backup and restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="troubleshooting.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="devices/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roll out the agent
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Roll out the agent
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="devices/windows.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="devices/macos.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    macOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="devices/verify.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Check that computers joined
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="devices/downloads.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scripts to download
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-people-and-devices-are-identified" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How people and devices are identified
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-sign-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        First sign-in
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Roles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Roles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-default-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The default role
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#two-accounts-for-an-administrator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two accounts for an administrator
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-the-keycloak-console" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open the Keycloak console
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-a-person-to-the-admin-portal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add a person to the admin portal
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Add a person to the admin portal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-same-from-the-command-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The same from the command line
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-a-keycloak-administrator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add a Keycloak administrator
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connect-your-companys-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connect your company's directory
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#required-realm-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required realm settings
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="sign-in-and-roles">Sign-in and roles<a class="headerlink" href="#sign-in-and-roles" title="Permanent link">&para;</a></h1>
+<p>This page explains who can sign in to AI Firewall, what each role can do, and how to add people.</p>
+<h2 id="how-people-and-devices-are-identified">How people and devices are identified<a class="headerlink" href="#how-people-and-devices-are-identified" title="Permanent link">&para;</a></h2>
+<p>AI Firewall uses <strong>Keycloak</strong> as its sign-in service. Keycloak runs as one of the containers of the server. It handles sign-in to the admin portal, roles and the sign-in log. It has two realms (separate sets of accounts):</p>
+<table>
+<thead>
+<tr>
+<th>Realm</th>
+<th>What it is for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ai-firewall</code></td>
+<td>Sign-in to the <strong>admin portal</strong>. The role of a person decides what they can do. Their workspace group decides which workspace they see.</td>
+</tr>
+<tr>
+<td><code>master</code></td>
+<td>Sign-in to the <strong>Keycloak console</strong>, for the administrators who manage people and roles.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>What</th>
+<th>How it is identified</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>People who use the admin portal</td>
+<td>Keycloak, realm <code>ai-firewall</code></td>
+</tr>
+<tr>
+<td>Keycloak administrators</td>
+<td>Keycloak, realm <code>master</code>. One personal account for each administrator</td>
+</tr>
+<tr>
+<td>Computers (agents)</td>
+<td><strong>Not through Keycloak.</strong> At first start the agent exchanges the device enrolment key for its own device key.</td>
+</tr>
+<tr>
+<td>Static tokens (the emergency sign-in token and the administration tokens)</td>
+<td><strong>Not through Keycloak.</strong> They always have the highest rights and are not recorded in the sign-in log. Keep them for emergencies only.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="first-sign-in">First sign-in<a class="headerlink" href="#first-sign-in" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Open <code>https://&lt;your-address&gt;/admin</code>.</li>
+<li>Select the single sign-on button. Sign in with the administrator email that you gave to setup and the <strong>temporary password</strong> from <code>credentials.txt</code>.</li>
+<li>You are asked to choose a new password.</li>
+</ol>
+<p>If you set <code>authMode</code> to <code>compat</code> (the recommended value), the sign-in page also has an <strong>emergency token field</strong>. Use it only in an emergency, and keep the token in your password manager. With <code>keycloak</code>, the page has the single sign-on button only.</p>
+<h2 id="roles">Roles<a class="headerlink" href="#roles" title="Permanent link">&para;</a></h2>
+<p>Every person who uses the admin portal has <strong>one base role</strong>. The server checks the role on every request, not only in the screens.</p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>What it allows</th>
+<th>Who gets it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>admin</code></td>
+<td>Everything in their own workspace</td>
+<td>IT or security administrators who set up and run protection</td>
+</tr>
+<tr>
+<td><code>analyst</code></td>
+<td>Reading and investigating in their own workspace, without changes</td>
+<td>Analysts who review detections but must not change settings</td>
+</tr>
+<tr>
+<td><code>auditor</code></td>
+<td>Audit only: reading and export</td>
+<td>Auditors and compliance staff</td>
+</tr>
+<tr>
+<td><code>super-admin</code></td>
+<td>Added on top of a base role. All workspaces, creating workspaces, releases, platform audit and the sign-in log</td>
+<td>People who run the whole installation. Given only through the <code>fleet-operators</code> group</td>
+</tr>
+</tbody>
+</table>
+<p><strong>[TBC: the <code>super-admin</code> role is described in the product notes as being for ScienceSoft operators of a shared installation. Say who needs it on a server that belongs to one organisation, for example to create workspaces.]</strong></p>
+<p>A role is not enough. A person also needs a <strong>workspace group</strong>. Without it the portal shows no workspace.</p>
+<h3 id="the-default-role">The default role<a class="headerlink" href="#the-default-role" title="Permanent link">&para;</a></h3>
+<p>Give new portal users the <code>auditor</code> role. It has the fewest rights, so a person who gets it by mistake cannot change anything. Give <code>analyst</code> or <code>admin</code> only when the work needs it.</p>
+<ul>
+<li>Do not add the product roles to the default roles of the <code>ai-firewall</code> realm. If you do, every new person, including people who sign in through a company directory, gets access automatically.</li>
+<li>Never give <code>super-admin</code> by default, and never make <code>fleet-operators</code> a default group.</li>
+</ul>
+<h2 id="two-accounts-for-an-administrator">Two accounts for an administrator<a class="headerlink" href="#two-accounts-for-an-administrator" title="Permanent link">&para;</a></h2>
+<p>The Keycloak console and the admin portal use different realms, so an administrator who needs both has <strong>two accounts with the same username and separate passwords</strong>. Changing the password of one does not change the other. An account from the <code>master</code> realm cannot sign in to the admin portal. A person who needs the portal needs an account in the <code>ai-firewall</code> realm.</p>
+<p>Use the built-in emergency administrator account only in an emergency, for example to create the first additional administrator. For regular work, create a personal administrator account for each person. Do not share one account.</p>
+<h2 id="open-the-keycloak-console">Open the Keycloak console<a class="headerlink" href="#open-the-keycloak-console" title="Permanent link">&para;</a></h2>
+<p>The console is <strong>never on the public address</strong>. Those addresses always answer "not found". You open it from your own computer through an SSH tunnel.</p>
+<ol>
+<li>
+<p>In <code>credentials.txt</code>, find the console account and the tunnel command. The command looks like this:</p>
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>-N<span class="w"> </span>-L<span class="w"> </span><span class="m">18080</span>:127.0.0.1:8080<span class="w"> </span>&lt;user&gt;@&lt;server&gt;
+</code></pre></div>
+<p>Keep it running.</p>
+</li>
+<li>
+<p>Open <code>http://127.0.0.1:18080/keycloak/admin/</code> in your browser. Use exactly that address, with <code>127.0.0.1</code>, not <code>localhost</code>.</p>
+</li>
+<li>Sign in with your <code>master</code> realm account. A one-time code from an authenticator app is required. The first time, you register the app. Every later sign-in asks for the code.</li>
+<li>Close the tunnel when you finish.</li>
+</ol>
+<p><strong>[TBC: the quick start that ships with the installer uses port 8080 on the server side of the tunnel. A separate server note for version 2.2.6 uses port 18080 and says a one-time server change is needed first. Confirm the correct command for the current version.]</strong></p>
+<h2 id="add-a-person-to-the-admin-portal">Add a person to the admin portal<a class="headerlink" href="#add-a-person-to-the-admin-portal" title="Permanent link">&para;</a></h2>
+<p>In the Keycloak console:</p>
+<ol>
+<li>Switch the realm (top left) from <code>master</code> to <strong><code>ai-firewall</code></strong>. A person created in <code>master</code> cannot sign in to the portal.</li>
+<li>Open <strong>Users</strong>, then <strong>Add user</strong>. Fill in the username, email and name. Turn on <strong>Email verified</strong> only if you have confirmed the address. Select <strong>Create</strong>.</li>
+<li>On the <strong>Credentials</strong> tab, select <strong>Set password</strong>. Enter a strong password and keep <strong>Temporary</strong> on, so the person must change it at the first sign-in.</li>
+<li>On the <strong>Role mapping</strong> tab, select <strong>Assign role</strong>, filter by realm roles, and choose one base role (<code>admin</code>, <code>analyst</code> or <code>auditor</code>).</li>
+<li>On the <strong>Groups</strong> tab, select <strong>Join group</strong> and choose the workspace group.</li>
+</ol>
+<p>Deliver the password in a safe way:</p>
+<ul>
+<li>Never send it in plain text by email, chat or in a ticket.</li>
+<li>Send the username and the password through different channels, or use a password-sharing tool with a one-time link.</li>
+<li>Ask the person to change the temporary password and to confirm when it is done.</li>
+</ul>
+<p><code>super-admin</code> is not given directly. Add the person to the <code>fleet-operators</code> group. To check, open <strong>Role mapping</strong> and turn off <strong>Hide inherited roles</strong>. A person with all-workspace access must show the base role and the inherited <code>super-admin</code> role. A person with one workspace must not show <code>super-admin</code>.</p>
+<h3 id="the-same-from-the-command-line">The same from the command line<a class="headerlink" href="#the-same-from-the-command-line" title="Permanent link">&para;</a></h3>
+<p>On the server, <code>kcadm.sh</code> runs inside the Keycloak container, so no tunnel is needed:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">KC</span><span class="o">=</span><span class="s2">&quot;sudo docker exec -it ai-firewall-keycloak /opt/keycloak/bin/kcadm.sh&quot;</span>
+<span class="nv">$KC</span><span class="w"> </span>config<span class="w"> </span>credentials<span class="w"> </span>--server<span class="w"> </span>http://localhost:8080/keycloak<span class="w"> </span>--realm<span class="w"> </span>master<span class="w"> </span>--user<span class="w"> </span>&lt;your-admin-username&gt;
+<span class="nv">$KC</span><span class="w"> </span>create<span class="w"> </span>users<span class="w"> </span>-r<span class="w"> </span>ai-firewall<span class="w"> </span>-s<span class="w"> </span><span class="nv">username</span><span class="o">=</span>&lt;email&gt;<span class="w"> </span>-s<span class="w"> </span><span class="nv">email</span><span class="o">=</span>&lt;email&gt;<span class="w"> </span>-s<span class="w"> </span><span class="nv">enabled</span><span class="o">=</span><span class="nb">true</span>
+<span class="nv">$KC</span><span class="w"> </span>set-password<span class="w"> </span>-r<span class="w"> </span>ai-firewall<span class="w"> </span>--username<span class="w"> </span>&lt;email&gt;<span class="w"> </span>--new-password<span class="w"> </span><span class="s1">&#39;&lt;temporary-password&gt;&#39;</span><span class="w"> </span>--temporary
+<span class="nv">$KC</span><span class="w"> </span>add-roles<span class="w"> </span>-r<span class="w"> </span>ai-firewall<span class="w"> </span>--uusername<span class="w"> </span>&lt;email&gt;<span class="w"> </span>--rolename<span class="w"> </span>admin
+</code></pre></div>
+<p>Then add the person to the workspace group in the console.</p>
+<h2 id="add-a-keycloak-administrator">Add a Keycloak administrator<a class="headerlink" href="#add-a-keycloak-administrator" title="Permanent link">&para;</a></h2>
+<ol>
+<li>In the console, make sure the realm is <strong><code>master</code></strong>.</li>
+<li>Open <strong>Users</strong>, then <strong>Add user</strong>, and set a temporary password as above.</li>
+<li>
+<p>Give the access that fits:</p>
+<table>
+<thead>
+<tr>
+<th>Scope</th>
+<th>Who needs it</th>
+<th>What to give</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The <code>ai-firewall</code> realm only</td>
+<td>An administrator who manages portal people, roles and groups</td>
+<td>Join the group <code>aifw-realm-operators</code></td>
+</tr>
+<tr>
+<td>All realms, including <code>master</code></td>
+<td>An administrator who replaces the emergency account for regular work</td>
+<td>The realm role <code>admin</code> of the <code>master</code> realm</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<p>For everyday work with portal people, the first scope is enough. Never create administrator accounts for the people who only use the portal.</p>
+<h2 id="connect-your-companys-directory">Connect your company's directory<a class="headerlink" href="#connect-your-companys-directory" title="Permanent link">&para;</a></h2>
+<p>You can let people sign in with their company account, for example Microsoft Entra ID. See <a href="identity-providers.html">Single sign-on with your company directory</a>.</p>
+<h2 id="required-realm-settings">Required realm settings<a class="headerlink" href="#required-realm-settings" title="Permanent link">&para;</a></h2>
+<p>Setup imports the <code>ai-firewall</code> realm when Keycloak starts for the first time. The realm has no people in it. These settings are required for the product to work. Do not change them.</p>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Setting</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Roles</td>
+<td><code>admin</code>, <code>analyst</code>, <code>auditor</code>, <code>super-admin</code></td>
+<td>One base role for each person. <code>super-admin</code> is extra</td>
+</tr>
+<tr>
+<td>Groups</td>
+<td><code>fleet-operators</code></td>
+<td>Gives <code>super-admin</code>. Never a default group</td>
+</tr>
+<tr>
+<td>Groups</td>
+<td>Workspace groups</td>
+<td>Each has a <code>tenant</code> attribute. Every person must be in one</td>
+</tr>
+<tr>
+<td>Client</td>
+<td><code>admin-portal-spa</code></td>
+<td>A public client with PKCE <code>S256</code>. Direct access grants off. No client secret</td>
+</tr>
+<tr>
+<td>Client</td>
+<td><code>admin-api</code></td>
+<td>Bearer-only. No client secret</td>
+</tr>
+<tr>
+<td>Client</td>
+<td><code>admin-cli</code></td>
+<td>Do not change</td>
+</tr>
+<tr>
+<td>Login</td>
+<td>User registration</td>
+<td>Off</td>
+</tr>
+</tbody>
+</table>
+<p>A running server does not read the realm file again. All other settings keep the Keycloak defaults.</p>
+<p><strong>[TBC: confirm with the product team that these names and settings are final for the current version.]</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="reverse-proxy.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Reverse proxy">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Reverse proxy
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="identity-providers.html" class="md-footer__link md-footer__link--next" aria-label="Next: Single sign-on">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Single sign-on
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © ScienceSoft
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.top", "navigation.sections", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

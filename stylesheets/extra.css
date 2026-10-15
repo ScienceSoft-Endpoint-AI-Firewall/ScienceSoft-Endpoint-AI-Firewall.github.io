@@ -1,0 +1,75 @@
+/* ScienceSoft brand: Brand Blue #005EB8, Title Navy #2F5597, Body #404040,
+   Orange #FF9A08 (highlight only), Panel #E8F4FF. */
+
+:root,
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #005EB8;
+  --md-primary-fg-color--light: #479BEB;
+  --md-primary-fg-color--dark: #2F5597;
+  --md-primary-bg-color: #ffffff;
+  --md-accent-fg-color: #FF9A08;
+  --md-typeset-a-color: #005EB8;
+  --md-default-fg-color: #404040;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #005EB8;
+  --md-primary-fg-color--light: #479BEB;
+  --md-primary-fg-color--dark: #2F5597;
+  --md-accent-fg-color: #FF9A08;
+  --md-typeset-a-color: #479BEB;
+}
+
+.md-typeset h1,
+.md-typeset h2 {
+  color: #2F5597;
+  font-weight: 700;
+}
+
+[data-md-color-scheme="slate"] .md-typeset h1,
+[data-md-color-scheme="slate"] .md-typeset h2 {
+  color: #8FBBEA;
+}
+
+/* Orange rule under page titles, as on the corporate slides. */
+.md-typeset h1 {
+  border-bottom: 3px solid #FF9A08;
+  padding-bottom: 0.3em;
+}
+
+.md-header__button.md-logo img {
+  height: 1.4rem;
+  width: auto;
+}
+
+/* The AI Firewall mark, next to the title and after the ScienceSoft logo. */
+.md-header__title .md-header__topic:first-child .md-ellipsis::before {
+  content: "";
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.55rem;
+  vertical-align: -0.4rem;
+  background: url("../assets/ai-firewall-mark.svg") center / contain no-repeat;
+}
+
+.md-typeset table:not([class]) th {
+  background-color: #E8F4FF;
+  color: #2F5597;
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) th {
+  background-color: #1d2b3f;
+  color: #cfe4fb;
+}
+
+/* Placeholder for a screenshot that is not taken yet. */
+.md-typeset code.screenshot {
+  display: block;
+  padding: 1.2em;
+  text-align: center;
+  border: 2px dashed #479BEB;
+  border-radius: 6px;
+  background: #E8F4FF;
+  color: #2F5597;
+}
