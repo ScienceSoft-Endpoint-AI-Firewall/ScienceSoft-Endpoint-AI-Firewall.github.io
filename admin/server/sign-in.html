@@ -1578,8 +1578,14 @@
 </table>
 <h2 id="first-sign-in">First sign-in<a class="headerlink" href="#first-sign-in" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Open <code>https://&lt;your-address&gt;/admin</code>.</li>
-<li>Select the single sign-on button. Sign in with the administrator email that you gave to setup and the <strong>temporary password</strong> from <code>credentials.txt</code>.</li>
+<li>
+<p>Open <code>https://&lt;your-address&gt;/admin</code>.</p>
+<p><img alt="The sign-in page of the admin portal: a button to sign in with your account, a field for the emergency token, and a button View live demo." src="../../assets/screenshots/portal-sign-in.png" /></p>
+<p>The button <strong>View live demo</strong> opens a sample portal with invented data. It does not connect to your server.</p>
+</li>
+<li>
+<p>Select the single sign-on button. Sign in with the administrator email that you gave to setup and the <strong>temporary password</strong> from <code>credentials.txt</code>.</p>
+</li>
 <li>You are asked to choose a new password, and to register an authenticator app for one-time codes.</li>
 </ol>
 <p>If you set <code>authMode</code> to <code>compat</code> (the recommended value), the sign-in page also has an <strong>emergency token field</strong>. Use it only in an emergency, and keep the token in your password manager. With <code>keycloak</code>, the page has the single sign-on button only.</p>
