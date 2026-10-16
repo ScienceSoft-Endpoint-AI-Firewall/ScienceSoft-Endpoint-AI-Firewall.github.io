@@ -692,7 +692,7 @@
   <span class="md-ellipsis">
     
   
-    Prerequisites
+    Server requirements
   
 
     
@@ -1248,21 +1248,36 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
               
-                
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
   
   
   
   
     <li class="md-nav__item">
-      <a href="downloads.html" class="md-nav__link">
+      <a href="https://github.com/ScienceSoft-Endpoint-AI-Firewall/trial-releases/releases" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Scripts to download
+    Trial Version
   
 
     
@@ -1271,22 +1286,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -1533,8 +1532,12 @@
 <p>AI Firewall has <strong>no Group Policy template</strong> (<code>.admx</code>). To use Group Policy, run the installer from a computer <strong>startup script</strong>:</p>
 <ol>
 <li>Put the installer on a share that computer accounts can read.</li>
-<li>Add a startup script (<em>Computer Configuration</em>, <em>Policies</em>, <em>Windows Settings</em>, <em>Scripts</em>, <em>Startup</em>) that runs the installer if the app is not installed yet. See <a href="downloads.html">Scripts to download</a>.</li>
-<li>Link the policy to a pilot organisational unit first.</li>
+<li>
+<p>Add a startup script (<em>Computer Configuration</em>, <em>Policies</em>, <em>Windows Settings</em>, <em>Scripts</em>, <em>Startup</em>) that runs the installer with the switches from <a href="#silent-installation">Silent installation</a>, if the app is not installed yet.</p>
+</li>
+<li>
+<p>Link the policy to a pilot organisational unit first.</p>
+</li>
 </ol>
 <p>The enrolment key is on the command line of the script. Protect the share, so that only computer accounts can read it.</p>
 <h2 id="remove-the-agent">Remove the agent<a class="headerlink" href="#remove-the-agent" title="Permanent link">&para;</a></h2>

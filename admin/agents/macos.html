@@ -692,7 +692,7 @@
   <span class="md-ellipsis">
     
   
-    Prerequisites
+    Server requirements
   
 
     
@@ -1253,21 +1253,36 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
               
-                
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
   
   
   
   
     <li class="md-nav__item">
-      <a href="downloads.html" class="md-nav__link">
+      <a href="https://github.com/ScienceSoft-Endpoint-AI-Firewall/trial-releases/releases" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Scripts to download
+    Trial Version
   
 
     
@@ -1276,22 +1291,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -1451,7 +1450,7 @@
 <li>The installer ignores an address or key that it considers invalid, and the Mac is then not enrolled. Use printable ASCII only. The key can be up to 4096 characters and the address up to 2048. The address must not contain <code>?</code>, <code>#</code>, <code>@</code> or <code>..</code>.</li>
 <li>The file is read when the package is installed. To change the address or the key later, write the new file and install the package again.</li>
 </ul>
-<p>A script that writes this file is on the <a href="downloads.html">downloads page</a>.</p>
+<p>Your management tool must create this file on every Mac <strong>before</strong> it installs the package.</p>
 <h2 id="install">Install<a class="headerlink" href="#install" title="Permanent link">&para;</a></h2>
 <p>From the command line, as an administrator:</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>installer<span class="w"> </span>-pkg<span class="w"> </span>AI-Firewall-&lt;version&gt;-arm64.pkg<span class="w"> </span>-target<span class="w"> </span>/
@@ -1460,7 +1459,7 @@
 <h2 id="jamf-pro">Jamf Pro<a class="headerlink" href="#jamf-pro" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Upload the <code>.pkg</code> to Jamf.</li>
-<li>Upload the script that writes <code>enrollment.json</code> (see <a href="downloads.html">downloads</a>). Give it the server address and the key as parameters.</li>
+<li>Add a script, or a file-deployment step, that creates <code>enrollment.json</code> as described above, with your server address and key.</li>
 <li>Create a <strong>policy</strong> that has both. Set the script to run <strong>Before</strong> the package.</li>
 <li>Scope the policy to a pilot smart group first.</li>
 </ol>

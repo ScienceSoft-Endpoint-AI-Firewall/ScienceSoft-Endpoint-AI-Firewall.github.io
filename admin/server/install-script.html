@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Download and use install.sh, the first step of installing the ScienceSoft AI Endpoint Firewall server. What it does, its settings, the checksum, and fixes for common errors.">
+        <meta name="description" content="Get and use install.sh, the first step of installing the ScienceSoft AI Endpoint Firewall server. What it does, its settings, and fixes for common errors.">
       
       
       
@@ -694,7 +694,7 @@
   <span class="md-ellipsis">
     
   
-    Prerequisites
+    Server requirements
   
 
     
@@ -1253,21 +1253,36 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
               
-                
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
   
   
   
   
     <li class="md-nav__item">
-      <a href="../agents/downloads.html" class="md-nav__link">
+      <a href="https://github.com/ScienceSoft-Endpoint-AI-Firewall/trial-releases/releases" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Scripts to download
+    Trial Version
   
 
     
@@ -1276,22 +1291,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -1422,28 +1421,7 @@
 sudo<span class="w"> </span>aifw<span class="w"> </span>setup
 </code></pre></div>
 <h2 id="download">Download<a class="headerlink" href="#download" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>File</th>
-<th>What it is</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="files/install.sh">install.sh</a></td>
-<td>The installer script</td>
-</tr>
-<tr>
-<td><a href="files/README.txt">README.txt</a></td>
-<td>The same instructions as on this page, as a text file to keep next to the script</td>
-</tr>
-<tr>
-<td><a href="files/SHA256SUMS">SHA256SUMS</a></td>
-<td>The checksum of <code>install.sh</code>, to check that the file is intact</td>
-</tr>
-</tbody>
-</table>
+<p>Get the current script from the ScienceSoft repository: <a href="https://github.com/ScienceSoft-Endpoint-AI-Firewall/utilities/blob/main/server/install.sh">install.sh</a>. The same file is in your welcome email.</p>
 <p><strong>You need the registry access name and token from your welcome email to run it.</strong> The software cannot be downloaded without them. The script does not contain them.</p>
 <p>The script does not contain the registry access name or token. It contains the address of the software registry, which you can override with <code>AIFW_REGISTRY</code>.</p>
 <h2 id="before-you-start">Before you start<a class="headerlink" href="#before-you-start" title="Permanent link">&para;</a></h2>
@@ -1452,7 +1430,7 @@ sudo<span class="w"> </span>aifw<span class="w"> </span>setup
 <li><strong>Administrator rights</strong> (you run it with <code>sudo</code>).</li>
 <li><strong>Internet access</strong> from the server: to the Ubuntu package archive, to the software registry and, for Let's Encrypt, to the certificate authority.</li>
 <li>The <strong>registry access name and token</strong>, and the <strong>license file</strong>, from your welcome email.</li>
-<li>The server size and ports from <a href="prerequisites.html">Prerequisites</a>.</li>
+<li>The server size and ports from <a href="prerequisites.html">Server requirements</a>.</li>
 </ul>
 <p>Take a <strong>snapshot or backup</strong> of the server first.</p>
 <h2 id="how-to-use-it">How to use it<a class="headerlink" href="#how-to-use-it" title="Permanent link">&para;</a></h2>
@@ -1460,11 +1438,6 @@ sudo<span class="w"> </span>aifw<span class="w"> </span>setup
 <li>
 <p>Copy <code>install.sh</code> to the server. If you copied it from a Windows computer, convert the line endings first, or it can fail without a message:</p>
 <div class="highlight"><pre><span></span><code>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/\r$//&#39;</span><span class="w"> </span>install.sh
-</code></pre></div>
-</li>
-<li>
-<p>Check that the file is intact. Put <code>install.sh</code> and <code>SHA256SUMS</code> in the same folder. The result must be <code>OK</code>:</p>
-<div class="highlight"><pre><span></span><code>sha256sum<span class="w"> </span>-c<span class="w"> </span>SHA256SUMS
 </code></pre></div>
 </li>
 <li>
@@ -1601,7 +1574,7 @@ sudo<span class="w"> </span>aifw<span class="w"> </span>setup
 <h2 id="security-notes">Security notes<a class="headerlink" href="#security-notes" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Read the script before you run it as administrator.</strong> It is a short, plain shell script.</li>
-<li>Download it only from this site or from your welcome email, and check the checksum.</li>
+<li>Download it only from the ScienceSoft repository linked above or from your welcome email.</li>
 <li>Keep the access token secret. Do not put it into tickets or chats.</li>
 </ul>
 
