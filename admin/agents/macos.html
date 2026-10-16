@@ -6,33 +6,33 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="What you need before installing the ScienceSoft AI Endpoint Firewall server: Ubuntu server size, ports for each HTTPS mode, registry access, license file and a snapshot.">
+        <meta name="description" content="Install the ScienceSoft AI Endpoint Firewall agent on Apple silicon Macs with the pkg installer and Jamf Pro, with the enrollment file written first.">
       
       
       
       
-        <link rel="prev" href="index.html">
+        <link rel="prev" href="windows.html">
       
       
-        <link rel="next" href="install.html">
+        <link rel="next" href="verify.html">
       
       
         
       
       
-      <link rel="icon" href="../assets/favicon.svg">
+      <link rel="icon" href="../../assets/favicon.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>Server prerequisites - ScienceSoft AI Endpoint Firewall</title>
+        <title>Deploy the agent on macOS (pkg, Jamf) - ScienceSoft AI Endpoint Firewall</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -53,9 +53,9 @@
       
     
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -85,7 +85,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#prerequisites" class="md-skip">
+        <a href="#macos" class="md-skip">
           Skip to content
         </a>
       
@@ -101,9 +101,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="ScienceSoft AI Endpoint Firewall" class="md-header__button md-logo" aria-label="ScienceSoft AI Endpoint Firewall" data-md-component="logo">
+    <a href="../.." title="ScienceSoft AI Endpoint Firewall" class="md-header__button md-logo" aria-label="ScienceSoft AI Endpoint Firewall" data-md-component="logo">
       
-  <img src="../assets/logo-white.svg" alt="logo">
+  <img src="../../assets/logo-white.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -120,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Server prerequisites
+              Deploy the agent on macOS (pkg, Jamf)
             
           </span>
         </div>
@@ -226,9 +226,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="ScienceSoft AI Endpoint Firewall" class="md-nav__button md-logo" aria-label="ScienceSoft AI Endpoint Firewall" data-md-component="logo">
+    <a href="../.." title="ScienceSoft AI Endpoint Firewall" class="md-nav__button md-logo" aria-label="ScienceSoft AI Endpoint Firewall" data-md-component="logo">
       
-  <img src="../assets/logo-white.svg" alt="logo">
+  <img src="../../assets/logo-white.svg" alt="logo">
 
     </a>
     ScienceSoft AI Endpoint Firewall
@@ -295,7 +295,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../index.html" class="md-nav__link">
+      <a href="../../index.html" class="md-nav__link">
         
   
   
@@ -323,7 +323,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../install.html" class="md-nav__link">
+      <a href="../../install.html" class="md-nav__link">
         
   
   
@@ -351,7 +351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../management.html" class="md-nav__link">
+      <a href="../../management.html" class="md-nav__link">
         
   
   
@@ -379,7 +379,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../check-status.html" class="md-nav__link">
+      <a href="../../check-status.html" class="md-nav__link">
         
   
   
@@ -407,7 +407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../coverage.html" class="md-nav__link">
+      <a href="../../coverage.html" class="md-nav__link">
         
   
   
@@ -435,7 +435,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../troubleshooting.html" class="md-nav__link">
+      <a href="../../troubleshooting.html" class="md-nav__link">
         
   
   
@@ -463,7 +463,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../faq.html" class="md-nav__link">
+      <a href="../../faq.html" class="md-nav__link">
         
   
   
@@ -491,7 +491,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../uninstall.html" class="md-nav__link">
+      <a href="../../uninstall.html" class="md-nav__link">
         
   
   
@@ -580,6 +580,450 @@
   
   
     <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Set up your self-hosted server
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Set up your self-hosted server
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../server/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../server/prerequisites.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prerequisites
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../server/install.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install the server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../server/install-script.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The installer script
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../server/aifw-reference.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    aifw commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../server/reverse-proxy.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reverse proxy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../server/sign-in.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sign-in and roles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../server/identity-providers.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Single sign-on
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../server/operate.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operate and upgrade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../server/backup-restore.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backup and restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../server/troubleshooting.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roll out the agent
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Roll out the agent
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="index.html" class="md-nav__link">
         
   
@@ -588,6 +1032,34 @@
     
   
     Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="windows.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows
   
 
     
@@ -624,7 +1096,7 @@
   <span class="md-ellipsis">
     
   
-    Prerequisites
+    macOS
   
 
     
@@ -635,14 +1107,14 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="prerequisites.html" class="md-nav__link md-nav__link--active">
+      <a href="macos.html" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    Prerequisites
+    macOS
   
 
     
@@ -668,10 +1140,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-you-receive-from-sciencesoft" class="md-nav__link">
+  <a href="#the-installer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What you receive from ScienceSoft
+        The installer
       
     </span>
   </a>
@@ -679,10 +1151,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-server" class="md-nav__link">
+  <a href="#the-enrolment-key-goes-in-a-file-not-in-the-command" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The server
+        The enrolment key goes in a file, not in the command
       
     </span>
   </a>
@@ -690,49 +1162,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-network" class="md-nav__link">
+  <a href="#install" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The network
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="The network">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ports" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Ports
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#a-name-for-the-server" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        A name for the server
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#before-you-start" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Before you start
+        Install
       
     </span>
   </a>
@@ -740,10 +1173,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tools-on-your-own-computer" class="md-nav__link">
+  <a href="#jamf-pro" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Tools on your own computer
+        Jamf Pro
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other tools
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-installer-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the installer does
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remove-the-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remove the agent
       
     </span>
   </a>
@@ -766,392 +1232,7 @@
   
   
     <li class="md-nav__item">
-      <a href="install.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Install the server
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="install-script.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    The installer script
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="aifw-reference.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    aifw commands
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="reverse-proxy.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Reverse proxy
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="sign-in.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Sign-in and roles
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="identity-providers.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Single sign-on
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="operate.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Operate and upgrade
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="backup-restore.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Backup and restore
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="troubleshooting.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Troubleshooting
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_12" >
-        
-          
-          <label class="md-nav__link" for="__nav_2_12" id="__nav_2_12_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Roll out the agent
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_12_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_12">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Roll out the agent
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="devices/index.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="devices/windows.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Windows
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="devices/macos.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    macOS
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="devices/verify.html" class="md-nav__link">
+      <a href="verify.html" class="md-nav__link">
         
   
   
@@ -1179,7 +1260,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devices/downloads.html" class="md-nav__link">
+      <a href="downloads.html" class="md-nav__link">
         
   
   
@@ -1242,10 +1323,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-you-receive-from-sciencesoft" class="md-nav__link">
+  <a href="#the-installer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What you receive from ScienceSoft
+        The installer
       
     </span>
   </a>
@@ -1253,10 +1334,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-server" class="md-nav__link">
+  <a href="#the-enrolment-key-goes-in-a-file-not-in-the-command" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The server
+        The enrolment key goes in a file, not in the command
       
     </span>
   </a>
@@ -1264,49 +1345,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-network" class="md-nav__link">
+  <a href="#install" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The network
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="The network">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ports" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Ports
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#a-name-for-the-server" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        A name for the server
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#before-you-start" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Before you start
+        Install
       
     </span>
   </a>
@@ -1314,10 +1356,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tools-on-your-own-computer" class="md-nav__link">
+  <a href="#jamf-pro" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Tools on your own computer
+        Jamf Pro
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other tools
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-installer-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the installer does
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remove-the-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remove the agent
       
     </span>
   </a>
@@ -1341,102 +1416,79 @@
 
 
 
-<h1 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h1>
-<p>Have everything on this page ready before you start.</p>
-<h2 id="what-you-receive-from-sciencesoft">What you receive from ScienceSoft<a class="headerlink" href="#what-you-receive-from-sciencesoft" title="Permanent link">&para;</a></h2>
-<p>You get a <strong>welcome email</strong>. It contains:</p>
-<ul>
-<li>the <strong>registry access details</strong>: a name and a token. The installer needs them to download the software;</li>
-<li>the <strong>license file</strong> for your organisation (a file that ends in <code>.license</code>);</li>
-<li>the installer script <strong><code>install.sh</code></strong>.</li>
-</ul>
-<p>The software is not available for anonymous download. You need the registry access details to install it.</p>
-<h2 id="the-server">The server<a class="headerlink" href="#the-server" title="Permanent link">&para;</a></h2>
+<h1 id="macos">macOS<a class="headerlink" href="#macos" title="Permanent link">&para;</a></h1>
+<p>AI Firewall for macOS runs on <strong>Apple silicon</strong> Macs (M1 or newer). There is no Intel version.</p>
+<h2 id="the-installer">The installer<a class="headerlink" href="#the-installer" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th></th>
-<th>Minimum</th>
-<th>Recommended</th>
+<th>File</th>
+<th>Use</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Operating system</strong></td>
-<td>Ubuntu 24.04 LTS, Intel/AMD (x86_64) or ARM (aarch64)</td>
-<td>Ubuntu 24.04 LTS</td>
+<td><code>AI-Firewall-&lt;version&gt;-arm64.pkg</code></td>
+<td>Deploying to many Macs. Signed and notarized.</td>
 </tr>
 <tr>
-<td><strong>CPU</strong></td>
-<td>2 vCPU</td>
-<td>4 vCPU</td>
-</tr>
-<tr>
-<td><strong>Memory</strong></td>
-<td>4 GB for the product itself, plus what the operating system needs</td>
-<td>8 GB in total</td>
-</tr>
-<tr>
-<td><strong>Free disk</strong></td>
-<td>20 GB</td>
-<td>50 GB, and more as audit history grows</td>
-</tr>
-<tr>
-<td><strong>Software</strong></td>
-<td><code>systemd</code></td>
-<td></td>
+<td><code>.dmg</code> and <code>.zip</code></td>
+<td>Manual installation by one person, and automatic updates.</td>
 </tr>
 </tbody>
 </table>
+<p>Use the <code>.pkg</code> for managed deployment. It installs for the whole Mac, never for one user only.</p>
+<h2 id="the-enrolment-key-goes-in-a-file-not-in-the-command">The enrolment key goes in a file, not in the command<a class="headerlink" href="#the-enrolment-key-goes-in-a-file-not-in-the-command" title="Permanent link">&para;</a></h2>
+<p>On macOS the installer takes <strong>no arguments</strong>. The enrolment key and the server address are read from a file that you create <strong>before</strong> you run the installer:</p>
+<div class="highlight"><pre><span></span><code>/Library/Application Support/ai-firewall/enrollment.json
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;fleetUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://ai-firewall.example.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;token&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;enrolment-key&gt;&quot;</span><span class="p">}</span>
+</code></pre></div>
 <ul>
-<li>The installer is tested on Ubuntu 24.04. On a newer release it continues, but shows a warning.</li>
-<li>The installer adds Docker Engine and the Docker Compose plugin if they are missing.</li>
-<li>The server needs a <strong>static IP address</strong> or a DHCP reservation.</li>
+<li>The address must be <code>https://</code>. The key must be plain text without spaces.</li>
+<li>The file must belong to <code>root</code>, group <code>wheel</code>, and be readable by <code>root</code> only (mode <code>0600</code>). It holds the key.</li>
+<li>The installer copies the address and the key into a protected settings file. The file <code>enrollment.json</code> stays on the Mac with the key in it. Keep it readable by <code>root</code> only, or delete it after the install if your policy asks for that.</li>
+<li>The installer ignores an address or key that it considers invalid, and the Mac is then not enrolled. Use printable ASCII only. The key can be up to 4096 characters and the address up to 2048. The address must not contain <code>?</code>, <code>#</code>, <code>@</code> or <code>..</code>.</li>
+<li>The file is read when the package is installed. To change the address or the key later, write the new file and install the package again.</li>
 </ul>
-<h2 id="the-network">The network<a class="headerlink" href="#the-network" title="Permanent link">&para;</a></h2>
-<p>The server needs internet access during the installation. It downloads software from the vendor's private container registry and, depending on the version, from public container registries.</p>
-<h3 id="ports">Ports<a class="headerlink" href="#ports" title="Permanent link">&para;</a></h3>
-<p>The ports you need depend on how HTTPS is handled (see <a href="install.html#how-https-is-handled">Install the server</a>):</p>
-<table>
-<thead>
-<tr>
-<th>HTTPS handling</th>
-<th>Open inbound</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Automatic certificates</strong> (Let's Encrypt)</td>
-<td>22, 80, 443</td>
-<td>Port 80 is used to issue the certificate. The server's DNS name must already point at this server.</td>
-</tr>
-<tr>
-<td><strong>Your own certificate</strong></td>
-<td>22, 443</td>
-<td>Setup also opens port 80. This mode does not need it. Close it yourself if you want.</td>
-</tr>
-<tr>
-<td><strong>Your own load balancer or proxy</strong></td>
-<td>22, and 8090 <strong>only from the proxy's address</strong></td>
-<td>You configure the proxy yourself. See <a href="reverse-proxy.html">Reverse proxy</a>. Give the proxy's address to setup. If you leave it empty, port 8090 is open to every address.</td>
-</tr>
-</tbody>
-</table>
-<p>The ports must be free before setup. Setup turns on the server's firewall (<code>ufw</code>) with these rules.</p>
-<p>Setup always allows SSH first, on the port that <code>sshd</code> uses. If you give setup one address for SSH, only that address can connect. The port of the sign-in console (8080) is never opened to the network. It is reachable only on the server itself, through an SSH tunnel.</p>
-<h3 id="a-name-for-the-server">A name for the server<a class="headerlink" href="#a-name-for-the-server" title="Permanent link">&para;</a></h3>
-<p>Choose the address users and devices will use, for example <code>https://ai-firewall.example.com</code>. It must be a full <code>https://</code> address, with no path and no trailing slash. A DNS record for it must exist.</p>
-<h2 id="before-you-start">Before you start<a class="headerlink" href="#before-you-start" title="Permanent link">&para;</a></h2>
+<p>A script that writes this file is on the <a href="downloads.html">downloads page</a>.</p>
+<h2 id="install">Install<a class="headerlink" href="#install" title="Permanent link">&para;</a></h2>
+<p>From the command line, as an administrator:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>installer<span class="w"> </span>-pkg<span class="w"> </span>AI-Firewall-&lt;version&gt;-arm64.pkg<span class="w"> </span>-target<span class="w"> </span>/
+</code></pre></div>
+<p>The target must be <code>/</code>, the system volume.</p>
+<h2 id="jamf-pro">Jamf Pro<a class="headerlink" href="#jamf-pro" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>Take a snapshot or backup of the server.</strong> If you need to change an installation parameter later, restore the snapshot and run setup again from a clean state.</li>
-<li>Have the <strong>license file</strong> and the <strong>registry access details</strong> at hand.</li>
-<li>If you will use your own certificate, have the <strong>certificate and its key</strong> on the server, readable by the user who runs the installation.</li>
-<li>If you will use your own load balancer, <strong>set it up first</strong>. See <a href="reverse-proxy.html">Reverse proxy</a>.</li>
-<li>Decide the <strong>email address</strong> of the first administrator.</li>
+<li>Upload the <code>.pkg</code> to Jamf.</li>
+<li>Upload the script that writes <code>enrollment.json</code> (see <a href="downloads.html">downloads</a>). Give it the server address and the key as parameters.</li>
+<li>Create a <strong>policy</strong> that has both. Set the script to run <strong>Before</strong> the package.</li>
+<li>Scope the policy to a pilot smart group first.</li>
 </ol>
-<h2 id="tools-on-your-own-computer">Tools on your own computer<a class="headerlink" href="#tools-on-your-own-computer" title="Permanent link">&para;</a></h2>
-<p>You need an SSH client to connect to the server, and a password manager to keep the sign-in details that setup shows once.</p>
+<h2 id="other-tools">Other tools<a class="headerlink" href="#other-tools" title="Permanent link">&para;</a></h2>
+<p>Any tool that can run a script as root and then install a <code>.pkg</code> works in the same way: write the file, then install.</p>
+<h2 id="what-the-installer-does">What the installer does<a class="headerlink" href="#what-the-installer-does" title="Permanent link">&para;</a></h2>
+<p>It runs as root and:</p>
+<ul>
+<li>creates a certificate for this Mac and trusts it in the System keychain. If trusting fails, your MDM must deliver a trust profile, or an administrator must approve it;</li>
+<li>installs the background services;</li>
+<li>sets the <strong>automatic proxy configuration</strong> of every network connection to the local firewall. <strong>This replaces an automatic proxy setting that your company already has.</strong></li>
+</ul>
+<p>The agent needs no Full Disk Access, Accessibility, Screen Recording or other privacy permission, and it installs no system extension or network extension. It installs launch daemons from the package. The one approval it can need is trust for its certificate, as described above: from an install script, macOS does not let the certificate be trusted without an MDM trust profile or an administrator's approval. On macOS 13 and later the system may also show a notice that background items were added. That notice is not a request for approval.</p>
+<p>AI Firewall does not provide a configuration profile (<code>.mobileconfig</code>). The profiles that you may find for other ScienceSoft products do not work with it.</p>
+<h2 id="remove-the-agent">Remove the agent<a class="headerlink" href="#remove-the-agent" title="Permanent link">&para;</a></h2>
+<p>Run the uninstall script that comes with the app, as root:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span><span class="s2">&quot;/Applications/AI Firewall.app/Contents/Resources/uninstall.command&quot;</span>
+</code></pre></div>
+<p>It removes the app, the services, the certificate and the proxy setting if it points at AI Firewall.</p>
+<p><strong>The script asks you to type <code>remove</code>, and there is no switch to skip that.</strong> If it runs with no terminal, as it does in many management tools, it stops without changing anything, and it still returns exit code 0, so your tool shows success. Give it the answer on standard input:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span>remove<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span><span class="s2">&quot;/Applications/AI Firewall.app/Contents/Resources/uninstall.command&quot;</span>
+</code></pre></div>
+<p>Try this on a pilot Mac first.</p>
+<ul>
+<li><strong>The script always returns 0.</strong> Check the result in its output: for each item the last lines say that it is gone, or <code>STILL PRESENT</code> followed by the path.</li>
+<li><strong>Run by a tool as root, it cannot clean the home folders of the people who use the Mac.</strong> It removes the app, the services, the certificate in the System keychain and the proxy setting. The per-user data of each user (history, preferences, logs and the user's keychain entry) stays, and the user can remove it.</li>
+<li><strong>Notice to your server.</strong> In version 2.2.7, an uninstall run by a management tool sends no notice to your server. The Mac stops reporting. Remove it from the portal. Newer versions report the removal when the uninstall runs as root on a Mac that was installed from the package.</li>
+</ul>
 
 
 
@@ -1475,7 +1527,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="index.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview">
+          <a href="windows.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Windows">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1485,20 +1537,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Overview
+                Windows
               </div>
             </div>
           </a>
         
         
           
-          <a href="install.html" class="md-footer__link md-footer__link--next" aria-label="Next: Install the server">
+          <a href="verify.html" class="md-footer__link md-footer__link--next" aria-label="Next: Check that computers joined">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Install the server
+                Check that computers joined
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1539,10 +1591,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.top", "navigation.sections", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "navigation.sections", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

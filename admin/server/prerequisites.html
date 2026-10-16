@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Silent installation switches, exit codes, Microsoft Intune Win32 app settings and a Group Policy startup script for the ScienceSoft AI Endpoint Firewall agent.">
+        <meta name="description" content="What you need before installing the ScienceSoft AI Endpoint Firewall server: Ubuntu server size, ports for each HTTPS mode, registry access, license file and a snapshot.">
       
       
       
@@ -14,7 +14,7 @@
         <link rel="prev" href="index.html">
       
       
-        <link rel="next" href="macos.html">
+        <link rel="next" href="install.html">
       
       
         
@@ -25,7 +25,7 @@
     
     
       
-        <title>Deploy the agent on Windows (silent install, Intune, Group Policy) - ScienceSoft AI Endpoint Firewall</title>
+        <title>Server prerequisites - ScienceSoft AI Endpoint Firewall</title>
       
     
     
@@ -85,7 +85,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#windows" class="md-skip">
+        <a href="#prerequisites" class="md-skip">
           Skip to content
         </a>
       
@@ -120,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Deploy the agent on Windows (silent install, Intune, Group Policy)
+              Server prerequisites
             
           </span>
         </div>
@@ -605,286 +605,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../prerequisites.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Prerequisites
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../install.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Install the server
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../install-script.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    The installer script
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../aifw-reference.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    aifw commands
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../reverse-proxy.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Reverse proxy
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../sign-in.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Sign-in and roles
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../identity-providers.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Single sign-on
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../operate.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Operate and upgrade
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../backup-restore.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Backup and restore
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../troubleshooting.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Troubleshooting
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -900,17 +620,17 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_12" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2_12" id="__nav_2_12_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
     
   
-    Roll out the agent
+    Set up your self-hosted server
   
 
     
@@ -921,12 +641,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_12_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2_12">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Roll out the agent
+    Set up your self-hosted server
   
 
           </label>
@@ -983,7 +703,7 @@
   <span class="md-ellipsis">
     
   
-    Windows
+    Prerequisites
   
 
     
@@ -994,14 +714,14 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="windows.html" class="md-nav__link md-nav__link--active">
+      <a href="prerequisites.html" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    Windows
+    Prerequisites
   
 
     
@@ -1027,10 +747,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#install-on-one-computer" class="md-nav__link">
+  <a href="#what-you-receive-from-sciencesoft" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Install on one computer
+        What you receive from ScienceSoft
       
     </span>
   </a>
@@ -1038,22 +758,44 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#silent-installation" class="md-nav__link">
+  <a href="#the-server" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Silent installation
+        The server
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Silent installation">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The network
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The network">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#exit-codes" class="md-nav__link">
+  <a href="#ports" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Exit codes
+        Ports
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-name-for-the-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A name for the server
       
     </span>
   </a>
@@ -1066,10 +808,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#microsoft-intune" class="md-nav__link">
+  <a href="#before-you-start" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Microsoft Intune
+        Before you start
       
     </span>
   </a>
@@ -1077,21 +819,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#group-policy-startup-script" class="md-nav__link">
+  <a href="#tools-on-your-own-computer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Group Policy (startup script)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#remove-the-agent" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Remove the agent
+        Tools on your own computer
       
     </span>
   </a>
@@ -1114,7 +845,372 @@
   
   
     <li class="md-nav__item">
-      <a href="macos.html" class="md-nav__link">
+      <a href="install.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install the server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="install-script.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The installer script
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="aifw-reference.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    aifw commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reverse-proxy.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reverse proxy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sign-in.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sign-in and roles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="identity-providers.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Single sign-on
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="operate.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operate and upgrade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="backup-restore.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backup and restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="troubleshooting.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roll out the agent
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Roll out the agent
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/windows.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/macos.html" class="md-nav__link">
         
   
   
@@ -1142,7 +1238,7 @@
   
   
     <li class="md-nav__item">
-      <a href="verify.html" class="md-nav__link">
+      <a href="../agents/verify.html" class="md-nav__link">
         
   
   
@@ -1170,7 +1266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="downloads.html" class="md-nav__link">
+      <a href="../agents/downloads.html" class="md-nav__link">
         
   
   
@@ -1233,10 +1329,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#install-on-one-computer" class="md-nav__link">
+  <a href="#what-you-receive-from-sciencesoft" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Install on one computer
+        What you receive from ScienceSoft
       
     </span>
   </a>
@@ -1244,22 +1340,44 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#silent-installation" class="md-nav__link">
+  <a href="#the-server" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Silent installation
+        The server
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Silent installation">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The network
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The network">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#exit-codes" class="md-nav__link">
+  <a href="#ports" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Exit codes
+        Ports
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-name-for-the-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A name for the server
       
     </span>
   </a>
@@ -1272,10 +1390,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#microsoft-intune" class="md-nav__link">
+  <a href="#before-you-start" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Microsoft Intune
+        Before you start
       
     </span>
   </a>
@@ -1283,21 +1401,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#group-policy-startup-script" class="md-nav__link">
+  <a href="#tools-on-your-own-computer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Group Policy (startup script)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#remove-the-agent" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Remove the agent
+        Tools on your own computer
       
     </span>
   </a>
@@ -1321,144 +1428,102 @@
 
 
 
-<h1 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h1>
-<h2 id="install-on-one-computer">Install on one computer<a class="headerlink" href="#install-on-one-computer" title="Permanent link">&para;</a></h2>
-<p>Run the installer as an administrator. You will see a short wizard and one administrator prompt. The enrolment key and the server address are given on the command line, so the computer joins your workspace by itself.</p>
-<h2 id="silent-installation">Silent installation<a class="headerlink" href="#silent-installation" title="Permanent link">&para;</a></h2>
-<p>Run the installer from an elevated command prompt, or as the system account (as Intune and most deployment tools do):</p>
-<div class="highlight"><pre><span></span><code>AI-Firewall-&lt;version&gt;-x64.exe /S /FLEET_URL=&quot;https://&lt;your-server&gt;&quot; /ENROLL_TOKEN=&quot;&lt;enrolment-key&gt;&quot;
-</code></pre></div>
+<h1 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h1>
+<p>Have everything on this page ready before you start.</p>
+<h2 id="what-you-receive-from-sciencesoft">What you receive from ScienceSoft<a class="headerlink" href="#what-you-receive-from-sciencesoft" title="Permanent link">&para;</a></h2>
+<p>You get a <strong>welcome email</strong>. It contains:</p>
+<ul>
+<li>the <strong>registry access details</strong>: a name and a token. The installer needs them to download the software;</li>
+<li>the <strong>license file</strong> for your organisation (a file that ends in <code>.license</code>);</li>
+<li>the installer script <strong><code>install.sh</code></strong>.</li>
+</ul>
+<p>The software is not available for anonymous download. You need the registry access details to install it.</p>
+<h2 id="the-server">The server<a class="headerlink" href="#the-server" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Switch</th>
-<th>Meaning</th>
+<th></th>
+<th>Minimum</th>
+<th>Recommended</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>/S</code></td>
-<td>Silent: no windows.</td>
+<td><strong>Operating system</strong></td>
+<td>Ubuntu 24.04 LTS, Intel/AMD (x86_64) or ARM (aarch64)</td>
+<td>Ubuntu 24.04 LTS</td>
 </tr>
 <tr>
-<td><code>/FLEET_URL=</code></td>
-<td>The address of your server. Must start with <code>https://</code>.</td>
+<td><strong>CPU</strong></td>
+<td>2 vCPU</td>
+<td>4 vCPU</td>
 </tr>
 <tr>
-<td><code>/ENROLL_TOKEN=</code></td>
-<td>The device enrolment key.</td>
+<td><strong>Memory</strong></td>
+<td>4 GB for the product itself, plus what the operating system needs</td>
+<td>8 GB in total</td>
 </tr>
 <tr>
-<td><code>/UPDATE_URL=</code></td>
-<td>Optional. Where the agent looks for updates, usually <code>https://&lt;your-server&gt;/updates/generic</code>.</td>
+<td><strong>Free disk</strong></td>
+<td>20 GB</td>
+<td>50 GB, and more as audit history grows</td>
 </tr>
 <tr>
-<td><code>/D=&lt;folder&gt;</code></td>
-<td>Optional. The install folder. It must be the last switch. Use the default folder. A folder that is a link to another place, or is inside a user's profile folder, is refused on a new install. A drive root or a system folder is not locked down.</td>
+<td><strong>Software</strong></td>
+<td><code>systemd</code></td>
+<td></td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li><strong>Give both <code>/FLEET_URL</code> and <code>/ENROLL_TOKEN</code>.</strong> If only one is given, the installer ignores both and the computer works on its own, without your workspace.</li>
-<li>Put the values in quotes. If you start the installer from PowerShell, use <code>Start-Process -Wait</code> and read the exit code.</li>
-<li>The installer does not restart the computer.</li>
+<li>The installer is tested on Ubuntu 24.04. On a newer release it continues, but shows a warning.</li>
+<li>The installer adds Docker Engine and the Docker Compose plugin if they are missing.</li>
+<li>The server needs a <strong>static IP address</strong> or a DHCP reservation.</li>
 </ul>
-<h3 id="exit-codes">Exit codes<a class="headerlink" href="#exit-codes" title="Permanent link">&para;</a></h3>
+<h2 id="the-network">The network<a class="headerlink" href="#the-network" title="Permanent link">&para;</a></h2>
+<p>The server needs internet access during the installation. It downloads software from the vendor's private container registry and, depending on the version, from public container registries.</p>
+<h3 id="ports">Ports<a class="headerlink" href="#ports" title="Permanent link">&para;</a></h3>
+<p>The ports you need depend on how HTTPS is handled (see <a href="install.html#how-https-is-handled">Install the server</a>):</p>
 <table>
 <thead>
 <tr>
-<th>Code</th>
-<th>Meaning</th>
-<th>What to do</th>
+<th>HTTPS handling</th>
+<th>Open inbound</th>
+<th>Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>0</td>
-<td>Installed</td>
-<td>Success. Check that the computer joined in the portal.</td>
+<td><strong>Automatic certificates</strong> (Let's Encrypt)</td>
+<td>22, 80, 443</td>
+<td>Port 80 is used to issue the certificate. The server's DNS name must already point at this server.</td>
 </tr>
 <tr>
-<td>1</td>
-<td>Cancelled</td>
-<td>Someone stopped the installer.</td>
+<td><strong>Your own certificate</strong></td>
+<td>22, 443</td>
+<td>Setup also opens port 80. This mode does not need it. Close it yourself if you want.</td>
 </tr>
 <tr>
-<td>2</td>
-<td>Not installed</td>
-<td>The previous version could not be removed, or the install folder is a link to another place or is inside a user's profile folder, or the folder <code>%ProgramData%\ai-firewall</code> could not be secured. Choose a folder under Program Files. If a file was held open, restart the computer and run the installer again.</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Installed, but not locked down</td>
-<td>The app is installed, but the install folder was not locked, or the protection service may not have been registered. This happens on an update, with the folder problems described for code 2. Treat it as success for the rollout, then reinstall into the default folder.</td>
+<td><strong>Your own load balancer or proxy</strong></td>
+<td>22, and 8090 <strong>only from the proxy's address</strong></td>
+<td>You configure the proxy yourself. See <a href="reverse-proxy.html">Reverse proxy</a>. Give the proxy's address to setup. If you leave it empty, port 8090 is open to every address.</td>
 </tr>
 </tbody>
 </table>
-<p>A missing or incomplete server address still returns 0, and the computer then works on its own. The reason is written to <code>%ProgramData%\ai-firewall\install-enrolment.log</code>. Check the result with <a href="verify.html">Check that computers joined</a>.</p>
-<p>The reason for code 3 is shown only in the installer window, which is hidden in a silent install. It is not written to the Windows event log.</p>
-<h2 id="microsoft-intune">Microsoft Intune<a class="headerlink" href="#microsoft-intune" title="Permanent link">&para;</a></h2>
-<p>The installer is an <code>.exe</code>, not an <code>.msi</code>. Deploy it as a <strong>Windows app (Win32)</strong>.</p>
+<p>The ports must be free before setup. Setup turns on the server's firewall (<code>ufw</code>) with these rules.</p>
+<p>Setup always allows SSH first, on the port that <code>sshd</code> uses. If you give setup one address for SSH, only that address can connect. The port of the sign-in console (8080) is never opened to the network. It is reachable only on the server itself, through an SSH tunnel.</p>
+<h3 id="a-name-for-the-server">A name for the server<a class="headerlink" href="#a-name-for-the-server" title="Permanent link">&para;</a></h3>
+<p>Choose the address users and devices will use, for example <code>https://ai-firewall.example.com</code>. It must be a full <code>https://</code> address, with no path and no trailing slash. A DNS record for it must exist.</p>
+<h2 id="before-you-start">Before you start<a class="headerlink" href="#before-you-start" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Put the <code>.exe</code> alone in an empty folder.</li>
-<li>Wrap it with the <em>Microsoft Win32 Content Prep Tool</em> (<code>IntuneWinAppUtil.exe</code>). It produces an <code>.intunewin</code> file.</li>
-<li>In Intune, add a <strong>Windows app (Win32)</strong> and upload the file.</li>
-<li>
-<p>Set the commands:</p>
-<table>
-<thead>
-<tr>
-<th>Setting</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Install command</td>
-<td><code>AI-Firewall-&lt;version&gt;-x64.exe /S /FLEET_URL="https://&lt;your-server&gt;" /ENROLL_TOKEN="&lt;enrolment-key&gt;"</code></td>
-</tr>
-<tr>
-<td>Uninstall command</td>
-<td><code>"%ProgramFiles%\AI Firewall\Uninstall AI Firewall.exe" /allusers /S</code></td>
-</tr>
-<tr>
-<td>Install behavior</td>
-<td>System</td>
-</tr>
-<tr>
-<td>Restart behavior</td>
-<td>No specific action</td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>
-<p><strong>Detection rule:</strong> a file exists, <code>%ProgramFiles%\AI Firewall\AI Firewall.exe</code>. This works when the default folder is used. You can also use the installer's uninstall entry in the registry (<code>HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall</code>, 64-bit view). Its <code>DisplayName</code> is "AI Firewall" followed by the version, so do not match it exactly, and its <code>DisplayVersion</code> is the app version.</p>
-</li>
-<li><strong>Requirements:</strong> 64-bit, Windows 10 or Windows 11.</li>
-<li><strong>Return codes:</strong> add code <code>3</code> as <strong>Success</strong>, in addition to the defaults.</li>
-<li>Assign the app to a pilot group first.</li>
+<li><strong>Take a snapshot or backup of the server.</strong> If you need to change an installation parameter later, restore the snapshot and run setup again from a clean state.</li>
+<li>Have the <strong>license file</strong> and the <strong>registry access details</strong> at hand.</li>
+<li>If you will use your own certificate, have the <strong>certificate and its key</strong> on the server, readable by the user who runs the installation.</li>
+<li>If you will use your own load balancer, <strong>set it up first</strong>. See <a href="reverse-proxy.html">Reverse proxy</a>.</li>
+<li>Decide the <strong>email address</strong> of the first administrator.</li>
 </ol>
-<div class="admonition warning">
-<p class="admonition-title">The key is visible in Intune</p>
-<p>The install command is stored in Intune with the key in it. Limit who can read the app's settings, and replace the key after the pilot if you are concerned.</p>
-</div>
-<p>Try the install, the uninstall and the detection rule on a pilot computer before you assign the app widely.</p>
-<h2 id="group-policy-startup-script">Group Policy (startup script)<a class="headerlink" href="#group-policy-startup-script" title="Permanent link">&para;</a></h2>
-<p>AI Firewall has <strong>no Group Policy template</strong> (<code>.admx</code>). To use Group Policy, run the installer from a computer <strong>startup script</strong>:</p>
-<ol>
-<li>Put the installer on a share that computer accounts can read.</li>
-<li>Add a startup script (<em>Computer Configuration</em>, <em>Policies</em>, <em>Windows Settings</em>, <em>Scripts</em>, <em>Startup</em>) that runs the installer if the app is not installed yet. See <a href="downloads.html">Scripts to download</a>.</li>
-<li>Link the policy to a pilot organisational unit first.</li>
-</ol>
-<p>The enrolment key is on the command line of the script. Protect the share, so that only computer accounts can read it.</p>
-<h2 id="remove-the-agent">Remove the agent<a class="headerlink" href="#remove-the-agent" title="Permanent link">&para;</a></h2>
-<p>The uninstaller needs administrator rights.</p>
-<div class="highlight"><pre><span></span><code>&quot;%ProgramFiles%\AI Firewall\Uninstall AI Firewall.exe&quot; /allusers /S
-</code></pre></div>
-<p>This is the quiet uninstall command that the installer registers. Run it as an administrator or as the system account. Without administrator rights it asks for elevation.</p>
-<p>It removes the app, the services, the certificate and the settings that AI Firewall added. It does <strong>not</strong> restore a computer-wide proxy setting that existed before AI Firewall was installed. Local data of every user on the computer is deleted. See the <a href="../../uninstall.html">User Guide</a> for what is removed.</p>
-<p>In version 2.2.7, an uninstall run by a deployment tool sends no notice to your server. The computer stops reporting. Remove it from the portal. Newer versions report the removal to the server when the uninstaller runs as the system account on a computer that has the protection service. An uninstall that an administrator starts by hand sends nothing.</p>
+<h2 id="tools-on-your-own-computer">Tools on your own computer<a class="headerlink" href="#tools-on-your-own-computer" title="Permanent link">&para;</a></h2>
+<p>You need an SSH client to connect to the server, and a password manager to keep the sign-in details that setup shows once.</p>
 
 
 
@@ -1514,13 +1579,13 @@
         
         
           
-          <a href="macos.html" class="md-footer__link md-footer__link--next" aria-label="Next: macOS">
+          <a href="install.html" class="md-footer__link md-footer__link--next" aria-label="Next: Install the server">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                macOS
+                Install the server
               </div>
             </div>
             <div class="md-footer__button md-icon">

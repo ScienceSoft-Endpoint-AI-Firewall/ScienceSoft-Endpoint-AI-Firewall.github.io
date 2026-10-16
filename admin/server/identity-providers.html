@@ -6,33 +6,33 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="How people sign in to the ScienceSoft AI Endpoint Firewall admin portal, the admin, analyst, auditor and super-admin roles, and how to add users in Keycloak.">
+        <meta name="description" content="Connect Microsoft Entra ID to the ScienceSoft AI Endpoint Firewall admin portal with the built-in Microsoft provider or generic OpenID Connect.">
       
       
       
       
-        <link rel="prev" href="reverse-proxy.html">
+        <link rel="prev" href="sign-in.html">
       
       
-        <link rel="next" href="identity-providers.html">
+        <link rel="next" href="operate.html">
       
       
         
       
       
-      <link rel="icon" href="../assets/favicon.svg">
+      <link rel="icon" href="../../assets/favicon.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>Sign-in, roles and Keycloak console - ScienceSoft AI Endpoint Firewall</title>
+        <title>Single sign-on with Microsoft Entra ID - ScienceSoft AI Endpoint Firewall</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -53,9 +53,9 @@
       
     
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -85,7 +85,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sign-in-and-roles" class="md-skip">
+        <a href="#single-sign-on-with-your-company-directory" class="md-skip">
           Skip to content
         </a>
       
@@ -101,9 +101,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="ScienceSoft AI Endpoint Firewall" class="md-header__button md-logo" aria-label="ScienceSoft AI Endpoint Firewall" data-md-component="logo">
+    <a href="../.." title="ScienceSoft AI Endpoint Firewall" class="md-header__button md-logo" aria-label="ScienceSoft AI Endpoint Firewall" data-md-component="logo">
       
-  <img src="../assets/logo-white.svg" alt="logo">
+  <img src="../../assets/logo-white.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -120,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Sign-in, roles and Keycloak console
+              Single sign-on with Microsoft Entra ID
             
           </span>
         </div>
@@ -226,9 +226,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="ScienceSoft AI Endpoint Firewall" class="md-nav__button md-logo" aria-label="ScienceSoft AI Endpoint Firewall" data-md-component="logo">
+    <a href="../.." title="ScienceSoft AI Endpoint Firewall" class="md-nav__button md-logo" aria-label="ScienceSoft AI Endpoint Firewall" data-md-component="logo">
       
-  <img src="../assets/logo-white.svg" alt="logo">
+  <img src="../../assets/logo-white.svg" alt="logo">
 
     </a>
     ScienceSoft AI Endpoint Firewall
@@ -295,7 +295,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../index.html" class="md-nav__link">
+      <a href="../../index.html" class="md-nav__link">
         
   
   
@@ -323,7 +323,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../install.html" class="md-nav__link">
+      <a href="../../install.html" class="md-nav__link">
         
   
   
@@ -351,7 +351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../management.html" class="md-nav__link">
+      <a href="../../management.html" class="md-nav__link">
         
   
   
@@ -379,7 +379,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../check-status.html" class="md-nav__link">
+      <a href="../../check-status.html" class="md-nav__link">
         
   
   
@@ -407,7 +407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../coverage.html" class="md-nav__link">
+      <a href="../../coverage.html" class="md-nav__link">
         
   
   
@@ -435,7 +435,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../troubleshooting.html" class="md-nav__link">
+      <a href="../../troubleshooting.html" class="md-nav__link">
         
   
   
@@ -463,7 +463,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../faq.html" class="md-nav__link">
+      <a href="../../faq.html" class="md-nav__link">
         
   
   
@@ -491,7 +491,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../uninstall.html" class="md-nav__link">
+      <a href="../../uninstall.html" class="md-nav__link">
         
   
   
@@ -568,6 +568,85 @@
             
   
     Admin Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Set up your self-hosted server
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Set up your self-hosted server
   
 
           </label>
@@ -745,6 +824,34 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="sign-in.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sign-in and roles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -764,7 +871,7 @@
   <span class="md-ellipsis">
     
   
-    Sign-in and roles
+    Single sign-on
   
 
     
@@ -775,14 +882,14 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="sign-in.html" class="md-nav__link md-nav__link--active">
+      <a href="identity-providers.html" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    Sign-in and roles
+    Single sign-on
   
 
     
@@ -808,10 +915,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-people-and-devices-are-identified" class="md-nav__link">
+  <a href="#why-use-one" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How people and devices are identified
+        Why use one
       
     </span>
   </a>
@@ -819,10 +926,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#first-sign-in" class="md-nav__link">
+  <a href="#how-single-sign-on-works" class="md-nav__link">
     <span class="md-ellipsis">
       
-        First sign-in
+        How single sign-on works
       
     </span>
   </a>
@@ -830,22 +937,55 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#roles" class="md-nav__link">
+  <a href="#steps-for-any-provider" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Roles
+        Steps for any provider
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Roles">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#microsoft-entra-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Microsoft Entra ID
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Microsoft Entra ID">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#the-default-role" class="md-nav__link">
+  <a href="#option-1-built-in-microsoft-provider" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The default role
+        Option 1. Built-in Microsoft provider
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-2-generic-openid-connect-provider" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 2. Generic OpenID Connect provider
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#after-you-connect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        After you connect
       
     </span>
   </a>
@@ -858,82 +998,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#two-accounts-for-an-administrator" class="md-nav__link">
+  <a href="#more-information" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Two accounts for an administrator
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#open-the-keycloak-console" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Open the Keycloak console
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#add-a-person-to-the-admin-portal" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Add a person to the admin portal
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Add a person to the admin portal">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#the-same-from-the-command-line" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The same from the command line
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#add-a-keycloak-administrator" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Add a Keycloak administrator
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#connect-your-companys-directory" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Connect your company's directory
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#required-realm-settings" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Required realm settings
+        More information
       
     </span>
   </a>
@@ -944,34 +1012,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="identity-providers.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Single sign-on
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -1061,6 +1101,14 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
               
                 
   
@@ -1078,10 +1126,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_12" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
-          <label class="md-nav__link" for="__nav_2_12" id="__nav_2_12_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
             
   
   
@@ -1099,8 +1147,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_12_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_12">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1117,7 +1165,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devices/index.html" class="md-nav__link">
+      <a href="../agents/index.html" class="md-nav__link">
         
   
   
@@ -1145,7 +1193,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devices/windows.html" class="md-nav__link">
+      <a href="../agents/windows.html" class="md-nav__link">
         
   
   
@@ -1173,7 +1221,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devices/macos.html" class="md-nav__link">
+      <a href="../agents/macos.html" class="md-nav__link">
         
   
   
@@ -1201,7 +1249,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devices/verify.html" class="md-nav__link">
+      <a href="../agents/verify.html" class="md-nav__link">
         
   
   
@@ -1229,7 +1277,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devices/downloads.html" class="md-nav__link">
+      <a href="../agents/downloads.html" class="md-nav__link">
         
   
   
@@ -1292,10 +1340,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-people-and-devices-are-identified" class="md-nav__link">
+  <a href="#why-use-one" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How people and devices are identified
+        Why use one
       
     </span>
   </a>
@@ -1303,10 +1351,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#first-sign-in" class="md-nav__link">
+  <a href="#how-single-sign-on-works" class="md-nav__link">
     <span class="md-ellipsis">
       
-        First sign-in
+        How single sign-on works
       
     </span>
   </a>
@@ -1314,22 +1362,55 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#roles" class="md-nav__link">
+  <a href="#steps-for-any-provider" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Roles
+        Steps for any provider
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Roles">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#microsoft-entra-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Microsoft Entra ID
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Microsoft Entra ID">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#the-default-role" class="md-nav__link">
+  <a href="#option-1-built-in-microsoft-provider" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The default role
+        Option 1. Built-in Microsoft provider
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-2-generic-openid-connect-provider" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 2. Generic OpenID Connect provider
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#after-you-connect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        After you connect
       
     </span>
   </a>
@@ -1342,82 +1423,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#two-accounts-for-an-administrator" class="md-nav__link">
+  <a href="#more-information" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Two accounts for an administrator
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#open-the-keycloak-console" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Open the Keycloak console
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#add-a-person-to-the-admin-portal" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Add a person to the admin portal
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Add a person to the admin portal">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#the-same-from-the-command-line" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The same from the command line
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#add-a-keycloak-administrator" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Add a Keycloak administrator
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#connect-your-companys-directory" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Connect your company's directory
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#required-realm-settings" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Required realm settings
+        More information
       
     </span>
   </a>
@@ -1441,227 +1450,115 @@
 
 
 
-<h1 id="sign-in-and-roles">Sign-in and roles<a class="headerlink" href="#sign-in-and-roles" title="Permanent link">&para;</a></h1>
-<p>This page explains who can sign in to AI Firewall, what each role can do, and how to add people.</p>
-<h2 id="how-people-and-devices-are-identified">How people and devices are identified<a class="headerlink" href="#how-people-and-devices-are-identified" title="Permanent link">&para;</a></h2>
-<p>AI Firewall uses <strong>Keycloak</strong> as its sign-in service. Keycloak runs as one of the containers of the server. It handles sign-in to the admin portal, roles and the sign-in log. It has two realms (separate sets of accounts):</p>
-<table>
-<thead>
-<tr>
-<th>Realm</th>
-<th>What it is for</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>ai-firewall</code></td>
-<td>Sign-in to the <strong>admin portal</strong>. The role of a person decides what they can do. Their workspace group decides which workspace they see.</td>
-</tr>
-<tr>
-<td><code>master</code></td>
-<td>Sign-in to the <strong>Keycloak console</strong>, for the administrators who manage people and roles.</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>What</th>
-<th>How it is identified</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>People who use the admin portal</td>
-<td>Keycloak, realm <code>ai-firewall</code></td>
-</tr>
-<tr>
-<td>Keycloak administrators</td>
-<td>Keycloak, realm <code>master</code>. One personal account for each administrator</td>
-</tr>
-<tr>
-<td>Computers (agents)</td>
-<td><strong>Not through Keycloak.</strong> At first start the agent exchanges the device enrolment key for its own device key.</td>
-</tr>
-<tr>
-<td>Static tokens (the emergency sign-in token and the administration tokens)</td>
-<td><strong>Not through Keycloak.</strong> They always have the highest rights and are not recorded in the sign-in log. Keep them for emergencies only.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="first-sign-in">First sign-in<a class="headerlink" href="#first-sign-in" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Open <code>https://&lt;your-address&gt;/admin</code>.</li>
-<li>Select the single sign-on button. Sign in with the administrator email that you gave to setup and the <strong>temporary password</strong> from <code>credentials.txt</code>.</li>
-<li>You are asked to choose a new password, and to register an authenticator app for one-time codes.</li>
-</ol>
-<p>If you set <code>authMode</code> to <code>compat</code> (the recommended value), the sign-in page also has an <strong>emergency token field</strong>. Use it only in an emergency, and keep the token in your password manager. With <code>keycloak</code>, the page has the single sign-on button only.</p>
-<h2 id="roles">Roles<a class="headerlink" href="#roles" title="Permanent link">&para;</a></h2>
-<p>Every person who uses the admin portal has <strong>one base role</strong>. The server checks the role on every request, not only in the screens.</p>
-<table>
-<thead>
-<tr>
-<th>Role</th>
-<th>What it allows</th>
-<th>Who gets it</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>admin</code></td>
-<td>Everything in their own workspace</td>
-<td>IT or security administrators who set up and run protection</td>
-</tr>
-<tr>
-<td><code>analyst</code></td>
-<td>Reading and investigating in their own workspace, without changes</td>
-<td>Analysts who review detections but must not change settings</td>
-</tr>
-<tr>
-<td><code>auditor</code></td>
-<td>Audit only: reading and export</td>
-<td>Auditors and compliance staff</td>
-</tr>
-<tr>
-<td><code>super-admin</code></td>
-<td>Added on top of a base role. All workspaces, creating workspaces, releases, platform audit and the sign-in log</td>
-<td>People who run the whole installation. Given only through the <code>fleet-operators</code> group</td>
-</tr>
-</tbody>
-</table>
-<p>On a server that belongs to one organisation, the people who run the whole installation need <code>super-admin</code>. Only they can create workspaces, see all workspaces, and use the platform audit log, the releases view and the other all-workspace views. Setup gives <code>super-admin</code> to the first administrator. Give it to others only by adding them to the <code>fleet-operators</code> group, and only to people you trust with every workspace. Everyone else needs one base role and one workspace group. The emergency token always has this level.</p>
-<p>A role is not enough. A person also needs a <strong>workspace group</strong>. Without it the portal shows no workspace.</p>
-<h3 id="the-default-role">The default role<a class="headerlink" href="#the-default-role" title="Permanent link">&para;</a></h3>
-<p>Give new portal users the <code>auditor</code> role. It has the fewest rights, so a person who gets it by mistake cannot change anything. Give <code>analyst</code> or <code>admin</code> only when the work needs it.</p>
+<h1 id="single-sign-on-with-your-company-directory">Single sign-on with your company directory<a class="headerlink" href="#single-sign-on-with-your-company-directory" title="Permanent link">&para;</a></h1>
+<p>An identity provider (IdP) lets people sign in to the admin portal with the accounts they already have, for example their Microsoft Entra ID account.</p>
+<div class="admonition warning">
+<p class="admonition-title">Preview</p>
+<p>Single sign-on is provided by Keycloak's own identity brokering. AI Firewall does not set it up for you and has no Microsoft-specific settings. You set it up in the Keycloak console. It is offered as a preview: the steps below follow Keycloak and Microsoft documentation, and ScienceSoft has not tested them with every directory setup. Test with a test account before you tell people.</p>
+<p>Creating an identity provider needs the built-in Keycloak administrator account (<code>kcadmin</code>). The personal console account that setup creates cannot do it. For the same reason, the <strong>Identity providers</strong> option is not shown to a <code>super-admin</code> account by default.</p>
+</div>
+<h2 id="why-use-one">Why use one<a class="headerlink" href="#why-use-one" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Do not add the product roles to the default roles of the <code>ai-firewall</code> realm. If you do, every new person, including people who sign in through a company directory, gets access automatically.</li>
-<li>Never give <code>super-admin</code> by default, and never make <code>fleet-operators</code> a default group.</li>
+<li><strong>One account and one password.</strong> People do not get a separate portal password, and you do not have to deliver passwords.</li>
+<li><strong>Central account life.</strong> When your organisation disables an employee in the directory, that person can no longer sign in to the portal.</li>
+<li><strong>Your sign-in rules.</strong> Multi-factor sign-in, conditional access and password rules of the IdP apply to the portal.</li>
 </ul>
-<h2 id="two-accounts-for-an-administrator">Two accounts for an administrator<a class="headerlink" href="#two-accounts-for-an-administrator" title="Permanent link">&para;</a></h2>
-<p>The Keycloak console and the admin portal use different realms, so an administrator who needs both has <strong>two accounts with the same username and separate passwords</strong>. Changing the password of one does not change the other. An account from the <code>master</code> realm cannot sign in to the admin portal. A person who needs the portal needs an account in the <code>ai-firewall</code> realm.</p>
-<p>Use the built-in emergency administrator account only in an emergency, for example to create the first additional administrator. For regular work, create a personal administrator account for each person. Do not share one account.</p>
-<h2 id="open-the-keycloak-console">Open the Keycloak console<a class="headerlink" href="#open-the-keycloak-console" title="Permanent link">&para;</a></h2>
-<p>The console is <strong>never on the public address</strong>. Those addresses always answer "not found". You open it from your own computer through an SSH tunnel.</p>
+<p>The IdP only confirms <strong>who</strong> the person is. Keycloak still decides <strong>what</strong> they can do: the role, the workspace group and all-workspace access are set in the <code>ai-firewall</code> realm, in the same way as for local accounts. See <a href="sign-in.html">Sign-in and roles</a>.</p>
+<h2 id="how-single-sign-on-works">How single sign-on works<a class="headerlink" href="#how-single-sign-on-works" title="Permanent link">&para;</a></h2>
+<p>A person opens <code>https://&lt;your-address&gt;/admin</code>. They are sent to the Keycloak sign-in page, choose the IdP, sign in there and return to the portal. Keycloak sits between the portal and the IdP.</p>
+<h2 id="steps-for-any-provider">Steps for any provider<a class="headerlink" href="#steps-for-any-provider" title="Permanent link">&para;</a></h2>
 <ol>
+<li><strong>Add the IdP to the <code>ai-firewall</code> realm only.</strong> Never to <code>master</code>.</li>
+<li><strong>Choose the alias first</strong>, for example <code>entra-id</code>. The alias is part of the redirect address and <strong>cannot be changed</strong> after you create the provider.</li>
 <li>
-<p>In <code>credentials.txt</code>, find the console account and the tunnel command. The command looks like this:</p>
-<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>-N<span class="w"> </span>-L<span class="w"> </span><span class="m">18080</span>:127.0.0.1:8080<span class="w"> </span>&lt;user&gt;@&lt;server&gt;
+<p><strong>Register Keycloak as an application in the IdP.</strong> The redirect address is:</p>
+<div class="highlight"><pre><span></span><code>https://&lt;your-address&gt;/keycloak/realms/ai-firewall/broker/&lt;alias&gt;/endpoint
 </code></pre></div>
-<p>Keep it running.</p>
+<p><strong>Do not copy the redirect address that the Keycloak console shows.</strong> The console opens through an SSH tunnel and shows an address that starts with <code>http://127.0.0.1</code>. The IdP and the users' browsers cannot reach it. Take the value from the console and replace the part before <code>/keycloak</code> with your public address.</p>
 </li>
 <li>
-<p>Open <code>http://127.0.0.1:18080/keycloak/admin/</code> in your browser. Use exactly that address, with <code>127.0.0.1</code>, not <code>localhost</code>.</p>
+<p><strong>Create the provider in Keycloak</strong> with the client ID and the client secret from the IdP.</p>
 </li>
-<li>Sign in with your <code>master</code> realm account. A one-time code from an authenticator app is required. The first time, you register the app. Every later sign-in asks for the code.</li>
-<li>Close the tunnel when you finish.</li>
+<li><strong>Plan how people get access.</strong> A person who signs in through the IdP for the first time is created in the <code>ai-firewall</code> realm <strong>without a role</strong>, so the portal does not work for them yet. The realm can also add new people to its default workspace group (<code>default-tenant</code>). Check the group of each new person, because it may not be the workspace that you want. Either give them the role and the group by hand after the first sign-in, or add mappers that do it automatically. <strong>Never map anyone to <code>fleet-operators</code> automatically.</strong></li>
+<li><strong>Test</strong> with a test account before you tell people: open the portal, choose the IdP, and check that the person sees the right workspace.</li>
+<li><strong>Optional: skip the Keycloak page.</strong> Set the IdP as the default provider of the <em>Identity Provider Redirector</em> step in the <code>browser</code> authentication flow of the realm. <strong>Keep at least one local administrator account</strong> for when the IdP is not available.</li>
 </ol>
-<p>The tunnel command is the same on every server installed with <code>aifw</code>: port 8080 is on the server, and 18080 is on your own computer. If the console does not load after an upgrade from an older version, run <code>sudo aifw setup</code> once.</p>
-<h2 id="add-a-person-to-the-admin-portal">Add a person to the admin portal<a class="headerlink" href="#add-a-person-to-the-admin-portal" title="Permanent link">&para;</a></h2>
-<p>In the Keycloak console:</p>
+<h2 id="microsoft-entra-id">Microsoft Entra ID<a class="headerlink" href="#microsoft-entra-id" title="Permanent link">&para;</a></h2>
+<p>You can connect Entra ID in two ways. Both use an app registration in Entra ID.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Built-in Microsoft provider</th>
+<th>Generic OpenID Connect provider</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Effort</td>
+<td>Low: client ID, client secret and tenant ID</td>
+<td>Higher: discovery address, client authentication, scopes, signature checks</td>
+</tr>
+<tr>
+<td>Map Entra groups or app roles to Keycloak</td>
+<td>Not supported</td>
+<td>Supported, with mappers</td>
+</tr>
+<tr>
+<td>Limit to your organisation</td>
+<td><strong>Only if you fill in the tenant ID.</strong> An empty field lets any Microsoft account in</td>
+<td>Built in</td>
+</tr>
+<tr>
+<td>Choose it when</td>
+<td>People only need to sign in, and you give roles and groups in Keycloak</td>
+<td>You want Entra groups or app roles to give access</td>
+</tr>
+</tbody>
+</table>
+<h3 id="option-1-built-in-microsoft-provider">Option 1. Built-in Microsoft provider<a class="headerlink" href="#option-1-built-in-microsoft-provider" title="Permanent link">&para;</a></h3>
+<p><strong>In the Microsoft Entra admin center:</strong></p>
 <ol>
-<li>Switch the realm (top left) from <code>master</code> to <strong><code>ai-firewall</code></strong>. A person created in <code>master</code> cannot sign in to the portal.</li>
-<li>Open <strong>Users</strong>, then <strong>Add user</strong>. Fill in the username, email and name. Turn on <strong>Email verified</strong> only if you have confirmed the address. Select <strong>Create</strong>.</li>
-<li>On the <strong>Credentials</strong> tab, select <strong>Set password</strong>. Enter a strong password and keep <strong>Temporary</strong> on, so the person must change it at the first sign-in.</li>
-<li>On the <strong>Role mapping</strong> tab, select <strong>Assign role</strong>, filter by realm roles, and choose one base role (<code>admin</code>, <code>analyst</code> or <code>auditor</code>).</li>
-<li>On the <strong>Groups</strong> tab, select <strong>Join group</strong> and choose the workspace group.</li>
+<li>Open <strong>App registrations</strong>, then <strong>New registration</strong>.</li>
+<li>Enter a name, for example <code>AI Firewall admin portal</code>. For <strong>Supported account types</strong>, choose <strong>Accounts in this organizational directory only</strong>.</li>
+<li>For <strong>Redirect URI</strong>, choose the <strong>Web</strong> platform and enter the redirect address from above. Select <strong>Register</strong>.</li>
+<li>On <strong>Overview</strong>, copy the <strong>Application (client) ID</strong> and the <strong>Directory (tenant) ID</strong>.</li>
+<li>Open <strong>Certificates &amp; secrets</strong>, create a new client secret and copy its <strong>Value</strong>. Note the expiry date: <strong>sign-in stops when the secret expires</strong>.</li>
+<li>In <strong>API permissions</strong>, check that the delegated Microsoft Graph permission <code>User.Read</code> is there.</li>
 </ol>
-<p>Deliver the password in a safe way:</p>
+<p><strong>In the Keycloak console</strong> (realm <code>ai-firewall</code>):</p>
+<ol>
+<li>Open <strong>Identity providers</strong> and choose <strong>Microsoft</strong>.</li>
+<li>Fill in <strong>Alias</strong>, <strong>Display name</strong> (the text of the button on the sign-in page), <strong>Client ID</strong>, <strong>Client Secret</strong> and <strong>Tenant ID</strong>. <strong>Do not leave Tenant ID empty.</strong></li>
+<li>Select <strong>Add</strong>.</li>
+</ol>
+<h3 id="option-2-generic-openid-connect-provider">Option 2. Generic OpenID Connect provider<a class="headerlink" href="#option-2-generic-openid-connect-provider" title="Permanent link">&para;</a></h3>
+<p><strong>In the Microsoft Entra admin center:</strong></p>
+<ol>
+<li>Register the application as in steps 1 to 5 above, with the same redirect address.</li>
+<li>Open <strong>Token configuration</strong> and add the optional claim <code>email</code> to the ID token.</li>
+<li>To pass Entra groups, select <strong>Add groups claim</strong>. To pass app roles, define them in <strong>App roles</strong> and assign people to them in <strong>Enterprise applications</strong>.</li>
+</ol>
+<p><strong>In the Keycloak console</strong> (realm <code>ai-firewall</code>):</p>
+<ol>
+<li>Open <strong>Identity providers</strong> and choose <strong>OpenID Connect v1.0</strong>.</li>
+<li>Fill in <strong>Alias</strong> and <strong>Display name</strong>.</li>
+<li>For <strong>Discovery endpoint</strong>, enter <code>https://login.microsoftonline.com/&lt;tenant-id&gt;/v2.0/.well-known/openid-configuration</code>.</li>
+<li>Set <strong>Client authentication</strong> to <strong>Client secret sent as post</strong>. Fill in <strong>Client ID</strong> and <strong>Client Secret</strong>.</li>
+<li>Select <strong>Add</strong>. Then set <strong>Scopes</strong> to <code>openid profile email</code>, make sure <strong>Validate Signatures</strong> and <strong>Use JWKS URL</strong> are on, and select <strong>Save</strong>.</li>
+<li>If Entra passes groups or app roles, open <strong>Mappers</strong> and add <strong>Claim to Role</strong> or <strong>Advanced Claim to Group</strong> mappers that turn them into the role and the workspace group.</li>
+</ol>
+<h3 id="after-you-connect">After you connect<a class="headerlink" href="#after-you-connect" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Never send it in plain text by email, chat or in a ticket.</li>
-<li>Send the username and the password through different channels, or use a password-sharing tool with a one-time link.</li>
-<li>Ask the person to change the temporary password and to confirm when it is done.</li>
+<li>Without mappers, give each new person the role and the workspace group by hand.</li>
+<li>Never map Entra groups or roles to <code>fleet-operators</code> automatically.</li>
+<li>Before the client secret expires, create a new one in Entra ID and update <strong>Client Secret</strong> in the provider.</li>
 </ul>
-<p><code>super-admin</code> is not given directly. Add the person to the <code>fleet-operators</code> group. To check, open <strong>Role mapping</strong> and turn off <strong>Hide inherited roles</strong>. A person with all-workspace access must show the base role and the inherited <code>super-admin</code> role. A person with one workspace must not show <code>super-admin</code>.</p>
-<h3 id="the-same-from-the-command-line">The same from the command line<a class="headerlink" href="#the-same-from-the-command-line" title="Permanent link">&para;</a></h3>
-<p>On the server, <code>kcadm.sh</code> runs inside the Keycloak container, so no tunnel is needed:</p>
-<div class="highlight"><pre><span></span><code><span class="nv">KC</span><span class="o">=</span><span class="s2">&quot;sudo docker exec -it ai-firewall-keycloak /opt/keycloak/bin/kcadm.sh&quot;</span>
-<span class="nv">$KC</span><span class="w"> </span>config<span class="w"> </span>credentials<span class="w"> </span>--server<span class="w"> </span>http://localhost:8080/keycloak<span class="w"> </span>--realm<span class="w"> </span>master<span class="w"> </span>--user<span class="w"> </span>&lt;your-admin-username&gt;
-<span class="nv">$KC</span><span class="w"> </span>create<span class="w"> </span>users<span class="w"> </span>-r<span class="w"> </span>ai-firewall<span class="w"> </span>-s<span class="w"> </span><span class="nv">username</span><span class="o">=</span>&lt;email&gt;<span class="w"> </span>-s<span class="w"> </span><span class="nv">email</span><span class="o">=</span>&lt;email&gt;<span class="w"> </span>-s<span class="w"> </span><span class="nv">enabled</span><span class="o">=</span><span class="nb">true</span>
-<span class="nv">$KC</span><span class="w"> </span>set-password<span class="w"> </span>-r<span class="w"> </span>ai-firewall<span class="w"> </span>--username<span class="w"> </span>&lt;email&gt;<span class="w"> </span>--new-password<span class="w"> </span><span class="s1">&#39;&lt;temporary-password&gt;&#39;</span><span class="w"> </span>--temporary
-<span class="nv">$KC</span><span class="w"> </span>add-roles<span class="w"> </span>-r<span class="w"> </span>ai-firewall<span class="w"> </span>--uusername<span class="w"> </span>&lt;email&gt;<span class="w"> </span>--rolename<span class="w"> </span>admin
-</code></pre></div>
-<p>Then add the person to the workspace group in the console.</p>
-<h2 id="add-a-keycloak-administrator">Add a Keycloak administrator<a class="headerlink" href="#add-a-keycloak-administrator" title="Permanent link">&para;</a></h2>
-<ol>
-<li>In the console, make sure the realm is <strong><code>master</code></strong>.</li>
-<li>Open <strong>Users</strong>, then <strong>Add user</strong>, and set a temporary password as above.</li>
-<li>
-<p>Give the access that fits:</p>
-<table>
-<thead>
-<tr>
-<th>Scope</th>
-<th>Who needs it</th>
-<th>What to give</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>The <code>ai-firewall</code> realm only</td>
-<td>An administrator who manages portal people, roles and groups</td>
-<td>Join the group <code>aifw-realm-operators</code></td>
-</tr>
-<tr>
-<td>All realms, including <code>master</code></td>
-<td>An administrator who replaces the emergency account for regular work</td>
-<td>The realm role <code>admin</code> of the <code>master</code> realm</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ol>
-<p>For everyday work with portal people, the first scope is enough. Never create administrator accounts for the people who only use the portal.</p>
-<h2 id="connect-your-companys-directory">Connect your company's directory<a class="headerlink" href="#connect-your-companys-directory" title="Permanent link">&para;</a></h2>
-<p>You can let people sign in with their company account, for example Microsoft Entra ID. See <a href="identity-providers.html">Single sign-on with your company directory</a>.</p>
-<h2 id="required-realm-settings">Required realm settings<a class="headerlink" href="#required-realm-settings" title="Permanent link">&para;</a></h2>
-<p>Setup imports the <code>ai-firewall</code> realm when Keycloak starts for the first time. The realm has no people in it. These settings are required for the product to work. Do not change them.</p>
-<table>
-<thead>
-<tr>
-<th>Area</th>
-<th>Setting</th>
-<th>Required</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Roles</td>
-<td><code>admin</code>, <code>analyst</code>, <code>auditor</code>, <code>super-admin</code></td>
-<td>One base role for each person. <code>super-admin</code> is extra. A fifth role, <code>trial</code>, is used only on trial servers</td>
-</tr>
-<tr>
-<td>Groups</td>
-<td><code>fleet-operators</code></td>
-<td>Gives <code>super-admin</code>. Never a default group</td>
-</tr>
-<tr>
-<td>Groups</td>
-<td>Workspace groups</td>
-<td>Each has a <code>tenant</code> attribute. Every person must be in one</td>
-</tr>
-<tr>
-<td>Client</td>
-<td><code>admin-portal-spa</code></td>
-<td>A public client with PKCE <code>S256</code>. Direct access grants off. No client secret</td>
-</tr>
-<tr>
-<td>Client</td>
-<td><code>admin-api</code></td>
-<td>Bearer-only. No client secret</td>
-</tr>
-<tr>
-<td>Client</td>
-<td><code>admin-cli</code></td>
-<td>Do not change</td>
-</tr>
-<tr>
-<td>Login</td>
-<td>User registration</td>
-<td>Off</td>
-</tr>
-</tbody>
-</table>
-<p>A running server does not read the realm file again. The realm also sets a minimum password length of 12, a lockout after 5 failed sign-ins and a one-time-code policy for the administrator. <code>aifw setup</code> applies the same rules to servers that were set up earlier. Do not weaken them.</p>
+<h2 id="more-information">More information<a class="headerlink" href="#more-information" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Keycloak: <a href="https://www.keycloak.org/docs/latest/server_admin/index.html">Server Administration Guide</a>, the sections on identity providers and mappers.</li>
+<li>Microsoft: <a href="https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app">Register an application</a> and <a href="https://learn.microsoft.com/en-us/entra/identity-platform/v2-protocols-oidc">OpenID Connect on the Microsoft identity platform</a>.</li>
+</ul>
 
 
 
@@ -1700,7 +1597,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="reverse-proxy.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Reverse proxy">
+          <a href="sign-in.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Sign-in and roles">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1710,20 +1607,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Reverse proxy
+                Sign-in and roles
               </div>
             </div>
           </a>
         
         
           
-          <a href="identity-providers.html" class="md-footer__link md-footer__link--next" aria-label="Next: Single sign-on">
+          <a href="operate.html" class="md-footer__link md-footer__link--next" aria-label="Next: Operate and upgrade">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Single sign-on
+                Operate and upgrade
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1764,10 +1661,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.top", "navigation.sections", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "navigation.sections", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

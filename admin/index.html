@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Administrator guide for ScienceSoft AI Endpoint Firewall: install the server, set up sign-in, roll out the agent to Windows and macOS computers, back up and operate the server.">
+        <meta name="description" content="Administrator guide for ScienceSoft AI Endpoint Firewall: set up your server, roll out the agent to Windows and macOS computers, and operate the installation.">
       
       
       
@@ -14,7 +14,7 @@
         <link rel="prev" href="../uninstall.html">
       
       
-        <link rel="next" href="prerequisites.html">
+        <link rel="next" href="server/index.html">
       
       
         
@@ -640,10 +640,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-this-guide-covers" class="md-nav__link">
+  <a href="#the-parts-of-this-guide" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What this guide covers
+        The parts of this guide
       
     </span>
   </a>
@@ -651,10 +651,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-installation-at-a-glance" class="md-nav__link">
+  <a href="#where-to-start" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The installation at a glance
+        Where to start
       
     </span>
   </a>
@@ -665,286 +665,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="prerequisites.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Prerequisites
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="install.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Install the server
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="install-script.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    The installer script
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="aifw-reference.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    aifw commands
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="reverse-proxy.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Reverse proxy
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="sign-in.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Sign-in and roles
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="identity-providers.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Single sign-on
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="operate.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Operate and upgrade
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="backup-restore.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Backup and restore
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="troubleshooting.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Troubleshooting
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -967,17 +687,17 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_12" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
         
           
-          <label class="md-nav__link" for="__nav_2_12" id="__nav_2_12_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
     
   
-    Roll out the agent
+    Set up your self-hosted server
   
 
     
@@ -988,12 +708,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_12_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_12">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Roll out the agent
+    Set up your self-hosted server
   
 
           </label>
@@ -1006,7 +726,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devices/index.html" class="md-nav__link">
+      <a href="server/index.html" class="md-nav__link">
         
   
   
@@ -1034,7 +754,372 @@
   
   
     <li class="md-nav__item">
-      <a href="devices/windows.html" class="md-nav__link">
+      <a href="server/prerequisites.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prerequisites
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="server/install.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install the server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="server/install-script.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The installer script
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="server/aifw-reference.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    aifw commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="server/reverse-proxy.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reverse proxy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="server/sign-in.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sign-in and roles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="server/identity-providers.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Single sign-on
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="server/operate.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operate and upgrade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="server/backup-restore.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backup and restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="server/troubleshooting.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roll out the agent
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Roll out the agent
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="agents/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="agents/windows.html" class="md-nav__link">
         
   
   
@@ -1062,7 +1147,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devices/macos.html" class="md-nav__link">
+      <a href="agents/macos.html" class="md-nav__link">
         
   
   
@@ -1090,7 +1175,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devices/verify.html" class="md-nav__link">
+      <a href="agents/verify.html" class="md-nav__link">
         
   
   
@@ -1118,7 +1203,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devices/downloads.html" class="md-nav__link">
+      <a href="agents/downloads.html" class="md-nav__link">
         
   
   
@@ -1181,10 +1266,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-this-guide-covers" class="md-nav__link">
+  <a href="#the-parts-of-this-guide" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What this guide covers
+        The parts of this guide
       
     </span>
   </a>
@@ -1192,10 +1277,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-installation-at-a-glance" class="md-nav__link">
+  <a href="#where-to-start" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The installation at a glance
+        Where to start
       
     </span>
   </a>
@@ -1244,69 +1329,31 @@
 </tbody>
 </table>
 <p>All data stays in your environment. The server is installed and run by you.</p>
-<h2 id="what-this-guide-covers">What this guide covers<a class="headerlink" href="#what-this-guide-covers" title="Permanent link">&para;</a></h2>
+<h2 id="the-parts-of-this-guide">The parts of this guide<a class="headerlink" href="#the-parts-of-this-guide" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Page</th>
+<th>Part</th>
 <th>Read it to learn</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="prerequisites.html">Prerequisites</a></td>
-<td>What you need before you start: the server, the network, and what you receive from us.</td>
+<td><a href="server/index.html">Set up your self-hosted server</a></td>
+<td>What you need, how to install the server from an empty Ubuntu machine, how people sign in, and how to operate, back up and upgrade it.</td>
 </tr>
 <tr>
-<td><a href="install.html">Install the server</a></td>
-<td>Step by step: from an empty Ubuntu server to a working AI Firewall.</td>
-</tr>
-<tr>
-<td><a href="install-script.html">The installer script</a></td>
-<td>Download <code>install.sh</code> with its README and checksum, and how to use it.</td>
-</tr>
-<tr>
-<td><a href="aifw-reference.html">aifw commands</a></td>
-<td>Every <code>aifw</code> command with example output: setup, status, doctor, backup, upgrade.</td>
-</tr>
-<tr>
-<td><a href="reverse-proxy.html">Reverse proxy</a></td>
-<td>How to put your own load balancer or proxy in front of the server.</td>
-</tr>
-<tr>
-<td><a href="sign-in.html">Sign-in and roles</a></td>
-<td>The first sign-in, who can do what, and the sign-in service console.</td>
-</tr>
-<tr>
-<td><a href="identity-providers.html">Single sign-on</a></td>
-<td>Letting people sign in with your company directory, for example Microsoft Entra ID.</td>
-</tr>
-<tr>
-<td><a href="operate.html">Operate and upgrade</a></td>
-<td>Checking health, upgrades and rolling back.</td>
-</tr>
-<tr>
-<td><a href="backup-restore.html">Backup and restore</a></td>
-<td>What to back up, how, and how to bring the server back.</td>
-</tr>
-<tr>
-<td><a href="troubleshooting.html">Troubleshooting</a></td>
-<td>What to do when the installation or sign-in does not work.</td>
-</tr>
-<tr>
-<td><a href="devices/index.html">Roll out the agent</a></td>
-<td>Installing the agent on many Windows and macOS computers, and checking that they joined.</td>
+<td><a href="agents/index.html">Roll out the agent</a></td>
+<td>How to install the agent on many Windows and macOS computers, and how to check that they joined your workspace.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="the-installation-at-a-glance">The installation at a glance<a class="headerlink" href="#the-installation-at-a-glance" title="Permanent link">&para;</a></h2>
+<h2 id="where-to-start">Where to start<a class="headerlink" href="#where-to-start" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Get the server ready and the network open (see <a href="prerequisites.html">Prerequisites</a>).</li>
-<li>Run the installer script <code>install.sh</code>. It installs Docker and the <code>aifw</code> command.</li>
-<li>Run <code>aifw preflight</code>, then <code>aifw setup</code>. Setup asks a few questions and does the rest.</li>
-<li>Save the sign-in details that setup shows, then sign in to the admin portal.</li>
+<li>Read <a href="server/prerequisites.html">Prerequisites</a>, then follow <a href="server/install.html">Install the server</a>.</li>
+<li>Sign in to the admin portal and give your colleagues access (<a href="server/sign-in.html">Sign-in and roles</a>).</li>
+<li>Roll out the agent to a pilot group of computers (<a href="agents/index.html">Roll out the agent</a>).</li>
 </ol>
-<p>It takes about 20 minutes on a prepared server.</p>
 <p>If you have questions that this guide does not answer, contact your ScienceSoft representative.</p>
 
 
@@ -1363,13 +1410,13 @@
         
         
           
-          <a href="prerequisites.html" class="md-footer__link md-footer__link--next" aria-label="Next: Prerequisites">
+          <a href="server/index.html" class="md-footer__link md-footer__link--next" aria-label="Next: Overview">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Prerequisites
+                Overview
               </div>
             </div>
             <div class="md-footer__button md-icon">

@@ -6,13 +6,15 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Download the Windows install script and the macOS enrollment script for rolling out the ScienceSoft AI Endpoint Firewall agent.">
+        <meta name="description" content="Download and use install.sh, the first step of installing the ScienceSoft AI Endpoint Firewall server. What it does, its settings, the checksum, and fixes for common errors.">
       
       
       
       
-        <link rel="prev" href="verify.html">
+        <link rel="prev" href="install.html">
       
+      
+        <link rel="next" href="aifw-reference.html">
       
       
         
@@ -23,7 +25,7 @@
     
     
       
-        <title>Scripts to download - ScienceSoft AI Endpoint Firewall</title>
+        <title>install.sh, the server installer script - ScienceSoft AI Endpoint Firewall</title>
       
     
     
@@ -83,7 +85,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#scripts-to-download" class="md-skip">
+        <a href="#the-installer-script-installsh" class="md-skip">
           Skip to content
         </a>
       
@@ -118,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Scripts to download
+              install.sh, the server installer script
             
           </span>
         </div>
@@ -603,286 +605,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../prerequisites.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Prerequisites
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../install.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Install the server
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../install-script.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    The installer script
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../aifw-reference.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    aifw commands
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../reverse-proxy.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Reverse proxy
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../sign-in.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Sign-in and roles
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../identity-providers.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Single sign-on
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../operate.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Operate and upgrade
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../backup-restore.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Backup and restore
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../troubleshooting.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Troubleshooting
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -898,17 +620,17 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_12" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2_12" id="__nav_2_12_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
     
   
-    Roll out the agent
+    Set up your self-hosted server
   
 
     
@@ -919,12 +641,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_12_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2_12">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Roll out the agent
+    Set up your self-hosted server
   
 
           </label>
@@ -965,14 +687,14 @@
   
   
     <li class="md-nav__item">
-      <a href="windows.html" class="md-nav__link">
+      <a href="prerequisites.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Windows
+    Prerequisites
   
 
     
@@ -993,42 +715,14 @@
   
   
     <li class="md-nav__item">
-      <a href="macos.html" class="md-nav__link">
+      <a href="install.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    macOS
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="verify.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Check that computers joined
+    Install the server
   
 
     
@@ -1065,7 +759,7 @@
   <span class="md-ellipsis">
     
   
-    Scripts to download
+    The installer script
   
 
     
@@ -1076,14 +770,14 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="downloads.html" class="md-nav__link md-nav__link--active">
+      <a href="install-script.html" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    Scripts to download
+    The installer script
   
 
     
@@ -1109,10 +803,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#windows-install-and-enrol" class="md-nav__link">
+  <a href="#download" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Windows: install and enrol
+        Download
       
     </span>
   </a>
@@ -1120,10 +814,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#macos-write-the-enrolment-file" class="md-nav__link">
+  <a href="#before-you-start" class="md-nav__link">
     <span class="md-ellipsis">
       
-        macOS: write the enrolment file
+        Before you start
       
     </span>
   </a>
@@ -1131,10 +825,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#keep-the-key-safe" class="md-nav__link">
+  <a href="#how-to-use-it" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Keep the key safe
+        How to use it
       
     </span>
   </a>
@@ -1142,10 +836,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#not-provided" class="md-nav__link">
+  <a href="#what-the-script-does" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Not provided
+        What the script does
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Settings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#if-something-goes-wrong" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        If something goes wrong
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security notes
       
     </span>
   </a>
@@ -1156,6 +883,399 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="aifw-reference.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    aifw commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reverse-proxy.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reverse proxy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sign-in.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sign-in and roles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="identity-providers.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Single sign-on
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="operate.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operate and upgrade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="backup-restore.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backup and restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="troubleshooting.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roll out the agent
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Roll out the agent
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/windows.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/macos.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    macOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/verify.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Check that computers joined
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/downloads.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scripts to download
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1203,10 +1323,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#windows-install-and-enrol" class="md-nav__link">
+  <a href="#download" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Windows: install and enrol
+        Download
       
     </span>
   </a>
@@ -1214,10 +1334,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#macos-write-the-enrolment-file" class="md-nav__link">
+  <a href="#before-you-start" class="md-nav__link">
     <span class="md-ellipsis">
       
-        macOS: write the enrolment file
+        Before you start
       
     </span>
   </a>
@@ -1225,10 +1345,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#keep-the-key-safe" class="md-nav__link">
+  <a href="#how-to-use-it" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Keep the key safe
+        How to use it
       
     </span>
   </a>
@@ -1236,10 +1356,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#not-provided" class="md-nav__link">
+  <a href="#what-the-script-does" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Not provided
+        What the script does
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Settings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#if-something-goes-wrong" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        If something goes wrong
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security notes
       
     </span>
   </a>
@@ -1263,35 +1416,194 @@
 
 
 
-<h1 id="scripts-to-download">Scripts to download<a class="headerlink" href="#scripts-to-download" title="Permanent link">&para;</a></h1>
-<p>Two small scripts help with a managed deployment. <strong>Neither has been tested on a pilot computer yet.</strong> Read each one, and try it on a single computer before you deploy it widely.</p>
-<div class="admonition warning">
-<p class="admonition-title">Not tested on a pilot computer</p>
-<p>ScienceSoft checked both scripts against the installer, but has not run them on a Windows computer or on an Apple silicon Mac. Read them, and try each one on a single computer first.</p>
-</div>
-<h2 id="windows-install-and-enrol">Windows: install and enrol<a class="headerlink" href="#windows-install-and-enrol" title="Permanent link">&para;</a></h2>
-<p><a href="files/install-ai-firewall.ps1">install-ai-firewall.ps1</a></p>
-<p>Installs the agent silently and joins the computer to your workspace. Does nothing if AI Firewall is already installed. It checks the address and the key, runs the installer, and turns the installer's result into a simple code: 0 for success, 1 for failure.</p>
-<div class="highlight"><pre><span></span><code><span class="p">.\</span><span class="nb">install-ai</span><span class="n">-firewall</span><span class="p">.</span><span class="n">ps1</span> <span class="p">`</span>
-  <span class="n">-InstallerPath</span> <span class="n">C</span><span class="p">:\</span><span class="n">Temp</span><span class="p">\</span><span class="n">AI-Firewall</span><span class="p">-&lt;</span><span class="n">version</span><span class="p">&gt;</span><span class="n">-x64</span><span class="p">.</span><span class="n">exe</span> <span class="p">`</span>
-  <span class="n">-FleetUrl</span> <span class="n">https</span><span class="p">://&lt;</span><span class="n">your-server</span><span class="p">&gt;</span> <span class="p">`</span>
-  <span class="n">-EnrollmentKey</span> <span class="p">&lt;</span><span class="n">enrolment-key</span><span class="p">&gt;</span>
+<h1 id="the-installer-script-installsh">The installer script: <code>install.sh</code><a class="headerlink" href="#the-installer-script-installsh" title="Permanent link">&para;</a></h1>
+<p><code>install.sh</code> is the first step of installing the ScienceSoft AI Endpoint Firewall server. It prepares an empty Ubuntu server and installs one command, <code>aifw</code>. You then run <code>aifw setup</code>, which installs and configures everything else: the server, the admin portal, the sign-in service, the database, HTTPS and monitoring.</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>bash<span class="w"> </span>install.sh
+sudo<span class="w"> </span>aifw<span class="w"> </span>setup
 </code></pre></div>
-<p>Use it as a Group Policy startup script (see <a href="windows.html#group-policy-startup-script">Windows</a>), as an Intune script, or by hand.</p>
-<h2 id="macos-write-the-enrolment-file">macOS: write the enrolment file<a class="headerlink" href="#macos-write-the-enrolment-file" title="Permanent link">&para;</a></h2>
-<p><a href="files/seed-enrollment.sh">seed-enrollment.sh</a></p>
-<p>Writes <code>/Library/Application Support/ai-firewall/enrollment.json</code> with the server address and the key, readable by root only. Run it <strong>before</strong> the package. See <a href="macos.html#the-enrolment-key-goes-in-a-file-not-in-the-command">macOS</a>.</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>./seed-enrollment.sh<span class="w"> </span>https://&lt;your-server&gt;<span class="w"> </span>&lt;enrolment-key&gt;
-</code></pre></div>
-<p>In Jamf Pro, add the script to the policy as <strong>Before</strong>, and give the address and the key as parameters 4 and 5.</p>
-<h2 id="keep-the-key-safe">Keep the key safe<a class="headerlink" href="#keep-the-key-safe" title="Permanent link">&para;</a></h2>
+<h2 id="download">Download<a class="headerlink" href="#download" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="files/install.sh">install.sh</a></td>
+<td>The installer script</td>
+</tr>
+<tr>
+<td><a href="files/README.txt">README.txt</a></td>
+<td>The same instructions as on this page, as a text file to keep next to the script</td>
+</tr>
+<tr>
+<td><a href="files/SHA256SUMS">SHA256SUMS</a></td>
+<td>The checksum of <code>install.sh</code>, to check that the file is intact</td>
+</tr>
+</tbody>
+</table>
+<p><strong>You need the registry access name and token from your welcome email to run it.</strong> The software cannot be downloaded without them. The script does not contain them.</p>
+<p>The script does not contain the registry access name or token. It contains the address of the software registry, which you can override with <code>AIFW_REGISTRY</code>.</p>
+<h2 id="before-you-start">Before you start<a class="headerlink" href="#before-you-start" title="Permanent link">&para;</a></h2>
 <ul>
-<li>A script with the key in it can join computers to your workspace. Keep it where only computer accounts or administrators can read it.</li>
-<li>Do not paste the key into a ticket or a chat.</li>
-<li>After the pilot, consider replacing the key.</li>
+<li>An <strong>Ubuntu server</strong>. Ubuntu 24.04 LTS is the tested system. On another system the script prints a note and continues. Intel/AMD (x86_64) and ARM (aarch64) processors are supported.</li>
+<li><strong>Administrator rights</strong> (you run it with <code>sudo</code>).</li>
+<li><strong>Internet access</strong> from the server: to the Ubuntu package archive, to the software registry and, for Let's Encrypt, to the certificate authority.</li>
+<li>The <strong>registry access name and token</strong>, and the <strong>license file</strong>, from your welcome email.</li>
+<li>The server size and ports from <a href="prerequisites.html">Prerequisites</a>.</li>
 </ul>
-<h2 id="not-provided">Not provided<a class="headerlink" href="#not-provided" title="Permanent link">&para;</a></h2>
-<p>AI Firewall has no Group Policy template, no Intune configuration profile and no macOS configuration profile. Templates that you may have seen for other ScienceSoft products do not work with it.</p>
+<p>Take a <strong>snapshot or backup</strong> of the server first.</p>
+<h2 id="how-to-use-it">How to use it<a class="headerlink" href="#how-to-use-it" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>Copy <code>install.sh</code> to the server. If you copied it from a Windows computer, convert the line endings first, or it can fail without a message:</p>
+<div class="highlight"><pre><span></span><code>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/\r$//&#39;</span><span class="w"> </span>install.sh
+</code></pre></div>
+</li>
+<li>
+<p>Check that the file is intact. Put <code>install.sh</code> and <code>SHA256SUMS</code> in the same folder. The result must be <code>OK</code>:</p>
+<div class="highlight"><pre><span></span><code>sha256sum<span class="w"> </span>-c<span class="w"> </span>SHA256SUMS
+</code></pre></div>
+</li>
+<li>
+<p>Run the script as administrator:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>bash<span class="w"> </span>install.sh
+</code></pre></div>
+</li>
+<li>
+<p>When asked, enter the <strong>registry access name</strong> and the <strong>access token</strong>. The token you type is hidden. They are checked at once.</p>
+</li>
+<li>
+<p>Wait for the script to finish. It ends with:</p>
+<div class="highlight"><pre><span></span><code>Done. The aifw command is installed:
+aifw &lt;version&gt;
+
+Next step:  sudo aifw setup
+</code></pre></div>
+</li>
+<li>
+<p>Check the server, then set it up. See <a href="install.html">Install the server</a> and the <a href="aifw-reference.html">aifw command reference</a>:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>aifw<span class="w"> </span>preflight
+sudo<span class="w"> </span>aifw<span class="w"> </span>setup
+</code></pre></div>
+</li>
+</ol>
+<h2 id="what-the-script-does">What the script does<a class="headerlink" href="#what-the-script-does" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Checks that you run it as administrator.</li>
+<li>Notes the operating system. It continues on a system other than Ubuntu 24.04.</li>
+<li>Checks the processor type. Anything other than x86_64 or aarch64 stops the script <strong>before anything is changed</strong>.</li>
+<li>Installs <strong>Docker Engine</strong> and the <strong>Docker Compose</strong> component if they are missing. Docker comes from the Ubuntu package archive.</li>
+<li>Signs in to the software registry with your access name and token, and checks them.</li>
+<li>Downloads the installer image for this processor type and takes the <code>aifw</code> command out of it.</li>
+<li>Puts <code>aifw</code> at <code>/usr/local/bin/aifw</code> and prints its version.</li>
+</ol>
+<p>It does <strong>not</strong> set up the server. That is <code>aifw setup</code>.</p>
+<p>The registry sign-in is stored for the administrator account (<code>root</code>) in Docker's settings, so that <code>aifw upgrade</code> can download newer versions later. The access token should be a <strong>read-only</strong> token.</p>
+<h2 id="settings">Settings<a class="headerlink" href="#settings" title="Permanent link">&para;</a></h2>
+<p>For an unattended installation, give the script its settings as environment variables. All are optional, except the two access values, which the script asks for when they are not set.</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AIFW_REGISTRY_USER</code></td>
+<td>The registry access name</td>
+</tr>
+<tr>
+<td><code>AIFW_REGISTRY_TOKEN</code></td>
+<td>The registry access token</td>
+</tr>
+<tr>
+<td><code>AIFW_VERSION</code></td>
+<td>The version of the installer to download. By default: the newest published version</td>
+</tr>
+<tr>
+<td><code>AIFW_REGISTRY</code></td>
+<td>The software registry address (set by default)</td>
+</tr>
+<tr>
+<td><code>AIFW_REGISTRY_PATH</code></td>
+<td>The project in the registry (set by default)</td>
+</tr>
+</tbody>
+</table>
+<p>Example, with no questions asked:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span><span class="nv">AIFW_REGISTRY_USER</span><span class="o">=</span><span class="s1">&#39;&lt;name&gt;&#39;</span><span class="w"> </span><span class="nv">AIFW_REGISTRY_TOKEN</span><span class="o">=</span><span class="s1">&#39;&lt;token&gt;&#39;</span><span class="w"> </span>bash<span class="w"> </span>install.sh
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">A command line is not private</p>
+<p>Other users of the server can see a command line for a moment, and it can stay in the shell history. Prefer the questions on the screen, unless the installation is automated and the secret comes from a secret store.</p>
+</div>
+<p>To install a specific version:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span><span class="nv">AIFW_VERSION</span><span class="o">=</span>&lt;version&gt;<span class="w"> </span>bash<span class="w"> </span>install.sh
+</code></pre></div>
+<p>Running the script again is safe. It repairs a damaged <code>aifw</code> command. It downloads the newest published version unless you set <code>AIFW_VERSION</code>, so on a server that already works set <code>AIFW_VERSION</code> to the version it runs, or use <code>aifw upgrade</code> instead.</p>
+<h2 id="if-something-goes-wrong">If something goes wrong<a class="headerlink" href="#if-something-goes-wrong" title="Permanent link">&para;</a></h2>
+<p>The script stops with a line that starts with <strong>"Problem:"</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>The message says</th>
+<th>What to do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>This installer needs administrator rights</td>
+<td>Run it with <code>sudo</code>: <code>sudo bash install.sh</code></td>
+</tr>
+<tr>
+<td>The software is published for Intel/AMD (x86_64) and ARM (aarch64) servers</td>
+<td>The server has another processor type. Use a supported server</td>
+</tr>
+<tr>
+<td>Another program is installing software right now</td>
+<td>Often the automatic security updater, just after boot. Wait a minute and run the script again</td>
+</tr>
+<tr>
+<td>This server could not reach the Ubuntu package archive</td>
+<td>Check the internet access and proxy settings of the server</td>
+</tr>
+<tr>
+<td>Both the access name and the token are needed</td>
+<td>Both are in your welcome email. Ask your ScienceSoft contact if you cannot find them</td>
+</tr>
+<tr>
+<td>The registry did not accept the access token</td>
+<td>Check for typing mistakes. If it still fails, ask for a new token</td>
+</tr>
+<tr>
+<td>Could not download the installer image</td>
+<td>Check the internet access of the server to the software registry</td>
+</tr>
+<tr>
+<td>This version was not published for this machine</td>
+<td>There is no build for this processor type. Ask your ScienceSoft contact, or use an Intel/AMD server</td>
+</tr>
+<tr>
+<td>Could not write the <code>aifw</code> command</td>
+<td>The disk is full or read-only. Check it with <code>df -h /usr/local/bin</code></td>
+</tr>
+<tr>
+<td>Docker is installed but not running</td>
+<td>Start it with <code>systemctl start docker</code></td>
+</tr>
+</tbody>
+</table>
+<p>After you fix the cause, run the script again. For problems with setup, see <a href="troubleshooting.html">Troubleshooting</a>.</p>
+<h2 id="security-notes">Security notes<a class="headerlink" href="#security-notes" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Read the script before you run it as administrator.</strong> It is a short, plain shell script.</li>
+<li>Download it only from this site or from your welcome email, and check the checksum.</li>
+<li>Keep the access token secret. Do not put it into tickets or chats.</li>
+</ul>
 
 
 
@@ -1330,7 +1642,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="verify.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Check that computers joined">
+          <a href="install.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Install the server">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1340,11 +1652,27 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Check that computers joined
+                Install the server
               </div>
             </div>
           </a>
         
+        
+          
+          <a href="aifw-reference.html" class="md-footer__link md-footer__link--next" aria-label="Next: aifw commands">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                aifw commands
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
         
       </nav>
     

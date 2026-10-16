@@ -6,33 +6,33 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Everyday aifw commands, backups, upgrade and rollback for the ScienceSoft AI Endpoint Firewall server.">
+        <meta name="description" content="Install the ScienceSoft AI Endpoint Firewall server on your own Ubuntu machine: prerequisites, the installer script, aifw setup, HTTPS, sign-in, upgrades, backups and troubleshooting.">
       
       
       
       
-        <link rel="prev" href="identity-providers.html">
+        <link rel="prev" href="../index.html">
       
       
-        <link rel="next" href="backup-restore.html">
+        <link rel="next" href="prerequisites.html">
       
       
         
       
       
-      <link rel="icon" href="../assets/favicon.svg">
+      <link rel="icon" href="../../assets/favicon.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>Operate, monitor and upgrade the server - ScienceSoft AI Endpoint Firewall</title>
+        <title>Set up your self-hosted server - ScienceSoft AI Endpoint Firewall</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -53,9 +53,9 @@
       
     
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -85,7 +85,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#operate-and-upgrade" class="md-skip">
+        <a href="#set-up-your-self-hosted-server" class="md-skip">
           Skip to content
         </a>
       
@@ -101,9 +101,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="ScienceSoft AI Endpoint Firewall" class="md-header__button md-logo" aria-label="ScienceSoft AI Endpoint Firewall" data-md-component="logo">
+    <a href="../.." title="ScienceSoft AI Endpoint Firewall" class="md-header__button md-logo" aria-label="ScienceSoft AI Endpoint Firewall" data-md-component="logo">
       
-  <img src="../assets/logo-white.svg" alt="logo">
+  <img src="../../assets/logo-white.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -120,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Operate, monitor and upgrade the server
+              Set up your self-hosted server
             
           </span>
         </div>
@@ -226,9 +226,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="ScienceSoft AI Endpoint Firewall" class="md-nav__button md-logo" aria-label="ScienceSoft AI Endpoint Firewall" data-md-component="logo">
+    <a href="../.." title="ScienceSoft AI Endpoint Firewall" class="md-nav__button md-logo" aria-label="ScienceSoft AI Endpoint Firewall" data-md-component="logo">
       
-  <img src="../assets/logo-white.svg" alt="logo">
+  <img src="../../assets/logo-white.svg" alt="logo">
 
     </a>
     ScienceSoft AI Endpoint Firewall
@@ -295,7 +295,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../index.html" class="md-nav__link">
+      <a href="../../index.html" class="md-nav__link">
         
   
   
@@ -323,7 +323,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../install.html" class="md-nav__link">
+      <a href="../../install.html" class="md-nav__link">
         
   
   
@@ -351,7 +351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../management.html" class="md-nav__link">
+      <a href="../../management.html" class="md-nav__link">
         
   
   
@@ -379,7 +379,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../check-status.html" class="md-nav__link">
+      <a href="../../check-status.html" class="md-nav__link">
         
   
   
@@ -407,7 +407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../coverage.html" class="md-nav__link">
+      <a href="../../coverage.html" class="md-nav__link">
         
   
   
@@ -435,7 +435,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../troubleshooting.html" class="md-nav__link">
+      <a href="../../troubleshooting.html" class="md-nav__link">
         
   
   
@@ -463,7 +463,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../faq.html" class="md-nav__link">
+      <a href="../../faq.html" class="md-nav__link">
         
   
   
@@ -491,7 +491,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../uninstall.html" class="md-nav__link">
+      <a href="../../uninstall.html" class="md-nav__link">
         
   
   
@@ -580,7 +580,7 @@
   
   
     <li class="md-nav__item">
-      <a href="index.html" class="md-nav__link">
+      <a href="../index.html" class="md-nav__link">
         
   
   
@@ -596,6 +596,154 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Set up your self-hosted server
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Set up your self-hosted server
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="index.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-part-covers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What this part covers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-installation-at-a-glance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The installation at a glance
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -801,37 +949,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Operate and upgrade
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="operate.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="operate.html" class="md-nav__link">
         
   
   
@@ -847,92 +968,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#everyday-commands" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Everyday commands
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#backups" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Backups
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#upgrade" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Upgrade
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#roll-back" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Roll back
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#re-running-setup" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Re-running setup
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#monitoring" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Monitoring
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -994,6 +1029,14 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
               
                 
   
@@ -1011,10 +1054,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_12" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
-          <label class="md-nav__link" for="__nav_2_12" id="__nav_2_12_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
             
   
   
@@ -1032,8 +1075,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_12_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_12">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1050,7 +1093,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devices/index.html" class="md-nav__link">
+      <a href="../agents/index.html" class="md-nav__link">
         
   
   
@@ -1078,7 +1121,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devices/windows.html" class="md-nav__link">
+      <a href="../agents/windows.html" class="md-nav__link">
         
   
   
@@ -1106,7 +1149,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devices/macos.html" class="md-nav__link">
+      <a href="../agents/macos.html" class="md-nav__link">
         
   
   
@@ -1134,7 +1177,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devices/verify.html" class="md-nav__link">
+      <a href="../agents/verify.html" class="md-nav__link">
         
   
   
@@ -1162,7 +1205,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devices/downloads.html" class="md-nav__link">
+      <a href="../agents/downloads.html" class="md-nav__link">
         
   
   
@@ -1225,10 +1268,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#everyday-commands" class="md-nav__link">
+  <a href="#what-this-part-covers" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Everyday commands
+        What this part covers
       
     </span>
   </a>
@@ -1236,54 +1279,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#backups" class="md-nav__link">
+  <a href="#the-installation-at-a-glance" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Backups
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#upgrade" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Upgrade
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#roll-back" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Roll back
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#re-running-setup" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Re-running setup
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#monitoring" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Monitoring
+        The installation at a glance
       
     </span>
   </a>
@@ -1307,80 +1306,68 @@
 
 
 
-<h1 id="operate-and-upgrade">Operate and upgrade<a class="headerlink" href="#operate-and-upgrade" title="Permanent link">&para;</a></h1>
-<p>All commands run on the server, as the administrator (use <code>sudo</code>).</p>
-<h2 id="everyday-commands">Everyday commands<a class="headerlink" href="#everyday-commands" title="Permanent link">&para;</a></h2>
+<h1 id="set-up-your-self-hosted-server">Set up your self-hosted server<a class="headerlink" href="#set-up-your-self-hosted-server" title="Permanent link">&para;</a></h1>
+<p>The server holds your policy, the list of computers, the audit records and the admin portal. You install and run it on one Linux server that you own. This part of the guide takes you from an empty Ubuntu server to a working installation, and then shows how to keep it healthy.</p>
+<h2 id="what-this-part-covers">What this part covers<a class="headerlink" href="#what-this-part-covers" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Command</th>
-<th>What it does</th>
+<th>Page</th>
+<th>Read it to learn</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>aifw status</code></td>
-<td>Shows whether everything is healthy. Safe to run at any time.</td>
+<td><a href="prerequisites.html">Prerequisites</a></td>
+<td>What you need before you start: the server, the network, and what you receive from us.</td>
 </tr>
 <tr>
-<td><code>aifw doctor</code></td>
-<td>Looks for problems and explains what it finds.</td>
+<td><a href="install.html">Install the server</a></td>
+<td>Step by step: from an empty Ubuntu server to a working AI Firewall.</td>
 </tr>
 <tr>
-<td><code>aifw security-audit</code></td>
-<td>Checks the security settings of the server.</td>
+<td><a href="install-script.html">The installer script</a></td>
+<td>Download <code>install.sh</code> with its README and checksum, and how to use it.</td>
 </tr>
 <tr>
-<td><code>aifw versions</code></td>
-<td>Lists the versions you can upgrade to.</td>
+<td><a href="aifw-reference.html">aifw commands</a></td>
+<td>Every <code>aifw</code> command with example output: setup, status, doctor, backup, upgrade.</td>
 </tr>
 <tr>
-<td><code>aifw backup</code></td>
-<td>Makes a backup now. See <a href="backup-restore.html">Backup and restore</a>.</td>
+<td><a href="reverse-proxy.html">Reverse proxy</a></td>
+<td>How to put your own load balancer or proxy in front of the server.</td>
 </tr>
 <tr>
-<td><code>aifw --version</code></td>
-<td>Shows the version of the <code>aifw</code> command.</td>
+<td><a href="sign-in.html">Sign-in and roles</a></td>
+<td>The first sign-in, who can do what, and the sign-in service console.</td>
+</tr>
+<tr>
+<td><a href="identity-providers.html">Single sign-on</a></td>
+<td>Letting people sign in with your company directory, for example Microsoft Entra ID.</td>
+</tr>
+<tr>
+<td><a href="operate.html">Operate and upgrade</a></td>
+<td>Checking health, upgrades and rolling back.</td>
+</tr>
+<tr>
+<td><a href="backup-restore.html">Backup and restore</a></td>
+<td>What to back up, how, and how to bring the server back.</td>
+</tr>
+<tr>
+<td><a href="troubleshooting.html">Troubleshooting</a></td>
+<td>What to do when the installation or sign-in does not work.</td>
 </tr>
 </tbody>
 </table>
-<p><code>aifw security-audit</code> checks the safety of the server: the firewall, the SSH settings, file permissions, the license, the sign-in service settings and pending system updates. It changes nothing. <code>aifw doctor</code> runs the machine checks, the health checks and the security checks, and prints one numbered list of findings with a fix beside each. It changes nothing too. Both end with a summary line, and return a non-zero exit code if a requirement is not met.</p>
-<h2 id="backups">Backups<a class="headerlink" href="#backups" title="Permanent link">&para;</a></h2>
-<p>The database holds everything: workspaces, devices, audit history and usage statistics. Back it up and keep the backups <strong>away from the server</strong>.</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>aifw<span class="w"> </span>backup
-</code></pre></div>
-<ul>
-<li>It writes a dated copy of <strong>both databases</strong> and a copy of the settings file (<code>.env</code>) into the <code>backups</code> folder under the install folder. It keeps the last 30 days.</li>
-<li>Setup also installs a <strong>daily timer</strong> that runs the backup.</li>
-<li>If you set <code>AIFW_BACKUP_REMOTE</code>, it copies the <strong>database dump only</strong> to that place. <strong>The copy of the settings file stays on the server.</strong> Move it to your backup storage yourself. A database dump alone cannot be restored without it.</li>
-<li>Some data is not saved by <code>aifw backup</code>: captured data, policy presets and your own TLS certificate.</li>
-</ul>
-<p>The full list, the steps for a complete backup and the <strong>restore procedure</strong> are on <a href="backup-restore.html">Backup and restore</a>. There is no restore command: restoring is a manual procedure. Read it, and rehearse it on a test server, before you need it.</p>
-<h2 id="upgrade">Upgrade<a class="headerlink" href="#upgrade" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>aifw<span class="w"> </span>versions<span class="w">               </span><span class="c1"># what can I upgrade to?</span>
-sudo<span class="w"> </span>aifw<span class="w"> </span>upgrade<span class="w"> </span>--version<span class="w"> </span>&lt;version&gt;
-sudo<span class="w"> </span>aifw<span class="w"> </span>status
-</code></pre></div>
-<ul>
-<li>Take a snapshot or a backup first. <code>aifw upgrade</code> also makes a backup before it changes anything, and stops if that backup fails.</li>
-<li>The database is upgraded automatically. Updates are additive, so a server upgrade does not reject or lose data from computers that already use AI Firewall.</li>
-<li>After the upgrade, check <code>https://&lt;your-address&gt;/health</code>.</li>
-<li><code>aifw upgrade</code> does not apply new sign-in settings. After an upgrade that adds them, run <code>sudo aifw setup</code> once. See <a href="aifw-reference.html#aifw-upgrade">aifw commands</a>.</li>
-</ul>
-<h2 id="roll-back">Roll back<a class="headerlink" href="#roll-back" title="Permanent link">&para;</a></h2>
-<p>If the new version does not work, go back to the previous one:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>aifw<span class="w"> </span>upgrade<span class="w"> </span>--version<span class="w"> </span>&lt;previous-version&gt;
-</code></pre></div>
-<p>There is no separate rollback command. In a terminal the command warns that older software will run against data that the newer version already changed, and asks you to confirm. In a script it refuses. If you must go back, restore the snapshot or the backup that you took before the upgrade.</p>
-<h2 id="re-running-setup">Re-running setup<a class="headerlink" href="#re-running-setup" title="Permanent link">&para;</a></h2>
-<p>Running <code>aifw setup</code> again is safe. It checks every part of the installation and repairs what has drifted, without touching your data, and offers your previous answers. Use <code>aifw setup --check</code> first to see what would change. Setup does not change the public address, the version or the administrator e-mail of a server that is already set up. It stops and names the setting. To move to a newer version, use <code>aifw upgrade</code>. See <a href="install.html#step-4-run-setup">Install the server</a>.</p>
-<h2 id="monitoring">Monitoring<a class="headerlink" href="#monitoring" title="Permanent link">&para;</a></h2>
-<p>The installation includes Grafana (dashboards) and Prometheus (metrics, kept for 30 days). They are not on the public address. The Grafana user is <code>admin</code>, and its password is in <code>credentials.txt</code>.</p>
-<ul>
-<li><strong>The dashboard</strong> "ai-firewall — Production Overview" shows whether the server answers, how long <code>/health</code> takes, the database connections and size, and how many computers are in a degraded protection state.</li>
-<li><strong>One alert rule ships.</strong> It fires when a computer's protection has been degraded for more than 10 minutes: its traffic is sent unprotected or is blocked. Alerts are not sent by e-mail. Look at them in Prometheus under <em>Status</em>, then <em>Alerts</em>, or add your own alerting.</li>
-<li><strong>How to open them.</strong> Grafana and Prometheus have no port on the server's network, so a tunnel to port 3000 on the server itself does not reach them in the shipped configuration. Ask your ScienceSoft representative how to open them in your installation.</li>
-</ul>
+<h2 id="the-installation-at-a-glance">The installation at a glance<a class="headerlink" href="#the-installation-at-a-glance" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Get the server ready and the network open (see <a href="prerequisites.html">Prerequisites</a>).</li>
+<li>Run the installer script <code>install.sh</code>. It installs Docker and the <code>aifw</code> command.</li>
+<li>Run <code>aifw preflight</code>, then <code>aifw setup</code>. Setup asks a few questions and does the rest.</li>
+<li>Save the sign-in details that setup shows, then sign in to the admin portal.</li>
+</ol>
+<p>It takes about 20 minutes on a prepared server.</p>
+<p>When the server runs, continue with <a href="../agents/index.html">Roll out the agent</a>.</p>
 
 
 
@@ -1419,7 +1406,7 @@ sudo<span class="w"> </span>aifw<span class="w"> </span>status
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="identity-providers.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Single sign-on">
+          <a href="../index.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1429,20 +1416,20 @@ sudo<span class="w"> </span>aifw<span class="w"> </span>status
                 Previous
               </span>
               <div class="md-ellipsis">
-                Single sign-on
+                Overview
               </div>
             </div>
           </a>
         
         
           
-          <a href="backup-restore.html" class="md-footer__link md-footer__link--next" aria-label="Next: Backup and restore">
+          <a href="prerequisites.html" class="md-footer__link md-footer__link--next" aria-label="Next: Prerequisites">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Backup and restore
+                Prerequisites
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1483,10 +1470,10 @@ sudo<span class="w"> </span>aifw<span class="w"> </span>status
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.top", "navigation.sections", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "navigation.sections", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

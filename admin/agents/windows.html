@@ -6,33 +6,33 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="How to put nginx, IIS or HAProxy in front of the ScienceSoft AI Endpoint Firewall server: required headers, WebSocket, 600-second timeout and no response buffering.">
+        <meta name="description" content="Silent installation switches, exit codes, Microsoft Intune Win32 app settings and a Group Policy startup script for the ScienceSoft AI Endpoint Firewall agent.">
       
       
       
       
-        <link rel="prev" href="aifw-reference.html">
+        <link rel="prev" href="index.html">
       
       
-        <link rel="next" href="sign-in.html">
+        <link rel="next" href="macos.html">
       
       
         
       
       
-      <link rel="icon" href="../assets/favicon.svg">
+      <link rel="icon" href="../../assets/favicon.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>Reverse proxy and load balancer settings - ScienceSoft AI Endpoint Firewall</title>
+        <title>Deploy the agent on Windows (silent install, Intune, Group Policy) - ScienceSoft AI Endpoint Firewall</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -53,9 +53,9 @@
       
     
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -85,7 +85,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#reverse-proxy" class="md-skip">
+        <a href="#windows" class="md-skip">
           Skip to content
         </a>
       
@@ -101,9 +101,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="ScienceSoft AI Endpoint Firewall" class="md-header__button md-logo" aria-label="ScienceSoft AI Endpoint Firewall" data-md-component="logo">
+    <a href="../.." title="ScienceSoft AI Endpoint Firewall" class="md-header__button md-logo" aria-label="ScienceSoft AI Endpoint Firewall" data-md-component="logo">
       
-  <img src="../assets/logo-white.svg" alt="logo">
+  <img src="../../assets/logo-white.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -120,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Reverse proxy and load balancer settings
+              Deploy the agent on Windows (silent install, Intune, Group Policy)
             
           </span>
         </div>
@@ -226,9 +226,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="ScienceSoft AI Endpoint Firewall" class="md-nav__button md-logo" aria-label="ScienceSoft AI Endpoint Firewall" data-md-component="logo">
+    <a href="../.." title="ScienceSoft AI Endpoint Firewall" class="md-nav__button md-logo" aria-label="ScienceSoft AI Endpoint Firewall" data-md-component="logo">
       
-  <img src="../assets/logo-white.svg" alt="logo">
+  <img src="../../assets/logo-white.svg" alt="logo">
 
     </a>
     ScienceSoft AI Endpoint Firewall
@@ -295,7 +295,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../index.html" class="md-nav__link">
+      <a href="../../index.html" class="md-nav__link">
         
   
   
@@ -323,7 +323,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../install.html" class="md-nav__link">
+      <a href="../../install.html" class="md-nav__link">
         
   
   
@@ -351,7 +351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../management.html" class="md-nav__link">
+      <a href="../../management.html" class="md-nav__link">
         
   
   
@@ -379,7 +379,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../check-status.html" class="md-nav__link">
+      <a href="../../check-status.html" class="md-nav__link">
         
   
   
@@ -407,7 +407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../coverage.html" class="md-nav__link">
+      <a href="../../coverage.html" class="md-nav__link">
         
   
   
@@ -435,7 +435,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../troubleshooting.html" class="md-nav__link">
+      <a href="../../troubleshooting.html" class="md-nav__link">
         
   
   
@@ -463,7 +463,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../faq.html" class="md-nav__link">
+      <a href="../../faq.html" class="md-nav__link">
         
   
   
@@ -491,7 +491,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../uninstall.html" class="md-nav__link">
+      <a href="../../uninstall.html" class="md-nav__link">
         
   
   
@@ -580,7 +580,84 @@
   
   
     <li class="md-nav__item">
-      <a href="index.html" class="md-nav__link">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Set up your self-hosted server
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Set up your self-hosted server
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../server/index.html" class="md-nav__link">
         
   
   
@@ -608,7 +685,7 @@
   
   
     <li class="md-nav__item">
-      <a href="prerequisites.html" class="md-nav__link">
+      <a href="../server/prerequisites.html" class="md-nav__link">
         
   
   
@@ -636,7 +713,7 @@
   
   
     <li class="md-nav__item">
-      <a href="install.html" class="md-nav__link">
+      <a href="../server/install.html" class="md-nav__link">
         
   
   
@@ -664,7 +741,7 @@
   
   
     <li class="md-nav__item">
-      <a href="install-script.html" class="md-nav__link">
+      <a href="../server/install-script.html" class="md-nav__link">
         
   
   
@@ -692,7 +769,7 @@
   
   
     <li class="md-nav__item">
-      <a href="aifw-reference.html" class="md-nav__link">
+      <a href="../server/aifw-reference.html" class="md-nav__link">
         
   
   
@@ -700,6 +777,261 @@
     
   
     aifw commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../server/reverse-proxy.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reverse proxy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../server/sign-in.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sign-in and roles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../server/identity-providers.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Single sign-on
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../server/operate.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operate and upgrade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../server/backup-restore.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backup and restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../server/troubleshooting.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roll out the agent
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Roll out the agent
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
   
 
     
@@ -736,7 +1068,7 @@
   <span class="md-ellipsis">
     
   
-    Reverse proxy
+    Windows
   
 
     
@@ -747,14 +1079,14 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="reverse-proxy.html" class="md-nav__link md-nav__link--active">
+      <a href="windows.html" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    Reverse proxy
+    Windows
   
 
     
@@ -780,22 +1112,33 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-the-proxy-must-do" class="md-nav__link">
+  <a href="#install-on-one-computer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What the proxy must do
+        Install on one computer
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="What the proxy must do">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#silent-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Silent installation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Silent installation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#why-these-values" class="md-nav__link">
+  <a href="#exit-codes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why these values
+        Exit codes
       
     </span>
   </a>
@@ -808,10 +1151,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#nginx" class="md-nav__link">
+  <a href="#microsoft-intune" class="md-nav__link">
     <span class="md-ellipsis">
       
-        nginx
+        Microsoft Intune
       
     </span>
   </a>
@@ -819,10 +1162,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#iis-with-url-rewrite-and-arr" class="md-nav__link">
+  <a href="#group-policy-startup-script" class="md-nav__link">
     <span class="md-ellipsis">
       
-        IIS with URL Rewrite and ARR
+        Group Policy (startup script)
       
     </span>
   </a>
@@ -830,21 +1173,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#haproxy" class="md-nav__link">
+  <a href="#remove-the-agent" class="md-nav__link">
     <span class="md-ellipsis">
       
-        HAProxy
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#check-after-you-configure-the-proxy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Check after you configure the proxy
+        Remove the agent
       
     </span>
   </a>
@@ -867,252 +1199,7 @@
   
   
     <li class="md-nav__item">
-      <a href="sign-in.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Sign-in and roles
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="identity-providers.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Single sign-on
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="operate.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Operate and upgrade
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="backup-restore.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Backup and restore
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="troubleshooting.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Troubleshooting
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_12" >
-        
-          
-          <label class="md-nav__link" for="__nav_2_12" id="__nav_2_12_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Roll out the agent
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_12_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_12">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Roll out the agent
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="devices/index.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="devices/windows.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Windows
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="devices/macos.html" class="md-nav__link">
+      <a href="macos.html" class="md-nav__link">
         
   
   
@@ -1140,7 +1227,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devices/verify.html" class="md-nav__link">
+      <a href="verify.html" class="md-nav__link">
         
   
   
@@ -1168,7 +1255,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devices/downloads.html" class="md-nav__link">
+      <a href="downloads.html" class="md-nav__link">
         
   
   
@@ -1231,22 +1318,33 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-the-proxy-must-do" class="md-nav__link">
+  <a href="#install-on-one-computer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What the proxy must do
+        Install on one computer
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="What the proxy must do">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#silent-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Silent installation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Silent installation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#why-these-values" class="md-nav__link">
+  <a href="#exit-codes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why these values
+        Exit codes
       
     </span>
   </a>
@@ -1259,10 +1357,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#nginx" class="md-nav__link">
+  <a href="#microsoft-intune" class="md-nav__link">
     <span class="md-ellipsis">
       
-        nginx
+        Microsoft Intune
       
     </span>
   </a>
@@ -1270,10 +1368,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#iis-with-url-rewrite-and-arr" class="md-nav__link">
+  <a href="#group-policy-startup-script" class="md-nav__link">
     <span class="md-ellipsis">
       
-        IIS with URL Rewrite and ARR
+        Group Policy (startup script)
       
     </span>
   </a>
@@ -1281,21 +1379,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#haproxy" class="md-nav__link">
+  <a href="#remove-the-agent" class="md-nav__link">
     <span class="md-ellipsis">
       
-        HAProxy
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#check-after-you-configure-the-proxy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Check after you configure the proxy
+        Remove the agent
       
     </span>
   </a>
@@ -1319,139 +1406,144 @@
 
 
 
-<h1 id="reverse-proxy">Reverse proxy<a class="headerlink" href="#reverse-proxy" title="Permanent link">&para;</a></h1>
-<p>Use this page when your own load balancer or reverse proxy ends HTTPS in front of the server (HTTPS option 3 in <a href="install.html#how-https-is-handled">Install the server</a>). Set the proxy up <strong>before</strong> you run setup, and before the first device connects.</p>
-<p>You can use nginx, IIS, HAProxy, or a load balancer from your cloud provider.</p>
-<h2 id="what-the-proxy-must-do">What the proxy must do<a class="headerlink" href="#what-the-proxy-must-do" title="Permanent link">&para;</a></h2>
+<h1 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h1>
+<h2 id="install-on-one-computer">Install on one computer<a class="headerlink" href="#install-on-one-computer" title="Permanent link">&para;</a></h2>
+<p>Run the installer as an administrator. You will see a short wizard and one administrator prompt. The enrolment key and the server address are given on the command line, so the computer joins your workspace by itself.</p>
+<h2 id="silent-installation">Silent installation<a class="headerlink" href="#silent-installation" title="Permanent link">&para;</a></h2>
+<p>Run the installer from an elevated command prompt, or as the system account (as Intune and most deployment tools do):</p>
+<div class="highlight"><pre><span></span><code>AI-Firewall-&lt;version&gt;-x64.exe /S /FLEET_URL=&quot;https://&lt;your-server&gt;&quot; /ENROLL_TOKEN=&quot;&lt;enrolment-key&gt;&quot;
+</code></pre></div>
 <table>
 <thead>
 <tr>
-<th>Requirement</th>
+<th>Switch</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/S</code></td>
+<td>Silent: no windows.</td>
+</tr>
+<tr>
+<td><code>/FLEET_URL=</code></td>
+<td>The address of your server. Must start with <code>https://</code>.</td>
+</tr>
+<tr>
+<td><code>/ENROLL_TOKEN=</code></td>
+<td>The device enrolment key.</td>
+</tr>
+<tr>
+<td><code>/UPDATE_URL=</code></td>
+<td>Optional. Where the agent looks for updates, usually <code>https://&lt;your-server&gt;/updates/generic</code>.</td>
+</tr>
+<tr>
+<td><code>/D=&lt;folder&gt;</code></td>
+<td>Optional. The install folder. It must be the last switch. Use the default folder. A folder that is a link to another place, or is inside a user's profile folder, is refused on a new install. A drive root or a system folder is not locked down.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Give both <code>/FLEET_URL</code> and <code>/ENROLL_TOKEN</code>.</strong> If only one is given, the installer ignores both and the computer works on its own, without your workspace.</li>
+<li>Put the values in quotes. If you start the installer from PowerShell, use <code>Start-Process -Wait</code> and read the exit code.</li>
+<li>The installer does not restart the computer.</li>
+</ul>
+<h3 id="exit-codes">Exit codes<a class="headerlink" href="#exit-codes" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Meaning</th>
+<th>What to do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Installed</td>
+<td>Success. Check that the computer joined in the portal.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Cancelled</td>
+<td>Someone stopped the installer.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Not installed</td>
+<td>The previous version could not be removed, or the install folder is a link to another place or is inside a user's profile folder, or the folder <code>%ProgramData%\ai-firewall</code> could not be secured. Choose a folder under Program Files. If a file was held open, restart the computer and run the installer again.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Installed, but not locked down</td>
+<td>The app is installed, but the install folder was not locked, or the protection service may not have been registered. This happens on an update, with the folder problems described for code 2. Treat it as success for the rollout, then reinstall into the default folder.</td>
+</tr>
+</tbody>
+</table>
+<p>A missing or incomplete server address still returns 0, and the computer then works on its own. The reason is written to <code>%ProgramData%\ai-firewall\install-enrolment.log</code>. Check the result with <a href="verify.html">Check that computers joined</a>.</p>
+<p>The reason for code 3 is shown only in the installer window, which is hidden in a silent install. It is not written to the Windows event log.</p>
+<h2 id="microsoft-intune">Microsoft Intune<a class="headerlink" href="#microsoft-intune" title="Permanent link">&para;</a></h2>
+<p>The installer is an <code>.exe</code>, not an <code>.msi</code>. Deploy it as a <strong>Windows app (Win32)</strong>.</p>
+<ol>
+<li>Put the <code>.exe</code> alone in an empty folder.</li>
+<li>Wrap it with the <em>Microsoft Win32 Content Prep Tool</em> (<code>IntuneWinAppUtil.exe</code>). It produces an <code>.intunewin</code> file.</li>
+<li>In Intune, add a <strong>Windows app (Win32)</strong> and upload the file.</li>
+<li>
+<p>Set the commands:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
 <th>Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Public address</td>
-<td>HTTPS on port 443 for your server's name, with your certificate. HTTPS ends at the proxy</td>
+<td>Install command</td>
+<td><code>AI-Firewall-&lt;version&gt;-x64.exe /S /FLEET_URL="https://&lt;your-server&gt;" /ENROLL_TOKEN="&lt;enrolment-key&gt;"</code></td>
 </tr>
 <tr>
-<td>Where it sends traffic</td>
-<td>Everything (<code>/</code>) to <code>http://&lt;server-ip&gt;:8090</code></td>
+<td>Uninstall command</td>
+<td><code>"%ProgramFiles%\AI Firewall\Uninstall AI Firewall.exe" /allusers /S</code></td>
 </tr>
 <tr>
-<td>Server firewall</td>
-<td>Port 8090 open <strong>only to the proxy's address</strong></td>
+<td>Install behavior</td>
+<td>System</td>
 </tr>
 <tr>
-<td>Headers</td>
-<td>Keep the original <code>Host</code>. Send <code>X-Forwarded-Proto: https</code> and <code>X-Forwarded-Host: &lt;your-name&gt;</code></td>
-</tr>
-<tr>
-<td>WebSocket</td>
-<td>Pass the <code>Upgrade</code> and <code>Connection</code> headers through</td>
-</tr>
-<tr>
-<td>Timeouts</td>
-<td>An idle (read and send) timeout of <strong>600 seconds or more</strong></td>
-</tr>
-<tr>
-<td>Buffering</td>
-<td>Streamed responses (<code>text/event-stream</code>) must reach the client as they are written, not when the response ends</td>
-</tr>
-<tr>
-<td>Request size</td>
-<td>Allow request bodies of at least 8 MB. Computers upload audit data in bodies of up to 8 MB. nginx refuses bodies over 1 MB by default</td>
+<td>Restart behavior</td>
+<td>No specific action</td>
 </tr>
 </tbody>
 </table>
-<p>You do not need to do anything for the sign-in service console. The server refuses it on the public address. Administrators reach it through an SSH tunnel (see <a href="sign-in.html">Sign-in and roles</a>).</p>
-<h3 id="why-these-values">Why these values<a class="headerlink" href="#why-these-values" title="Permanent link">&para;</a></h3>
-<p>The server keeps long connections open:</p>
-<ul>
-<li>Every managed computer keeps a stream open, so that a policy change reaches it at once. The server sends a keep-alive signal every 25 seconds.</li>
-<li>The admin portal keeps streams open for audit records, with a keep-alive every 30 seconds.</li>
-<li>One stream (the violations stream, for the top administrator role only) has no keep-alive yet.</li>
-</ul>
-<p>Because of the keep-alive signals, a timeout of 60 seconds is enough for most streams. Setup generates 600 seconds, which also covers the stream without a keep-alive. A proxy that buffers responses holds events back, so computers get policy changes late. The server tells the proxy not to buffer its streams (<code>X-Accel-Buffering: no</code>).</p>
-<h2 id="nginx">nginx<a class="headerlink" href="#nginx" title="Permanent link">&para;</a></h2>
-<p>Setup writes this file for you when you choose your own proxy: <code>&lt;install folder&gt;/proxy-snippets/nginx-server-block.conf</code>. nginx waits only 60 seconds by default, so the two timeout lines are required. The file that setup writes has no <code>client_max_body_size</code> line. Add it, as shown.</p>
-<div class="highlight"><pre><span></span><code><span class="k">server</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kn">listen</span><span class="w"> </span><span class="mi">443</span><span class="w"> </span><span class="s">ssl</span><span class="p">;</span>
-<span class="w">    </span><span class="kn">server_name</span><span class="w"> </span><span class="s">ai-firewall.example.com</span><span class="p">;</span>
-<span class="w">    </span><span class="kn">ssl_certificate</span><span class="w">     </span><span class="s">/path/to/fullchain.pem</span><span class="p">;</span>
-<span class="w">    </span><span class="kn">ssl_certificate_key</span><span class="w"> </span><span class="s">/path/to/privkey.pem</span><span class="p">;</span>
-<span class="w">    </span><span class="kn">client_max_body_size</span><span class="w"> </span><span class="mi">8m</span><span class="p">;</span>
-
-<span class="w">    </span><span class="kn">location</span><span class="w"> </span><span class="s">/</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="kn">proxy_pass</span><span class="w"> </span><span class="s">http://&lt;server-ip&gt;:8090</span><span class="p">;</span>
-<span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">Host</span><span class="w"> </span><span class="nv">$host</span><span class="p">;</span>
-<span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">X-Forwarded-Proto</span><span class="w"> </span><span class="s">https</span><span class="p">;</span>
-<span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">X-Forwarded-Host</span><span class="w"> </span><span class="s">ai-firewall.example.com</span><span class="p">;</span>
-<span class="w">        </span><span class="kn">proxy_http_version</span><span class="w"> </span><span class="mi">1</span><span class="s">.1</span><span class="p">;</span>
-<span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">Upgrade</span><span class="w"> </span><span class="nv">$http_upgrade</span><span class="p">;</span>
-<span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">Connection</span><span class="w"> </span><span class="s">&quot;upgrade&quot;</span><span class="p">;</span>
-<span class="w">        </span><span class="kn">proxy_read_timeout</span><span class="w"> </span><span class="s">600s</span><span class="p">;</span>
-<span class="w">        </span><span class="kn">proxy_send_timeout</span><span class="w"> </span><span class="s">600s</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>nginx obeys the "do not buffer" header from the server, so you do not need another setting.</p>
-<h2 id="iis-with-url-rewrite-and-arr">IIS with URL Rewrite and ARR<a class="headerlink" href="#iis-with-url-rewrite-and-arr" title="Permanent link">&para;</a></h2>
-<p>Setup writes <code>&lt;install folder&gt;/proxy-snippets/iis-web.config</code>.</p>
-<ol>
-<li>Install the <strong>URL Rewrite</strong> and <strong>Application Request Routing (ARR)</strong> modules.</li>
-<li>
-<p>Turn on the ARR proxy and set its timeout to 600 seconds or more. In IIS Manager, open the server node, then <em>Application Request Routing Cache</em>, then <em>Server Proxy Settings</em>. Or run:</p>
-<div class="highlight"><pre><span></span><code>%windir%\system32\inetsrv\appcmd.exe set config -section:system.webServer/proxy /enabled:&quot;True&quot; /timeout:&quot;00:10:00&quot; /commit:apphost
-</code></pre></div>
-<p>The server tells proxies not to buffer its event streams, but IIS ARR does not read that header. If computers receive policy changes late, set <strong>Response buffer threshold</strong> in the same place to 0, then check again. ScienceSoft has not verified this setting on a customer installation.</p>
 </li>
 <li>
-<p>In the site's URL Rewrite settings, add <code>HTTP_X_FORWARDED_PROTO</code> and <code>HTTP_X_FORWARDED_HOST</code> to the <strong>Allowed Server Variables</strong>. Without them the rule below fails.</p>
+<p><strong>Detection rule:</strong> a file exists, <code>%ProgramFiles%\AI Firewall\AI Firewall.exe</code>. This works when the default folder is used. You can also use the installer's uninstall entry in the registry (<code>HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall</code>, 64-bit view). Its <code>DisplayName</code> is "AI Firewall" followed by the version, so do not match it exactly, and its <code>DisplayVersion</code> is the app version.</p>
 </li>
-<li>
-<p>Bind the site to your name on HTTPS port 443 with your certificate, and add this rule:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;configuration&gt;</span>
-<span class="w">  </span><span class="nt">&lt;system.webServer&gt;</span>
-<span class="w">    </span><span class="nt">&lt;rewrite&gt;</span>
-<span class="w">      </span><span class="nt">&lt;rules&gt;</span>
-<span class="w">        </span><span class="nt">&lt;rule</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;proxy-to-ai-firewall&quot;</span><span class="w"> </span><span class="na">stopProcessing=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
-<span class="w">          </span><span class="nt">&lt;match</span><span class="w"> </span><span class="na">url=</span><span class="s">&quot;(.*)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">          </span><span class="nt">&lt;action</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;Rewrite&quot;</span><span class="w"> </span><span class="na">url=</span><span class="s">&quot;http://&lt;server-ip&gt;:8090/{R:1}&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">          </span><span class="nt">&lt;serverVariables&gt;</span>
-<span class="w">            </span><span class="nt">&lt;set</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;HTTP_X_FORWARDED_PROTO&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;https&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">            </span><span class="nt">&lt;set</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;HTTP_X_FORWARDED_HOST&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;ai-firewall.example.com&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">          </span><span class="nt">&lt;/serverVariables&gt;</span>
-<span class="w">        </span><span class="nt">&lt;/rule&gt;</span>
-<span class="w">      </span><span class="nt">&lt;/rules&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/rewrite&gt;</span>
-<span class="w">  </span><span class="nt">&lt;/system.webServer&gt;</span>
-<span class="nt">&lt;/configuration&gt;</span>
-</code></pre></div>
-</li>
+<li><strong>Requirements:</strong> 64-bit, Windows 10 or Windows 11.</li>
+<li><strong>Return codes:</strong> add code <code>3</code> as <strong>Success</strong>, in addition to the defaults.</li>
+<li>Assign the app to a pilot group first.</li>
 </ol>
-<h2 id="haproxy">HAProxy<a class="headerlink" href="#haproxy" title="Permanent link">&para;</a></h2>
-<p>Setup does not write a file for HAProxy. This is the equivalent of the nginx block. HAProxy does not buffer responses and passes WebSocket upgrades by itself. After the upgrade, <code>timeout tunnel</code> applies instead of <code>timeout server</code>.</p>
-<div class="highlight"><pre><span></span><code>frontend aifw_https
-    mode http
-    bind :443 ssl crt /etc/haproxy/certs/ai-firewall.pem
-    timeout client 600s
-    http-request set-header X-Forwarded-Proto https
-    http-request set-header X-Forwarded-Host ai-firewall.example.com
-    default_backend aifw_control_plane
-
-backend aifw_control_plane
-    mode http
-    timeout server 600s
-    timeout tunnel 600s
-    option httpchk GET /health
-    server cp1 &lt;server-ip&gt;:8090 check
+<div class="admonition warning">
+<p class="admonition-title">The key is visible in Intune</p>
+<p>The install command is stored in Intune with the key in it. Limit who can read the app's settings, and replace the key after the pilot if you are concerned.</p>
+</div>
+<p>Try the install, the uninstall and the detection rule on a pilot computer before you assign the app widely.</p>
+<h2 id="group-policy-startup-script">Group Policy (startup script)<a class="headerlink" href="#group-policy-startup-script" title="Permanent link">&para;</a></h2>
+<p>AI Firewall has <strong>no Group Policy template</strong> (<code>.admx</code>). To use Group Policy, run the installer from a computer <strong>startup script</strong>:</p>
+<ol>
+<li>Put the installer on a share that computer accounts can read.</li>
+<li>Add a startup script (<em>Computer Configuration</em>, <em>Policies</em>, <em>Windows Settings</em>, <em>Scripts</em>, <em>Startup</em>) that runs the installer if the app is not installed yet. See <a href="downloads.html">Scripts to download</a>.</li>
+<li>Link the policy to a pilot organisational unit first.</li>
+</ol>
+<p>The enrolment key is on the command line of the script. Protect the share, so that only computer accounts can read it.</p>
+<h2 id="remove-the-agent">Remove the agent<a class="headerlink" href="#remove-the-agent" title="Permanent link">&para;</a></h2>
+<p>The uninstaller needs administrator rights.</p>
+<div class="highlight"><pre><span></span><code>&quot;%ProgramFiles%\AI Firewall\Uninstall AI Firewall.exe&quot; /allusers /S
 </code></pre></div>
-<h2 id="check-after-you-configure-the-proxy">Check after you configure the proxy<a class="headerlink" href="#check-after-you-configure-the-proxy" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-fsS<span class="w"> </span>https://ai-firewall.example.com/health
-</code></pre></div>
-<p>The answer must be <code>{"status":"ok"}</code>. Use your own name instead of <code>ai-firewall.example.com</code>, and your own server address instead of <code>&lt;server-ip&gt;</code>, everywhere on this page.</p>
+<p>This is the quiet uninstall command that the installer registers. Run it as an administrator or as the system account. Without administrator rights it asks for elevation.</p>
+<p>It removes the app, the services, the certificate and the settings that AI Firewall added. It does <strong>not</strong> restore a computer-wide proxy setting that existed before AI Firewall was installed. Local data of every user on the computer is deleted. See the <a href="../../uninstall.html">User Guide</a> for what is removed.</p>
+<p>In version 2.2.7, an uninstall run by a deployment tool sends no notice to your server. The computer stops reporting. Remove it from the portal. Newer versions report the removal to the server when the uninstaller runs as the system account on a computer that has the protection service. An uninstall that an administrator starts by hand sends nothing.</p>
 
 
 
@@ -1490,7 +1582,7 @@ backend aifw_control_plane
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="aifw-reference.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: aifw commands">
+          <a href="index.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1500,20 +1592,20 @@ backend aifw_control_plane
                 Previous
               </span>
               <div class="md-ellipsis">
-                aifw commands
+                Overview
               </div>
             </div>
           </a>
         
         
           
-          <a href="sign-in.html" class="md-footer__link md-footer__link--next" aria-label="Next: Sign-in and roles">
+          <a href="macos.html" class="md-footer__link md-footer__link--next" aria-label="Next: macOS">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Sign-in and roles
+                macOS
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1554,10 +1646,10 @@ backend aifw_control_plane
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.top", "navigation.sections", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "navigation.sections", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

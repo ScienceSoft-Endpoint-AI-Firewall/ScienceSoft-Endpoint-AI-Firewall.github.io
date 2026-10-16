@@ -6,33 +6,33 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Download and use install.sh, the first step of installing the ScienceSoft AI Endpoint Firewall server. What it does, its settings, the checksum, and fixes for common errors.">
+        <meta name="description" content="Fixes for common ScienceSoft AI Endpoint Firewall server problems: install.sh failures, registry access, preflight errors, secure web access and sign-in redirects.">
       
       
       
       
-        <link rel="prev" href="install.html">
+        <link rel="prev" href="backup-restore.html">
       
       
-        <link rel="next" href="aifw-reference.html">
+        <link rel="next" href="../agents/index.html">
       
       
         
       
       
-      <link rel="icon" href="../assets/favicon.svg">
+      <link rel="icon" href="../../assets/favicon.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>install.sh, the server installer script - ScienceSoft AI Endpoint Firewall</title>
+        <title>Server installation and sign-in troubleshooting - ScienceSoft AI Endpoint Firewall</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -53,9 +53,9 @@
       
     
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -85,7 +85,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#the-installer-script-installsh" class="md-skip">
+        <a href="#troubleshooting" class="md-skip">
           Skip to content
         </a>
       
@@ -101,9 +101,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="ScienceSoft AI Endpoint Firewall" class="md-header__button md-logo" aria-label="ScienceSoft AI Endpoint Firewall" data-md-component="logo">
+    <a href="../.." title="ScienceSoft AI Endpoint Firewall" class="md-header__button md-logo" aria-label="ScienceSoft AI Endpoint Firewall" data-md-component="logo">
       
-  <img src="../assets/logo-white.svg" alt="logo">
+  <img src="../../assets/logo-white.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -120,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              install.sh, the server installer script
+              Server installation and sign-in troubleshooting
             
           </span>
         </div>
@@ -226,9 +226,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="ScienceSoft AI Endpoint Firewall" class="md-nav__button md-logo" aria-label="ScienceSoft AI Endpoint Firewall" data-md-component="logo">
+    <a href="../.." title="ScienceSoft AI Endpoint Firewall" class="md-nav__button md-logo" aria-label="ScienceSoft AI Endpoint Firewall" data-md-component="logo">
       
-  <img src="../assets/logo-white.svg" alt="logo">
+  <img src="../../assets/logo-white.svg" alt="logo">
 
     </a>
     ScienceSoft AI Endpoint Firewall
@@ -295,7 +295,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../index.html" class="md-nav__link">
+      <a href="../../index.html" class="md-nav__link">
         
   
   
@@ -323,7 +323,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../install.html" class="md-nav__link">
+      <a href="../../install.html" class="md-nav__link">
         
   
   
@@ -351,7 +351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../management.html" class="md-nav__link">
+      <a href="../../management.html" class="md-nav__link">
         
   
   
@@ -379,7 +379,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../check-status.html" class="md-nav__link">
+      <a href="../../check-status.html" class="md-nav__link">
         
   
   
@@ -407,7 +407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../coverage.html" class="md-nav__link">
+      <a href="../../coverage.html" class="md-nav__link">
         
   
   
@@ -435,7 +435,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../troubleshooting.html" class="md-nav__link">
+      <a href="../../troubleshooting.html" class="md-nav__link">
         
   
   
@@ -463,7 +463,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../faq.html" class="md-nav__link">
+      <a href="../../faq.html" class="md-nav__link">
         
   
   
@@ -491,7 +491,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../uninstall.html" class="md-nav__link">
+      <a href="../../uninstall.html" class="md-nav__link">
         
   
   
@@ -568,6 +568,85 @@
             
   
     Admin Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Set up your self-hosted server
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Set up your self-hosted server
   
 
           </label>
@@ -661,37 +740,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    The installer script
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="install-script.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="install-script.html" class="md-nav__link">
         
   
   
@@ -707,103 +759,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#download" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Download
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#before-you-start" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Before you start
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-use-it" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How to use it
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-the-script-does" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What the script does
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#settings" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Settings
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#if-something-goes-wrong" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        If something goes wrong
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#security-notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Security notes
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -981,10 +936,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="troubleshooting.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="troubleshooting.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1000,6 +982,133 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#start-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Start here
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installsh-does-nothing-or-fails-with-a-strange-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        install.sh does nothing, or fails with a strange error
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-installer-does-not-accept-the-registry-access-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The installer does not accept the registry access details
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aifw-preflight-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        aifw preflight fails
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-stops-at-start-secure-web-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup stops at "Start secure web access"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-server-answers-but-the-sign-in-page-redirects-to-the-wrong-address-or-shows-an-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The server answers, but the sign-in page redirects to the wrong address or shows an error
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#computers-get-policy-changes-late" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Computers get policy changes late
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i-lost-credentialstxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I lost credentials.txt
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting help
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1022,10 +1131,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_12" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
-          <label class="md-nav__link" for="__nav_2_12" id="__nav_2_12_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
             
   
   
@@ -1043,8 +1152,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_12_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_12">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1061,7 +1170,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devices/index.html" class="md-nav__link">
+      <a href="../agents/index.html" class="md-nav__link">
         
   
   
@@ -1089,7 +1198,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devices/windows.html" class="md-nav__link">
+      <a href="../agents/windows.html" class="md-nav__link">
         
   
   
@@ -1117,7 +1226,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devices/macos.html" class="md-nav__link">
+      <a href="../agents/macos.html" class="md-nav__link">
         
   
   
@@ -1145,7 +1254,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devices/verify.html" class="md-nav__link">
+      <a href="../agents/verify.html" class="md-nav__link">
         
   
   
@@ -1173,7 +1282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devices/downloads.html" class="md-nav__link">
+      <a href="../agents/downloads.html" class="md-nav__link">
         
   
   
@@ -1236,10 +1345,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#download" class="md-nav__link">
+  <a href="#start-here" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Download
+        Start here
       
     </span>
   </a>
@@ -1247,10 +1356,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#before-you-start" class="md-nav__link">
+  <a href="#installsh-does-nothing-or-fails-with-a-strange-error" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Before you start
+        install.sh does nothing, or fails with a strange error
       
     </span>
   </a>
@@ -1258,10 +1367,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-use-it" class="md-nav__link">
+  <a href="#the-installer-does-not-accept-the-registry-access-details" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How to use it
+        The installer does not accept the registry access details
       
     </span>
   </a>
@@ -1269,10 +1378,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-the-script-does" class="md-nav__link">
+  <a href="#aifw-preflight-fails" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What the script does
+        aifw preflight fails
       
     </span>
   </a>
@@ -1280,10 +1389,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#settings" class="md-nav__link">
+  <a href="#setup-stops-at-start-secure-web-access" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Settings
+        Setup stops at "Start secure web access"
       
     </span>
   </a>
@@ -1291,10 +1400,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#if-something-goes-wrong" class="md-nav__link">
+  <a href="#the-server-answers-but-the-sign-in-page-redirects-to-the-wrong-address-or-shows-an-error" class="md-nav__link">
     <span class="md-ellipsis">
       
-        If something goes wrong
+        The server answers, but the sign-in page redirects to the wrong address or shows an error
       
     </span>
   </a>
@@ -1302,10 +1411,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#security-notes" class="md-nav__link">
+  <a href="#computers-get-policy-changes-late" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Security notes
+        Computers get policy changes late
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i-lost-credentialstxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I lost credentials.txt
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting help
       
     </span>
   </a>
@@ -1329,194 +1460,95 @@
 
 
 
-<h1 id="the-installer-script-installsh">The installer script: <code>install.sh</code><a class="headerlink" href="#the-installer-script-installsh" title="Permanent link">&para;</a></h1>
-<p><code>install.sh</code> is the first step of installing the ScienceSoft AI Endpoint Firewall server. It prepares an empty Ubuntu server and installs one command, <code>aifw</code>. You then run <code>aifw setup</code>, which installs and configures everything else: the server, the admin portal, the sign-in service, the database, HTTPS and monitoring.</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>bash<span class="w"> </span>install.sh
-sudo<span class="w"> </span>aifw<span class="w"> </span>setup
+<h1 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h1>
+<h2 id="start-here">Start here<a class="headerlink" href="#start-here" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>aifw<span class="w"> </span>status
+sudo<span class="w"> </span>aifw<span class="w"> </span>doctor
+docker<span class="w"> </span>ps
 </code></pre></div>
-<h2 id="download">Download<a class="headerlink" href="#download" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>File</th>
-<th>What it is</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="files/install.sh">install.sh</a></td>
-<td>The installer script</td>
-</tr>
-<tr>
-<td><a href="files/README.txt">README.txt</a></td>
-<td>The same instructions as on this page, as a text file to keep next to the script</td>
-</tr>
-<tr>
-<td><a href="files/SHA256SUMS">SHA256SUMS</a></td>
-<td>The checksum of <code>install.sh</code>, to check that the file is intact</td>
-</tr>
-</tbody>
-</table>
-<p><strong>You need the registry access name and token from your welcome email to run it.</strong> The software cannot be downloaded without them. The script does not contain them.</p>
-<p>The script does not contain the registry access name or token. It contains the address of the software registry, which you can override with <code>AIFW_REGISTRY</code>.</p>
-<h2 id="before-you-start">Before you start<a class="headerlink" href="#before-you-start" title="Permanent link">&para;</a></h2>
-<ul>
-<li>An <strong>Ubuntu server</strong>. Ubuntu 24.04 LTS is the tested system. On another system the script prints a note and continues. Intel/AMD (x86_64) and ARM (aarch64) processors are supported.</li>
-<li><strong>Administrator rights</strong> (you run it with <code>sudo</code>).</li>
-<li><strong>Internet access</strong> from the server: to the Ubuntu package archive, to the software registry and, for Let's Encrypt, to the certificate authority.</li>
-<li>The <strong>registry access name and token</strong>, and the <strong>license file</strong>, from your welcome email.</li>
-<li>The server size and ports from <a href="prerequisites.html">Prerequisites</a>.</li>
-</ul>
-<p>Take a <strong>snapshot or backup</strong> of the server first.</p>
-<h2 id="how-to-use-it">How to use it<a class="headerlink" href="#how-to-use-it" title="Permanent link">&para;</a></h2>
-<ol>
-<li>
-<p>Copy <code>install.sh</code> to the server. If you copied it from a Windows computer, convert the line endings first, or it can fail without a message:</p>
+<p><code>aifw status</code> says if the installation is healthy. <code>docker ps</code> shows each container. A container that is restarting or <code>unhealthy</code> is where to look first:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>logs<span class="w"> </span>&lt;container-name&gt;<span class="w"> </span>--tail<span class="w"> </span><span class="m">200</span>
+</code></pre></div>
+<h2 id="installsh-does-nothing-or-fails-with-a-strange-error"><code>install.sh</code> does nothing, or fails with a strange error<a class="headerlink" href="#installsh-does-nothing-or-fails-with-a-strange-error" title="Permanent link">&para;</a></h2>
+<p>The script may have Windows line endings, for example if you copied it from a Windows computer. Convert it and run it again:</p>
 <div class="highlight"><pre><span></span><code>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/\r$//&#39;</span><span class="w"> </span>install.sh
+bash<span class="w"> </span>install.sh
 </code></pre></div>
-</li>
-<li>
-<p>Check that the file is intact. Put <code>install.sh</code> and <code>SHA256SUMS</code> in the same folder. The result must be <code>OK</code>:</p>
-<div class="highlight"><pre><span></span><code>sha256sum<span class="w"> </span>-c<span class="w"> </span>SHA256SUMS
-</code></pre></div>
-</li>
-<li>
-<p>Run the script as administrator:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>bash<span class="w"> </span>install.sh
-</code></pre></div>
-</li>
-<li>
-<p>When asked, enter the <strong>registry access name</strong> and the <strong>access token</strong>. The token you type is hidden. They are checked at once.</p>
-</li>
-<li>
-<p>Wait for the script to finish. It ends with:</p>
-<div class="highlight"><pre><span></span><code>Done. The aifw command is installed:
-aifw &lt;version&gt;
-
-Next step:  sudo aifw setup
-</code></pre></div>
-</li>
-<li>
-<p>Check the server, then set it up. See <a href="install.html">Install the server</a> and the <a href="aifw-reference.html">aifw command reference</a>:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>aifw<span class="w"> </span>preflight
-sudo<span class="w"> </span>aifw<span class="w"> </span>setup
-</code></pre></div>
-</li>
-</ol>
-<h2 id="what-the-script-does">What the script does<a class="headerlink" href="#what-the-script-does" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Checks that you run it as administrator.</li>
-<li>Notes the operating system. It continues on a system other than Ubuntu 24.04.</li>
-<li>Checks the processor type. Anything other than x86_64 or aarch64 stops the script <strong>before anything is changed</strong>.</li>
-<li>Installs <strong>Docker Engine</strong> and the <strong>Docker Compose</strong> component if they are missing. Docker comes from the Ubuntu package archive.</li>
-<li>Signs in to the software registry with your access name and token, and checks them.</li>
-<li>Downloads the installer image for this processor type and takes the <code>aifw</code> command out of it.</li>
-<li>Puts <code>aifw</code> at <code>/usr/local/bin/aifw</code> and prints its version.</li>
-</ol>
-<p>It does <strong>not</strong> set up the server. That is <code>aifw setup</code>.</p>
-<p>The registry sign-in is stored for the administrator account (<code>root</code>) in Docker's settings, so that <code>aifw upgrade</code> can download newer versions later. The access token should be a <strong>read-only</strong> token.</p>
-<h2 id="settings">Settings<a class="headerlink" href="#settings" title="Permanent link">&para;</a></h2>
-<p>For an unattended installation, give the script its settings as environment variables. All are optional, except the two access values, which the script asks for when they are not set.</p>
+<h2 id="the-installer-does-not-accept-the-registry-access-details">The installer does not accept the registry access details<a class="headerlink" href="#the-installer-does-not-accept-the-registry-access-details" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Check that you copied the name and the token completely, without spaces.</li>
+<li>The server needs internet access to the vendor's container registry.</li>
+<li>If it still fails, ask your ScienceSoft representative to check that the access is active.</li>
+</ul>
+<h2 id="aifw-preflight-fails"><code>aifw preflight</code> fails<a class="headerlink" href="#aifw-preflight-fails" title="Permanent link">&para;</a></h2>
+<p>It says which requirement is not met. Typical causes:</p>
 <table>
 <thead>
 <tr>
-<th>Variable</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>AIFW_REGISTRY_USER</code></td>
-<td>The registry access name</td>
-</tr>
-<tr>
-<td><code>AIFW_REGISTRY_TOKEN</code></td>
-<td>The registry access token</td>
-</tr>
-<tr>
-<td><code>AIFW_VERSION</code></td>
-<td>The version of the installer to download. By default: the newest published version</td>
-</tr>
-<tr>
-<td><code>AIFW_REGISTRY</code></td>
-<td>The software registry address (set by default)</td>
-</tr>
-<tr>
-<td><code>AIFW_REGISTRY_PATH</code></td>
-<td>The project in the registry (set by default)</td>
-</tr>
-</tbody>
-</table>
-<p>Example, with no questions asked:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span><span class="nv">AIFW_REGISTRY_USER</span><span class="o">=</span><span class="s1">&#39;&lt;name&gt;&#39;</span><span class="w"> </span><span class="nv">AIFW_REGISTRY_TOKEN</span><span class="o">=</span><span class="s1">&#39;&lt;token&gt;&#39;</span><span class="w"> </span>bash<span class="w"> </span>install.sh
-</code></pre></div>
-<div class="admonition warning">
-<p class="admonition-title">A command line is not private</p>
-<p>Other users of the server can see a command line for a moment, and it can stay in the shell history. Prefer the questions on the screen, unless the installation is automated and the secret comes from a secret store.</p>
-</div>
-<p>To install a specific version:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span><span class="nv">AIFW_VERSION</span><span class="o">=</span>&lt;version&gt;<span class="w"> </span>bash<span class="w"> </span>install.sh
-</code></pre></div>
-<p>Running the script again is safe. It repairs a damaged <code>aifw</code> command. It downloads the newest published version unless you set <code>AIFW_VERSION</code>, so on a server that already works set <code>AIFW_VERSION</code> to the version it runs, or use <code>aifw upgrade</code> instead.</p>
-<h2 id="if-something-goes-wrong">If something goes wrong<a class="headerlink" href="#if-something-goes-wrong" title="Permanent link">&para;</a></h2>
-<p>The script stops with a line that starts with <strong>"Problem:"</strong>.</p>
-<table>
-<thead>
-<tr>
-<th>The message says</th>
+<th>Message about</th>
 <th>What to do</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>This installer needs administrator rights</td>
-<td>Run it with <code>sudo</code>: <code>sudo bash install.sh</code></td>
+<td>Memory, CPU or disk</td>
+<td>Add resources. See <a href="prerequisites.html#the-server">Prerequisites</a>.</td>
 </tr>
 <tr>
-<td>The software is published for Intel/AMD (x86_64) and ARM (aarch64) servers</td>
-<td>The server has another processor type. Use a supported server</td>
+<td>A port is in use</td>
+<td>Stop what uses it, or choose another HTTPS option.</td>
 </tr>
 <tr>
-<td>Another program is installing software right now</td>
-<td>Often the automatic security updater, just after boot. Wait a minute and run the script again</td>
+<td>The registry cannot be reached</td>
+<td>Check the proxy and firewall rules for outgoing traffic.</td>
 </tr>
 <tr>
-<td>This server could not reach the Ubuntu package archive</td>
-<td>Check the internet access and proxy settings of the server</td>
-</tr>
-<tr>
-<td>Both the access name and the token are needed</td>
-<td>Both are in your welcome email. Ask your ScienceSoft contact if you cannot find them</td>
-</tr>
-<tr>
-<td>The registry did not accept the access token</td>
-<td>Check for typing mistakes. If it still fails, ask for a new token</td>
-</tr>
-<tr>
-<td>Could not download the installer image</td>
-<td>Check the internet access of the server to the software registry</td>
-</tr>
-<tr>
-<td>This version was not published for this machine</td>
-<td>There is no build for this processor type. Ask your ScienceSoft contact, or use an Intel/AMD server</td>
-</tr>
-<tr>
-<td>Could not write the <code>aifw</code> command</td>
-<td>The disk is full or read-only. Check it with <code>df -h /usr/local/bin</code></td>
-</tr>
-<tr>
-<td>Docker is installed but not running</td>
-<td>Start it with <code>systemctl start docker</code></td>
+<td><code>systemd</code></td>
+<td>The server must use <code>systemd</code>.</td>
 </tr>
 </tbody>
 </table>
-<p>After you fix the cause, run the script again. For problems with setup, see <a href="troubleshooting.html">Troubleshooting</a>.</p>
-<h2 id="security-notes">Security notes<a class="headerlink" href="#security-notes" title="Permanent link">&para;</a></h2>
+<h2 id="setup-stops-at-start-secure-web-access">Setup stops at "Start secure web access"<a class="headerlink" href="#setup-stops-at-start-secure-web-access" title="Permanent link">&para;</a></h2>
+<p>You see this message: "Start secure web access — failed". It is usually one of three things:</p>
+<ol>
+<li>The cloud firewall (for example a network security group) does not let ports <strong>80</strong> and <strong>443</strong> in.</li>
+<li>The DNS name does not point at <strong>this</strong> server yet.</li>
+<li>The certificate is still being issued. Wait a few minutes.</li>
+</ol>
+<p>If you use your own load balancer, it must be fully ready <strong>before</strong> you run setup. For details, run:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>logs<span class="w"> </span>ai-firewall-caddy
+</code></pre></div>
+<p>Fix the cause. If nothing about the answers has to change, run <code>sudo aifw setup</code> again.</p>
+<h2 id="the-server-answers-but-the-sign-in-page-redirects-to-the-wrong-address-or-shows-an-error">The server answers, but the sign-in page redirects to the wrong address or shows an error<a class="headerlink" href="#the-server-answers-but-the-sign-in-page-redirects-to-the-wrong-address-or-shows-an-error" title="Permanent link">&para;</a></h2>
+<p>The single sign-on service may have been set up for a different public address than the one your server uses.</p>
+<p>There is no command that changes the public address of a server that is already set up. Setup refuses a different address.</p>
 <ul>
-<li><strong>Read the script before you run it as administrator.</strong> It is a short, plain shell script.</li>
-<li>Download it only from this site or from your welcome email, and check the checksum.</li>
-<li>Keep the access token secret. Do not put it into tickets or chats.</li>
+<li>If you have not used the server yet, restore the snapshot that you took before the installation, and run <code>aifw setup</code> again with the right address.</li>
+<li>If the server is in use (computers are enrolled and people have signed in), do not change the address by hand. Send your ScienceSoft representative the output of <code>sudo aifw status</code> and <code>sudo aifw doctor</code>, and the public address you gave to setup.</li>
 </ul>
+<h2 id="computers-get-policy-changes-late">Computers get policy changes late<a class="headerlink" href="#computers-get-policy-changes-late" title="Permanent link">&para;</a></h2>
+<p>A proxy that buffers responses, or an idle timeout that is too short, delays the streams. See <a href="reverse-proxy.html#what-the-proxy-must-do">Reverse proxy</a>.</p>
+<h2 id="i-lost-credentialstxt">I lost <code>credentials.txt</code><a class="headerlink" href="#i-lost-credentialstxt" title="Permanent link">&para;</a></h2>
+<p>The file is meant to be deleted after you save its contents. Running <code>aifw setup</code> again writes a new <code>credentials.txt</code> from the current settings. Delete it again after you copy what you need.</p>
+<ul>
+<li>
+<p><strong>The enrolment key and the emergency token</strong> are kept in the settings file <code>/opt/ai-firewall/docker/.env</code>, which only the administrator can read. To read the enrolment key:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;^AIFW_ENROL_TOKEN=&#39;</span><span class="w"> </span>/opt/ai-firewall/docker/.env
+</code></pre></div>
+</li>
+<li>
+<p><strong>A forgotten portal password.</strong> Another administrator can set a new temporary password in the Keycloak console, or with <code>kcadm.sh</code>. See <a href="sign-in.html#the-same-from-the-command-line">Sign-in and roles</a>.</p>
+</li>
+<li><strong>The temporary password from the sheet</strong> works only for the first sign-in. After the administrator has changed it, the sheet shows an old value.</li>
+</ul>
+<h2 id="getting-help">Getting help<a class="headerlink" href="#getting-help" title="Permanent link">&para;</a></h2>
+<p>Send your ScienceSoft representative:</p>
+<ul>
+<li>the output of <code>sudo aifw status</code>;</li>
+<li>the output of <code>sudo aifw doctor</code>;</li>
+<li>the last 200 lines of the log of the container that fails.</li>
+</ul>
+<p>Do not send the settings file, <code>credentials.txt</code>, or any token.</p>
 
 
 
@@ -1555,7 +1587,7 @@ sudo<span class="w"> </span>aifw<span class="w"> </span>setup
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="install.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Install the server">
+          <a href="backup-restore.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Backup and restore">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1565,20 +1597,20 @@ sudo<span class="w"> </span>aifw<span class="w"> </span>setup
                 Previous
               </span>
               <div class="md-ellipsis">
-                Install the server
+                Backup and restore
               </div>
             </div>
           </a>
         
         
           
-          <a href="aifw-reference.html" class="md-footer__link md-footer__link--next" aria-label="Next: aifw commands">
+          <a href="../agents/index.html" class="md-footer__link md-footer__link--next" aria-label="Next: Overview">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                aifw commands
+                Overview
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1619,10 +1651,10 @@ sudo<span class="w"> </span>aifw<span class="w"> </span>setup
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.top", "navigation.sections", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "navigation.sections", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>
