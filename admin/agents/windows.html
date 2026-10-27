@@ -1256,6 +1256,287 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configure your fleet
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Configure your fleet
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fleet/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fleet/workspaces.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workspaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fleet/enrolment-keys.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enrolment keys
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fleet/devices-and-groups.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Devices and groups
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fleet/settings.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fleet/policies.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Policies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fleet/what-is-recorded.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What the workspace records
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fleet/audit.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audit and evidence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1517,7 +1798,7 @@
 </table>
 </li>
 <li>
-<p><strong>Detection rule:</strong> a file exists, <code>%ProgramFiles%\AI Firewall\AI Firewall.exe</code>. This works when the default folder is used. You can also use the installer's uninstall entry in the registry (<code>HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall</code>, 64-bit view). Its <code>DisplayName</code> is "AI Firewall" followed by the version, so do not match it exactly, and its <code>DisplayVersion</code> is the app version.</p>
+<p><strong>Detection rule:</strong> a file exists, <code>%ProgramFiles%\AI Firewall\AI Firewall.exe</code>. This works when the default folder is used. You can also use the installer's uninstall entry in the registry (<code>HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall</code>, 64-bit view). Its <code>DisplayName</code> is "ScienceSoft AI Endpoint Firewall" followed by the version, so do not match it exactly, and its <code>DisplayVersion</code> is the app version.</p>
 </li>
 <li><strong>Requirements:</strong> 64-bit, Windows 10 or Windows 11.</li>
 <li><strong>Return codes:</strong> add code <code>3</code> as <strong>Success</strong>, in addition to the defaults.</li>
@@ -1529,7 +1810,7 @@
 </div>
 <p>Try the install, the uninstall and the detection rule on a pilot computer before you assign the app widely.</p>
 <h2 id="group-policy-startup-script">Group Policy (startup script)<a class="headerlink" href="#group-policy-startup-script" title="Permanent link">&para;</a></h2>
-<p>AI Firewall has <strong>no Group Policy template</strong> (<code>.admx</code>). To use Group Policy, run the installer from a computer <strong>startup script</strong>:</p>
+<p>ScienceSoft AI Endpoint Firewall has <strong>no Group Policy template</strong> (<code>.admx</code>). To use Group Policy, run the installer from a computer <strong>startup script</strong>:</p>
 <ol>
 <li>Put the installer on a share that computer accounts can read.</li>
 <li>
@@ -1545,7 +1826,7 @@
 <div class="highlight"><pre><span></span><code>&quot;%ProgramFiles%\AI Firewall\Uninstall AI Firewall.exe&quot; /allusers /S
 </code></pre></div>
 <p>This is the quiet uninstall command that the installer registers. Run it as an administrator or as the system account. Without administrator rights it asks for elevation.</p>
-<p>It removes the app, the services, the certificate and the settings that AI Firewall added. It also puts back the MCP servers and skills that the agent had removed from the user's Claude Code and Codex configuration, but only for the account that runs the uninstaller. It does <strong>not</strong> restore a computer-wide proxy setting that existed before AI Firewall was installed. Local data of every user on the computer is deleted. See the <a href="../../uninstall.html">User Guide</a> for what is removed.</p>
+<p>It removes the app, the services, the certificate and the settings that ScienceSoft AI Endpoint Firewall added. It also puts back the MCP servers and skills that the agent had removed from the user's Claude Code and Codex configuration, but only for the account that runs the uninstaller. It does <strong>not</strong> restore a computer-wide proxy setting that existed before ScienceSoft AI Endpoint Firewall was installed. Local data of every user on the computer is deleted. See the <a href="../../uninstall.html">User Guide</a> for what is removed.</p>
 <p>In version 2.2.7, an uninstall run by a deployment tool sends no notice to your server. The computer stops reporting. Remove it from the portal. Newer versions report the removal to the server when the uninstaller runs as the system account on a computer that has the protection service. An uninstall that an administrator starts by hand sends nothing.</p>
 
 

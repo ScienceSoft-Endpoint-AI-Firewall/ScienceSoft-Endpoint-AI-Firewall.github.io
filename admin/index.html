@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Administrator guide for ScienceSoft AI Endpoint Firewall: set up your server, roll out the agent to Windows and macOS computers, and operate the installation.">
+        <meta name="description" content="Administrator guide for ScienceSoft AI Endpoint Firewall: set up your server, roll out the agent, configure your fleet in the admin portal, and operate the installation.">
       
       
       
@@ -1204,6 +1204,287 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configure your fleet
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Configure your fleet
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fleet/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fleet/workspaces.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workspaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fleet/enrolment-keys.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enrolment keys
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fleet/devices-and-groups.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Devices and groups
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fleet/settings.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fleet/policies.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Policies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fleet/what-is-recorded.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What the workspace records
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fleet/audit.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audit and evidence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1305,7 +1586,7 @@
 
 <h1 id="admin-guide">Admin Guide<a class="headerlink" href="#admin-guide" title="Permanent link">&para;</a></h1>
 <p>This guide is for the IT or platform team that sets up <strong>ScienceSoft AI Endpoint Firewall</strong> (called <strong>AI Firewall</strong> in this guide) in an organisation.</p>
-<p>AI Firewall has two parts:</p>
+<p>ScienceSoft AI Endpoint Firewall has two parts:</p>
 <table>
 <thead>
 <tr>
@@ -1345,6 +1626,10 @@
 <td><a href="agents/index.html">Roll out the agent</a></td>
 <td>How to install the agent on many Windows and macOS computers, and how to check that they joined your workspace.</td>
 </tr>
+<tr>
+<td><a href="fleet/index.html">Configure your fleet</a></td>
+<td>How to use the admin portal: workspaces, enrolment keys, devices and groups, settings, policies, what is recorded, and the audit trail.</td>
+</tr>
 </tbody>
 </table>
 <h2 id="where-to-start">Where to start<a class="headerlink" href="#where-to-start" title="Permanent link">&para;</a></h2>
@@ -1352,6 +1637,7 @@
 <li>Read <a href="server/prerequisites.html">Server requirements</a>, then follow <a href="server/install.html">Install the server</a>.</li>
 <li>Sign in to the admin portal and give your colleagues access (<a href="server/sign-in.html">Sign-in and roles</a>).</li>
 <li>Roll out the agent to a pilot group of computers (<a href="agents/index.html">Roll out the agent</a>).</li>
+<li>Manage the computers in the portal (<a href="fleet/index.html">Configure your fleet</a>).</li>
 </ol>
 <p>If you have questions that this guide does not answer, contact your ScienceSoft representative.</p>
 
