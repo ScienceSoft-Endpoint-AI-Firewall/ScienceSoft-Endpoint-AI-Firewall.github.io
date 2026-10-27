@@ -631,6 +631,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#why-did-a-window-ask-me-to-confirm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why did a window ask me to confirm?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#does-it-slow-down-my-ai-tools" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1582,6 +1593,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#why-did-a-window-ask-me-to-confirm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why did a window ask me to confirm?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#does-it-slow-down-my-ai-tools" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1734,7 +1756,7 @@
 <ul>
 <li>The workspace's administrators can see what was <strong>detected</strong>: how many values were found, and which types. They cannot see the values themselves.</li>
 <li>If your computer is connected to a workspace, the message is also recorded there, by default, with those values replaced. So they can read what you wrote, but not the personal data that was found in it. An administrator can choose to keep less (a short excerpt, or no message text at all). The setting is called <strong>Data Capture Mode</strong>.</li>
-<li>What the AI service receives depends on your company's setting. In <strong>Replace</strong> mode, values that the firewall is sure enough about are replaced before sending. In <strong>Record only</strong> mode, your message is sent as typed, apart from machine secrets such as API keys.</li>
+<li>What the AI service receives depends on your company's setting. In <strong>Replace</strong> mode, values that the firewall is sure enough about are replaced before sending. In <strong>Record only</strong> mode, your message is sent as typed, apart from your organisation's keywords and machine secrets such as API keys.</li>
 <li>A computer that is not connected to a workspace sends nothing.</li>
 </ul>
 <h3 id="is-my-data-sent-anywhere-to-be-scanned">Is my data sent anywhere to be scanned?<a class="headerlink" href="#is-my-data-sent-anywhere-to-be-scanned" title="Permanent link">&para;</a></h3>
@@ -1757,6 +1779,8 @@
 <h3 id="can-i-turn-protection-off">Can I turn protection off?<a class="headerlink" href="#can-i-turn-protection-off" title="Permanent link">&para;</a></h3>
 <p>No. There is no on/off switch in the app. Your company decides when protection is on.</p>
 <p>You can close the app from the tray menu, but then nothing is checked. Depending on how AI Firewall was installed, AI services are then either <strong>blocked</strong> or <strong>reached without being checked</strong> (see <a href="coverage.html#when-ai-firewall-is-not-running">What is protected</a>). Your IT team can see that the device has stopped reporting.</p>
+<h3 id="why-did-a-window-ask-me-to-confirm">Why did a window ask me to confirm?<a class="headerlink" href="#why-did-a-window-ask-me-to-confirm" title="Permanent link">&para;</a></h3>
+<p>Your organisation can ask you to confirm before you use an AI service or upload a file. Choose <strong>Continue</strong> to go ahead for up to 8 hours without being asked again for that service, or <strong>Cancel</strong>. Your choice, and a reason if you add one, is recorded for your organisation. If you do not answer in time, the request is cancelled and you can send it again.</p>
 <h3 id="does-it-slow-down-my-ai-tools">Does it slow down my AI tools?<a class="headerlink" href="#does-it-slow-down-my-ai-tools" title="Permanent link">&para;</a></h3>
 <p>A little. The <strong>Dashboard</strong> shows the median scan time measured on your own computer. Large screenshots take longer, because the text inside them is read first.</p>
 <h3 id="why-was-a-name-replaced-when-it-was-my-own">Why was a name replaced when it was my own?<a class="headerlink" href="#why-was-a-name-replaced-when-it-was-my-own" title="Permanent link">&para;</a></h3>
@@ -1772,7 +1796,7 @@
 <h3 id="does-it-work-with-claude-chatgpt-and-gemini">Does it work with Claude, ChatGPT and Gemini?<a class="headerlink" href="#does-it-work-with-claude-chatgpt-and-gemini" title="Permanent link">&para;</a></h3>
 <p>Yes, in your browser and in desktop apps built on web technology (for example Claude Desktop). Claude Code, Codex and Kimi Code are covered too, <strong>after they are turned on</strong> (see <a href="coverage.html">What is protected</a>). The full list, and what is <strong>not</strong> covered, is on the same page.</p>
 <h3 id="what-does-it-do-with-files-and-images">What does it do with files and images?<a class="headerlink" href="#what-does-it-do-with-files-and-images" title="Permanent link">&para;</a></h3>
-<p>Word, Excel, PowerPoint, PDF and OpenDocument files are opened on your computer and their text is checked. For images and screenshots, the text inside the picture is read on your computer. In Replace mode, a cleaned copy of a file is sent instead of the original.</p>
+<p>Word, Excel, PowerPoint, PDF and OpenDocument files are opened on your computer and their text is checked. Your organisation can also set rules by kind of document, such as NDAs or contracts. For images and screenshots, the text inside the picture is read on your computer. In Replace mode, a cleaned copy of a file is sent instead of the original.</p>
 <p>A file that cannot be read (for example an encrypted file) is recorded as <strong>not checked</strong>. By default it is still sent. Your IT team can choose to refuse such files instead.</p>
 <h3 id="which-languages-does-it-support">Which languages does it support?<a class="headerlink" href="#which-languages-does-it-support" title="Permanent link">&para;</a></h3>
 <p>The detection model, the ScienceSoft PII Encoder, supports 7 languages: English, Russian, Arabic, Spanish, German, Italian and French. Arabic person names are not detected yet (see <a href="coverage.html">What is protected</a>).</p>

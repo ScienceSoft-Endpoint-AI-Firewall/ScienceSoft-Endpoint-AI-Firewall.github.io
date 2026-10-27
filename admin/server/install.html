@@ -1598,7 +1598,7 @@ chmod<span class="w"> </span>+x<span class="w"> </span>./install.sh
 <p>Check that it worked:</p>
 <div class="highlight"><pre><span></span><code>aifw<span class="w"> </span>--version
 </code></pre></div>
-<p>To install a specific version of the <code>aifw</code> command, set <code>AIFW_VERSION</code> when you run the script, for example <code>AIFW_VERSION=&lt;version&gt; bash install.sh</code>. By default the script takes the newest published version. To upgrade a server that already works, do not run the script again: use <code>aifw upgrade</code>. All the settings of the script and its error messages are on <a href="install-script.html">The installer script</a>. Every <code>aifw</code> command is described on <a href="aifw-reference.html">aifw commands</a>.</p>
+<p>To install a specific version of the <code>aifw</code> command, set <code>AIFW_VERSION</code> when you run the script, for example <code>AIFW_VERSION=&lt;version&gt; bash install.sh</code>. By default the script takes the version that this server already runs, or the newest published version on a new server. To upgrade a server that already works, do not run the script again: use <code>aifw upgrade</code>. All the settings of the script and its error messages are on <a href="install-script.html">The installer script</a>. Every <code>aifw</code> command is described on <a href="aifw-reference.html">aifw commands</a>.</p>
 <h2 id="step-3-check-the-server-optional-recommended">Step 3. Check the server (optional, recommended)<a class="headerlink" href="#step-3-check-the-server-optional-recommended" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>aifw<span class="w"> </span>preflight
 </code></pre></div>
@@ -1622,7 +1622,7 @@ chmod<span class="w"> </span>+x<span class="w"> </span>./install.sh
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Before you change a basic answer</p>
-<p>Setup does not change the public address, the version or the administrator e-mail of a server that is already set up. It stops and names the setting. If one of them is wrong and the server is not in use yet, restore the snapshot taken before the installation, then run setup again. To change the version, use <code>aifw upgrade</code>. You can change how HTTPS is handled by running setup again. Do not rely on setup to apply a new license file to an existing server. To renew the licence, contact your ScienceSoft representative. Take a snapshot of the server before you change anything.</p>
+<p>Setup does not change the public address, the version or the administrator e-mail of a server that is already set up. It stops and names the setting. If one of them is wrong and the server is not in use yet, restore the snapshot taken before the installation, then run setup again. To change the version, use <code>aifw upgrade</code>. You can change how HTTPS is handled by running setup again. To renew the licence, run setup again and give the path of the new <code>.license</code> file. Press Enter to keep the installed one. The licence is read when the server starts, so check the <strong>License</strong> page afterwards. Take a snapshot of the server before you change anything.</p>
 </div>
 <h3 id="the-answers">The answers<a class="headerlink" href="#the-answers" title="Permanent link">&para;</a></h3>
 <table>
@@ -1657,7 +1657,12 @@ chmod<span class="w"> </span>+x<span class="w"> </span>./install.sh
 <tr>
 <td><code>licenseBlobPath</code></td>
 <td>License file path</td>
-<td>The full path of the <code>.license</code> file on the server.</td>
+<td>The full path of the <code>.license</code> file on the server. On a repeat run, give the path of a new file to replace the installed licence.</td>
+</tr>
+<tr>
+<td><code>monitoringDataDir</code></td>
+<td>Folder for metrics and logs (optional)</td>
+<td>An absolute folder, for example on a separate disk, where metrics and logs are kept.</td>
 </tr>
 <tr>
 <td><code>adminEmail</code></td>
@@ -1828,12 +1833,8 @@ chmod<span class="w"> </span>+x<span class="w"> </span>./install.sh
 <td>The database</td>
 </tr>
 <tr>
-<td><code>ai-firewall-prometheus</code>, <code>ai-firewall-grafana</code></td>
-<td>Metrics and dashboards</td>
-</tr>
-<tr>
-<td><code>ai-firewall-postgres-exporter</code>, <code>ai-firewall-blackbox</code></td>
-<td>Monitoring helpers</td>
+<td><code>ai-firewall-prometheus</code>, <code>ai-firewall-alertmanager</code>, <code>ai-firewall-loki</code>, <code>ai-firewall-alloy</code>, <code>ai-firewall-grafana</code></td>
+<td>Metrics, alerts, logs and dashboards</td>
 </tr>
 </tbody>
 </table>
@@ -1856,7 +1857,7 @@ curl<span class="w"> </span>-fsS<span class="w"> </span>http://127.0.0.1:8090/re
 <li>the address of the admin portal, the administrator's email and a <strong>temporary password</strong>;</li>
 <li>the <strong>device enrolment key</strong>, which the agent installers use to join computers to your workspace;</li>
 <li>the <strong>emergency sign-in token</strong>;</li>
-<li>the <strong>monitoring dashboard password</strong>;</li>
+<li>the way to reach <strong>Grafana</strong> (dashboards): it is not on the public address. Open an SSH tunnel to port 3000 on the server, browse to <code>http://127.0.0.1:3000</code> and sign in with a super-admin account. The password in the file is for emergencies;</li>
 <li>the sign-in service console account and the command to reach the console (see <a href="sign-in.html">Sign-in and roles</a>).</li>
 </ul>
 <p><strong>Move every value into your password manager now, then delete the file:</strong></p>

@@ -1789,7 +1789,7 @@ Available server versions (newest first):
 </ol>
 <p>Running it again is safe. Each step looks at the server before it changes anything, so a second run changes only what has drifted. The questions offer your previous answers.</p>
 <p><code>setup</code> is the only command that configures the sign-in service. When a check says the administrator sign-in failed, run <code>sudo aifw setup</code>. An upgrade does not do this.</p>
-<p><strong>What a repeat run can and cannot change.</strong> A repeat run is safe when your answers are the same. Setup refuses to change the public address, the version or the administrator e-mail of a server that is already set up, because the sign-in service, the database and the enrolled computers already hold those values. It stops and names the setting that differs. To move to a newer version, use <code>aifw upgrade</code>. You can change how HTTPS is handled by running setup again with the new choice. Setup does not apply a different license file to a server that is already set up. To renew the licence, contact your ScienceSoft representative.</p>
+<p><strong>What a repeat run can and cannot change.</strong> A repeat run is safe when your answers are the same. Setup refuses to change the public address, the version or the administrator e-mail of a server that is already set up, because the sign-in service, the database and the enrolled computers already hold those values. It stops and names the setting that differs. To move to a newer version, use <code>aifw upgrade</code>. You can change how HTTPS is handled by running setup again with the new choice. To renew the licence, run setup again and give the path of the new license file; press Enter to keep the installed one.</p>
 <p>There is no command that changes the public address of a configured server. If you gave a wrong address and have not used the server yet, restore the snapshot that you took before the installation, and run setup again with the right address.</p>
 <p>Options:</p>
 <ul>
@@ -1855,7 +1855,7 @@ Phase 8 of 8 — Finish and verify
 <p><em>(The example is shortened: a real run prints every step of every phase.)</em></p>
 <h2 id="aifw-upgrade"><code>aifw upgrade</code><a class="headerlink" href="#aifw-upgrade" title="Permanent link">&para;</a></h2>
 <p>Moves the server to a newer version. It takes a backup first, and your data stays.</p>
-<p>Run it without <code>--version</code> to take the newest published version. Run it with <code>--version 2.2.5</code> to take a named one.</p>
+<p>Run it without <code>--version</code> and, in a terminal, a menu lets you pick a version. Without a terminal (a script or a timer) it only names the newest stable version and changes nothing. Run it with <code>--version 2.2.5</code> to take a named one.</p>
 <p>Four limits:</p>
 <ol>
 <li><strong>It cannot reach a version that is not published.</strong> Run <code>aifw versions</code> first. If the target is the version already running, it stops with <code>This server is already on &lt;version&gt; — nothing to do</code>. Nothing was changed.</li>
@@ -1877,7 +1877,7 @@ This server is already on &lt;version&gt; — nothing to do
 <ol>
 <li>Take a snapshot of the server, or run <code>sudo aifw backup</code>.</li>
 <li>Run <code>sudo aifw versions</code> to see the newest published versions, and choose one.</li>
-<li>Run <code>sudo aifw upgrade --version &lt;version&gt;</code>. Without <code>--version</code> it takes the newest. The command does these things in order: it replaces its own program if the new version has a newer one, and runs again; it takes a backup, and stops if the backup fails; it updates the configuration files; it pins the new version; it pulls the new images, restarts the services and waits until they are healthy; it runs the health checks.</li>
+<li>Run <code>sudo aifw upgrade --version &lt;version&gt;</code>. Without <code>--version</code> the command shows a menu of versions in a terminal. The command does these things in order: it replaces its own program if the new version has a newer one, and runs again; it takes a backup, and stops if the backup fails; it updates the configuration files; it pins the new version; it pulls the new images, restarts the services and waits until they are healthy; it runs the health checks.</li>
 <li>Run <code>sudo aifw status</code> and check that every line passes.</li>
 <li>After an upgrade that adds sign-in settings, run <code>sudo aifw setup</code> once. <code>aifw upgrade</code> does not apply them.</li>
 </ol>
@@ -1935,7 +1935,7 @@ This server is not ready yet: 1 requirement(s) unmet, 4 recommendation(s).
 <h2 id="aifw-backup"><code>aifw backup</code><a class="headerlink" href="#aifw-backup" title="Permanent link">&para;</a></h2>
 <p>Dumps the database and the settings. The database of the sign-in service is included. Dumps older than 30 days are deleted.</p>
 <p>Set <code>AIFW_BACKUP_REMOTE</code> and the dump is also copied off the machine. <code>setup</code> installs a timer that takes a backup every day. <code>upgrade</code> takes one before anything moves. Run the command by hand before a risky change.</p>
-<p>It adds files and deletes its own old dumps. Nothing else is written.</p>
+<p>In a terminal, <code>aifw backup</code> opens a menu with <strong>Backup</strong> and <strong>Restore</strong>. Without a terminal (a timer or a script) it makes a backup, as described here. It adds files and deletes its own old dumps. Nothing else is written.</p>
 <div class="highlight"><pre><span></span><code># aifw backup
 Backing up the database (this can take a minute)...
 Note: backups live only on this server. An off-server copy protects against losing the machine.

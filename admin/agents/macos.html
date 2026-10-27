@@ -1478,7 +1478,7 @@
 <p>Run the uninstall script that comes with the app, as root:</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span><span class="s2">&quot;/Applications/AI Firewall.app/Contents/Resources/uninstall.command&quot;</span>
 </code></pre></div>
-<p>It removes the app, the services, the certificate and the proxy setting if it points at AI Firewall.</p>
+<p>It removes the app, the services, the certificate and the proxy setting if it points at AI Firewall. It also removes the managed Claude Code and Codex settings of the firewall and, for the user who runs it, puts back the MCP servers and skills that the agent had removed from those tools.</p>
 <p><strong>The script asks you to type <code>remove</code>, and there is no switch to skip that.</strong> If it runs with no terminal, as it does in many management tools, it stops without changing anything, and it still returns exit code 0, so your tool shows success. Give it the answer on standard input:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span>remove<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span><span class="s2">&quot;/Applications/AI Firewall.app/Contents/Resources/uninstall.command&quot;</span>
 </code></pre></div>

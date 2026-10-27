@@ -1475,7 +1475,7 @@
 <li>If you set <code>AIFW_BACKUP_REMOTE</code>, it copies the <strong>database dump only</strong> to that place. <strong>The copy of the settings file stays on the server.</strong> Move it to your backup storage yourself. A database dump alone cannot be restored without it.</li>
 <li>Some data is not saved by <code>aifw backup</code>: captured data, policy presets and your own TLS certificate.</li>
 </ul>
-<p>The full list, the steps for a complete backup and the <strong>restore procedure</strong> are on <a href="backup-restore.html">Backup and restore</a>. There is no restore command: restoring is a manual procedure. Read it, and rehearse it on a test server, before you need it.</p>
+<p>The full list, the steps for a complete backup and the <strong>restore procedure</strong> are on <a href="backup-restore.html">Backup and restore</a>. Restore is in the menu of <code>aifw backup</code> on a terminal. Read the procedure, and rehearse it on a test server, before you need it.</p>
 <h2 id="upgrade">Upgrade<a class="headerlink" href="#upgrade" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>aifw<span class="w"> </span>versions<span class="w">               </span><span class="c1"># what can I upgrade to?</span>
 sudo<span class="w"> </span>aifw<span class="w"> </span>upgrade<span class="w"> </span>--version<span class="w"> </span>&lt;version&gt;
@@ -1495,10 +1495,10 @@ sudo<span class="w"> </span>aifw<span class="w"> </span>status
 <h2 id="re-running-setup">Re-running setup<a class="headerlink" href="#re-running-setup" title="Permanent link">&para;</a></h2>
 <p>Running <code>aifw setup</code> again is safe. It checks every part of the installation and repairs what has drifted, without touching your data, and offers your previous answers. Use <code>aifw setup --check</code> first to see what would change. Setup does not change the public address, the version or the administrator e-mail of a server that is already set up. It stops and names the setting. To move to a newer version, use <code>aifw upgrade</code>. See <a href="install.html#step-4-run-setup">Install the server</a>.</p>
 <h2 id="monitoring">Monitoring<a class="headerlink" href="#monitoring" title="Permanent link">&para;</a></h2>
-<p>The installation includes Grafana (dashboards) and Prometheus (metrics, kept for 30 days). Neither is on the public address. Prometheus is reachable only inside the server's own network, so you cannot open it from outside.</p>
+<p>The installation includes Grafana (dashboards), Prometheus (metrics, kept for 30 days by default), Alertmanager (alerts), and Loki and Alloy (logs). None of them is on the public address. <code>sudo aifw monitoring retention</code> changes how long metrics and logs are kept. Prometheus is reachable only inside the server's own network, so you cannot open it from outside.</p>
 <ul>
 <li><strong>The dashboard</strong> "ai-firewall — Production Overview" shows whether the server answers, how long <code>/health</code> takes, the database connections and size, and how many computers are in a degraded protection state.</li>
-<li><strong>One alert rule ships.</strong> It fires when a computer's protection has been degraded for more than 10 minutes: its traffic is sent unprotected or is blocked. Alerts are not sent by e-mail. Add your own alerting if you need a notification.</li>
+<li><strong>Alert rules ship with the server</strong>, for example a disk, memory or database problem, a stopped service, many computers that stopped reporting, and a computer whose protection has been degraded for a long time. Alerts are sent by e-mail to the address in <code>AIFW_ALERT_EMAIL_TO</code> (by default the administrator address given at setup), through the mail settings of the server. The alert for many computers that stopped reporting is sent only in working hours.</li>
 </ul>
 <h3 id="open-grafana">Open Grafana<a class="headerlink" href="#open-grafana" title="Permanent link">&para;</a></h3>
 <p>From version 2.2.8, Grafana is reached through an SSH tunnel, in the same way as the Keycloak console. It is published on the server's own loopback address only, never on the network.</p>

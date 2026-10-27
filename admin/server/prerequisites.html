@@ -1465,7 +1465,7 @@
 <tr>
 <td><strong>Free disk</strong></td>
 <td>20 GB</td>
-<td>50 GB, and more as audit history grows</td>
+<td>100 GB (the database, logs and metrics share it), and more as audit history grows. You can keep metrics and logs on a separate disk with <code>aifw monitoring data-dir</code></td>
 </tr>
 <tr>
 <td><strong>Software</strong></td>
@@ -1480,7 +1480,7 @@
 <li>The server needs a <strong>static IP address</strong> or a DHCP reservation.</li>
 </ul>
 <h2 id="the-network">The network<a class="headerlink" href="#the-network" title="Permanent link">&para;</a></h2>
-<p>The server needs internet access during the installation. It downloads software from the vendor's private container registry and, depending on the version, from public container registries.</p>
+<p>The server needs internet access during the installation. It downloads software from the vendor's private container registry and, depending on the version, from public container registries. Once a day the running server also downloads public vulnerability advisory data (OSV) for the Developer Tool Inventory. Set <code>ADVISORY_REFRESH=off</code> on the server to stop it, and the server then uses only the files already in its data folder.</p>
 <h3 id="ports">Ports<a class="headerlink" href="#ports" title="Permanent link">&para;</a></h3>
 <p>The ports you need depend on how HTTPS is handled (see <a href="install.html#how-https-is-handled">Install the server</a>):</p>
 <table>

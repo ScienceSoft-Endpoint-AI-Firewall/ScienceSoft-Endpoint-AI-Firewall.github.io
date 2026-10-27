@@ -1506,7 +1506,7 @@
 <p>The agent needs outbound HTTPS (port 443) to:</p>
 <ul>
 <li><strong>Your server address.</strong></li>
-<li><strong>The update address.</strong> This is your server address followed by <code>/updates/generic</code>, unless you set another one with <code>/UPDATE_URL</code> on Windows.</li>
+<li><strong>The update address.</strong> The address built into the installer, unless you set another one with <code>/UPDATE_URL</code> on Windows or with <code>updateUrl</code> in <code>enrollment.json</code>. To take updates from your own server, publish the update feed there and set that address. It must start with <code>https://</code>.</li>
 <li><strong><code>huggingface.co</code>,</strong> where it downloads its detection models. Hugging Face also serves large files from its own download addresses, under <code>huggingface.co</code> and <code>hf.co</code>. Allow those names too. Test this from a pilot computer on a network that blocks everything by default. The agent checks every model file against a fixed hash after the download.</li>
 </ul>
 <p>The agent opens no inbound connections from the network. It listens only on the computer itself (<code>127.0.0.1</code>).</p>

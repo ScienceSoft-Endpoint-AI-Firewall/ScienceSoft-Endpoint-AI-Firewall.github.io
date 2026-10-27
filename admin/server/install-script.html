@@ -1495,7 +1495,7 @@ sudo<span class="w"> </span>aifw<span class="w"> </span>setup
 </tr>
 <tr>
 <td><code>AIFW_VERSION</code></td>
-<td>The version of the installer to download. By default: the newest published version</td>
+<td>The version of the installer to download. By default: the version this server already runs, or the newest published version on a new server</td>
 </tr>
 <tr>
 <td><code>AIFW_REGISTRY</code></td>
@@ -1517,7 +1517,7 @@ sudo<span class="w"> </span>aifw<span class="w"> </span>setup
 <p>To install a specific version:</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span><span class="nv">AIFW_VERSION</span><span class="o">=</span>&lt;version&gt;<span class="w"> </span>bash<span class="w"> </span>install.sh
 </code></pre></div>
-<p>Running the script again is safe. It repairs a damaged <code>aifw</code> command. It downloads the newest published version unless you set <code>AIFW_VERSION</code>, so on a server that already works set <code>AIFW_VERSION</code> to the version it runs, or use <code>aifw upgrade</code> instead.</p>
+<p>Running the script again is safe. It repairs a damaged <code>aifw</code> command. On a server that already works it keeps the version that server runs. To change the version, use <code>aifw upgrade</code>.</p>
 <h2 id="if-something-goes-wrong">If something goes wrong<a class="headerlink" href="#if-something-goes-wrong" title="Permanent link">&para;</a></h2>
 <p>The script stops with a line that starts with <strong>"Problem:"</strong>.</p>
 <table>

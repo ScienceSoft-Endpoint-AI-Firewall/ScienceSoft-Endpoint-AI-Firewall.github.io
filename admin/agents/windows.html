@@ -1480,7 +1480,7 @@
 </tbody>
 </table>
 <p>A missing or incomplete server address still returns 0, and the computer then works on its own. The reason is written to <code>%ProgramData%\ai-firewall\install-enrolment.log</code>. Check the result with <a href="verify.html">Check that computers joined</a>.</p>
-<p>The reason for code 3 is shown only in the installer window, which is hidden in a silent install. It is not written to the Windows event log.</p>
+<p>The reason for code 3 is shown only in the installer window, which is hidden in a silent install. For code 3 nothing is written to the Windows event log. If the server address is missing, the installer writes a warning to the Application event log (source AI Firewall, event 124) and adds it to <code>install-enrolment.log</code>, and the exit code stays 0.</p>
 <h2 id="microsoft-intune">Microsoft Intune<a class="headerlink" href="#microsoft-intune" title="Permanent link">&para;</a></h2>
 <p>The installer is an <code>.exe</code>, not an <code>.msi</code>. Deploy it as a <strong>Windows app (Win32)</strong>.</p>
 <ol>
@@ -1545,7 +1545,7 @@
 <div class="highlight"><pre><span></span><code>&quot;%ProgramFiles%\AI Firewall\Uninstall AI Firewall.exe&quot; /allusers /S
 </code></pre></div>
 <p>This is the quiet uninstall command that the installer registers. Run it as an administrator or as the system account. Without administrator rights it asks for elevation.</p>
-<p>It removes the app, the services, the certificate and the settings that AI Firewall added. It does <strong>not</strong> restore a computer-wide proxy setting that existed before AI Firewall was installed. Local data of every user on the computer is deleted. See the <a href="../../uninstall.html">User Guide</a> for what is removed.</p>
+<p>It removes the app, the services, the certificate and the settings that AI Firewall added. It also puts back the MCP servers and skills that the agent had removed from the user's Claude Code and Codex configuration, but only for the account that runs the uninstaller. It does <strong>not</strong> restore a computer-wide proxy setting that existed before AI Firewall was installed. Local data of every user on the computer is deleted. See the <a href="../../uninstall.html">User Guide</a> for what is removed.</p>
 <p>In version 2.2.7, an uninstall run by a deployment tool sends no notice to your server. The computer stops reporting. Remove it from the portal. Newer versions report the removal to the server when the uninstaller runs as the system account on a computer that has the protection service. An uninstall that an administrator starts by hand sends nothing.</p>
 
 

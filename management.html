@@ -468,6 +468,34 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notifications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Notifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-your-organisation-asks-you-to-confirm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When your organisation asks you to confirm
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ai-tools-protection" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1430,6 +1458,34 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notifications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Notifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-your-organisation-asks-you-to-confirm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When your organisation asks you to confirm
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ai-tools-protection" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1548,6 +1604,11 @@
 <td>Every request the firewall saw, and what it did with each one.</td>
 </tr>
 <tr>
+<td>Monitor</td>
+<td>Notifications</td>
+<td>Every notice the firewall raised, including ones you missed: what was found, why, and the request behind it. The latest 500 are kept.</td>
+</tr>
+<tr>
 <td>Configure</td>
 <td>Protection</td>
 <td>What the firewall looks for, and what happens when it finds something.</td>
@@ -1582,7 +1643,7 @@
 <p>At the bottom of the menu, a status card shows if protection is on, for example "Protection is on". It also shows who sets the rules ("Managed by IT" or "Local settings") and the mode. Below it you see the app version and a button to switch between light and dark theme. The button at the top of the menu folds it to icons.</p>
 <p><strong>There is no on/off switch in the app.</strong> Your company decides when protection is on. You can close the app from the tray menu (<strong>Quit</strong>), but then protection stops. See <a href="coverage.html#when-ai-firewall-is-not-running">When AI Firewall is not running</a>.</p>
 <p>The <strong>i</strong> button at the top of every screen ("Why this status?") shows the checks behind the current status. For the meaning of each status, see <a href="check-status.html">Check status</a>.</p>
-<p><img alt="The AI Firewall window on the Dashboard. The menu on the left lists Dashboard, Activity, Protection, AI tools protection, Detection engine, Device &amp; coverage, Updates and Help. The status card at the bottom of the menu says that protection is paused by the organisation." src="assets/screenshots/app-overview.png" /></p>
+<p><img alt="The AI Firewall window on the Dashboard. The menu on the left lists Dashboard, Activity, Notifications, Protection, AI tools protection, Detection engine, Device &amp; coverage, Updates and Help. The status card at the bottom of the menu says that protection is paused by the organisation." src="assets/screenshots/app-overview.png" /></p>
 <p><em>In this example the organisation has paused protection, so the status card does not say "Protection is on". See <a href="check-status.html">Check status</a>.</em></p>
 <h2 id="who-is-in-charge-you-or-your-it-team">Who is in charge: you or your IT team<a class="headerlink" href="#who-is-in-charge-you-or-your-it-team" title="Permanent link">&para;</a></h2>
 <p>Your IT team sets the rules. <strong>You cannot change the mode or the list of data types in the app.</strong> You can see them, so you know what protects you. Where a rule is set by your IT team, the screen says "Set by your IT team. To change it, contact them."</p>
@@ -1627,7 +1688,7 @@
 <tbody>
 <tr>
 <td>Record only</td>
-<td>The request is sent as typed. You get a log entry so you know what left your computer.</td>
+<td>The request is sent as typed, apart from machine secrets and your organisation's keywords, which are replaced. You get a log entry so you know what left your computer.</td>
 </tr>
 <tr>
 <td>Replace</td>
@@ -1635,7 +1696,7 @@
 </tr>
 <tr>
 <td>Block</td>
-<td>The request is not sent. You see what was found and can edit the prompt and try again.</td>
+<td>The request is not sent. You see what was found and can edit the prompt and try again. Two cases are replaced and sent instead: a search question that an app sends in a web address, and a request whose only findings are your organisation's keywords.</td>
 </tr>
 </tbody>
 </table>
@@ -1645,6 +1706,10 @@
 <p><strong>AI services this applies to.</strong> The AI services that are inspected. A service that is not on the list is not inspected.</p>
 <p><strong>Things only your company would recognise.</strong> Patterns specific to your company, for example an internal project code. You can add your own with <strong>Add a company pattern</strong>, and remove them again. They stay on your computer. Patterns pushed by your IT team are separate and read-only.</p>
 <p><strong>Never replace these.</strong> A list of terms that are never replaced. It is set by your IT team and you cannot change it. If something is replaced that should not be, tell your IT team.</p>
+<h2 id="notifications">Notifications<a class="headerlink" href="#notifications" title="Permanent link">&para;</a></h2>
+<p>The <strong>Notifications</strong> screen keeps every notice the firewall raised, including the ones you missed. Each entry has a label (Record only, Replaced, Credential or Held), what was found, why, and the request behind it. It shows the kinds of data, never the data. The list survives a restart and keeps the latest 500. Selecting a system notification opens this screen.</p>
+<h3 id="when-your-organisation-asks-you-to-confirm">When your organisation asks you to confirm<a class="headerlink" href="#when-your-organisation-asks-you-to-confirm" title="Permanent link">&para;</a></h3>
+<p>Your organisation can ask you to confirm before you use an AI service or upload a file. A window asks "Continue to <service>?" or "Upload this document to <service>?". Choose <strong>Continue</strong> to go ahead; you are not asked again for that service for up to 8 hours. Choose <strong>Cancel</strong> to stop. You can add a reason (optional). If you do not answer in time, the request is cancelled and you can send it again. Closing the window or pressing Enter counts as Cancel. Your choice and reason are recorded for your organisation, and personal data in the reason is replaced.</p>
 <h2 id="ai-tools-protection">AI tools protection<a class="headerlink" href="#ai-tools-protection" title="Permanent link">&para;</a></h2>
 <p>Lists the skills and MCP servers found in the configuration files on your computer. Nothing is sent while it looks.</p>
 <ul>
@@ -1653,7 +1718,7 @@
 <li>For each item you see its name, type (MCP server or skill), the tool it belongs to, where it is configured, and a risk level (high, medium, low) with the reason.</li>
 <li>"Could not be read" means a configuration file could not be parsed.</li>
 </ul>
-<p>This is a list, not an approval. Nobody has reviewed these items, and an MCP server that opens its own connection is not inspected by the firewall.</p>
+<p>This is a list, not an approval. Nobody has reviewed these items, and an MCP server that opens its own connection is not inspected by the firewall. If your organisation does not allow an MCP server or skill, the app removes it from Claude Code or Codex and shows a notice at the top of the window. Uninstalling the app puts it back.</p>
 <h2 id="detection-engine">Detection engine<a class="headerlink" href="#detection-engine" title="Permanent link">&para;</a></h2>
 <p><img alt="The Detection engine screen: pattern matching and the language model run on every request, and a list of models with their size, languages and download state." src="assets/screenshots/detection-engine.png" /></p>
 <p>Shows how the firewall finds data. Two things run on every request: pattern matching (always on) and a language model that finds names, addresses and similar free text.</p>
@@ -1674,9 +1739,9 @@
 </ul>
 <p>Each one is shown as Covered, Partial or Not covered, with a reason.</p>
 <p><strong>AI services covered</strong>: the services and addresses that are inspected.</p>
-<p><strong>Install certificate.</strong> If the certificate is missing, a banner appears at the top: AI Firewall needs to install a security certificate to inspect AI traffic. Select <strong>Install certificate</strong> and approve the prompt.</p>
+<p><strong>Install certificate.</strong> If the certificate is missing, a banner appears at the top: AI Firewall needs to install a security certificate to inspect AI traffic. Select <strong>Install certificate</strong>, follow the short steps and approve the system prompt.</p>
 <p><strong>Connect a command-line tool.</strong> Claude Code, Codex and Kimi Code do not follow the system proxy, so they are off until you turn them on. Select this button, choose the tool, and follow the three steps. AI Firewall then changes that tool's own settings so its requests go through the firewall. Turning protection off, or uninstalling, puts the settings back. Start a new session of the tool afterwards. Your IT team can also turn tools on for the whole company.</p>
-<p><strong>What you are told about.</strong> Choose which notifications you get. Some are always on and cannot be turned off, for example "A request was not sent" and "Protection stopped".</p>
+<p><strong>What you are told about.</strong> Choose which notifications you get. Some are always on and cannot be turned off, for example "A request was not sent", "A request was blocked by your organisation's policy" and "Protection stopped". "Details were found and recorded" (Record only) shows at most once a minute, and turning it off does not stop the recording. Others are "Your IT team changed the policy", "An AI coding tool is not allowed" and a weekly summary, which is off by default.</p>
 <p><strong>This laptop.</strong> Start with this laptop, save a copy of your settings, restore from a copy, or reset to defaults.</p>
 <h2 id="updates">Updates<a class="headerlink" href="#updates" title="Permanent link">&para;</a></h2>
 <p>Shows the installed version, the newest version and when the app last checked.</p>

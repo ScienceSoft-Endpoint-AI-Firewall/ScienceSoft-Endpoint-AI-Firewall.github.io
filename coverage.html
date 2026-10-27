@@ -1528,7 +1528,7 @@
 <p>The <strong>Protection</strong> screen shows the full list, in four groups: People, Credentials, Financial and Government identity.</p>
 <p>It also checks:</p>
 <ul>
-<li><strong>Files</strong>: Word, Excel, PowerPoint and PDF.</li>
+<li><strong>Files</strong>: Word, Excel, PowerPoint, PDF and OpenDocument.</li>
 <li><strong>Images and screenshots</strong>: it reads the text inside the picture.</li>
 </ul>
 <h2 id="what-it-does-when-it-finds-something">What it does when it finds something<a class="headerlink" href="#what-it-does-when-it-finds-something" title="Permanent link">&para;</a></h2>
@@ -1546,7 +1546,7 @@
 <tr>
 <td>Monitor</td>
 <td>Record only</td>
-<td>The request is sent as you typed it, and a log entry shows what left your computer. The one exception is machine secrets such as API keys: those are replaced by default.</td>
+<td>The request is sent as you typed it, and a log entry shows what left your computer. The exceptions are machine secrets such as API keys and your organisation's keywords: those are replaced.</td>
 <td>The first days, to see what is really being sent. <strong>This is the default for new teams.</strong></td>
 </tr>
 <tr>
@@ -1558,7 +1558,7 @@
 <tr>
 <td>Protect</td>
 <td>Block</td>
-<td>A request is not sent when the firewall is sure enough (see below) that it holds private data. You see what was found. You can edit your prompt and try again.</td>
+<td>A request is not sent when the firewall is sure enough (see below) that it holds private data. You see what was found. You can edit your prompt and try again. Two cases are replaced and sent instead: a search question that an app sends in a web address, and a request whose only findings are your organisation's keywords.</td>
 <td>When private data must never leave your computer.</td>
 </tr>
 </tbody>
@@ -1595,7 +1595,7 @@
 </tr>
 <tr>
 <td>Firefox</td>
-<td>Yes, if it is set to "Use system proxy settings"</td>
+<td>Yes, if it is set to "Use system proxy settings". On a company-managed Windows computer, your IT team's policy can set this for you</td>
 </tr>
 <tr>
 <td>Desktop apps built on web technology, such as Claude Desktop</td>
@@ -1631,6 +1631,7 @@
 <li>What you type, and what your AI tools read back (for example, files that Claude Code reads for you).</li>
 <li>Images and screenshots (text is read on your computer).</li>
 <li>Documents: Word, Excel, PowerPoint, PDF and OpenDocument files, and <code>.zip</code> files one level deep. In Replace mode, a cleaned copy is sent instead of the original.</li>
+<li>Document types: your organisation can also set rules by kind of document (for example NDAs or contracts): allow, record, replace personal data, ask you, or block. If a file is blocked, a notification names the document type.</li>
 <li>A file that cannot be read (encrypted, damaged, unknown format, or a zip inside a zip) is recorded as <strong>not checked</strong>, with the reason. By default it is still sent. Your IT team can choose to refuse such files instead.</li>
 </ul>
 <h2 id="what-is-not-covered">What is NOT covered<a class="headerlink" href="#what-is-not-covered" title="Permanent link">&para;</a></h2>
