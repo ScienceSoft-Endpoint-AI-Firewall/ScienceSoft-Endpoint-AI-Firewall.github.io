@@ -61,6 +61,7 @@
 
     
     
+  <style>:root { --build-chip: "Draft · 2.2.8-beta.5"; --build-chip-bg: #005EB8; --build-chip-fg: #ffffff; }</style>
   
   <meta name="robots" content="noindex, nofollow">
   
@@ -2220,7 +2221,7 @@
 <p>Choose a <strong>Device group</strong> ("None: organisation default only" for a computer in no group), a <strong>Service</strong>, and <strong>Policies to test</strong>, for example "The policies publishing would create" before the first publish. The table <strong>Result</strong> shows the rows <strong>Access</strong>, <strong>If no one can be asked</strong>, <strong>Mode</strong>, <strong>Text mode</strong>, <strong>File mode</strong>, <strong>Images</strong>, <strong>Documents</strong> and <strong>Other files</strong>, with a "Stricter wins" badge where two policies met, and a <strong>Keywords</strong> block. It says "Allowed: shared host, cannot be blocked" or "Allowed: block not enforced for this service yet" instead of a false Block. The tester leaves out policies for people.</p>
 <h3 id="publish">Publish<a class="headerlink" href="#publish" title="Permanent link">&para;</a></h3>
 <p>A bar at the bottom shows "N unpublished changes". <strong>Publishing creates the next version.</strong> Computers get it at their next check. The server keeps <strong>one</strong> version of the set: there is no list of old versions and no restore. The admin log names the version and the policies in it.</p>
-<p>If you open the policy list with an old copy, publishing is refused with "Refresh to load v<N>, then make your change again." Only an <code>admin</code> or <code>super-admin</code> can publish.</p>
+<p>If you open the policy list with an old copy, publishing is refused with "Refresh to load v&lt;N&gt;, then make your change again." Only an <code>admin</code> or <code>super-admin</code> can publish.</p>
 <h3 id="roll-out">Roll out<a class="headerlink" href="#roll-out" title="Permanent link">&para;</a></h3>
 <p>The column <strong>Running</strong> and the rollout card count the computers by the version they report. A computer is counted only when it reports back the new version. Lifting a service block, or deleting a rule, reaches computers at their next check.</p>
 <h2 id="what-a-computer-enforces">What a computer enforces<a class="headerlink" href="#what-a-computer-enforces" title="Permanent link">&para;</a></h2>
@@ -2311,6 +2312,7 @@
         
       </main>
       
+  
         <footer class="md-footer">
   
     
@@ -2373,6 +2375,28 @@
   </div>
 </footer>
       
+  <div class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__col">
+        <strong>ScienceSoft AI Endpoint Firewall</strong>
+        <span>Finds and replaces personal and confidential data in prompts to AI assistants, on each computer, before the request leaves it.</span>
+      </div>
+      <div class="site-footer__col">
+        <strong>Guides</strong>
+        <a href="../../index.md">User Guide</a>
+        <a href="../index.md">Admin Guide</a>
+        <a href="../../troubleshooting.md">Troubleshooting</a>
+        <a href="../../faq.md">FAQ</a>
+      </div>
+      <div class="site-footer__col">
+        <strong>This documentation</strong>
+        <span>Draft · 2.2.8-beta.5</span>
+        <span>Built 2026-10-28</span>
+        <span>© ScienceSoft</span>
+      </div>
+    </div>
+  </div>
+
     </div>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
@@ -2386,6 +2410,8 @@
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/progress.js"></script>
       
     
   </body>

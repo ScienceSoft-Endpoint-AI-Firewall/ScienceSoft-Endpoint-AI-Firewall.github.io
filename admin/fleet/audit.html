@@ -59,6 +59,7 @@
 
     
     
+  <style>:root { --build-chip: "Draft · 2.2.8-beta.5"; --build-chip-bg: #005EB8; --build-chip-fg: #ffffff; }</style>
   
   <meta name="robots" content="noindex, nofollow">
   
@@ -1815,7 +1816,7 @@
 <li><strong>Overview</strong> shows, for one workspace, four sections: <strong>Alerts</strong>, <strong>Devices</strong>, <strong>AI Activity</strong> of the last 7 days, and the <strong>Client</strong> tile. The <strong>Client</strong> tile checks update versions against the update feed of another product. On a server that hosts only this product it can be empty or say that no feed is hosted. Ignore it. Reload the page to see new figures: it does not refresh itself.</li>
 <li><strong>AI Activity</strong> (the screen is titled <strong>Capture</strong>) shows counters: requests, scan rate, latency, the mix of actions (<strong>Pass</strong>, <strong>Mask</strong>, <strong>Block</strong>, <strong>Log</strong>, <strong>Reroute</strong>), the top destinations, and how the two detectors agree. The same numbers are on the <strong>Capture</strong> tab of a workspace. If it says "No capture data yet", counters are off or no computer has reported. The workspace setting <code>capture.stats</code> turns them on.</li>
 <li><strong>Dev Tools</strong> (titled <strong>Developer Tool Inventory</strong>) lists the MCP servers and skills the agents found on the computers. It says "No developer tools reported yet" until they report. Paths show the operating-system account name. The card <strong>Not allowed in AI coding agents</strong> lists the items that the <a href="policies.html#ai-coding-agents">AI coding agents</a> policy does not allow, with the device, the reason and the enforcement. The column <strong>Known vulnerabilities</strong> shows, for each MCP server, how many known vulnerabilities its package has and the worst one. A button <strong>Vulnerable only</strong> filters the list, and the device page lists the advisories with links. The data comes from OSV advisories, and the page shows its date. "None known" does not mean safe: a server without a pinned version, a removed one and one in a container cannot be checked, and skills are not checked.</li>
-<li><strong>Overall analytics</strong> shows one workspace over a date range. It opens with <strong>Coverage</strong>: how much AI traffic was not fully inspected and why, and a table of the computers behind those numbers. Below it are the volume per channel, the top users and the breakdown of the kinds of data found. In version 2.2.8-beta.1 the two lists of top users still say "Per-user aggregation pending". The page is built once a day, so it can be up to a day old.</li>
+<li><strong>Overall analytics</strong> shows one workspace over a date range. It opens with <strong>Coverage</strong>: how much AI traffic was not fully inspected and why, and a table of the computers behind those numbers. Below it are the volume per channel, the top users and the breakdown of the kinds of data found. In version 2.2.8 the two lists of top users still say "Per-user aggregation pending". The page is built once a day, so it can be up to a day old.</li>
 <li><strong>Detection quality</strong> shows how accurately sensitive data is detected: precision and recall per type from lab tests, and how often the fleet's detectors agree. The link <strong>False-positive reports</strong> at the top opens the same list as <strong>Audit</strong> &gt; <strong>False positives</strong>.</li>
 </ul>
 <p><img alt="The Overall analytics page: the Coverage section with the reasons requests were not fully checked and the connections not inspected, and a table with the requests and connections per computer." src="../../assets/screenshots/fleet-overall-analytics.png" /></p>
@@ -1896,7 +1897,7 @@
 <p><strong>Exception requests</strong> in the menu lists requests for an exception to a blocked or masked message, with the kinds of data and the AI service. Pick the workspace in <strong>Tenant</strong>.</p>
 <p><img alt="The Exception requests page for a workspace with no requests: the line Nothing waiting for a decision and the message No exception requests." src="../../assets/screenshots/fleet-exception-requests.png" /></p>
 <ul>
-<li>The columns are <strong>Requested</strong>, <strong>Device</strong>, <strong>What was found</strong> (the kinds of data by name), <strong>AI service</strong>, <strong>What happened</strong> (<strong>Blocked</strong>, <strong>Held</strong> or <strong>Masked</strong>) and <strong>Decision</strong>. A waiting request has the buttons <strong>Approve</strong> and <strong>Reject</strong>. A decided one reads "Approved by <who> · <when>" or "Rejected by <who> · <when>".</li>
+<li>The columns are <strong>Requested</strong>, <strong>Device</strong>, <strong>What was found</strong> (the kinds of data by name), <strong>AI service</strong>, <strong>What happened</strong> (<strong>Blocked</strong>, <strong>Held</strong> or <strong>Masked</strong>) and <strong>Decision</strong>. A waiting request has the buttons <strong>Approve</strong> and <strong>Reject</strong>. A decided one reads "Approved by &lt;who&gt; · &lt;when&gt;" or "Rejected by &lt;who&gt; · &lt;when&gt;".</li>
 <li>The page never shows the text of the prompt, only the kinds of data.</li>
 <li>The page says: "Approving or rejecting records your answer and who gave it. It does not change anything on the employee's device: nothing is unblocked or sent again." The pause described below is the one exception.</li>
 <li>An <code>admin</code> of the workspace or a <code>super-admin</code> can decide. For anyone else the page says "This sign-in can see these requests but cannot decide them." If someone else decided first, the page says "Already decided by someone else. The list has been refreshed to show their answer." The decision goes into the <a href="#what-administrators-changed">admin log</a> as <code>exception.request.decided</code>.</li>
@@ -1954,6 +1955,7 @@
         
       </main>
       
+  
         <footer class="md-footer">
   
     
@@ -2000,6 +2002,28 @@
   </div>
 </footer>
       
+  <div class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__col">
+        <strong>ScienceSoft AI Endpoint Firewall</strong>
+        <span>Finds and replaces personal and confidential data in prompts to AI assistants, on each computer, before the request leaves it.</span>
+      </div>
+      <div class="site-footer__col">
+        <strong>Guides</strong>
+        <a href="../../index.md">User Guide</a>
+        <a href="../index.md">Admin Guide</a>
+        <a href="../../troubleshooting.md">Troubleshooting</a>
+        <a href="../../faq.md">FAQ</a>
+      </div>
+      <div class="site-footer__col">
+        <strong>This documentation</strong>
+        <span>Draft · 2.2.8-beta.5</span>
+        <span>Built 2026-10-28</span>
+        <span>© ScienceSoft</span>
+      </div>
+    </div>
+  </div>
+
     </div>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
@@ -2013,6 +2037,8 @@
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/progress.js"></script>
       
     
   </body>

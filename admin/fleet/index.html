@@ -61,6 +61,7 @@
 
     
     
+  <style>:root { --build-chip: "Draft · 2.2.8-beta.5"; --build-chip-bg: #005EB8; --build-chip-fg: #ffffff; }</style>
   
   <meta name="robots" content="noindex, nofollow">
   
@@ -1719,7 +1720,7 @@
 <h2 id="how-every-page-looks">How every page looks<a class="headerlink" href="#how-every-page-looks" title="Permanent link">&para;</a></h2>
 <p>Every page has one header: the title on the left, then the <strong>Tenant</strong> list (the workspace you are looking at), a <strong>Window</strong> list on dashboards, the page's own buttons, and <strong>Sign out</strong> on the right. There are no <strong>Back</strong> buttons: use the menu or the browser's Back button.</p>
 <p><img alt="The portal Overview of a workspace: the blocks Alerts, Devices and AI Activity with counters, and the left menu." src="../../assets/screenshots/portal-overview.png" /></p>
-<p>The line under your name at the bottom of the menu says what the server grants your account: <strong>Super admin</strong>, <strong>Tenant admin · <workspace></strong> or <strong>Read-only</strong>.</p>
+<p>The line under your name at the bottom of the menu says what the server grants your account: <strong>Super admin</strong>, <strong>Tenant admin · &lt;workspace&gt;</strong> or <strong>Read-only</strong>.</p>
 <p>If you leave the <strong>Config</strong> or <strong>Policy</strong> tab of a workspace with changes that are not saved, the portal asks <strong>Save your changes?</strong> with <strong>Cancel</strong>, <strong>Discard</strong> and <strong>Save</strong>. The <strong>Policies</strong> page does not ask.</p>
 <h2 id="the-menu">The menu<a class="headerlink" href="#the-menu" title="Permanent link">&para;</a></h2>
 <p>The left menu has these entries. The words are the portal's own.</p>
@@ -1904,6 +1905,7 @@
         
       </main>
       
+  
         <footer class="md-footer">
   
     
@@ -1966,6 +1968,28 @@
   </div>
 </footer>
       
+  <div class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__col">
+        <strong>ScienceSoft AI Endpoint Firewall</strong>
+        <span>Finds and replaces personal and confidential data in prompts to AI assistants, on each computer, before the request leaves it.</span>
+      </div>
+      <div class="site-footer__col">
+        <strong>Guides</strong>
+        <a href="../../index.md">User Guide</a>
+        <a href="../index.md">Admin Guide</a>
+        <a href="../../troubleshooting.md">Troubleshooting</a>
+        <a href="../../faq.md">FAQ</a>
+      </div>
+      <div class="site-footer__col">
+        <strong>This documentation</strong>
+        <span>Draft · 2.2.8-beta.5</span>
+        <span>Built 2026-10-28</span>
+        <span>© ScienceSoft</span>
+      </div>
+    </div>
+  </div>
+
     </div>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
@@ -1979,6 +2003,8 @@
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/progress.js"></script>
       
     
   </body>
