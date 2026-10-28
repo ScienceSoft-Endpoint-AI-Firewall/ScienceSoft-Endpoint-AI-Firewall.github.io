@@ -61,7 +61,6 @@
 
     
     
-  <style>:root { --build-chip: "Draft · 2.2.8-beta.5"; --build-chip-bg: #005EB8; --build-chip-fg: #ffffff; }</style>
   
   <meta name="robots" content="noindex, nofollow">
   
@@ -2056,9 +2055,7 @@ sudo<span class="w"> </span>aifw<span class="w"> </span>setup<span class="w">   
 <p>A version that is not in the list cannot be installed or upgraded to. If the version you need is missing, it has not been published yet: wait for it, or contact support. Older versions stay in the list and stay installable.</p>
 <div class="highlight"><pre><span></span><code># aifw versions
 Available server versions (newest first):
-2.2.6
-2.2.5
-2.0.75
+2.2.8
 </code></pre></div>
 <h2 id="aifw-setup"><code>aifw setup</code><a class="headerlink" href="#aifw-setup" title="Permanent link">&para;</a></h2>
 <p>Run this after <code>install.sh</code> has finished. It performs the installation, and it is also the repair command.</p>
@@ -2137,7 +2134,7 @@ Phase 8 of 8 — Finish and verify
 <p><em>(The example is shortened: a real run prints every step of every phase.)</em></p>
 <h2 id="aifw-upgrade"><code>aifw upgrade</code><a class="headerlink" href="#aifw-upgrade" title="Permanent link">&para;</a></h2>
 <p>Moves the server to a newer version. It takes a backup first, and your data stays.</p>
-<p>Run it without <code>--version</code> and, in a terminal, a menu lets you pick a version. Without a terminal (a script or a timer) it only names the newest stable version and changes nothing. Run it with <code>--version 2.2.5</code> to take a named one.</p>
+<p>Run it without <code>--version</code> and, in a terminal, a menu lets you pick a version. Without a terminal (a script or a timer) it only names the newest stable version and changes nothing. Run it with <code>--version 2.2.8</code> to take a named one.</p>
 <p>Four limits:</p>
 <ol>
 <li><strong>It cannot reach a version that is not published.</strong> Run <code>aifw versions</code> first. If the target is the version already running, it stops with <code>This server is already on &lt;version&gt; — nothing to do</code>. Nothing was changed.</li>
@@ -2228,7 +2225,7 @@ Backup done: /opt/ai-firewall/backups/backup-2026-10-06T08-45-59.sql.gz (0.1 MB)
 <h3 id="aifw-version"><code>aifw --version</code><a class="headerlink" href="#aifw-version" title="Permanent link">&para;</a></h3>
 <p>Prints the version of the <code>aifw</code> program on this machine. That is not always the version the server runs: the two drift apart when the program is left behind. An old program then reports services as missing, because it looks for containers that a newer stack has retired.</p>
 <div class="highlight"><pre><span></span><code># aifw --version
-aifw 2.2.6
+aifw 2.2.8
 </code></pre></div>
 <h3 id="aifw-help"><code>aifw --help</code><a class="headerlink" href="#aifw-help" title="Permanent link">&para;</a></h3>
 <p>Lists every command with a one-line description. <code>aifw</code> with no arguments prints the same.</p>
@@ -2418,9 +2415,7 @@ Server check:
         <a href="../../faq.md">FAQ</a>
       </div>
       <div class="site-footer__col">
-        <strong>This documentation</strong>
-        <span>Draft · 2.2.8-beta.5</span>
-        <span>Built 2026-10-28</span>
+        <strong>ScienceSoft</strong>
         <span>© ScienceSoft</span>
       </div>
     </div>

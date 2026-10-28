@@ -59,7 +59,6 @@
 
     
     
-  <style>:root { --build-chip: "Draft · 2.2.8-beta.5"; --build-chip-bg: #005EB8; --build-chip-fg: #ffffff; }</style>
   
   <meta name="robots" content="noindex, nofollow">
   
@@ -1816,7 +1815,7 @@
 <li><strong>Overview</strong> shows, for one workspace, four sections: <strong>Alerts</strong>, <strong>Devices</strong>, <strong>AI Activity</strong> of the last 7 days, and the <strong>Client</strong> tile. The <strong>Client</strong> tile checks update versions against the update feed of another product. On a server that hosts only this product it can be empty or say that no feed is hosted. Ignore it. Reload the page to see new figures: it does not refresh itself.</li>
 <li><strong>AI Activity</strong> (the screen is titled <strong>Capture</strong>) shows counters: requests, scan rate, latency, the mix of actions (<strong>Pass</strong>, <strong>Mask</strong>, <strong>Block</strong>, <strong>Log</strong>, <strong>Reroute</strong>), the top destinations, and how the two detectors agree. The same numbers are on the <strong>Capture</strong> tab of a workspace. If it says "No capture data yet", counters are off or no computer has reported. The workspace setting <code>capture.stats</code> turns them on.</li>
 <li><strong>Dev Tools</strong> (titled <strong>Developer Tool Inventory</strong>) lists the MCP servers and skills the agents found on the computers. It says "No developer tools reported yet" until they report. Paths show the operating-system account name. The card <strong>Not allowed in AI coding agents</strong> lists the items that the <a href="policies.html#ai-coding-agents">AI coding agents</a> policy does not allow, with the device, the reason and the enforcement. The column <strong>Known vulnerabilities</strong> shows, for each MCP server, how many known vulnerabilities its package has and the worst one. A button <strong>Vulnerable only</strong> filters the list, and the device page lists the advisories with links. The data comes from OSV advisories, and the page shows its date. "None known" does not mean safe: a server without a pinned version, a removed one and one in a container cannot be checked, and skills are not checked.</li>
-<li><strong>Overall analytics</strong> shows one workspace over a date range. It opens with <strong>Coverage</strong>: how much AI traffic was not fully inspected and why, and a table of the computers behind those numbers. Below it are the volume per channel, the top users and the breakdown of the kinds of data found. In version 2.2.8 the two lists of top users still say "Per-user aggregation pending". The page is built once a day, so it can be up to a day old.</li>
+<li><strong>Overall analytics</strong> shows one workspace over a date range. It opens with <strong>Coverage</strong>: how much AI traffic was not fully inspected and why, and a table of the computers behind those numbers. Below it are the volume per channel, the top users and the breakdown of the kinds of data found. The two lists of top users still say "Per-user aggregation pending". The page is built once a day, so it can be up to a day old.</li>
 <li><strong>Detection quality</strong> shows how accurately sensitive data is detected: precision and recall per type from lab tests, and how often the fleet's detectors agree. The link <strong>False-positive reports</strong> at the top opens the same list as <strong>Audit</strong> &gt; <strong>False positives</strong>.</li>
 </ul>
 <p><img alt="The Overall analytics page: the Coverage section with the reasons requests were not fully checked and the connections not inspected, and a table with the requests and connections per computer." src="../../assets/screenshots/fleet-overall-analytics.png" /></p>
@@ -2016,9 +2015,7 @@
         <a href="../../faq.md">FAQ</a>
       </div>
       <div class="site-footer__col">
-        <strong>This documentation</strong>
-        <span>Draft · 2.2.8-beta.5</span>
-        <span>Built 2026-10-28</span>
+        <strong>ScienceSoft</strong>
         <span>© ScienceSoft</span>
       </div>
     </div>

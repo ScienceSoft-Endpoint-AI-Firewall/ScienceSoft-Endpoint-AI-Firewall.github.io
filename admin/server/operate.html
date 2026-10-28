@@ -61,7 +61,6 @@
 
     
     
-  <style>:root { --build-chip: "Draft · 2.2.8-beta.5"; --build-chip-bg: #005EB8; --build-chip-fg: #ffffff; }</style>
   
   <meta name="robots" content="noindex, nofollow">
   
@@ -1783,7 +1782,7 @@ sudo<span class="w"> </span>aifw<span class="w"> </span>status
 <li><strong>Alert rules ship with the server</strong>, for example a disk, memory or database problem, a stopped service, many computers that stopped reporting, and a computer whose protection has been degraded for a long time. Alerts are sent by e-mail to the address in <code>AIFW_ALERT_EMAIL_TO</code> (by default the administrator address given at setup), through the mail settings of the server. The alert for many computers that stopped reporting is sent only in working hours.</li>
 </ul>
 <h3 id="open-grafana">Open Grafana<a class="headerlink" href="#open-grafana" title="Permanent link">&para;</a></h3>
-<p>From version 2.2.8, Grafana is reached through an SSH tunnel, in the same way as the Keycloak console. It is published on the server's own loopback address only, never on the network.</p>
+<p>Grafana is reached through an SSH tunnel, in the same way as the Keycloak console. It is published on the server's own loopback address only, never on the network.</p>
 <ol>
 <li>
 <p>On your own computer, open the tunnel and keep it running:</p>
@@ -1796,7 +1795,7 @@ sudo<span class="w"> </span>aifw<span class="w"> </span>status
 <li>Sign in with your personal account through Keycloak. Only <code>super-admin</code> accounts are accepted. Every other role is refused, because the dashboard shows the computers of every workspace.</li>
 <li>In an emergency, you can sign in with the local account <code>admin</code>. Its password is in the settings file as <code>GRAFANA_ADMIN_PASSWORD</code>, and in <code>credentials.txt</code> if you kept it.</li>
 </ol>
-<p><code>aifw upgrade</code> sets this up on a server that was installed earlier. If its sign-in step fails, the upgrade still finishes. It then prints a warning with the cause and the <code>aifw setup</code> command that completes it. In versions before 2.2.8, Grafana has no port on the server, so this tunnel does not work.</p>
+<p><code>aifw upgrade</code> sets this up on a server that was installed earlier. If its sign-in step fails, the upgrade still finishes. It then prints a warning with the cause and the <code>aifw setup</code> command that completes it.</p>
 
 
 
@@ -1905,9 +1904,7 @@ sudo<span class="w"> </span>aifw<span class="w"> </span>status
         <a href="../../faq.md">FAQ</a>
       </div>
       <div class="site-footer__col">
-        <strong>This documentation</strong>
-        <span>Draft · 2.2.8-beta.5</span>
-        <span>Built 2026-10-28</span>
+        <strong>ScienceSoft</strong>
         <span>© ScienceSoft</span>
       </div>
     </div>

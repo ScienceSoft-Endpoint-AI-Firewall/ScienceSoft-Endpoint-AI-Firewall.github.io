@@ -61,7 +61,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 4.2rem; }
 .md-nav__item .md-nav__link--active { font-weight: 600; }
 .md-nav--secondary .md-nav__link--active { color: var(--md-typeset-a-color); }
 
-/* ---- Header: corporate blue, with the build chip ---- */
+/* ---- Header: corporate blue ---- */
 .md-header__button.md-logo img { height: 1.4rem; width: auto; }
 
 /* The AI Firewall mark, next to the title and after the ScienceSoft logo. */
@@ -72,21 +72,6 @@ html { scroll-behavior: smooth; scroll-padding-top: 4.2rem; }
   margin-right: 0.55rem;
   vertical-align: -0.4rem;
   background: url("../assets/ai-firewall-mark.svg") center / contain no-repeat;
-}
-/* Build chip: orange for a draft, green for the release. Words come from mkdocs*.yml. */
-.md-header__title .md-header__topic:first-child .md-ellipsis::after {
-  content: var(--build-chip);
-  display: inline-block;
-  margin-left: 0.7rem;
-  padding: 0.12rem 0.55rem;
-  border-radius: 999px;
-  font-size: 0.58rem; font-weight: 600; letter-spacing: 0.02em;
-  vertical-align: 0.1rem;
-  background: #ffffff;
-  color: #005EB8;
-}
-@media (max-width: 59.9375em) {
-  .md-header__title .md-header__topic:first-child .md-ellipsis::after { display: none; }
 }
 
 /* ---- Tables, notes, pictures ---- */
@@ -180,13 +165,6 @@ html { scroll-behavior: smooth; scroll-padding-top: 4.2rem; }
   .site-footer__inner { grid-template-columns: 1fr; }
 }
 
-/* ---- Header fixes ---- */
-.md-header__title .md-header__topic:first-child .md-ellipsis::after {
-  line-height: 1.5;
-  font-size: 0.55rem;
-  padding: 0.05rem 0.5rem;
-  vertical-align: 0.12rem;
-}
 
 /* Trial Version: an external link in the menu, shown as a button. */
 .md-nav__link[href*="trial-releases"] {

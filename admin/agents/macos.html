@@ -61,7 +61,6 @@
 
     
     
-  <style>:root { --build-chip: "Draft · 2.2.8-beta.5"; --build-chip-bg: #005EB8; --build-chip-fg: #ffffff; }</style>
   
   <meta name="robots" content="noindex, nofollow">
   
@@ -1768,7 +1767,7 @@
 <ul>
 <li><strong>The script always returns 0.</strong> Check the result in its output: for each item the last lines say that it is gone, or <code>STILL PRESENT</code> followed by the path.</li>
 <li><strong>Run by a tool as root, it cannot clean the home folders of the people who use the Mac.</strong> It removes the app, the services, the certificate in the System keychain and the proxy setting. The per-user data of each user (history, preferences, logs and the user's keychain entry) stays, and the user can remove it.</li>
-<li><strong>Notice to your server.</strong> In version 2.2.7, an uninstall run by a management tool sends no notice to your server. The Mac stops reporting. Remove it from the portal. Newer versions report the removal when the uninstall runs as root on a Mac that was installed from the package.</li>
+<li><strong>Notice to your server.</strong> An uninstall reports the removal to the server only when it runs as root on a Mac that was installed from the package. In any other case the Mac stops reporting. Remove it from the portal.</li>
 </ul>
 
 
@@ -1878,9 +1877,7 @@
         <a href="../../faq.md">FAQ</a>
       </div>
       <div class="site-footer__col">
-        <strong>This documentation</strong>
-        <span>Draft · 2.2.8-beta.5</span>
-        <span>Built 2026-10-28</span>
+        <strong>ScienceSoft</strong>
         <span>© ScienceSoft</span>
       </div>
     </div>

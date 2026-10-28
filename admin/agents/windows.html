@@ -61,7 +61,6 @@
 
     
     
-  <style>:root { --build-chip: "Draft · 2.2.8-beta.5"; --build-chip-bg: #005EB8; --build-chip-fg: #ffffff; }</style>
   
   <meta name="robots" content="noindex, nofollow">
   
@@ -1828,7 +1827,7 @@
 </code></pre></div>
 <p>This is the quiet uninstall command that the installer registers. Run it as an administrator or as the system account. Without administrator rights it asks for elevation.</p>
 <p>It removes the app, the services, the certificate and the settings that ScienceSoft AI Endpoint Firewall added. It also puts back the MCP servers and skills that the agent had removed from the user's Claude Code and Codex configuration, but only for the account that runs the uninstaller. It does <strong>not</strong> restore a computer-wide proxy setting that existed before ScienceSoft AI Endpoint Firewall was installed. Local data of every user on the computer is deleted. See the <a href="../../uninstall.html">User Guide</a> for what is removed.</p>
-<p>In version 2.2.7, an uninstall run by a deployment tool sends no notice to your server. The computer stops reporting. Remove it from the portal. Newer versions report the removal to the server when the uninstaller runs as the system account on a computer that has the protection service. An uninstall that an administrator starts by hand sends nothing.</p>
+<p>An uninstall reports the removal to the server only when the uninstaller runs as the system account on a computer that has the protection service. An uninstall that an administrator starts by hand sends nothing. In any other case the computer stops reporting. Remove it from the portal.</p>
 
 
 
@@ -1937,9 +1936,7 @@
         <a href="../../faq.md">FAQ</a>
       </div>
       <div class="site-footer__col">
-        <strong>This documentation</strong>
-        <span>Draft · 2.2.8-beta.5</span>
-        <span>Built 2026-10-28</span>
+        <strong>ScienceSoft</strong>
         <span>© ScienceSoft</span>
       </div>
     </div>
