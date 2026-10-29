@@ -320,12 +320,150 @@
   <section class="lp-section lp-section--tint" id="how">
     <div class="lp-wrap">
       <h2 class="lp-h2">How it works, in three steps.</h2>
-      <div class="lp-flow">
+
+      <!-- Wide screens: one picture. Narrow screens: the three cards below. -->
+      <figure class="lp-diagram lp-reveal">
+        <svg viewBox="0 0 900 420" role="img" aria-labelledby="lp-d-title lp-d-desc">
+          <title id="lp-d-title">How a message is checked before it reaches an AI tool</title>
+          <desc id="lp-d-desc">A message with private details is checked by the program on the employee's computer. The private details are replaced with labels. The cleaned message goes to the AI tool. A record of what was found goes to your own workspace.</desc>
+          <defs>
+            <marker id="lp-ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker>
+            <filter id="lp-sh" x="-25%" y="-20%" width="150%" height="160%"><feDropShadow dx="0" dy="7" stdDeviation="8" flood-color="#0b2a5a" flood-opacity=".16"/></filter>
+            <linearGradient id="lp-g-shield" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f8be6"/><stop offset=".55" stop-color="#005EB8"/><stop offset="1" stop-color="#00428a"/></linearGradient>
+            <linearGradient id="lp-g-box" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#eef6ff"/><stop offset="1" stop-color="#e4f0fd"/></linearGradient>
+            <linearGradient id="lp-g-line" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9db9da"/><stop offset="1" stop-color="#5f8fc6"/></linearGradient>
+          </defs>
+
+          <!-- The computer -->
+          <rect class="d-box" x="12" y="20" width="596" height="280" rx="22"/>
+          <text class="d-cap" x="44" y="62">On the computer</text>
+
+          <!-- 1. the message with private details -->
+          <g transform="translate(60 124)" class="d-shadow">
+            <rect class="d-paper" width="86" height="104" rx="9"/>
+            <rect class="d-line" x="13" y="15" width="60" height="6" rx="3"/>
+            <rect class="d-hot" x="13" y="31" width="44" height="8" rx="4"/>
+            <rect class="d-line" x="13" y="47" width="60" height="6" rx="3"/>
+            <rect class="d-hot" x="13" y="63" width="52" height="8" rx="4"/>
+            <rect class="d-line" x="13" y="79" width="38" height="6" rx="3"/>
+          </g>
+          <text class="d-num" x="103" y="106" text-anchor="middle">1</text>
+          <text class="d-lab" x="103" y="262" text-anchor="middle">A message, file</text>
+          <text class="d-lab" x="103" y="280" text-anchor="middle">or picture</text>
+
+          <line class="d-arrow" x1="164" y1="176" x2="252" y2="176"/>
+
+          <!-- 2. the check: the shield is centred on x = 318 -->
+          <circle class="d-halo" cx="318" cy="176" r="64"/>
+          <g transform="translate(274.3 126) scale(1.15)" class="d-shadow">
+            <path class="d-shield" d="M38 0 4 13v26c0 22 14 38 34 47 20-9 34-25 34-47V13z"/>
+            <path class="d-tick" d="m23 44 10 10 20-22"/>
+          </g>
+          <text class="d-num" x="318" y="106" text-anchor="middle">2</text>
+          <rect class="d-rules" x="272" y="38" width="92" height="24" rx="12"/>
+          <text class="d-rules-t" x="318" y="55" text-anchor="middle">Your rules</text>
+          <text class="d-lab" x="318" y="262" text-anchor="middle">The program</text>
+          <text class="d-lab" x="318" y="280" text-anchor="middle">checks it</text>
+
+          <line class="d-arrow" x1="384" y1="176" x2="460" y2="176"/>
+
+          <!-- 3. the cleaned message -->
+          <g transform="translate(476 124)" class="d-shadow">
+            <rect class="d-paper d-paper--safe" width="86" height="104" rx="9"/>
+            <rect class="d-line" x="13" y="15" width="60" height="6" rx="3"/>
+            <rect class="d-tagbox" x="13" y="31" width="44" height="8" rx="4"/>
+            <rect class="d-line" x="13" y="47" width="60" height="6" rx="3"/>
+            <rect class="d-tagbox" x="13" y="63" width="52" height="8" rx="4"/>
+            <rect class="d-line" x="13" y="79" width="38" height="6" rx="3"/>
+          </g>
+          <text class="d-num" x="519" y="106" text-anchor="middle">3</text>
+          <text class="d-lab" x="519" y="262" text-anchor="middle">Private parts</text>
+          <text class="d-lab" x="519" y="280" text-anchor="middle">replaced</text>
+
+          <!-- out to the AI tool -->
+          <line class="d-arrow" x1="578" y1="176" x2="694" y2="176"/>
+          <g transform="translate(708 118)" class="d-shadow">
+            <path class="d-cloud" d="M40 94h96a30 30 0 0 0 4-60 42 42 0 0 0-80-10 36 36 0 0 0-20 70z"/>
+            <text class="d-cloud-t" x="86" y="64" text-anchor="middle">AI tool</text>
+          </g>
+          <text class="d-lab" x="794" y="262" text-anchor="middle">ChatGPT, Claude,</text>
+          <text class="d-lab" x="794" y="280" text-anchor="middle">Gemini and others</text>
+
+          <!-- the record, to your own workspace -->
+          <circle cx="422" cy="176" r="5" fill="#ff9a08"/>
+          <path class="d-record" d="M422 176V372H648"/>
+          <text class="d-lab d-lab--small" x="438" y="362">a record of what was found</text>
+          <g transform="translate(660 342)" class="d-shadow">
+            <rect class="d-ws" width="226" height="60" rx="14"/>
+            <text class="d-ws-t" x="113" y="27" text-anchor="middle">Your own workspace</text>
+            <text class="d-ws-s" x="113" y="46" text-anchor="middle">on your server</text>
+          </g>
+
+          <!-- moving dots (still when motion is reduced) -->
+          <circle class="d-dot d-dot--in" cx="168" cy="176" r="7"/>
+          <circle class="d-dot d-dot--out" cx="392" cy="176" r="7"/>
+        </svg>
+        <figcaption>The check happens on the computer, before anything is sent. The AI gets the question without the private part. Your workspace gets a record of what was found.</figcaption>
+      </figure>
+
+      <div class="lp-flow lp-flow--fallback">
         <div class="lp-step lp-reveal"><span class="lp-step__n">1</span><h3>Someone sends something to an AI tool</h3><p>A message, a document or a picture, in the browser or in an app.</p></div>
         <div class="lp-arrow" aria-hidden="true">&rarr;</div>
         <div class="lp-step lp-step--core lp-reveal"><span class="lp-step__n">2</span><h3>The program on their computer reads it first</h3><p>It looks for private details: names, numbers, passwords, confidential documents. This happens on the computer itself.</p></div>
         <div class="lp-arrow" aria-hidden="true">&rarr;</div>
         <div class="lp-step lp-reveal"><span class="lp-step__n">3</span><h3>Your rules decide what happens</h3><p>The private details are replaced with labels, or the message is stopped. Then the rest goes on to the AI.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Three settings -->
+  <section class="lp-section" id="modes">
+    <div class="lp-wrap">
+      <h2 class="lp-h2">You decide what happens when private data is found.</h2>
+      <p class="lp-sub">Three settings, shown on the same example. Choose one for the whole company, or different ones for a team or an AI tool.</p>
+
+      <div class="lp-modes">
+        <div class="lp-mode lp-mode--watch lp-reveal">
+          <div class="lp-mode__head">
+            <span class="lp-mode__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M1.5 12S5.5 5 12 5s10.5 7 10.5 7-4 7-10.5 7S1.5 12 1.5 12z"/><circle cx="12" cy="12" r="3.2"/></svg></span>
+            <h3>Record only</h3>
+          </div>
+          <span class="lp-mode__badge">Where a new workspace starts</span>
+          <p>The message goes through as it is. You get a record of what was found, so you can see what your people send before you switch protection on. Passwords, keys and the words you list are still hidden.</p>
+          <div class="lp-mode__box">
+            <p class="lp-mode__label">What the AI receives</p>
+            <p class="lp-mode__text">Write a polite reply to <mark>Anna Kowalski</mark> (<mark>anna.kowalski@acme-corp.example</mark>). Her card <mark>4111 1111 1111 1111</mark> was charged twice for invoice 2041.</p>
+            <p class="lp-mode__who">The employee notices nothing.</p>
+          </div>
+        </div>
+
+        <div class="lp-mode lp-mode--replace lp-reveal">
+          <div class="lp-mode__head">
+            <span class="lp-mode__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9 8 11 4.6-2 8-6 8-11V5z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg></span>
+            <h3>Replace</h3>
+          </div>
+          <span class="lp-mode__badge lp-mode__badge--ghost">&nbsp;</span>
+          <p>Private details are swapped for labels. The AI still understands the question and can answer it.</p>
+          <div class="lp-mode__box lp-mode__box--safe">
+            <p class="lp-mode__label">What the AI receives</p>
+            <p class="lp-mode__text">Write a polite reply to <span class="lp-tag">[PERSON]</span> (<span class="lp-tag">[EMAIL]</span>). Her card <span class="lp-tag">[CARD NUMBER]</span> was charged twice for invoice 2041.</p>
+            <p class="lp-mode__who">The employee gets an answer as usual.</p>
+          </div>
+        </div>
+
+        <div class="lp-mode lp-mode--block lp-reveal">
+          <div class="lp-mode__head">
+            <span class="lp-mode__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="m5.6 5.6 12.8 12.8"/></svg></span>
+            <h3>Block</h3>
+          </div>
+          <span class="lp-mode__badge lp-mode__badge--ghost">&nbsp;</span>
+          <p>The message is stopped and the employee is told why. Nothing is sent to the AI.</p>
+          <div class="lp-mode__box lp-mode__box--stop">
+            <p class="lp-mode__label">What the AI receives</p>
+            <p class="lp-mode__text lp-mode__text--none">Nothing.</p>
+            <p class="lp-mode__who">The employee sees: <span class="lp-mode__notice">Request blocked &mdash; PII detected</span></p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
