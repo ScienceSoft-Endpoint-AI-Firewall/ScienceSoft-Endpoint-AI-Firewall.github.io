@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Fixes for common problems with ScienceSoft AI Endpoint Firewall: empty Activity, names not replaced, command-line tools not checked, certificate trust and server connection.">
+        <meta name="description" content="Fixes for common problems with ScienceSoft On-Device AI Firewall: empty Activity, names not replaced, command-line tools not checked, certificate trust and server connection.">
       
       
       
@@ -25,7 +25,7 @@
     
     
       
-        <title>Troubleshooting for users - ScienceSoft AI Endpoint Firewall</title>
+        <title>Troubleshooting for users - ScienceSoft On-Device AI Firewall</title>
       
     
     
@@ -103,7 +103,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="ScienceSoft AI Endpoint Firewall" class="md-header__button md-logo" aria-label="ScienceSoft AI Endpoint Firewall" data-md-component="logo">
+    <a href="." title="ScienceSoft On-Device AI Firewall" class="md-header__button md-logo" aria-label="ScienceSoft On-Device AI Firewall" data-md-component="logo">
       
   <img src="assets/logo-white.svg" alt="logo">
 
@@ -116,7 +116,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            ScienceSoft AI Endpoint Firewall
+            ScienceSoft On-Device AI Firewall
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -228,12 +228,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="ScienceSoft AI Endpoint Firewall" class="md-nav__button md-logo" aria-label="ScienceSoft AI Endpoint Firewall" data-md-component="logo">
+    <a href="." title="ScienceSoft On-Device AI Firewall" class="md-nav__button md-logo" aria-label="ScienceSoft On-Device AI Firewall" data-md-component="logo">
       
   <img src="assets/logo-white.svg" alt="logo">
 
     </a>
-    ScienceSoft AI Endpoint Firewall
+    ScienceSoft On-Device AI Firewall
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -1829,7 +1829,7 @@
 
 
 <h1 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h1>
-<p>This page helps you when ScienceSoft AI Endpoint Firewall does not behave as you expect. Find your problem in the list, then follow the steps. If a status in the app is not green, read <a href="check-status.html">Check status</a> first.</p>
+<p>This page helps you when ScienceSoft On-Device AI Firewall does not behave as you expect. Find your problem in the list, then follow the steps. If a status in the app is not green, read <a href="check-status.html">Check status</a> first.</p>
 <h2 id="quick-list">Quick list<a class="headerlink" href="#quick-list" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1922,9 +1922,9 @@
 <p>If your IT team manages your computer, they set the rules. The mode and the list of data types are always read-only in the app. A banner says "Set by your IT team. To change it, contact them." on the screens where your IT team sets a rule. To change a rule, contact them.</p>
 <p>You can change company patterns, the detection model, image languages, notifications and the start-up setting yourself.</p>
 <h2 id="problem-6-certificate-trust-is-not-yes-installed">Problem 6. Certificate trust is not "Yes — installed"<a class="headerlink" href="#problem-6-certificate-trust-is-not-yes-installed" title="Permanent link">&para;</a></h2>
-<p>Without the certificate, ScienceSoft AI Endpoint Firewall cannot read encrypted AI traffic.</p>
+<p>Without the certificate, ScienceSoft On-Device AI Firewall cannot read encrypted AI traffic.</p>
 <ol>
-<li>A banner at the top of the app says ScienceSoft AI Endpoint Firewall needs to install a security certificate. Select <strong>Install certificate</strong>.</li>
+<li>A banner at the top of the app says ScienceSoft On-Device AI Firewall needs to install a security certificate. Select <strong>Install certificate</strong>.</li>
 <li>Approve the prompt from your operating system. On Windows it needs an administrator account. On macOS it asks for your login password.</li>
 <li>Open <strong>Device &amp; coverage</strong>. <strong>Certificate trust</strong> must now say <strong>Yes — installed</strong>.</li>
 </ol>
@@ -1956,9 +1956,9 @@
 </table>
 <p>Select <strong>Try connecting again</strong> to ask the server to accept this device again.</p>
 <h2 id="problem-8-teams-or-outlook-cannot-sign-in">Problem 8. Teams or Outlook cannot sign in<a class="headerlink" href="#problem-8-teams-or-outlook-cannot-sign-in" title="Permanent link">&para;</a></h2>
-<p>To cover Microsoft 365 Copilot, ScienceSoft AI Endpoint Firewall also checks <code>graph.microsoft.com</code>. The Teams, Outlook and Office desktop apps pin their certificate for that address, so they may fail to sign in or send messages while protection is on. Tell your IT team. Turning protection off restores them, but only your IT team can do that.</p>
+<p>To cover Microsoft 365 Copilot, ScienceSoft On-Device AI Firewall also checks <code>graph.microsoft.com</code>. The Teams, Outlook and Office desktop apps pin their certificate for that address, so they may fail to sign in or send messages while protection is on. Tell your IT team. Turning protection off restores them, but only your IT team can do that.</p>
 <h2 id="problem-9-ai-tools-stopped-working-when-i-closed-the-app">Problem 9. AI tools stopped working when I closed the app<a class="headerlink" href="#problem-9-ai-tools-stopped-working-when-i-closed-the-app" title="Permanent link">&para;</a></h2>
-<p>On Windows with the system guard, and on macOS installed from the .pkg, the AI services that ScienceSoft AI Endpoint Firewall covers are <strong>blocked</strong> while the app is not running. This protects you: requests are not sent unchecked. Start the app again. Your IT team can grant an exception.</p>
+<p>On Windows with the system guard, and on macOS installed from the .pkg, the AI services that ScienceSoft On-Device AI Firewall covers are <strong>blocked</strong> while the app is not running. This protects you: requests are not sent unchecked. Start the app again. Your IT team can grant an exception.</p>
 <p>On macOS installed from the .dmg, nothing is blocked. If the app is closed, AI requests go out <strong>without being checked</strong>.</p>
 <h2 id="problem-10-ai-tools-feel-slower">Problem 10. AI tools feel slower<a class="headerlink" href="#problem-10-ai-tools-feel-slower" title="Permanent link">&para;</a></h2>
 <p>A little delay is normal. <strong>Dashboard</strong> shows the median scan time measured on your own computer. Large screenshots take longer, because the text inside them is read first. If the delay is large, contact your IT team.</p>
@@ -2068,7 +2068,7 @@
   <div class="site-footer">
     <div class="site-footer__inner">
       <div class="site-footer__col">
-        <strong>ScienceSoft AI Endpoint Firewall</strong>
+        <strong>ScienceSoft On-Device AI Firewall</strong>
         <span>Finds and replaces personal and confidential data in prompts to AI assistants, on each computer, before the request leaves it.</span>
       </div>
       <div class="site-footer__col">

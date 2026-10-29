@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Silent installation switches, exit codes, Microsoft Intune Win32 app settings and a Group Policy startup script for the ScienceSoft AI Endpoint Firewall agent.">
+        <meta name="description" content="Silent installation switches, exit codes, Microsoft Intune Win32 app settings and a Group Policy startup script for the ScienceSoft On-Device AI Firewall agent.">
       
       
       
@@ -25,7 +25,7 @@
     
     
       
-        <title>Deploy the agent on Windows (silent install, Intune, Group Policy) - ScienceSoft AI Endpoint Firewall</title>
+        <title>Deploy the agent on Windows (silent install, Intune, Group Policy) - ScienceSoft On-Device AI Firewall</title>
       
     
     
@@ -103,7 +103,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="ScienceSoft AI Endpoint Firewall" class="md-header__button md-logo" aria-label="ScienceSoft AI Endpoint Firewall" data-md-component="logo">
+    <a href="../.." title="ScienceSoft On-Device AI Firewall" class="md-header__button md-logo" aria-label="ScienceSoft On-Device AI Firewall" data-md-component="logo">
       
   <img src="../../assets/logo-white.svg" alt="logo">
 
@@ -116,7 +116,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            ScienceSoft AI Endpoint Firewall
+            ScienceSoft On-Device AI Firewall
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -228,12 +228,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="ScienceSoft AI Endpoint Firewall" class="md-nav__button md-logo" aria-label="ScienceSoft AI Endpoint Firewall" data-md-component="logo">
+    <a href="../.." title="ScienceSoft On-Device AI Firewall" class="md-nav__button md-logo" aria-label="ScienceSoft On-Device AI Firewall" data-md-component="logo">
       
   <img src="../../assets/logo-white.svg" alt="logo">
 
     </a>
-    ScienceSoft AI Endpoint Firewall
+    ScienceSoft On-Device AI Firewall
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -1800,7 +1800,7 @@
 </table>
 </li>
 <li>
-<p><strong>Detection rule:</strong> a file exists, <code>%ProgramFiles%\AI Firewall\AI Firewall.exe</code>. This works when the default folder is used. You can also use the installer's uninstall entry in the registry (<code>HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall</code>, 64-bit view). Its <code>DisplayName</code> is "ScienceSoft AI Endpoint Firewall" followed by the version, so do not match it exactly, and its <code>DisplayVersion</code> is the app version.</p>
+<p><strong>Detection rule:</strong> a file exists, <code>%ProgramFiles%\AI Firewall\AI Firewall.exe</code>. This works when the default folder is used. You can also use the installer's uninstall entry in the registry (<code>HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall</code>, 64-bit view). Its <code>DisplayName</code> is "ScienceSoft On-Device AI Firewall" followed by the version, so do not match it exactly, and its <code>DisplayVersion</code> is the app version.</p>
 </li>
 <li><strong>Requirements:</strong> 64-bit, Windows 10 or Windows 11.</li>
 <li><strong>Return codes:</strong> add code <code>3</code> as <strong>Success</strong>, in addition to the defaults.</li>
@@ -1812,7 +1812,7 @@
 </div>
 <p>Try the install, the uninstall and the detection rule on a pilot computer before you assign the app widely.</p>
 <h2 id="group-policy-startup-script">Group Policy (startup script)<a class="headerlink" href="#group-policy-startup-script" title="Permanent link">&para;</a></h2>
-<p>ScienceSoft AI Endpoint Firewall has <strong>no Group Policy template</strong> (<code>.admx</code>). To use Group Policy, run the installer from a computer <strong>startup script</strong>:</p>
+<p>ScienceSoft On-Device AI Firewall has <strong>no Group Policy template</strong> (<code>.admx</code>). To use Group Policy, run the installer from a computer <strong>startup script</strong>:</p>
 <ol>
 <li>Put the installer on a share that computer accounts can read.</li>
 <li>
@@ -1828,7 +1828,7 @@
 <div class="highlight"><pre><span></span><code>&quot;%ProgramFiles%\AI Firewall\Uninstall AI Firewall.exe&quot; /allusers /S
 </code></pre></div>
 <p>This is the quiet uninstall command that the installer registers. Run it as an administrator or as the system account. Without administrator rights it asks for elevation.</p>
-<p>It removes the app, the services, the certificate and the settings that ScienceSoft AI Endpoint Firewall added. It also puts back the MCP servers and skills that the agent had removed from the user's Claude Code and Codex configuration, but only for the account that runs the uninstaller. It does <strong>not</strong> restore a computer-wide proxy setting that existed before ScienceSoft AI Endpoint Firewall was installed. Local data of every user on the computer is deleted. See the <a href="../../uninstall.html">User Guide</a> for what is removed.</p>
+<p>It removes the app, the services, the certificate and the settings that ScienceSoft On-Device AI Firewall added. It also puts back the MCP servers and skills that the agent had removed from the user's Claude Code and Codex configuration, but only for the account that runs the uninstaller. It does <strong>not</strong> restore a computer-wide proxy setting that existed before ScienceSoft On-Device AI Firewall was installed. Local data of every user on the computer is deleted. See the <a href="../../uninstall.html">User Guide</a> for what is removed.</p>
 <p>An uninstall reports the removal to the server only when the uninstaller runs as the system account on a computer that has the protection service. An uninstall that an administrator starts by hand sends nothing. In any other case the computer stops reporting. Remove it from the portal.</p>
 
 
@@ -1927,7 +1927,7 @@
   <div class="site-footer">
     <div class="site-footer__inner">
       <div class="site-footer__col">
-        <strong>ScienceSoft AI Endpoint Firewall</strong>
+        <strong>ScienceSoft On-Device AI Firewall</strong>
         <span>Finds and replaces personal and confidential data in prompts to AI assistants, on each computer, before the request leaves it.</span>
       </div>
       <div class="site-footer__col">

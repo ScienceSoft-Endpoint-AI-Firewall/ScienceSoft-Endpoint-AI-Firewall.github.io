@@ -23,7 +23,7 @@ body:has(.lp) .md-footer-meta { display: none; }
 .lp-hero h1 { color: #fff; font-size: 2.35rem; line-height: 1.12; font-weight: 600; margin-bottom: 1rem; }
 .lp-lead { font-size: 0.92rem; line-height: 1.65; color: #e6f0fb; font-weight: 300; max-width: 34rem; }
 .lp-lead strong { color: #fff; font-weight: 600; }
-.lp-lead em { font-style: normal; color: #fff; border-bottom: 2px solid var(--lp-orange); }
+.lp-lead em { font-style: normal; font-weight: 700; color: #fff; }
 .lp-cta { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1.6rem; }
 .lp-cta--center { justify-content: center; }
 .lp-btn { display: inline-block; padding: 0.62rem 1.3rem; border-radius: 999px; font-weight: 600; font-size: 0.78rem;

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="How the ScienceSoft AI Endpoint Firewall agent gets onto a Windows or macOS computer, how to approve the certificate and how to check that protection works.">
+        <meta name="description" content="How the ScienceSoft On-Device AI Firewall agent gets onto a Windows or macOS computer, how to approve the certificate and how to check that protection works.">
       
       
       
@@ -25,7 +25,7 @@
     
     
       
-        <title>Install the agent and check that it works - ScienceSoft AI Endpoint Firewall</title>
+        <title>Install the agent and check that it works - ScienceSoft On-Device AI Firewall</title>
       
     
     
@@ -103,7 +103,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="ScienceSoft AI Endpoint Firewall" class="md-header__button md-logo" aria-label="ScienceSoft AI Endpoint Firewall" data-md-component="logo">
+    <a href="." title="ScienceSoft On-Device AI Firewall" class="md-header__button md-logo" aria-label="ScienceSoft On-Device AI Firewall" data-md-component="logo">
       
   <img src="assets/logo-white.svg" alt="logo">
 
@@ -116,7 +116,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            ScienceSoft AI Endpoint Firewall
+            ScienceSoft On-Device AI Firewall
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -228,12 +228,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="ScienceSoft AI Endpoint Firewall" class="md-nav__button md-logo" aria-label="ScienceSoft AI Endpoint Firewall" data-md-component="logo">
+    <a href="." title="ScienceSoft On-Device AI Firewall" class="md-nav__button md-logo" aria-label="ScienceSoft On-Device AI Firewall" data-md-component="logo">
       
   <img src="assets/logo-white.svg" alt="logo">
 
     </a>
-    ScienceSoft AI Endpoint Firewall
+    ScienceSoft On-Device AI Firewall
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -1775,7 +1775,7 @@
 
 
 <h1 id="install">Install<a class="headerlink" href="#install" title="Permanent link">&para;</a></h1>
-<p>This page explains how ScienceSoft AI Endpoint Firewall gets onto your computer and how to check that it works.</p>
+<p>This page explains how ScienceSoft On-Device AI Firewall gets onto your computer and how to check that it works.</p>
 <h2 id="what-you-need">What you need<a class="headerlink" href="#what-you-need" title="Permanent link">&para;</a></h2>
 <ul>
 <li>A Windows or macOS computer. There is no Linux version.</li>
@@ -1826,7 +1826,7 @@
 <p>In a trial, the app asks for a server address and an enrollment code from your welcome email. Your ScienceSoft representative can send you the trial guide.</p>
 </div>
 <h3 id="step-3-approve-the-certificate">Step 3. Approve the certificate<a class="headerlink" href="#step-3-approve-the-certificate" title="Permanent link">&para;</a></h3>
-<p>AI traffic is encrypted. To read a request before it leaves your computer, ScienceSoft AI Endpoint Firewall needs your computer to trust it. It does this with a certificate.</p>
+<p>AI traffic is encrypted. To read a request before it leaves your computer, ScienceSoft On-Device AI Firewall needs your computer to trust it. It does this with a certificate.</p>
 <ol>
 <li>A prompt appears. On Windows it is a security prompt. On macOS it asks for your login password.</li>
 <li>Read it. The certificate is issued to <strong>AI Firewall Local CA</strong>.</li>
@@ -1836,7 +1836,7 @@
 <ul>
 <li>It is made on your computer and works on this computer only.</li>
 <li>Its private key never leaves your computer.</li>
-<li>If you decline, ScienceSoft AI Endpoint Firewall cannot read encrypted traffic. It will tell you this. It will not pretend that you are protected.</li>
+<li>If you decline, ScienceSoft On-Device AI Firewall cannot read encrypted traffic. It will tell you this. It will not pretend that you are protected.</li>
 </ul>
 <h3 id="step-4-check-that-it-works">Step 4. Check that it works<a class="headerlink" href="#step-4-check-that-it-works" title="Permanent link">&para;</a></h3>
 <ol>
@@ -1846,11 +1846,11 @@
 <p><img alt="The card This device on Device &amp; coverage. The row Certificate trust says &quot;Yes — installed&quot; and the row System proxy says &quot;Pointing at this firewall&quot;. Addresses and identifiers are hidden." src="assets/screenshots/device-coverage-certificate.png" /></p>
 <p>If it says anything else, see <a href="#if-something-goes-wrong">If something goes wrong</a> below.</p>
 <h2 id="way-2-your-it-team-installs-it">Way 2: Your IT team installs it<a class="headerlink" href="#way-2-your-it-team-installs-it" title="Permanent link">&para;</a></h2>
-<p>Your IT team installs ScienceSoft AI Endpoint Firewall for the whole company. You do not need to download or set up anything.</p>
+<p>Your IT team installs ScienceSoft On-Device AI Firewall for the whole company. You do not need to download or set up anything.</p>
 <p>You may still see the certificate prompt described in Step 3. Approve it. Then check that it works with Step 4.</p>
 <p>Your IT team can find the deployment details in <a href="admin/agents/index.html">Roll out the agent</a>.</p>
 <h2 id="what-your-company-can-see">What your company can see<a class="headerlink" href="#what-your-company-can-see" title="Permanent link">&para;</a></h2>
-<p>ScienceSoft AI Endpoint Firewall works on your computer. The text you type, your files and your images are checked on your computer. They are not sent anywhere to be scanned.</p>
+<p>ScienceSoft On-Device AI Firewall works on your computer. The text you type, your files and your images are checked on your computer. They are not sent anywhere to be scanned.</p>
 <p>If your computer is connected to a workspace, the workspace's administrators can see what was <strong>detected</strong> (how many values and which types) and what was done about it. By default the message is also recorded there, with the private values already replaced. So they can read what you wrote, but not the personal data found in it. An administrator can choose to keep less (the setting is called <strong>Data Capture Mode</strong>).</p>
 <p>The private values themselves are not collected. A computer that is not connected to a workspace sends nothing.</p>
 <h2 id="if-something-goes-wrong">If something goes wrong<a class="headerlink" href="#if-something-goes-wrong" title="Permanent link">&para;</a></h2>
@@ -1876,7 +1876,7 @@
 </tr>
 </tbody>
 </table>
-<p>If ScienceSoft AI Endpoint Firewall is closed or stopped, AI services are either unavailable or reached without protection, depending on how it was installed. See <a href="coverage.html#when-sciencesoft-ai-endpoint-firewall-is-not-running">When ScienceSoft AI Endpoint Firewall is not running</a>. Start the app again.</p>
+<p>If ScienceSoft On-Device AI Firewall is closed or stopped, AI services are either unavailable or reached without protection, depending on how it was installed. See <a href="coverage.html#when-sciencesoft-on-device-ai-firewall-is-not-running">When ScienceSoft On-Device AI Firewall is not running</a>. Start the app again.</p>
 <p>For more problems, see <a href="troubleshooting.html">Troubleshooting</a>.</p>
 
 
@@ -1975,7 +1975,7 @@
   <div class="site-footer">
     <div class="site-footer__inner">
       <div class="site-footer__col">
-        <strong>ScienceSoft AI Endpoint Firewall</strong>
+        <strong>ScienceSoft On-Device AI Firewall</strong>
         <span>Finds and replaces personal and confidential data in prompts to AI assistants, on each computer, before the request leaves it.</span>
       </div>
       <div class="site-footer__col">

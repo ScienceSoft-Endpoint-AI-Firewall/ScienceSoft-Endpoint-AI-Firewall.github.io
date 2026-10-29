@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Install the ScienceSoft AI Endpoint Firewall agent on Apple silicon Macs with the pkg installer and Jamf Pro, with the enrollment file written first.">
+        <meta name="description" content="Install the ScienceSoft On-Device AI Firewall agent on Apple silicon Macs with the pkg installer and Jamf Pro, with the enrollment file written first.">
       
       
       
@@ -25,7 +25,7 @@
     
     
       
-        <title>Deploy the agent on macOS (pkg, Jamf) - ScienceSoft AI Endpoint Firewall</title>
+        <title>Deploy the agent on macOS (pkg, Jamf) - ScienceSoft On-Device AI Firewall</title>
       
     
     
@@ -103,7 +103,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="ScienceSoft AI Endpoint Firewall" class="md-header__button md-logo" aria-label="ScienceSoft AI Endpoint Firewall" data-md-component="logo">
+    <a href="../.." title="ScienceSoft On-Device AI Firewall" class="md-header__button md-logo" aria-label="ScienceSoft On-Device AI Firewall" data-md-component="logo">
       
   <img src="../../assets/logo-white.svg" alt="logo">
 
@@ -116,7 +116,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            ScienceSoft AI Endpoint Firewall
+            ScienceSoft On-Device AI Firewall
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -228,12 +228,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="ScienceSoft AI Endpoint Firewall" class="md-nav__button md-logo" aria-label="ScienceSoft AI Endpoint Firewall" data-md-component="logo">
+    <a href="../.." title="ScienceSoft On-Device AI Firewall" class="md-nav__button md-logo" aria-label="ScienceSoft On-Device AI Firewall" data-md-component="logo">
       
   <img src="../../assets/logo-white.svg" alt="logo">
 
     </a>
-    ScienceSoft AI Endpoint Firewall
+    ScienceSoft On-Device AI Firewall
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -1699,7 +1699,7 @@
 
 
 <h1 id="macos">macOS<a class="headerlink" href="#macos" title="Permanent link">&para;</a></h1>
-<p>ScienceSoft AI Endpoint Firewall for macOS runs on <strong>Apple silicon</strong> Macs (M1 or newer). There is no Intel version.</p>
+<p>ScienceSoft On-Device AI Firewall for macOS runs on <strong>Apple silicon</strong> Macs (M1 or newer). There is no Intel version.</p>
 <h2 id="the-installer">The installer<a class="headerlink" href="#the-installer" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1756,12 +1756,12 @@
 <li>sets the <strong>automatic proxy configuration</strong> of every network connection to the local firewall. <strong>This replaces an automatic proxy setting that your company already has.</strong></li>
 </ul>
 <p>The agent needs no Full Disk Access, Accessibility, Screen Recording or other privacy permission, and it installs no system extension or network extension. It installs launch daemons from the package. The one approval it can need is trust for its certificate, as described above: from an install script, macOS does not let the certificate be trusted without an MDM trust profile or an administrator's approval. On macOS 13 and later the system may also show a notice that background items were added. That notice is not a request for approval.</p>
-<p>ScienceSoft AI Endpoint Firewall does not provide a configuration profile (<code>.mobileconfig</code>). The profiles that you may find for other ScienceSoft products do not work with it.</p>
+<p>ScienceSoft On-Device AI Firewall does not provide a configuration profile (<code>.mobileconfig</code>). The profiles that you may find for other ScienceSoft products do not work with it.</p>
 <h2 id="remove-the-agent">Remove the agent<a class="headerlink" href="#remove-the-agent" title="Permanent link">&para;</a></h2>
 <p>Run the uninstall script that comes with the app, as root:</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span><span class="s2">&quot;/Applications/AI Firewall.app/Contents/Resources/uninstall.command&quot;</span>
 </code></pre></div>
-<p>It removes the app, the services, the certificate and the proxy setting if it points at ScienceSoft AI Endpoint Firewall. It also removes the managed Claude Code and Codex settings of the firewall and, for the user who runs it, puts back the MCP servers and skills that the agent had removed from those tools.</p>
+<p>It removes the app, the services, the certificate and the proxy setting if it points at ScienceSoft On-Device AI Firewall. It also removes the managed Claude Code and Codex settings of the firewall and, for the user who runs it, puts back the MCP servers and skills that the agent had removed from those tools.</p>
 <p><strong>The script asks you to type <code>remove</code>, and there is no switch to skip that.</strong> If it runs with no terminal, as it does in many management tools, it stops without changing anything, and it still returns exit code 0, so your tool shows success. Give it the answer on standard input:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span>remove<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span><span class="s2">&quot;/Applications/AI Firewall.app/Contents/Resources/uninstall.command&quot;</span>
 </code></pre></div>
@@ -1868,7 +1868,7 @@
   <div class="site-footer">
     <div class="site-footer__inner">
       <div class="site-footer__col">
-        <strong>ScienceSoft AI Endpoint Firewall</strong>
+        <strong>ScienceSoft On-Device AI Firewall</strong>
         <span>Finds and replaces personal and confidential data in prompts to AI assistants, on each computer, before the request leaves it.</span>
       </div>
       <div class="site-footer__col">
