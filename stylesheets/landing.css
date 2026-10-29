@@ -325,3 +325,40 @@ body:has(.lp) .md-header__title--active .md-header__topic:first-child { opacity:
 [data-md-color-scheme="slate"] .md-typeset ul.lp-ticks li { color: #dbe5f3; }
 [data-md-color-scheme="slate"] .md-typeset ul.lp-ticks li::before { background-color: #1d3552; }
 @media (max-width: 60em) { .lp-leaders { grid-template-columns: 1fr; gap: 1.6rem; } .lp-h2--left, .lp-sub--left { text-align: center; } }
+
+/* Material's own "figure" rule is stronger than a single class: match it so the picture is really hidden on narrow screens. */
+@media (max-width: 49.9375em) { .md-typeset figure.lp-diagram { display: none; } }
+@media (min-width: 50em) { .lp .lp-flow.lp-flow--fallback { display: none; } }
+
+/* The questions are plain collapsible rows, not notes: no icon, no side stripe (Material styles every <details> as a note). */
+.md-typeset details.lp-faq__item { border: 1px solid #e3e8ef; border-left: 1px solid #e3e8ef; border-radius: 12px; background: #fff; box-shadow: none; margin: 0.7rem 0; padding: 0; }
+.md-typeset details.lp-faq__item > summary { background: transparent !important; padding: 0.95rem 2.6rem 0.95rem 1.2rem; margin: 0; }
+.md-typeset details.lp-faq__item > summary::before { display: none; }
+.md-typeset details.lp-faq__item[open] > summary { padding-bottom: 0.6rem; }
+.md-typeset details.lp-faq__item > p { padding: 0 1.2rem 1.1rem; margin: 0; }
+[data-md-color-scheme="slate"] .md-typeset details.lp-faq__item { background: #1a2433; border-color: #2b3a50; border-left-color: #2b3a50; }
+
+/* Space under the hero buttons (".lp p { margin: 0 }" was stronger than ".lp-note"). */
+.lp .lp-note { margin-top: 1.3rem; }
+.lp .lp-cta { margin-bottom: 0.2rem; }
+
+/* Phone: the shield stays upright; arrows show the way down from the message to what goes to the AI. */
+@media (max-width: 44em) {
+  .lp-demo__mid { flex-direction: column; max-width: none; gap: 0.25rem; padding: 0.1rem 0; }
+  .lp-demo__mid svg { transform: none; width: 2.2rem; height: auto; }
+  .lp-demo__mid::before, .lp-demo__mid::after { content: "\2193"; color: #8aa6c8; font-size: 1.3rem; line-height: 1; font-weight: 700; }
+}
+.lp .lp-eyebrow { margin-bottom: 0.9rem; }
+
+/* Section menu on phones: short labels that fit in one line, so no word is cut off at the edge. */
+.lp-strip .lp-short { display: none; }
+@media (max-width: 44em) {
+  .lp-strip .lp-long { display: none; }
+  .lp-strip .lp-short { display: inline; }
+  .lp-strip__in { overflow-x: visible; justify-content: space-between; gap: 0.6rem; }
+}
+
+/* The page ends with the guides block and then the footer: no white strip between them.
+   (The footer keeps a gap above it on the guide pages, where it follows the text.) */
+body:has(.lp) .site-footer { margin-top: 0; }
+.lp .lp-docs.lp-section--tint { background: transparent; }
