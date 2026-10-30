@@ -88,6 +88,10 @@
         
           { "@type": "Question", "name": "Does our data go to ScienceSoft?", "acceptedAnswer": { "@type": "Answer", "text": "No. In a normal installation you run the server yourself, on your own machine, so what the program records stays with you. In a trial, the server may be run by ScienceSoft, and then ScienceSoft can see what that trial workspace records." } },
         
+          { "@type": "Question", "name": "We already have a DLP system. Why do we need this as well?", "acceptedAnswer": { "@type": "Answer", "text": "They do different jobs. A classic DLP decides whether a file or a paste may leave the company at all. We work only on the path to AI services, and instead of stopping the work we replace personal data with realistic stand-ins, so people keep using AI while the real values never reach the AI provider. The two complement each other. Because both tools look at what leaves the computer, we check during the pilot that they run side by side without conflict, on a test machine with your DLP configuration." } },
+        
+          { "@type": "Question", "name": "Will it slow down our AI tools?", "acceptedAnswer": { "@type": "Answer", "text": "In our lab, scanning a typical prompt takes tens of milliseconds, and replies stream through without waiting. Long conversations and large attachments take longer; an image takes about a second, because its text is read first." } },
+        
           { "@type": "Question", "name": "Which AI tools does it cover?", "acceptedAnswer": { "@type": "Answer", "text": "The ones people use most in a web browser, including ChatGPT, Claude, Gemini, Microsoft Copilot, Perplexity and Grok, and several desktop and command-line tools. The guides list exactly what is covered and what is not." } },
         
           { "@type": "Question", "name": "Who can see what is recorded?", "acceptedAnswer": { "@type": "Answer", "text": "The administrators of your workspace. They see what was found and the message with the private details already replaced. Tell your employees about this. The guides list everything that is recorded." } },
@@ -592,6 +596,28 @@
     </div>
   </section>
 
+  <!-- AI tools it covers -->
+  <section class="lp-section" id="tools">
+    <div class="lp-wrap">
+      <h2 class="lp-h2">Works with the AI tools your people use.</h2>
+      <p class="lp-sub">At the time of writing, 38 AI services in a web browser are covered, and the list grows with new versions.</p>
+      <ul class="lp-chips">
+        <li>ChatGPT</li>
+        <li>Claude</li>
+        <li>Gemini</li>
+        <li>Microsoft Copilot</li>
+        <li>GitHub Copilot</li>
+        <li>Perplexity</li>
+        <li>Grok</li>
+        <li>Claude Desktop</li>
+        <li>Claude Code *</li>
+        <li>Codex *</li>
+        <li>Kimi Code *</li>
+      </ul>
+      <p class="lp-small">* Command-line tools are covered after you turn them on. Some tools are not covered, and documents attached in Microsoft 365 Copilot are not checked. <a href="coverage.html">The guides list exactly what is covered and what is not.</a></p>
+    </div>
+  </section>
+
   
 
   <!-- Honest block -->
@@ -623,6 +649,32 @@
 
   
 
+  <!-- Free trial -->
+  <section class="lp-section" id="trial">
+    <div class="lp-wrap">
+      <h2 class="lp-h2">Try it free for 30 days.</h2>
+      <p class="lp-sub">Up to 5 computers. Choose the way that suits you.</p>
+      <div class="lp-cards lp-cards--2">
+        <div class="lp-card lp-card--row lp-reveal"><div class="lp-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 18.5a4 4 0 0 1-.7-7.9A5.6 5.6 0 0 1 17 9.2a4.7 4.7 0 0 1 .6 9.3z"/></svg></div><h3>Hosted by ScienceSoft</h3><p>A quick first look for a small team, with nothing to install on your servers. You sign up, install the program on up to 5 computers and connect them to your own private trial workspace.</p></div>
+        <div class="lp-card lp-card--row lp-reveal"><div class="lp-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="6" rx="2"/><rect x="4" y="14" width="16" height="6" rx="2"/><path d="M8 7h.01M8 17h.01"/></svg></div><h3>In your own infrastructure</h3><p>Test it where your real data is. You install the server yourself, following our instructions, and ScienceSoft engineers help you for 16 hours, free of charge. The server runs in your own environment.</p></div>
+      </div>
+      <p class="lp-small">After 30 days you decide: buy subscriptions, or stop. If you stop, you remove the program from your computers. In the hosted trial, ScienceSoft runs the workspace and can see what it records.</p>
+    </div>
+  </section>
+
+  <!-- Support -->
+  <section class="lp-section" id="support">
+    <div class="lp-wrap">
+      <h2 class="lp-h2">Help when you roll it out.</h2>
+      <p class="lp-sub">Help comes with every subscription. A hands-on rollout is optional.</p>
+      <div class="lp-cards lp-cards--2">
+        <div class="lp-card lp-card--row lp-reveal"><div class="lp-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M19 19c0 1.5-1.5 2.5-4 2.5h-2"/></svg></div><h3>Included with every subscription</h3><p>16 hours of ScienceSoft help to install the product and get the first teams using it, and answers to your team's questions for as long as the subscription is active.</p></div>
+        <div class="lp-card lp-card--row lp-reveal"><div class="lp-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 21V4"/><path d="M6 5h11l-2 4 2 4H6"/></svg></div><h3>Extended rollout support (optional)</h3><p>A hands-on rollout together with your team, usually 3 to 6 weeks: a pilot with one team, policy tuning, rollout to the whole fleet and a handover for audit. We confirm the plan once we know your fleet size and policy needs.</p></div>
+      </div>
+      <p class="lp-small">Customizations and integrations are scoped separately.</p>
+    </div>
+  </section>
+
   <!-- Questions -->
   <section class="lp-section" id="faq">
     <div class="lp-wrap lp-wrap--narrow">
@@ -632,6 +684,16 @@
         <details class="lp-faq__item" open>
           <summary>Does our data go to ScienceSoft?</summary>
           <p>No. In a normal installation you run the server yourself, on your own machine, so what the program records stays with you. In a trial, the server may be run by ScienceSoft, and then ScienceSoft can see what that trial workspace records.</p>
+        </details>
+        
+        <details class="lp-faq__item">
+          <summary>We already have a DLP system. Why do we need this as well?</summary>
+          <p>They do different jobs. A classic DLP decides whether a file or a paste may leave the company at all. We work only on the path to AI services, and instead of stopping the work we replace personal data with realistic stand-ins, so people keep using AI while the real values never reach the AI provider. The two complement each other. Because both tools look at what leaves the computer, we check during the pilot that they run side by side without conflict, on a test machine with your DLP configuration.</p>
+        </details>
+        
+        <details class="lp-faq__item">
+          <summary>Will it slow down our AI tools?</summary>
+          <p>In our lab, scanning a typical prompt takes tens of milliseconds, and replies stream through without waiting. Long conversations and large attachments take longer; an image takes about a second, because its text is read first.</p>
         </details>
         
         <details class="lp-faq__item">
