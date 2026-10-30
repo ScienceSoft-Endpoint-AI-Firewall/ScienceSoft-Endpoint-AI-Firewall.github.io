@@ -460,3 +460,21 @@ body:has(.lp) .site-footer { margin-top: 0; }
 [data-md-color-scheme="slate"] .lp .lp-h3 { color: #ffc266; }
 [data-md-color-scheme="slate"] .lp .lp-h3::before, [data-md-color-scheme="slate"] .lp .lp-h3::after { background: #7d6334; }
 [data-md-color-scheme="slate"] .lp-compare tbody th { color: #dbe5f3; }
+
+/* ---- Pricing and "From ScienceSoft" ---- */
+.lp-prices { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; max-width: 56rem; margin: 2rem auto 0; }
+.lp-price { background: #fff; border: 1px solid #e3e8ef; border-radius: 14px; padding: 1.2rem 1rem 1.1rem; text-align: center; box-shadow: 0 2px 10px rgba(30, 50, 90, .05);
+  display: flex; flex-direction: column; gap: 0.2rem; transition: transform .2s ease, box-shadow .2s ease; }
+.lp-price:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(30, 50, 90, .12); }
+.lp-price__n { font-size: 0.7rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--lp-muted); }
+.lp-price__v { font-size: 1.7rem; font-weight: 700; color: var(--lp-navy); letter-spacing: -0.02em; line-height: 1.2; }
+.lp-price__u { font-size: 0.68rem; color: var(--lp-muted); }
+.lp-facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; max-width: 56rem; margin: 2rem auto 0; }
+.lp-fact { text-align: center; padding: 1rem 0.6rem; border-top: 3px solid var(--lp-orange); background: #fff; border-radius: 0 0 12px 12px; box-shadow: 0 2px 10px rgba(30, 50, 90, .05);
+  display: flex; flex-direction: column; gap: 0.3rem; }
+.lp-fact__n { font-size: 1.7rem; font-weight: 700; color: var(--lp-navy); letter-spacing: -0.02em; line-height: 1.15; }
+.lp-fact__t { font-size: 0.7rem; color: var(--lp-muted); line-height: 1.45; }
+[data-md-color-scheme="slate"] .lp-price, [data-md-color-scheme="slate"] .lp-fact { background: #1a2433; border-color: #2b3a50; }
+[data-md-color-scheme="slate"] .lp-price__v, [data-md-color-scheme="slate"] .lp-fact__n { color: #8FBBEA; }
+@media (max-width: 60em) { .lp-prices, .lp-facts { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 30em) { .lp-prices, .lp-facts { grid-template-columns: 1fr; } }
