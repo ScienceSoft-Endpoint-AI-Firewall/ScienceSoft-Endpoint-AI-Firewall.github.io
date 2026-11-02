@@ -501,3 +501,14 @@ body:has(.lp) .site-footer { margin-top: 0; }
 [data-md-color-scheme="slate"] .md-typeset .lp-view h4 { color: #8FBBEA; }
 [data-md-color-scheme="slate"] .md-typeset .lp-view li { color: #a9b8cd; }
 @media (max-width: 36em) { .lp .lp-h3::before, .lp .lp-h3::after { display: none; } .lp .lp-h3 { letter-spacing: .1em; } }
+
+/* ---- The shield with the computers around it ---- */
+.lp-hero__shot { position: relative; }
+.md-typeset img.lp-art { border: 0; box-shadow: none; border-radius: 0; background: none; margin: 0; pointer-events: none; user-select: none; }
+.lp-hero .lp-frame { position: relative; z-index: 1; }
+.md-typeset img.lp-art--cta { display: block; width: 11.5rem; max-width: 60%; margin: 0 auto 0.6rem; }
+@media (prefers-reduced-motion: no-preference) {
+  .md-typeset img.lp-art--cta { animation: lp-float 7s ease-in-out infinite; }
+}
+@keyframes lp-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+

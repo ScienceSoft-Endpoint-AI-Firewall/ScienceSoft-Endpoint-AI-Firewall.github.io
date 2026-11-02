@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 300" role="img" aria-label="A shield with a check mark, connected to computers around it">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#FFB22E" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#FFB22E" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="shield" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFD25A"/>
+      <stop offset="1" stop-color="#FF9A08"/>
+    </linearGradient>
+  </defs>
+
+  <!-- rings -->
+  <circle cx="180" cy="150" r="122" fill="none" stroke="#fff" stroke-opacity=".14" stroke-width="1.5" stroke-dasharray="2 8" stroke-linecap="round"/>
+  <circle cx="180" cy="150" r="82" fill="none" stroke="#fff" stroke-opacity=".12" stroke-width="1.5"/>
+
+  <!-- links from the computers to the shield -->
+  <g stroke="#fff" stroke-opacity=".38" stroke-width="1.6" stroke-linecap="round">
+    <line x1="48" y1="96" x2="180" y2="150"/>
+    <line x1="70" y1="214" x2="180" y2="150"/>
+    <line x1="180" y1="274" x2="180" y2="150"/>
+    <line x1="300" y1="224" x2="180" y2="150"/>
+    <line x1="318" y1="106" x2="180" y2="150"/>
+    <line x1="238" y1="34" x2="180" y2="150"/>
+    <line x1="112" y1="28" x2="180" y2="150"/>
+  </g>
+
+  <!-- the computers -->
+  <g fill="#fff" fill-opacity=".14" stroke="#fff" stroke-opacity=".75" stroke-width="1.6">
+    <circle cx="48" cy="96" r="13"/>
+    <circle cx="70" cy="214" r="13"/>
+    <circle cx="180" cy="274" r="13"/>
+    <circle cx="300" cy="224" r="13"/>
+    <circle cx="318" cy="106" r="13"/>
+    <circle cx="238" cy="34" r="13"/>
+    <circle cx="112" cy="28" r="13"/>
+  </g>
+  <g fill="#fff" fill-opacity=".9">
+    <circle cx="48" cy="96" r="4"/>
+    <circle cx="70" cy="214" r="4"/>
+    <circle cx="180" cy="274" r="4"/>
+    <circle cx="300" cy="224" r="4"/>
+    <circle cx="318" cy="106" r="4"/>
+    <circle cx="238" cy="34" r="4"/>
+    <circle cx="112" cy="28" r="4"/>
+  </g>
+
+  <!-- the shield -->
+  <circle cx="180" cy="150" r="92" fill="url(#glow)"/>
+  <g transform="translate(180 148)">
+    <path d="M0 -70 L-50 -52 v46 c0 38 23 64 50 76 c27 -12 50 -38 50 -76 v-46 z" fill="url(#shield)" stroke="#fff" stroke-opacity=".55" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M0 -70 L-50 -52 v46 c0 38 23 64 50 76 z" fill="#fff" fill-opacity=".16"/>
+    <path d="M-24 4 L-7 21 L27 -17" fill="none" stroke="#fff" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
