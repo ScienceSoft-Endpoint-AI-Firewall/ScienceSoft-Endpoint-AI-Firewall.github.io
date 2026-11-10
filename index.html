@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="ScienceSoft On-Device AI Firewall checks requests to ChatGPT, Claude, Gemini and other AI tools on each computer, and replaces or blocks personal data before they leave it.">
+        <meta name="description" content="ScienceSoft On-Device AI Firewall shows which AI tools your people use and, on each computer, replaces or blocks personal data in requests to ChatGPT, Claude, Gemini and other AI tools before they leave it.">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Keep company data out of AI prompts - ScienceSoft On-Device AI Firewall</title>
+        <title>Find shadow AI and protect what it is sent - ScienceSoft On-Device AI Firewall</title>
       
     
     
@@ -66,8 +66,8 @@
   
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="AI data protection for ChatGPT, Claude and Gemini | ScienceSoft On-Device AI Firewall">
-  <meta property="og:description" content="ScienceSoft On-Device AI Firewall checks requests to ChatGPT, Claude, Gemini and other AI tools on each computer, and replaces or blocks personal data before they leave it.">
+  <meta property="og:title" content="Shadow AI control and data protection for ChatGPT, Claude and Gemini | ScienceSoft On-Device AI Firewall">
+  <meta property="og:description" content="ScienceSoft On-Device AI Firewall shows which AI tools your people use and, on each computer, replaces or blocks personal data in requests to ChatGPT, Claude, Gemini and other AI tools before they leave it.">
   
   
   <meta property="og:url" content="https://sciencesoft-endpoint-ai-firewall.github.io/">
@@ -86,7 +86,7 @@
         "name": "ScienceSoft On-Device AI Firewall",
         "applicationCategory": "SecurityApplication",
         "operatingSystem": "Windows, macOS",
-        "description": "ScienceSoft On-Device AI Firewall checks requests to ChatGPT, Claude, Gemini and other AI tools on each computer, and replaces or blocks personal data before they leave it.",
+        "description": "ScienceSoft On-Device AI Firewall shows which AI tools your people use and, on each computer, replaces or blocks personal data in requests to ChatGPT, Claude, Gemini and other AI tools before they leave it.",
         "publisher": { "@type": "Organization", "name": "ScienceSoft" }
       },
       {
@@ -95,9 +95,9 @@
         
           { "@type": "Question", "name": "Does our data go to ScienceSoft?", "acceptedAnswer": { "@type": "Answer", "text": "No. In a normal installation you run the server yourself, on your own machine, so what the program records stays with you. In a trial, the server may be run by ScienceSoft, and then ScienceSoft can see what that trial workspace records." } },
         
-          { "@type": "Question", "name": "We already have a DLP system. Why do we need this as well?", "acceptedAnswer": { "@type": "Answer", "text": "They do different jobs. A classic DLP decides whether a file or a paste may leave the company at all. We work only on the path to AI services, and you choose what happens there. There are three settings: Record only (nothing is changed, everything is recorded), Replace (private details are replaced before the message leaves the computer, so people keep using AI) and Block (the message is stopped). Policies then apply them to each AI service and each type of data. By default replaced details become labels such as [PERSON]; an administrator can switch on realistic stand-ins instead, so the AI sees a normal-looking name, and the employee gets the answer with the real values put back. Wherever a policy replaces or blocks, the real values do not reach the AI provider. The two complement each other. Because both tools look at what leaves the computer, we check during the pilot that they run side by side without conflict, on a test machine with your DLP configuration." } },
+          { "@type": "Question", "name": "We already have a DLP system. Why do we need this as well?", "acceptedAnswer": { "@type": "Answer", "text": "They do different jobs. A classic DLP decides whether a file or a paste may leave the company at all. We work only on the path to AI services, and you choose what happens there. There are three settings: Record only (nothing is changed, everything is recorded), Replace (private details are replaced before the message leaves the computer, so people keep using AI) and Block (the message is stopped). Policies then apply them to each AI service and each type of data. By default replaced details become labels such as [PERSON]; an administrator can switch on realistic stand-ins instead, so the AI sees a normal-looking name, and the employee gets the answer with the real values put back. Wherever a policy replaces or blocks, the real values do not reach the AI provider. The two complement each other. Because both tools look at what leaves the computer, the pilot is the place to check that they run side by side without conflict: try it on a test computer that has your DLP configuration." } },
         
-          { "@type": "Question", "name": "Will it slow down our AI tools?", "acceptedAnswer": { "@type": "Answer", "text": "In our lab, scanning a typical prompt takes tens of milliseconds, and replies stream through without waiting. Long conversations and large attachments take longer; an image takes about a second, because its text is read first." } },
+          { "@type": "Question", "name": "Will it slow down our AI tools?", "acceptedAnswer": { "@type": "Answer", "text": "The check runs on the computer itself, before the message leaves, and replies stream back without waiting. Long conversations and large attachments take longer, and a picture takes longer still, because its text has to be read first. In the trial you can measure the delay on your own computers." } },
         
           { "@type": "Question", "name": "Which AI tools does it cover?", "acceptedAnswer": { "@type": "Answer", "text": "The ones people use most in a web browser, including ChatGPT, Claude, Gemini, Microsoft Copilot, Perplexity and Grok, and several desktop and command-line tools. The guides list exactly what is covered and what is not." } },
         
@@ -169,7 +169,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Keep company data out of AI prompts
+              Find shadow AI and protect what it is sent
             
           </span>
         </div>
@@ -259,7 +259,7 @@
       
 <nav class="lp-strip" aria-label="On this page">
   <div class="lp-wrap lp-strip__in">
-    <a href="#risk"><span class="lp-long">What we solve</span><span class="lp-short">Solves</span></a>
+    <a href="#solve"><span class="lp-long">What we solve</span><span class="lp-short">Solves</span></a>
     <a href="#how">How it works</a>
     <a href="#why"><span class="lp-long">Why you need it</span><span class="lp-short">Why</span></a>
     
@@ -282,11 +282,12 @@
   <section class="lp-hero">
     <div class="lp-wrap lp-hero__grid">
       <div class="lp-hero__text">
-        <p class="lp-eyebrow">Data protection for companies that use AI</p>
-        <h1>Use AI at work without giving away your company's secrets.</h1>
+        <p class="lp-eyebrow">Shadow AI control for companies</p>
+        <h1>Shadow AI is already at work in your company. Find it, and protect what it is sent.</h1>
         <p class="lp-lead">
           <strong>ScienceSoft On-Device AI Firewall</strong> is a small program on each work computer.
-          When someone sends a message, a file or a picture to ChatGPT, Claude, Gemini or another AI tool,
+          It shows which of 38 AI services your people use: ChatGPT, Claude, Gemini and more.
+          When someone sends a message, a file or a picture to one of them,
           it finds personal and confidential details and <em>hides them first</em>.
           The AI still gets the question, without the private part.
         </p>
@@ -308,8 +309,14 @@
   <!-- The risk -->
   <section class="lp-section" id="risk">
     <div class="lp-wrap">
-      <h2 class="lp-h2">AI is already in your company. So is the risk.</h2>
-      <p class="lp-sub">Your people use AI every day to write and work faster. That is good. But a chat window does not warn anyone that a message holds a client's name, a price list or a card number. Once it is sent, you cannot take it back.</p>
+      <h2 class="lp-h2">Your people already use AI you cannot see.</h2>
+      <p class="lp-sub">Teams try new AI tools every week, often with personal accounts and without asking. They only want to work faster. But a chat window does not warn anyone that a message holds a client's name, a price list or a card number, and once it is sent you cannot take it back. Nor can you show a client or an auditor how it was handled, if you never knew it happened.</p>
+
+      <div class="lp-cards lp-cards--3">
+        <div class="lp-card lp-reveal"><div class="lp-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2.5 12s3.6-6.5 9.5-6.5S21.5 12 21.5 12 17.9 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></svg></div><h3>See which AI tools are used</h3><p>The program recognises requests to 38 AI services. You see how many go to each one, and from how many people.</p></div>
+        <div class="lp-card lp-reveal"><div class="lp-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/><circle cx="9" cy="7" r="2.2"/><circle cx="15.5" cy="12" r="2.2"/><circle cx="8" cy="17" r="2.2"/></svg></div><h3>Decide what is allowed</h3><p>Allow an AI service with private details replaced, or block it. The decision is yours, for each service.</p></div>
+        <div class="lp-card lp-reveal"><div class="lp-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="m9.8 14.5 2 2 3.6-4"/></svg></div><h3>Show how it was handled</h3><p>Every checked request leaves a record. It helps you show a client or an auditor how AI use was handled.</p></div>
+      </div>
 
       <div class="lp-demo lp-reveal">
         <div class="lp-demo__side">
@@ -324,21 +331,46 @@
           <p class="lp-demo__label">What goes to the AI</p>
           <p class="lp-demo__text">Write a polite reply to <span class="lp-tag">[PERSON]</span> (<span class="lp-tag">[EMAIL]</span>). Her card <span class="lp-tag">[CARD NUMBER]</span> was charged twice for invoice 2041.</p>
         </div>
+        <div class="lp-demo__mid lp-demo__mid--back" aria-hidden="true">
+          <svg viewBox="0 0 64 72" width="46" height="52" role="img"><path d="M8 36h42M36 20l16 16-16 16" fill="none" stroke="#FF9A08" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>the answer comes back, real details put back</span>
+        </div>
+        <div class="lp-demo__side lp-demo__side--back">
+          <p class="lp-demo__label">What the employee reads</p>
+          <p class="lp-demo__text">Dear <mark class="lp-back">Anna Kowalski</mark>, we are sorry that invoice 2041 was charged twice to your card. The refund is already on its way.</p>
+        </div>
       </div>
-      <p class="lp-small">An example with invented data. The AI can still write the reply.</p>
+      <p class="lp-small">An example with invented data. The AI can still write the reply.<a href="#solve">See what we solve</a></p>
+    </div>
+  </section>
+
+  <!-- What we solve -->
+  <section class="lp-section" id="solve">
+    <div class="lp-wrap">
+      <h2 class="lp-h2">What we solve.</h2>
+      <p class="lp-sub">Six everyday situations where private data would otherwise end up in an AI tool, and what the program does in each.</p>
+      <div class="lp-cards lp-cards--3">
+        <div class="lp-card lp-reveal"><h3>A nurse asks AI to tidy a note</h3><p>The patient's name and details are replaced before the note leaves the computer. The nurse still gets a clear summary.</p></div>
+        <div class="lp-card lp-reveal"><h3>A manager polishes a letter to a client</h3><p>The client's name, e-mail and account number stay in your company. The letter still gets better.</p></div>
+        <div class="lp-card lp-reveal"><h3>A developer pastes code with a key in it</h3><p>The program always notices passwords and secret keys. By your setting it replaces them or stops the message.</p></div>
+        <div class="lp-card lp-reveal"><h3>A consultant uploads a contract draft</h3><p>You can set rules by kind of document, for example NDAs: allow, record, replace the personal data, or block.</p></div>
+        <div class="lp-card lp-reveal"><h3>The team tries a new AI tool</h3><p>You see which AI tools people use. Then you allow or block each one, for the whole company or for a group of computers.</p></div>
+        <div class="lp-card lp-reveal"><h3>You want to start without disturbing anyone</h3><p>A new team starts in Record only: nothing changes for people, and you see what is being sent. When you are ready, you switch on replacing.</p></div>
+      </div>
+      <p class="lp-small">These are examples, not customer stories. <a href="threats.html">Which security needs it answers</a> &middot; <a href="how-it-is-built.html">How it is built</a></p>
     </div>
   </section>
 
   <!-- How it works -->
   <section class="lp-section lp-section--tint" id="how">
     <div class="lp-wrap">
-      <h2 class="lp-h2">How it works, in three steps.</h2>
+      <h2 class="lp-h2">How it works, in four steps.</h2>
 
       <!-- Wide screens: one picture. Narrow screens: the three cards below. -->
       <figure class="lp-diagram lp-reveal">
         <svg viewBox="0 0 900 420" role="img" aria-labelledby="lp-d-title lp-d-desc">
           <title id="lp-d-title">How a message is checked before it reaches an AI tool</title>
-          <desc id="lp-d-desc">A message with private details is checked by the program on the employee's computer. The private details are replaced with labels. The cleaned message goes to the AI tool. A record of what was found goes to your own workspace.</desc>
+          <desc id="lp-d-desc">A message with private details is checked by the program on the employee's computer, by the rules that your own workspace sends. The private details are replaced with labels. The cleaned message goes to the AI tool, and the answer comes back with the real details put back. A record of what was found goes to your own workspace.</desc>
           <defs>
             <marker id="lp-ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker>
             <filter id="lp-sh" x="-25%" y="-20%" width="150%" height="160%"><feDropShadow dx="0" dy="7" stdDeviation="8" flood-color="#0b2a5a" flood-opacity=".16"/></filter>
@@ -373,8 +405,6 @@
             <path class="d-tick" d="m23 44 10 10 20-22"/>
           </g>
           <text class="d-num" x="318" y="106" text-anchor="middle">2</text>
-          <rect class="d-rules" x="272" y="38" width="92" height="24" rx="12"/>
-          <text class="d-rules-t" x="318" y="55" text-anchor="middle">Your rules</text>
           <text class="d-lab" x="318" y="262" text-anchor="middle">The program</text>
           <text class="d-lab" x="318" y="280" text-anchor="middle">checks it</text>
 
@@ -399,24 +429,36 @@
             <path class="d-cloud" d="M40 94h96a30 30 0 0 0 4-60 42 42 0 0 0-80-10 36 36 0 0 0-20 70z"/>
             <text class="d-cloud-t" x="86" y="64" text-anchor="middle">AI tool</text>
           </g>
-          <text class="d-lab" x="794" y="262" text-anchor="middle">ChatGPT, Claude,</text>
-          <text class="d-lab" x="794" y="280" text-anchor="middle">Gemini and others</text>
+          <text class="d-lab" x="794" y="262" text-anchor="middle">38 AI services,</text>
+          <text class="d-lab" x="794" y="280" text-anchor="middle">for example</text>
+          <image class="d-logo" href="assets/ai-logos/claude.svg" x="736" y="298" width="28" height="28" aria-hidden="true"/>
+          <image class="d-logo d-logo--mono" href="assets/ai-logos/openai.svg" x="780" y="298" width="28" height="28" aria-hidden="true"/>
+          <image class="d-logo" href="assets/ai-logos/gemini.svg" x="824" y="298" width="28" height="28" aria-hidden="true"/>
+          <image class="d-logo" href="assets/ai-logos/copilot.svg" x="736" y="342" width="28" height="28" aria-hidden="true"/>
+          <image class="d-logo" href="assets/ai-logos/perplexity.svg" x="780" y="342" width="28" height="28" aria-hidden="true"/>
 
-          <!-- the record, to your own workspace -->
-          <circle cx="422" cy="176" r="5" fill="#ff9a08"/>
-          <path class="d-record" d="M422 176V372H648"/>
-          <text class="d-lab d-lab--small" x="438" y="362">a record of what was found</text>
-          <g transform="translate(660 342)" class="d-shadow">
-            <rect class="d-ws" width="226" height="60" rx="14"/>
-            <text class="d-ws-t" x="113" y="27" text-anchor="middle">Your own workspace</text>
-            <text class="d-ws-s" x="113" y="46" text-anchor="middle">on your server</text>
+          <!-- the answer comes back, with the real details put back -->
+          <path class="d-back" d="M794 134V78H356V110"/>
+          <text class="d-lab d-lab--back" x="575" y="68" text-anchor="middle">4 &middot; the answer comes back, real details put back</text>
+
+          <!-- your own workspace: the rules go to the program, the record comes back -->
+          <g transform="translate(190 340)" class="d-shadow">
+            <rect class="d-ws" width="260" height="60" rx="14"/>
+            <text class="d-ws-t" x="130" y="27" text-anchor="middle">Your own workspace</text>
+            <text class="d-ws-s" x="130" y="46" text-anchor="middle">on your server</text>
           </g>
+          <path class="d-rulesline" d="M240 338V212H262"/>
+          <text class="d-lab d-lab--small" x="230" y="318" text-anchor="end">your rules</text>
+          <circle cx="422" cy="176" r="5" fill="#ff9a08"/>
+          <path class="d-record" d="M422 176V334"/>
+          <text class="d-lab d-lab--small" x="436" y="324">a record of what was found</text>
 
           <!-- moving dots (still when motion is reduced) -->
           <circle class="d-dot d-dot--in" cx="168" cy="176" r="7"/>
           <circle class="d-dot d-dot--out" cx="392" cy="176" r="7"/>
+          <circle class="d-dot d-dot--back" cx="790" cy="78" r="7"/>
         </svg>
-        <figcaption>The check happens on the computer, before anything is sent. The AI gets the question without the private part. Your workspace gets a record of what was found.</figcaption>
+        <figcaption>The check happens on the computer, before anything is sent. The AI gets the question without the private part, and the employee reads the answer with the real details put back. Your own workspace sends the rules and receives a record of what was found. It happens on the computer because that is the only place that still has the message exactly as the employee wrote it.</figcaption>
       </figure>
 
       <div class="lp-flow lp-flow--fallback">
@@ -425,7 +467,10 @@
         <div class="lp-step lp-step--core lp-reveal"><span class="lp-step__n">2</span><h3>The program on their computer reads it first</h3><p>It looks for private details: names, numbers, passwords, confidential documents. This happens on the computer itself.</p></div>
         <div class="lp-arrow" aria-hidden="true">&rarr;</div>
         <div class="lp-step lp-reveal"><span class="lp-step__n">3</span><h3>Your rules decide what happens</h3><p>The private details are replaced with labels, or the message is stopped. Then the rest goes on to the AI.</p></div>
+        <div class="lp-arrow" aria-hidden="true">&rarr;</div>
+        <div class="lp-step lp-reveal"><span class="lp-step__n">4</span><h3>The answer comes back</h3><p>The real details are put back in the answer, so the employee reads it as usual.</p></div>
       </div>
+      <p class="lp-howlink"><a class="lp-btn lp-btn--primary" href="#tech">How it works for IT and security teams &darr;</a></p>
     </div>
   </section>
 
@@ -433,7 +478,7 @@
   <section class="lp-section" id="modes">
     <div class="lp-wrap">
       <h2 class="lp-h2">You decide what happens when private data is found.</h2>
-      <p class="lp-sub">Three settings, shown on the same example. Choose one for the whole company, or different ones for a team or an AI tool.</p>
+      <p class="lp-sub">Three settings, shown on the same example. Choose one for the whole company, or different ones for a group of computers or an AI tool.</p>
 
       <div class="lp-modes">
         <div class="lp-mode lp-mode--watch lp-reveal">
@@ -442,7 +487,7 @@
             <h3>Record only</h3>
           </div>
           <span class="lp-mode__badge">Where a new workspace starts</span>
-          <p>The message goes through as it is. You get a record of what was found, so you can see what your people send before you switch protection on. Passwords, keys and the words you list are still hidden.</p>
+          <p>The message goes through as it is. You get a record of what was found, so you can see what your people send before you switch protection on. The exceptions are machine secrets such as API keys, and the words you list: those are still replaced.</p>
           <div class="lp-mode__box">
             <p class="lp-mode__label">What the AI receives</p>
             <p class="lp-mode__text">Write a polite reply to <mark>Anna Kowalski</mark> (<mark>anna.kowalski@acme-corp.example</mark>). Her card <mark>4111 1111 1111 1111</mark> was charged twice for invoice 2041.</p>
@@ -456,11 +501,12 @@
             <h3>Replace</h3>
           </div>
           <span class="lp-mode__badge lp-mode__badge--ghost">&nbsp;</span>
-          <p>Private details are swapped for labels. The AI still understands the question and can answer it.</p>
+          <p>Private details are swapped for labels, or, if you prefer, for look-alike details such as another name. The AI still understands the question and can answer it.</p>
           <div class="lp-mode__box lp-mode__box--safe">
             <p class="lp-mode__label">What the AI receives</p>
             <p class="lp-mode__text">Write a polite reply to <span class="lp-tag">[PERSON]</span> (<span class="lp-tag">[EMAIL]</span>). Her card <span class="lp-tag">[CARD NUMBER]</span> was charged twice for invoice 2041.</p>
-            <p class="lp-mode__who">The employee gets an answer as usual.</p>
+            <p class="lp-mode__text">Or, with look-alike details: Write a polite reply to <span class="lp-tag">Maria Lindqvist</span> (<span class="lp-tag">m.lindqvist@northfield-group.example</span>). Her card <span class="lp-tag">5500 0000 0000 0004</span> was charged twice for invoice 2041.</p>
+            <p class="lp-mode__who">The employee gets the answer with the real details put back.</p>
           </div>
         </div>
 
@@ -487,9 +533,7 @@
       <h2 class="lp-h2">Why your business needs it.</h2>
       <div class="lp-cards lp-cards--2">
         <div class="lp-card lp-card--row lp-reveal"><div class="lp-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.6-7.5-10.3A4.2 4.2 0 0 1 12 7.8a4.2 4.2 0 0 1 7.5 2.4c0 5.7-7.5 10.3-7.5 10.3z"/></svg></div><h3>Protect your clients' trust</h3><p>Clients and partners expect you to handle their data with care. One careless paste into a chat can damage that.</p></div>
-        <div class="lp-card lp-card--row lp-reveal"><div class="lp-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 2.8 5 13.6h6l-1 7.6 8-10.8h-6z"/></svg></div><h3>Keep the benefits of AI</h3><p>You do not have to ban AI tools. People keep working the way they like, and the risky details are handled for them.</p></div>
-        <div class="lp-card lp-card--row lp-reveal"><div class="lp-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/><circle cx="9" cy="7" r="2.2"/><circle cx="15.5" cy="12" r="2.2"/><circle cx="8" cy="17" r="2.2"/></svg></div><h3>Stay in control</h3><p>You decide which AI tools are allowed, what happens to personal data and which documents must never be sent. Different teams can have different rules.</p></div>
-        <div class="lp-card lp-card--row lp-reveal"><div class="lp-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="m9.8 14.5 2 2 3.6-4"/></svg></div><h3>Be able to show what you did</h3><p>A record of what was found and what was done helps when a client, an auditor or a regulator asks.</p></div>
+        <div class="lp-card lp-card--row lp-reveal"><div class="lp-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 2.8 5 13.6h6l-1 7.6 8-10.8h-6z"/></svg></div><h3>Keep the benefits of AI</h3><p>You do not have to ban AI tools. A ban does not stop people using them, it only moves the use where you cannot see it. People keep working the way they like, and the risky details are handled for them.</p></div>
       </div>
 
       <h3 class="lp-h3">What it looks for</h3>
@@ -530,24 +574,14 @@
               <td data-label="With the program"><span class="lp-ans lp-ans--yes"><strong>Your administrators.</strong><span>They see what was found and what the rules did, in your own workspace.</span></span></td>
             </tr>
             <tr>
-              <th scope="row">What is recorded</th>
-              <td data-label="Without it"><span class="lp-ans lp-ans--no"><strong>Nothing on your side.</strong></span></td>
-              <td data-label="With the program"><span class="lp-ans lp-ans--yes"><strong>Every checked request.</strong><span>When, which AI tool, which kinds of data, what happened. The message is kept with private details already replaced, unless you switch that off.</span></span></td>
-            </tr>
-            <tr>
               <th scope="row">Showing a client or an auditor what you did</th>
               <td data-label="Without it"><span class="lp-ans lp-ans--no"><strong>Nothing to show.</strong><span>You can describe a policy, but you have no record.</span></span></td>
               <td data-label="With the program"><span class="lp-ans lp-ans--yes"><strong>A record and reports.</strong><span>From your own server. Print them or export them.</span></span></td>
             </tr>
-            <tr>
-              <th scope="row">If you want to restrict an AI tool</th>
-              <td data-label="Without it"><span class="lp-ans lp-ans--no"><strong>All or nothing.</strong><span>Ban it for everyone, or trust people to be careful.</span></span></td>
-              <td data-label="With the program"><span class="lp-ans lp-ans--yes"><strong>Tool by tool, team by team.</strong><span>Allow or block each AI tool for the whole company or for one team, with separate rules for documents.</span></span></td>
-            </tr>
           </tbody>
         </table>
       </div>
-      <p class="lp-small">What you get depends on the setting you choose for each team and AI tool. A few AI tools share an address with others and cannot be blocked on their own.</p>
+      <p class="lp-small">What you get depends on the setting you choose for each group of computers and AI tool. A few AI tools share an address with others and cannot be blocked on their own.</p>
     </div>
   </section>
 
@@ -652,14 +686,17 @@
   <section class="lp-section" id="tools">
     <div class="lp-wrap">
       <h2 class="lp-h2">Works with the AI tools your people use.</h2>
-      <p class="lp-sub">At the time of writing, 38 AI services in a web browser are covered, and the list grows with new versions.</p>
+      <p class="lp-sub">At the time of writing, 38 AI services are covered: chat apps and the programming interfaces (APIs) of AI vendors. The list grows with new versions.</p>
+      <ul class="lp-logos">
+        <li><img src="assets/ai-logos/claude.svg" alt="" width="40" height="40" loading="lazy"><span>Claude</span></li>
+        <li><img class="lp-logo--mono" src="assets/ai-logos/openai.svg" alt="" width="40" height="40" loading="lazy"><span>ChatGPT</span></li>
+        <li><img class="lp-logo--mono" src="assets/ai-logos/openai.svg" alt="" width="40" height="40" loading="lazy"><span>OpenAI API</span></li>
+        <li><img src="assets/ai-logos/gemini.svg" alt="" width="40" height="40" loading="lazy"><span>Gemini</span></li>
+        <li><img src="assets/ai-logos/copilot.svg" alt="" width="40" height="40" loading="lazy"><span>Microsoft Copilot</span></li>
+        <li><img src="assets/ai-logos/perplexity.svg" alt="" width="40" height="40" loading="lazy"><span>Perplexity</span></li>
+      </ul>
       <ul class="lp-chips">
-        <li>ChatGPT</li>
-        <li>Claude</li>
-        <li>Gemini</li>
-        <li>Microsoft Copilot</li>
         <li>GitHub Copilot</li>
-        <li>Perplexity</li>
         <li>Grok</li>
         <li>Claude Desktop</li>
         <li>Claude Code *</li>
@@ -724,6 +761,13 @@
         <div class="lp-card lp-card--row lp-reveal"><div class="lp-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 21V4"/><path d="M6 5h11l-2 4 2 4H6"/></svg></div><h3>Extended rollout support (optional)</h3><p>A hands-on rollout together with your team, usually 3 to 6 weeks: a pilot with one team, policy tuning, rollout to the whole fleet and a handover for audit. We confirm the plan once we know your fleet size and policy needs.</p></div>
       </div>
       <p class="lp-small">Customizations and integrations are scoped separately.</p>
+
+      <h3 class="lp-h3">A pilot in three steps</h3>
+      <div class="lp-cards lp-cards--3">
+        <div class="lp-card lp-reveal"><div class="lp-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2.5 12s3.6-6.5 9.5-6.5S21.5 12 21.5 12 17.9 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></svg></div><h3>1. See</h3><p>Start in Record only. Nothing changes for people, and you see what is being sent. Done when you know which AI tools your people use.</p></div>
+        <div class="lp-card lp-reveal"><div class="lp-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.8 4.5 6v5.5c0 4.6 3 8 7.5 9.7 4.5-1.7 7.5-5.1 7.5-9.7V6z"/><path d="m8.8 12 2.4 2.4 4-4.4"/></svg></div><h3>2. Protect</h3><p>Switch on replacing for the data that matters, and block what must never leave. Done when you have decided what is hidden and what is stopped.</p></div>
+        <div class="lp-card lp-reveal"><div class="lp-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="m9.8 14.5 2 2 3.6-4"/></svg></div><h3>3. Show</h3><p>Open the reports for a few weeks of real use. Done when you have something to show a client or an auditor.</p></div>
+      </div>
     </div>
   </section>
 
@@ -755,12 +799,12 @@
         
         <details class="lp-faq__item">
           <summary>We already have a DLP system. Why do we need this as well?</summary>
-          <p>They do different jobs. A classic DLP decides whether a file or a paste may leave the company at all. We work only on the path to AI services, and you choose what happens there. There are three settings: Record only (nothing is changed, everything is recorded), Replace (private details are replaced before the message leaves the computer, so people keep using AI) and Block (the message is stopped). Policies then apply them to each AI service and each type of data. By default replaced details become labels such as [PERSON]; an administrator can switch on realistic stand-ins instead, so the AI sees a normal-looking name, and the employee gets the answer with the real values put back. Wherever a policy replaces or blocks, the real values do not reach the AI provider. The two complement each other. Because both tools look at what leaves the computer, we check during the pilot that they run side by side without conflict, on a test machine with your DLP configuration.</p>
+          <p>They do different jobs. A classic DLP decides whether a file or a paste may leave the company at all. We work only on the path to AI services, and you choose what happens there. There are three settings: Record only (nothing is changed, everything is recorded), Replace (private details are replaced before the message leaves the computer, so people keep using AI) and Block (the message is stopped). Policies then apply them to each AI service and each type of data. By default replaced details become labels such as [PERSON]; an administrator can switch on realistic stand-ins instead, so the AI sees a normal-looking name, and the employee gets the answer with the real values put back. Wherever a policy replaces or blocks, the real values do not reach the AI provider. The two complement each other. Because both tools look at what leaves the computer, the pilot is the place to check that they run side by side without conflict: try it on a test computer that has your DLP configuration.</p>
         </details>
         
         <details class="lp-faq__item">
           <summary>Will it slow down our AI tools?</summary>
-          <p>In our lab, scanning a typical prompt takes tens of milliseconds, and replies stream through without waiting. Long conversations and large attachments take longer; an image takes about a second, because its text is read first.</p>
+          <p>The check runs on the computer itself, before the message leaves, and replies stream back without waiting. Long conversations and large attachments take longer, and a picture takes longer still, because its text has to be read first. In the trial you can measure the delay on your own computers.</p>
         </details>
         
         <details class="lp-faq__item">
@@ -804,6 +848,45 @@
         <div class="lp-fact lp-reveal"><span class="lp-fact__n">ISO 27001</span><span class="lp-fact__t">certified security management system</span></div>
       </div>
       <p class="lp-small">ScienceSoft is also ISO 9001 certified, a Claude Certified Services Partner, a Microsoft Solutions Partner for Data &amp; AI and an AWS Partner since 2017. <a href="https://www.scnsoft.com/">More about ScienceSoft.</a></p>
+    </div>
+  </section>
+
+  <!-- How it works, for IT -->
+  <section class="lp-section" id="tech">
+    <div class="lp-wrap">
+      <h2 class="lp-h2">How it works, for IT and security teams.</h2>
+      <p class="lp-sub">The same steps, in more detail. Every request to an AI service goes through six stages on the computer itself.</p>
+      <div class="lp-cards lp-cards--3">
+        <div class="lp-card lp-reveal"><h3>1. Intercept</h3><p>A proxy setting on the computer sends traffic to AI tools to a local firewall. The firewall listens only on the computer itself.</p></div>
+        <div class="lp-card lp-reveal"><h3>2. Identify</h3><p>It works out which AI service the request is for, by its address. A service that is not on the list is not checked.</p></div>
+        <div class="lp-card lp-reveal"><h3>3. Inspect</h3><p>It reads the message, documents (Word, Excel, PowerPoint, PDF, OpenDocument) and the text inside pictures, for the kinds of data your rules switch on.</p></div>
+        <div class="lp-card lp-reveal"><h3>4. Decide</h3><p>The setting for this AI service and this kind of data decides: Record only, Replace or Block.</p></div>
+        <div class="lp-card lp-reveal"><h3>5. Act</h3><p>The request goes on, changed or not, or is stopped, and the employee is told why. In Replace the real values are put back in the answer.</p></div>
+        <div class="lp-card lp-reveal"><h3>6. Record</h3><p>A record of what was found goes to your workspace, in a chain that shows if it was changed afterwards.</p></div>
+      </div>
+
+      <h3 class="lp-h3">What is on the computer</h3>
+      <div class="lp-two">
+        <div class="lp-panel lp-reveal">
+          <h3>What runs there</h3>
+          <ul>
+            <li>An app in the tray that shows the status and applies your rules.</li>
+            <li>The local firewall. It opens no connection from the network.</li>
+            <li>The detection models: patterns, a model for names and a reader for text in pictures. They run on the computer.</li>
+            <li>Protection services that start the app again if it stops. On Windows a standard user cannot stop them.</li>
+          </ul>
+        </div>
+        <div class="lp-panel lp-panel--warm lp-reveal">
+          <h3>What it changes and talks to</h3>
+          <ul>
+            <li>A local certificate, trusted on the computer so the firewall can read traffic to AI tools. Its private key stays there.</li>
+            <li>A proxy setting that sends traffic to AI tools to the local firewall.</li>
+            <li>Outbound HTTPS only: to your workspace, to the update address and to download the detection models.</li>
+            <li>Uninstalling removes the certificate and the settings that the program added.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="lp-small">Limits are listed too: for example, programs that pin their own certificate cannot be read. <a href="how-it-is-built.html">Read how it is built, in full</a> &middot; <a href="coverage.html#what-is-not-covered">What is not covered</a></p>
     </div>
   </section>
 
