@@ -103,7 +103,7 @@
         
           { "@type": "Question", "name": "Who can see what is recorded?", "acceptedAnswer": { "@type": "Answer", "text": "The administrators of your workspace. They see what was found and the message with the private details already replaced. Tell your employees about this. The guides list everything that is recorded." } },
         
-          { "@type": "Question", "name": "Can it make mistakes?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. No detector finds everything: a name or a number that the program does not recognise is not hidden. That is why we recommend a pilot on a few computers first, and why the guides say plainly what is and is not covered." } },
+          { "@type": "Question", "name": "Can it make mistakes?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. No detector finds everything: a name or a number that the program does not recognise is not hidden. That is why we recommend a pilot on a few computers first, and why the guides say plainly what is and is not covered. No single control is perfect, so treat the program as one layer of your defence, next to the controls you already have." } },
         
           { "@type": "Question", "name": "How much does it cost?", "acceptedAnswer": { "@type": "Answer", "text": "$15 per protected device per month. Plans start at 20 devices, so the minimum is $300 a month. The price does not depend on how much your people use AI: you pay for the devices you protect." } },
         
@@ -340,7 +340,7 @@
           <p class="lp-demo__text">Dear <mark class="lp-back">Anna Kowalski</mark>, we are sorry that invoice 2041 was charged twice to your card. The refund is already on its way.</p>
         </div>
       </div>
-      <p class="lp-small">An example with invented data. The AI can still write the reply.<a href="#solve">See what we solve</a></p>
+      <p class="lp-small">An example with invented data. The AI can still write the reply. <a href="#solve">See what we solve</a></p>
     </div>
   </section>
 
@@ -348,14 +348,14 @@
   <section class="lp-section" id="solve">
     <div class="lp-wrap">
       <h2 class="lp-h2">What we solve.</h2>
-      <p class="lp-sub">Six everyday situations where private data would otherwise end up in an AI tool, and what the program does in each.</p>
-      <div class="lp-cards lp-cards--3">
-        <div class="lp-card lp-reveal"><h3>A nurse asks AI to tidy a note</h3><p>The patient's name and details are replaced before the note leaves the computer. The nurse still gets a clear summary.</p></div>
-        <div class="lp-card lp-reveal"><h3>A manager polishes a letter to a client</h3><p>The client's name, e-mail and account number stay in your company. The letter still gets better.</p></div>
-        <div class="lp-card lp-reveal"><h3>A developer pastes code with a key in it</h3><p>The program always notices passwords and secret keys. By your setting it replaces them or stops the message.</p></div>
-        <div class="lp-card lp-reveal"><h3>A consultant uploads a contract draft</h3><p>You can set rules by kind of document, for example NDAs: allow, record, replace the personal data, or block.</p></div>
-        <div class="lp-card lp-reveal"><h3>The team tries a new AI tool</h3><p>You see which AI tools people use. Then you allow or block each one, for the whole company or for a group of computers.</p></div>
-        <div class="lp-card lp-reveal"><h3>You want to start without disturbing anyone</h3><p>A new team starts in Record only: nothing changes for people, and you see what is being sent. When you are ready, you switch on replacing.</p></div>
+      <p class="lp-sub">Five everyday situations where private data would otherwise end up in an AI tool, and what the program does in each.</p>
+      <div class="lp-rows">
+        <div class="lp-rows__head" aria-hidden="true"><span>The situation</span><span></span><span>What the program does</span></div>
+        <div class="lp-row lp-reveal"><div class="lp-row__sit">A nurse asks AI to tidy a note</div><span class="lp-row__arrow" aria-hidden="true"></span><div class="lp-row__act">The patient's name and details are replaced before the note leaves the computer. The nurse still gets a clear summary.</div></div>
+        <div class="lp-row lp-reveal"><div class="lp-row__sit">A manager polishes a letter to a client</div><span class="lp-row__arrow" aria-hidden="true"></span><div class="lp-row__act">The client's name, e-mail and account number stay in your company. The letter still gets better.</div></div>
+        <div class="lp-row lp-reveal"><div class="lp-row__sit">A developer pastes code with a key in it</div><span class="lp-row__arrow" aria-hidden="true"></span><div class="lp-row__act">The program always notices passwords and secret keys. By your setting it replaces them or stops the message.</div></div>
+        <div class="lp-row lp-reveal"><div class="lp-row__sit">A consultant uploads a contract draft</div><span class="lp-row__arrow" aria-hidden="true"></span><div class="lp-row__act">You can set rules by kind of document, for example NDAs: allow, record, replace the personal data, or block.</div></div>
+        <div class="lp-row lp-reveal"><div class="lp-row__sit">The team tries a new AI tool</div><span class="lp-row__arrow" aria-hidden="true"></span><div class="lp-row__act">You see which AI tools people use. Then you allow or block each one, for the whole company or for a group of computers.</div></div>
       </div>
       <p class="lp-small">These are examples, not customer stories. <a href="threats.html">Which security needs it answers</a> &middot; <a href="how-it-is-built.html">How it is built</a></p>
     </div>
@@ -466,7 +466,7 @@
         <div class="lp-arrow" aria-hidden="true">&rarr;</div>
         <div class="lp-step lp-step--core lp-reveal"><span class="lp-step__n">2</span><h3>The program on their computer reads it first</h3><p>It looks for private details: names, numbers, passwords, confidential documents. This happens on the computer itself.</p></div>
         <div class="lp-arrow" aria-hidden="true">&rarr;</div>
-        <div class="lp-step lp-reveal"><span class="lp-step__n">3</span><h3>Your rules decide what happens</h3><p>The private details are replaced with labels, or the message is stopped. Then the rest goes on to the AI.</p></div>
+        <div class="lp-step lp-reveal"><span class="lp-step__n">3</span><h3>Your rules decide what happens</h3><p>The private details are replaced, or the message is stopped, as your rules say. Then the rest goes on to the AI.</p></div>
         <div class="lp-arrow" aria-hidden="true">&rarr;</div>
         <div class="lp-step lp-reveal"><span class="lp-step__n">4</span><h3>The answer comes back</h3><p>The real details are put back in the answer, so the employee reads it as usual.</p></div>
       </div>
@@ -505,7 +505,6 @@
           <div class="lp-mode__box lp-mode__box--safe">
             <p class="lp-mode__label">What the AI receives</p>
             <p class="lp-mode__text">Write a polite reply to <span class="lp-tag">[PERSON]</span> (<span class="lp-tag">[EMAIL]</span>). Her card <span class="lp-tag">[CARD NUMBER]</span> was charged twice for invoice 2041.</p>
-            <p class="lp-mode__text">Or, with look-alike details: Write a polite reply to <span class="lp-tag">Maria Lindqvist</span> (<span class="lp-tag">m.lindqvist@northfield-group.example</span>). Her card <span class="lp-tag">5500 0000 0000 0004</span> was charged twice for invoice 2041.</p>
             <p class="lp-mode__who">The employee gets the answer with the real details put back.</p>
           </div>
         </div>
@@ -530,7 +529,7 @@
   <!-- Why you need it -->
   <section class="lp-section" id="why">
     <div class="lp-wrap">
-      <h2 class="lp-h2">Why your business needs it.</h2>
+      <h2 class="lp-h2">What it protects, and why it matters.</h2>
       <div class="lp-cards lp-cards--2">
         <div class="lp-card lp-card--row lp-reveal"><div class="lp-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.6-7.5-10.3A4.2 4.2 0 0 1 12 7.8a4.2 4.2 0 0 1 7.5 2.4c0 5.7-7.5 10.3-7.5 10.3z"/></svg></div><h3>Protect your clients' trust</h3><p>Clients and partners expect you to handle their data with care. One careless paste into a chat can damage that.</p></div>
         <div class="lp-card lp-card--row lp-reveal"><div class="lp-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 2.8 5 13.6h6l-1 7.6 8-10.8h-6z"/></svg></div><h3>Keep the benefits of AI</h3><p>You do not have to ban AI tools. A ban does not stop people using them, it only moves the use where you cannot see it. People keep working the way they like, and the risky details are handled for them.</p></div>
@@ -781,10 +780,11 @@
       <p class="lp-small">Customizations and integrations are scoped separately.</p>
 
       <h3 class="lp-h3">A pilot in three steps</h3>
-      <div class="lp-cards lp-cards--3">
-        <div class="lp-card lp-reveal"><div class="lp-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2.5 12s3.6-6.5 9.5-6.5S21.5 12 21.5 12 17.9 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></svg></div><h3>1. See</h3><p>Start in Record only. Nothing changes for people, and you see what is being sent. Done when you know which AI tools your people use.</p></div>
-        <div class="lp-card lp-reveal"><div class="lp-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.8 4.5 6v5.5c0 4.6 3 8 7.5 9.7 4.5-1.7 7.5-5.1 7.5-9.7V6z"/><path d="m8.8 12 2.4 2.4 4-4.4"/></svg></div><h3>2. Protect</h3><p>Switch on replacing for the data that matters, and block what must never leave. Done when you have decided what is hidden and what is stopped.</p></div>
-        <div class="lp-card lp-reveal"><div class="lp-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="m9.8 14.5 2 2 3.6-4"/></svg></div><h3>3. Show</h3><p>Open the reports for a few weeks of real use. Done when you have something to show a client or an auditor.</p></div>
+      <div class="lp-stairs">
+        <div class="lp-stair lp-stair--0 lp-reveal"><span class="lp-stair__n">0</span><p class="lp-stair__t">AI you cannot see</p><p>People use AI tools with personal accounts. Nobody sees what is sent.</p></div>
+        <div class="lp-stair lp-stair--1 lp-reveal"><span class="lp-stair__n">1</span><p class="lp-stair__t">See</p><p>Start in Record only. Nothing changes for people, and you see what is being sent.</p><p class="lp-stair__done"><b>Done when</b> you know which AI tools your people use.</p></div>
+        <div class="lp-stair lp-stair--2 lp-reveal"><span class="lp-stair__n">2</span><p class="lp-stair__t">Protect</p><p>Switch on replacing for the data that matters, and block what must never leave.</p><p class="lp-stair__done"><b>Done when</b> you have decided what is hidden and what is stopped.</p></div>
+        <div class="lp-stair lp-stair--3 lp-reveal"><span class="lp-stair__n">3</span><p class="lp-stair__t">Show</p><p>Open the reports for a few weeks of real use.</p><p class="lp-stair__done"><b>Done when</b> you have something to show a client or an auditor.</p></div>
       </div>
     </div>
   </section>
@@ -837,7 +837,7 @@
         
         <details class="lp-faq__item">
           <summary>Can it make mistakes?</summary>
-          <p>Yes. No detector finds everything: a name or a number that the program does not recognise is not hidden. That is why we recommend a pilot on a few computers first, and why the guides say plainly what is and is not covered.</p>
+          <p>Yes. No detector finds everything: a name or a number that the program does not recognise is not hidden. That is why we recommend a pilot on a few computers first, and why the guides say plainly what is and is not covered. No single control is perfect, so treat the program as one layer of your defence, next to the controls you already have.</p>
         </details>
         
         <details class="lp-faq__item">
@@ -874,13 +874,18 @@
     <div class="lp-wrap">
       <h2 class="lp-h2">How it works, for IT and security teams.</h2>
       <p class="lp-sub">The same steps, in more detail. Every request to an AI service goes through six stages on the computer itself.</p>
-      <div class="lp-cards lp-cards--3">
-        <div class="lp-card lp-reveal"><h3>1. Intercept</h3><p>A proxy setting on the computer sends traffic to AI tools to a local firewall. The firewall listens only on the computer itself.</p></div>
-        <div class="lp-card lp-reveal"><h3>2. Identify</h3><p>It works out which AI service the request is for, by its address. A service that is not on the list is not checked.</p></div>
-        <div class="lp-card lp-reveal"><h3>3. Inspect</h3><p>It reads the message, documents (Word, Excel, PowerPoint, PDF, OpenDocument) and the text inside pictures, for the kinds of data your rules switch on.</p></div>
-        <div class="lp-card lp-reveal"><h3>4. Decide</h3><p>The setting for this AI service and this kind of data decides: Record only, Replace or Block.</p></div>
-        <div class="lp-card lp-reveal"><h3>5. Act</h3><p>The request goes on, changed or not, or is stopped, and the employee is told why. In Replace the real values are put back in the answer.</p></div>
-        <div class="lp-card lp-reveal"><h3>6. Record</h3><p>A record of what was found goes to your workspace, in a chain that shows if it was changed afterwards.</p></div>
+      <div class="lp-stages">
+        <div class="lp-stage lp-stage--1 lp-reveal"><svg class="lp-stage__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 11a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><h3><span>1</span> Intercept</h3><p>A proxy setting on the computer sends traffic to AI tools to a local firewall. The firewall listens only on the computer itself.</p></div>
+        <span class="lp-sarrow lp-sarrow--12" aria-hidden="true"></span>
+        <div class="lp-stage lp-stage--2 lp-reveal"><svg class="lp-stage__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m16 16 5 5"/></svg><h3><span>2</span> Identify</h3><p>It works out which AI service the request is for, by its address. A service that is not on the list is not checked.</p></div>
+        <span class="lp-sarrow lp-sarrow--23" aria-hidden="true"></span>
+        <div class="lp-stage lp-stage--3 lp-reveal"><svg class="lp-stage__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8 4.5 6v5.5c0 4.6 3 8 7.5 9.7 4.5-1.7 7.5-5.1 7.5-9.7V6z"/><path d="m8.8 12 2.4 2.4 4-4.4"/></svg><h3><span>3</span> Inspect</h3><p>It reads the message, documents (Word, Excel, PowerPoint, PDF, OpenDocument) and the text inside pictures, for the kinds of data your rules switch on.</p></div>
+        <span class="lp-sarrow lp-sarrow--34" aria-hidden="true"></span>
+        <div class="lp-stage lp-stage--4 lp-reveal"><svg class="lp-stage__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/><circle cx="9" cy="7" r="2.2"/><circle cx="15.5" cy="12" r="2.2"/><circle cx="8" cy="17" r="2.2"/></svg><h3><span>4</span> Decide</h3><p>The setting for this AI service and this kind of data decides: Record only, Replace or Block.</p></div>
+        <span class="lp-sarrow lp-sarrow--45" aria-hidden="true"></span>
+        <div class="lp-stage lp-stage--5 lp-reveal"><svg class="lp-stage__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 21 3l-8 18-2-8z"/></svg><h3><span>5</span> Act</h3><p>The request goes on, changed or not, or is stopped, and the employee is told why. In Replace the real values are put back in the answer.</p></div>
+        <span class="lp-sarrow lp-sarrow--56" aria-hidden="true"></span>
+        <div class="lp-stage lp-stage--6 lp-reveal"><svg class="lp-stage__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="m9.8 14.5 2 2 3.6-4"/></svg><h3><span>6</span> Record</h3><p>A record of what was found goes to your workspace, in a chain that shows if it was changed afterwards.</p></div>
       </div>
 
       <h3 class="lp-h3">What is on the computer</h3>
