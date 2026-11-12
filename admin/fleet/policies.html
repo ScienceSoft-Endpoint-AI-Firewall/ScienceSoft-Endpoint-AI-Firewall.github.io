@@ -2047,6 +2047,10 @@
 <p><img alt="The Policies page of a workspace that has not published a policy: the heading Your current settings become the organisation default, a table that says what publishing creates, and a bar with the button Publish to start using policies." src="../../assets/screenshots/fleet-policies-start.png" /></p>
 <p><em>The picture shows a test workspace. Names, addresses and IDs are examples.</em></p>
 <p>The page says: "Your current settings become the organisation default." Publishing takes the workspace's protection mode, its types of data and its advanced rules and makes them the <strong>Organisation default</strong> policy, version <code>v1</code>. A group or a computer that sets any of these on its own gets a policy of its own. The table <strong>What publishing creates</strong> lists each policy it will make, and <strong>Devices whose result changes</strong> lists the computers whose result would change, from what to what. Nothing is sent until you select <strong>Publish to start using policies</strong>.</p>
+<div class="admonition warning">
+<p class="admonition-title">The first publish cannot be undone</p>
+<p>After the first publish a workspace cannot go back to working without policies. You can change or switch off single policies and settings. The console asks "Start using policies for this workspace?" before the first publish.</p>
+</div>
 <p>Use <strong>Review the organisation default</strong> to look at the policy before you publish.</p>
 <h2 id="the-list-of-policies">The list of policies<a class="headerlink" href="#the-list-of-policies" title="Permanent link">&para;</a></h2>
 <p>After the first publish, the page lists your policies. The organisation default is always first. It applies to every computer, is always on, and cannot be deleted. Under the name of each policy a line says what it is for: <strong>Device-group policy</strong>, <strong>Single-device policy</strong>, <strong>User policy</strong> or <strong>User-group policy</strong>.</p>
@@ -2080,7 +2084,7 @@
 </tr>
 </tbody>
 </table>
-<p>A computer counts as running a version only when its status report says so. A computer on an older app that does not report a policy version is counted separately: "report no policy version (an older app, or no heartbeat yet)". <strong>See devices</strong> opens the <strong>Devices</strong> tab of the workspace.</p>
+<p>A computer counts as running a version only when its status report says so. A computer on an older app that does not report a policy version is counted separately: "report no policy version (an older app, or no heartbeat yet)". <strong>See devices</strong> opens <strong>Settings</strong> &gt; <strong>Devices</strong>.</p>
 <h2 id="edit-a-policy">Edit a policy<a class="headerlink" href="#edit-a-policy" title="Permanent link">&para;</a></h2>
 <p>Select a policy to edit it.</p>
 <p><img alt="The top of the organisation default: the card Start from a policy preset, and the card Data types with the data types Personal, Financial, Health and Credentials and the lists Added and Removed." src="../../assets/screenshots/fleet-policy-default.png" /></p>
@@ -2288,12 +2292,17 @@
 <div class="admonition warning">
 <p class="admonition-title">Limits of this card</p>
 <ul>
-<li>It governs Claude Code and Codex only. Cursor, VS Code, Windsurf and Claude Desktop are listed in <strong>Dev Tools</strong> but not governed here.</li>
+<li>On Claude Code you can also list blocked <strong>tools</strong>, with rules such as <code>Bash(curl:*)</code>. A group can add to a blocked list but never lift a block. Only a policy for one computer can remove an entry from a blocked list.</li>
+</ul>
+</div>
+<ul>
+<li>It governs Claude Code and Codex only. Cursor, VS Code, Windsurf and Claude Desktop are listed in <strong>Dev Tools</strong> but not governed here.<ul>
 <li>The managed settings are written only on computers where the product's system service is installed. Without it the app can only report, and remove servers from the person's own settings, which the person can undo.</li>
 <li>Codex has no managed block list. Allowed skills are "Not checked on Codex devices yet". Claude Code has no managed list of allowed skills.</li>
 <li>A blocked list is the union of all groups' lists. A group never lifts a block.</li>
 </ul>
-</div>
+</li>
+</ul>
 <h3 id="presets">Presets<a class="headerlink" href="#presets" title="Permanent link">&para;</a></h3>
 <p>The card <strong>Start from a policy preset</strong> fills in a policy in one step. Everything it sets stays editable. Use <strong>General</strong> or an <strong>Industry</strong> preset for the organisation default, and a <strong>Role</strong> preset for a group policy. It is not offered on a policy for one computer or for people.</p>
 <table>
@@ -2324,19 +2333,53 @@
 <p>For one computer and one AI service, the result comes from these layers, from the top:</p>
 <ol>
 <li><strong>A policy for the person</strong> who is signed in on the computer, if one names them. See <a href="#policies-for-people">Policies for people</a>.</li>
-<li><strong>The policies of the groups the computer is directly in.</strong> For <strong>Access</strong>, <strong>Mode</strong>, <strong>Text mode</strong>, <strong>File mode</strong> and each upload control, <strong>the strictest value among the matching policies wins</strong>: Block beats Replace, which beats Record only, and Block beats Allow. Each of Text mode and File mode is worked out on its own.</li>
+<li><strong>A policy for this one computer</strong>, if there is one. It <strong>replaces</strong> what the groups gave, stricter or looser.</li>
+<li><strong>The policies of the groups the computer is directly in.</strong> For <strong>Access</strong>, <strong>Mode</strong>, <strong>Text mode</strong>, <strong>File mode</strong> and each upload control, <strong>the strictest value among the matching policies wins</strong>: Block beats Replace, which beats Record only, and Block beats Allow. Each of Text mode and File mode is worked out on its own. If two policies are equally strict, the one with the lower ID decides.</li>
 <li><strong>The organisation default.</strong></li>
 <li><strong>The product default</strong>: Allow, and Record only.</li>
 </ol>
-<p>Within a policy, a row for the service beats that policy's <strong>Default for all services</strong> row.</p>
-<p>Data types, document types, keywords, AI coding agents and advanced rules combine in their own ways, described above and in <a href="settings.html#policy-rules">Policy rules</a>. <strong>A group policy overrides the organisation default even when it is looser.</strong> Only groups the computer is in <strong>directly</strong> count. A computer in no group gets the organisation default.</p>
+<p>The order of strictness is: Access and uploads Allow, Warn, Block; Mode Record only, Replace, Block; AI coding agents <strong>Report only</strong>, <strong>Remove these MCP servers</strong>, <strong>Only allowed MCP servers can run</strong>.</p>
+<p>Within a policy, a row for the service beats that policy's <strong>Default for all services</strong> row. The layer decides before the service does. A group's <strong>Default for all services</strong> mode therefore beats a row for one service on the organisation default.</p>
+<p>Other parts combine in their own ways:</p>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th>How it combines</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Data types</strong></td>
+<td>A policy for one computer replaces the rest. Otherwise the lists of the groups are joined. Otherwise the organisation default</td>
+</tr>
+<tr>
+<td><strong>Keywords</strong></td>
+<td>The lists are joined. A removal by any group beats an add</td>
+</tr>
+<tr>
+<td><strong>Advanced rules</strong></td>
+<td>One list: the policy for the computer, otherwise the last group by name that has rules, otherwise the organisation default. <strong>A group's list replaces the organisation's list</strong></td>
+</tr>
+<tr>
+<td><strong>Approved services</strong></td>
+<td>Only the organisation default has this list. It blocks nothing</td>
+</tr>
+<tr>
+<td><strong>Document types</strong>, <strong>AI coding agents</strong></td>
+<td>As described above</td>
+</tr>
+</tbody>
+</table>
+<p><strong>A group policy overrides the organisation default even when it is looser.</strong> Only groups the computer is in <strong>directly</strong> count. A computer in no group gets the organisation default. A policy cannot extend another policy: inheritance between policies is not available.</p>
+<p>A published policy also <strong>overwrites</strong> a few values of the computer's <a href="settings.html#where-settings-and-policies-overlap">settings</a>: the mode, the data types and the advanced rules. Set those in a policy, not on the Config tab.</p>
 <h2 id="test-publish-and-roll-out">Test, publish and roll out<a class="headerlink" href="#test-publish-and-roll-out" title="Permanent link">&para;</a></h2>
 <h3 id="the-tester">The tester<a class="headerlink" href="#the-tester" title="Permanent link">&para;</a></h3>
 <p>Select <strong>Tester</strong> to see what a computer gets and why. It runs in your browser and makes no call to the server.</p>
 <p><img alt="The Policy tester: the choices Device group, Service and Policies to test, and a Result table with the rows Access, If no one can be asked, Mode, Text mode and File mode, each with a result and the policy that decided it." src="../../assets/screenshots/fleet-policy-tester.png" /></p>
 <p>Choose a <strong>Device group</strong> ("None: organisation default only" for a computer in no group), a <strong>Service</strong>, and <strong>Policies to test</strong>, for example "The policies publishing would create" before the first publish. The table <strong>Result</strong> shows the rows <strong>Access</strong>, <strong>If no one can be asked</strong>, <strong>Mode</strong>, <strong>Text mode</strong>, <strong>File mode</strong>, <strong>Images</strong>, <strong>Documents</strong> and <strong>Other files</strong>, with a "Stricter wins" badge where two policies met, and a <strong>Keywords</strong> block. It says "Allowed: shared host, cannot be blocked" or "Allowed: block not enforced for this service yet" instead of a false Block. The tester leaves out policies for people.</p>
 <h3 id="publish">Publish<a class="headerlink" href="#publish" title="Permanent link">&para;</a></h3>
-<p>A bar at the bottom shows "N unpublished changes". <strong>Publishing creates the next version.</strong> Computers get it at their next check. The server keeps <strong>one</strong> version of the set: there is no list of old versions and no restore. The admin log names the version and the policies in it.</p>
+<p>A bar at the bottom shows "N unpublished changes". <strong>Publishing creates the next version.</strong> Computers get it at their next check. The server keeps every version. You can <strong>view</strong> them on the tab <strong>Config history</strong>, scope <strong>Policies</strong>, but you cannot roll back to one: change the policy and publish again. The admin log names the version and the policies in it.</p>
 <p>If you open the policy list with an old copy, publishing is refused with "Refresh to load v&lt;N&gt;, then make your change again." Only an <code>admin</code> or <code>super-admin</code> can publish.</p>
 <h3 id="roll-out">Roll out<a class="headerlink" href="#roll-out" title="Permanent link">&para;</a></h3>
 <p>The column <strong>Running</strong> and the rollout card count the computers by the version they report. A computer is counted only when it reports back the new version. Lifting a service block, or deleting a rule, reaches computers at their next check.</p>

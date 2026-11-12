@@ -1464,6 +1464,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="How the settings of groups are used">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#merge-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Merge modes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lists
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#not-configured" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Not configured
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1901,6 +1940,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="How the settings of groups are used">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#merge-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Merge modes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lists
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#not-configured" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Not configured
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1938,7 +2016,7 @@
 <tbody>
 <tr>
 <td><strong>The device list</strong></td>
-<td><strong>Settings</strong> &gt; <strong>Tenants</strong> &gt; workspace &gt; tab <strong>Devices</strong></td>
+<td><strong>Settings</strong> &gt; <strong>Devices</strong></td>
 <td>See every computer of one workspace, its status and protection, and put it in groups</td>
 </tr>
 <tr>
@@ -1950,8 +2028,8 @@
 </table>
 <p>Both read one workspace at a time. Pick it in <strong>Tenant</strong>.</p>
 <h2 id="the-device-list">The device list<a class="headerlink" href="#the-device-list" title="Permanent link">&para;</a></h2>
-<p>The tab <strong>Devices</strong> of a workspace lists its computers. It refreshes itself every 30 seconds.</p>
-<p><img alt="The Devices tab of a workspace: a trial banner, the counters Online, Stale, Offline and Revoked, a banner saying one device is degraded, and the table of computers with status, last seen, app version, firewall and protection." src="../../assets/screenshots/fleet-devices.png" /></p>
+<p>The page <strong>Settings</strong> &gt; <strong>Devices</strong> lists the computers of the workspace you pick in <strong>Tenant</strong>. It refreshes itself every 30 seconds. Older versions of the portal had this list as a tab of the workspace.</p>
+<p><img alt="The Devices page under Settings: a trial banner, the counters Online, Stale, Offline and Revoked, a banner saying one device is degraded, and the table of computers with status, last seen, app version, firewall and protection." src="../../assets/screenshots/fleet-devices.png" /></p>
 <p><em>The picture shows a test workspace. Names, addresses and IDs are examples.</em></p>
 <p>At the top, four tiles count the computers: <strong>Online</strong>, <strong>Stale</strong>, <strong>Offline</strong> and <strong>Revoked</strong>. A banner says how many computers are not protected right now. A banner above the tiles can show a licence problem or the trial state.</p>
 <table>
@@ -2044,7 +2122,7 @@
 <li><strong>Config</strong> shows the settings this computer actually applies, after groups and policies are layered on. Changed values are highlighted.</li>
 <li><strong>Logs</strong> needs <code>runtimeLogs</code> switched on in <a href="settings.html#what-each-setting-does-on-this-product">the settings</a>.</li>
 <li><strong>Audit</strong> lists the last 100 events of the computer for 1 hour, 24 hours or 7 days.</li>
-<li><strong>Override</strong> holds a JSON block that wins over everything else for this one computer. Use it for a test. It is not locked to an <code>admin</code>.</li>
+<li><strong>Override</strong> is a JSON editor for the settings of this one computer. They win over its groups and the workspace. It shows no server warnings and has no merge mode. To change an override with both, use the <strong>Config</strong> tab of the workspace and the scope <strong>Device override</strong>. See <a href="settings.html#settings-for-one-computer">Settings for one computer</a>. <strong>Clear override</strong> removes it.</li>
 <li><strong>Updates</strong> has a button "Update devices to a version". It pins <strong>every</strong> computer of the workspace, not just this one.</li>
 <li><strong>Integrity</strong> talks about "SS-managed config". It is for another product. Ignore it.</li>
 </ul>
@@ -2058,7 +2136,7 @@
 <ul>
 <li>On <strong>Dashboards</strong> &gt; <strong>Devices</strong>, <strong>Revoke</strong> is on every computer that is not revoked. The column <strong>Groups</strong> has a pencil button, "Edit memberships". <strong>Filter by status</strong> narrows the list. Select <strong>Revoke</strong> and confirm: "Revoke device &lt;id&gt;…? It will lose access on next request."</li>
 <li>A computer that was revoked can be <strong>deleted</strong> there, by a <code>super-admin</code> only. Its audit history is kept, and it must join again to come back.</li>
-<li>On the <strong>Devices</strong> tab of the workspace, <strong>Revoke</strong> appears only on a row with the status "removed".</li>
+<li>On <strong>Settings</strong> &gt; <strong>Devices</strong>, <strong>Revoke</strong> appears only on a row with the status "removed".</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">A revoked computer can come back</p>
@@ -2075,8 +2153,12 @@
 <ul>
 <li><strong>Name</strong> is required.</li>
 <li><strong>Parent</strong> is <code>(root)</code> or another group.</li>
-<li><strong>configBlob (JSON)</strong> is the group's own settings, as a JSON object. The default is <code>{}</code>. The server checks only that it is an object. It does <strong>not</strong> check the values against the settings. Prefer the <a href="settings.html#the-config-tab">Config tab</a>: choose the scope <strong>Group</strong> there, and it checks them when you validate.</li>
+<li><strong>Priority</strong> is a whole number. <strong>A higher number is stronger.</strong> A group with no priority ranks below every group that has one. See <a href="#how-the-settings-of-groups-are-used">How the settings of groups are used</a>.</li>
+<li><strong>Merge</strong> is <strong>Field by field</strong> (the default for a new group) or <strong>Whole block</strong>. See <a href="#merge-modes">Merge modes</a>.</li>
+<li><strong>Inherit from parent group</strong> is off by default. Switch it on to lay the parent's settings under the group's own.</li>
+<li><strong>configBlob (JSON)</strong> is the group's own settings, as a JSON object. The default is <code>{}</code>. Prefer the <a href="settings.html#the-config-tab">Config tab</a>: choose the scope <strong>Group</strong> there. It sets the values field by field and shows the server's warnings.</li>
 </ul>
+<p><img alt="The New group window: the fields Name and Parent, Priority with the hint that the higher number wins, Merge set to Field by field, the box Inherit from parent group, and the configBlob JSON." src="../../assets/screenshots/fleet-group-new.png" /></p>
 <p>A group cannot sit under itself or its own children. The portal says "Cycle detected".</p>
 <h3 id="put-computers-in-a-group">Put computers in a group<a class="headerlink" href="#put-computers-in-a-group" title="Permanent link">&para;</a></h3>
 <ul>
@@ -2087,19 +2169,79 @@
 <h3 id="delete-a-group">Delete a group<a class="headerlink" href="#delete-a-group" title="Permanent link">&para;</a></h3>
 <p>Select <strong>Delete</strong> and type the group name. If the group still has computers, tick <strong>Reassign members to parent group (force delete)</strong>. You cannot undo it.</p>
 <h3 id="how-the-settings-of-groups-are-used">How the settings of groups are used<a class="headerlink" href="#how-the-settings-of-groups-are-used" title="Permanent link">&para;</a></h3>
-<p>Read this before you rely on groups.</p>
+<p>Read this before you rely on groups. It is about <strong>settings</strong> (the Config tab). Policies combine in their own way: see <a href="policies.html#how-the-policies-of-a-computer-combine">How the policies of a computer combine</a>.</p>
+<p>From the weakest to the strongest, a computer gets:</p>
 <ol>
-<li>A computer gets the settings of its <strong>workspace</strong>.</li>
-<li>Then, for each group the computer is in <strong>directly</strong>, the group's settings are layered on. Groups are taken in order of their name, and the last name wins.</li>
-<li>Then the computer's own <strong>Override</strong> wins.</li>
-<li>If the workspace has published <a href="policies.html">policies</a>, they are layered last. They decide the protection mode, the types of data and the advanced rules where they have a value.</li>
+<li><strong>The workspace's settings.</strong></li>
+<li><strong>The settings of its groups</strong>, in order of <strong>Priority</strong>: a higher number is stronger. Before each group come its parents, but only for a group that has <strong>Inherit from parent group</strong> on.</li>
+<li><strong>Its own device override.</strong></li>
 </ol>
-<p>Two things surprise people:</p>
-<ul>
-<li><strong>A group replaces a whole block, not one value.</strong> If a group sets <code>firewall</code>, it replaces the workspace's whole <code>firewall</code> block, <strong>including the protection mode</strong>. Put every value of a block in the group, or leave the block out.</li>
-<li><strong>Groups do not pass settings on to child groups.</strong> Only the groups a computer is <strong>directly</strong> in count. The parent is used for display only.</li>
-</ul>
-<p>One privacy setting, <code>traceContent</code>, is set for the whole workspace. A group or computer can only narrow it.</p>
+<p>Then the published <a href="policies.html">policies</a> overwrite a few values. See <a href="settings.html#where-settings-and-policies-overlap">Where Settings and Policies overlap</a>.</p>
+<p>A single value comes from the nearest layer that sets it: an override beats a group, and a group beats the workspace. A layer may <strong>weaken</strong> a value from a layer below it. For example, an override can switch <code>firewall.enabled</code> off. Nothing is locked. <strong>Result policy</strong> marks such a value "weaker", and the admin log names who saved it.</p>
+<p><strong>Priority.</strong> Groups with the same priority, or none, are ordered by name, and the last name in the alphabet wins. The name does not raise a priority. It only makes the order the same on every calculation. The console warns about groups with equal priorities.</p>
+<p><strong>Inherit from parent group.</strong> Each group decides for itself. In the chain Company &gt; Department &gt; Team, the box on Team adds Department. Company is added only if the box is on Department too. The depth is not limited, and the console warns beyond 3. A group that is both a direct group and a parent of a computer is applied once, at its strongest place.</p>
+<p><strong>An example.</strong> The workspace sets <code>firewall.mode</code> to <code>mask</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Group</th>
+<th>Priority</th>
+<th>Inherit from parent</th>
+<th>Sets</th>
+<th>Place in the order</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Company</td>
+<td>none</td>
+<td>no</td>
+<td><code>firewall.mode: "mask"</code></td>
+<td>under Engineering, as its parent</td>
+</tr>
+<tr>
+<td>Engineering (parent: Company)</td>
+<td>10</td>
+<td>yes</td>
+<td><code>firewall.ocrMode: "monitor"</code></td>
+<td>second from the top</td>
+</tr>
+<tr>
+<td>Pilot</td>
+<td>20</td>
+<td>no</td>
+<td><code>firewall.mode: "monitor"</code></td>
+<td>the strongest group</td>
+</tr>
+</tbody>
+</table>
+<p>A computer in Engineering and Pilot, all in Field by field, gets <code>mode</code> <code>monitor</code> (from Pilot), <code>ocrMode</code> <code>monitor</code> (from Engineering) and everything else from the workspace. Its own override would win over all of these.</p>
+<h4 id="merge-modes">Merge modes<a class="headerlink" href="#merge-modes" title="Permanent link">&para;</a></h4>
+<p>Every group and every device override has a <strong>Merge</strong> mode.</p>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Field by field</strong></td>
+<td>Blocks are merged by field. A field the layer does not set comes from the layer below</td>
+</tr>
+<tr>
+<td><strong>Whole block</strong></td>
+<td>A block the layer sets, for example <code>firewall</code>, replaces the inherited block <strong>entirely</strong>. A field you leave out is lost</td>
+</tr>
+</tbody>
+</table>
+<p>New groups and overrides start in <strong>Field by field</strong>. Groups and overrides made before this change stay in <strong>Whole block</strong>, so their computers get what they got before. They carry a <strong>Whole block</strong> mark, and the editor has <strong>Switch to field by field</strong>, with a confirmation. Look at <strong>Result policy</strong> first: the result for computers can change.</p>
+<h4 id="lists">Lists<a class="headerlink" href="#lists" title="Permanent link">&para;</a></h4>
+<p>For a list field (<code>firewall.bypassDomains</code>, <code>neverRedact</code>, <code>extraTargetDomains</code>, <code>dlp.enabledTypes</code>, <code>secrets.classes</code>, <code>recognizers.countries</code>), a group or an override chooses <strong>is added to the inherited list</strong>, <strong>is removed from the inherited list</strong> or <strong>replaces the inherited list</strong>. This works in both merge modes. If no layer below sets the list, add and remove have nothing to work on and the computer keeps its built-in list. <code>bypassDomains</code> and <code>neverRedact</code> are the exception: their base is an empty list, and the console offers only <strong>replaces</strong> there.</p>
+<h4 id="not-configured">Not configured<a class="headerlink" href="#not-configured" title="Permanent link">&para;</a></h4>
+<p>Each field in the editor has a switch <strong>Not configured</strong>. In a group or an override in <strong>Field by field</strong> it means "inherit": the field is not saved. In the workspace and in <strong>Whole block</strong> it means "the computer's own default".</p>
+<p>One privacy setting, <code>traceContent</code>, is set for the whole workspace. A group or computer can only <strong>narrow</strong> it, from <code>full</code> to <code>masked</code> to <code>metadata</code>. A wider value is refused when you save, or ignored when merged.</p>
 <p>For policies per group, see <a href="policies.html">Policies</a>. There are also <strong>user groups</strong>, groups of sign-in names, which the console cannot create. See <a href="policies.html#policies-for-people">Policies for people</a>.</p>
 
 

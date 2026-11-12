@@ -1390,6 +1390,67 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#settings-for-one-computer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Settings for one computer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Settings for one computer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pause-protection-on-one-computer-or-a-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pause protection on one computer or a group
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result policy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-a-change-reaches-a-computer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When a change reaches a computer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-settings-and-policies-overlap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where Settings and Policies overlap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#config-history" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1760,6 +1821,67 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#settings-for-one-computer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Settings for one computer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Settings for one computer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pause-protection-on-one-computer-or-a-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pause protection on one computer or a group
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result policy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-a-change-reaches-a-computer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When a change reaches a computer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-settings-and-policies-overlap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where Settings and Policies overlap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#config-history" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1883,22 +2005,154 @@
 </div>
 <p>A new workspace starts in <strong>Record only</strong>. In the settings the three modes are called <code>monitor</code>, <code>mask</code> and <code>protect</code>.</p>
 <h2 id="the-config-tab">The Config tab<a class="headerlink" href="#the-config-tab" title="Permanent link">&para;</a></h2>
-<p>Open <strong>Settings</strong> &gt; <strong>Tenants</strong>, pick the workspace in <strong>Tenant</strong>, and open the tab <strong>Config</strong>. A page has these tabs: <strong>Overview</strong>, <strong>Config</strong>, <strong>Policy</strong>, <strong>Config history</strong>, <strong>Devices</strong>, <strong>Groups</strong>, <strong>Tokens</strong>, <strong>Audit</strong> and <strong>Capture</strong>.</p>
-<p><img alt="The top of the Config tab under Settings &gt; Tenants: the nine tabs, the scope Tenant default, the list of sections and the first cards." src="../../assets/screenshots/fleet-config-tab.png" /></p>
+<p>Open <strong>Settings</strong> &gt; <strong>Tenants</strong>, pick the workspace in <strong>Tenant</strong>, and open the tab <strong>Config</strong>. A page has these tabs: <strong>Overview</strong>, <strong>Config</strong>, <strong>Policy</strong>, <strong>Result policy</strong>, <strong>Config history</strong>, <strong>Groups</strong>, <strong>Tokens</strong>, <strong>Audit</strong> and <strong>Capture</strong>.</p>
+<p><img alt="The top of the Config tab under Settings &gt; Tenants: the nine tabs, the scope Tenant wide, the list of sections and the first cards." src="../../assets/screenshots/fleet-config-tab.png" /></p>
 <p><img alt="The Config tab of a workspace, edited: the list of sections on the left, the Firewall section with the fields Mode, Rules and Custom Exclusions, a Changed badge on one field, and the bar 1 unsaved change with Discard, Validate and Publish config." src="../../assets/screenshots/fleet-edit-config.png" /></p>
 <p><em>The picture shows a test workspace. Names, addresses and IDs are examples.</em></p>
 <ul>
-<li>The <strong>scope</strong> at the top is <strong>Tenant default</strong> or <strong>Group: name</strong>. A group's settings apply only to computers directly in the group. See <a href="devices-and-groups.html#how-the-settings-of-groups-are-used">how groups are used</a>.</li>
+<li>
+<p>The <strong>scope</strong> at the top is <strong>Tenant wide</strong>, <strong>Group: name</strong> or <strong>Device override: name</strong>. A group's settings apply to the computers directly in the group, and to those of a child group that inherits from it. See <a href="devices-and-groups.html#how-the-settings-of-groups-are-used">how groups are used</a>.
+<img alt="The scope list of the Config tab, set to Tenant wide, with the note that edits apply to every device unless a group or an override sets them." src="../../assets/screenshots/fleet-config-scope.png" /></p>
+</li>
+<li>
+<p>In a group or a device override, a field you do not touch stays <strong>Not configured (inherited)</strong>. Clear <strong>Not configured</strong> to set a value. For a list, choose whether your values are added to the inherited list, removed from it, or replace it.</p>
+</li>
 <li>The list <strong>Sections</strong> is on the left. Each section is a card with its fields. A <strong>Changed</strong> badge marks a field you changed, and <strong>Clear</strong> removes it. Changes stay on the page until you publish them.</li>
 <li><strong>Validate</strong> and <strong>Publish</strong> appear only after you change a field. Select <strong>Validate</strong>. When it says "Looks good", <strong>Publish</strong> (in the bar at the bottom, <strong>Publish config</strong>) becomes active. It sends the whole config with your changes laid over it. If someone else published meanwhile, you see "Refresh to see the latest config, then re-apply your changes".</li>
 <li>After publishing, the page shows how many computers acknowledged the new version, for example "Published v7 · all 12 devices acked". It waits up to 60 seconds over the first 200 computers.</li>
 <li>If you leave the Config or Policy tab with changes that are not saved, a window asks <strong>Save your changes?</strong> with <strong>Cancel</strong>, <strong>Discard</strong> and <strong>Save</strong>. The <strong>Policies</strong> page does not ask.</li>
 </ul>
-<p>The server refuses a config bigger than 64 KB. It checks only the values you changed, so an old value that is wrong does not block an unrelated change.</p>
+<p>The server refuses a workspace config bigger than 64 KB (at most 10 levels deep, 64 keys in an object, 1000 items in a list, 8 KB in a string). It checks only the values you changed, so an old value that is wrong does not block an unrelated change.</p>
+<p>For a group or a device override, the server refuses only the newer kinds of mistake: a priority, an inheritance, a merge mode or a list operation that is not valid. Any other value is checked by the same rules as the workspace, but a problem is only a <strong>warning</strong>. The save goes through, and the console says "The server's checks question these values (devices may not apply them)". Read the warnings: a computer may not apply such a value.</p>
+<p>A few sections must have the <strong>object</strong> form. For example, write <code>requestTimeout</code> as <code>{"requestTimeoutMs": 60000}</code>, not as <code>60000</code>; <code>customDlpPatterns</code> as <code>{"patterns": [...]}</code>; <code>userRiskProfiling</code> and <code>evalCapture</code> as <code>{"enabled": ...}</code>. For the workspace the server refuses the bare value. For a group or an override it only warns, and the computer may not apply it. A key the server does not know is stored and ignored by the agent, so a typo is not an error. The server sends a computer only the sections that computer says it supports.</p>
+<h3 id="settings-for-one-computer">Settings for one computer<a class="headerlink" href="#settings-for-one-computer" title="Permanent link">&para;</a></h3>
+<p>A device override changes settings for one computer without touching the rest.</p>
+<ol>
+<li>On the <strong>Config</strong> tab, choose the scope <strong>Device override: name</strong>.</li>
+<li>Set only the fields you need. Leave the others <strong>Not configured (inherited)</strong>. A new override is in <strong>Field by field</strong>. If the override carries a <strong>Whole block</strong> mark, select <strong>Switch to field by field</strong>. Otherwise every block it sets replaces the inherited block whole.</li>
+<li>Select <strong>Validate</strong>, then <strong>Publish config</strong>, and check the result in <a href="#result-policy">Result policy</a>.</li>
+<li>To remove the override, use <strong>Clear override</strong> on the <strong>Override</strong> tab of the device page.</li>
+</ol>
+<p>The <strong>Override</strong> tab of a device is a JSON editor. It shows no server warnings and does not set a merge mode. Use the scope <strong>Device override</strong> for changes.</p>
+<h4 id="pause-protection-on-one-computer-or-a-group">Pause protection on one computer or a group<a class="headerlink" href="#pause-protection-on-one-computer-or-a-group" title="Permanent link">&para;</a></h4>
+<p>Use this to take the checks off for a time, for a diagnosis or a compatibility problem.</p>
+<ol>
+<li>Choose the scope <strong>Device override</strong> (or <strong>Group</strong>).</li>
+<li>In the section <code>firewall</code>, clear <strong>Not configured</strong> for <strong>Enabled</strong> and switch it off.</li>
+<li>To have protection come back by itself, fill <strong>Paused Until</strong> with a date and time, for example <code>2026-11-10T18:00:00Z</code>. Without a date, protection stays off until you switch <strong>Enabled</strong> back on.</li>
+<li>Publish. <strong>Result policy</strong> shows <code>enabled = false</code>, marked "weaker".</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Requests are sent unchecked and unmasked</p>
+<p>While protection is paused, the proxy only passes traffic on. Redirection of traffic stays, but requests to AI services leave the computer <strong>without inspection and without replacing anything</strong>. A published policy does not change this: it never switches <code>firewall.enabled</code> back on, even in Block. Versions of the app that do not know <code>pausedUntil</code> keep protection off until someone switches it on.</p>
+</div>
+<p>To only record and not change requests, set the mode <strong>Record only</strong> in a <a href="policies.html">policy</a>, not here: the mode of an override loses to a published policy. See <a href="#where-settings-and-policies-overlap">Where Settings and Policies overlap</a>.</p>
+<h3 id="result-policy">Result policy<a class="headerlink" href="#result-policy" title="Permanent link">&para;</a></h3>
+<p><strong>Result policy</strong> shows what a computer actually gets, and where each value comes from. Open it under the <strong>Tenant</strong>, and in <strong>Show the result for</strong> choose <strong>The whole workspace</strong>, <strong>A group</strong> or <strong>A device</strong>. For a group, the result is worked out as for a computer that is only in that group and has no override. The same result for one computer is on its device page, on the <strong>Config</strong> tab.</p>
+<p><img alt="The Result policy tab: the list Show the result for set to The whole workspace, the block Layers, lowest first with Workspace config, and the tables Parameter, Value and From for each section." src="../../assets/screenshots/fleet-result-policy.png" /></p>
+<p>The block <strong>Layers, lowest first</strong> lists the layers in order. The tables <strong>Parameter | Value | From</strong> name the source of each value: <strong>Workspace config</strong>, <strong>Group X (priority N)</strong>, <strong>Parent group X, inherited by Y</strong>, <strong>Device override</strong> or <strong>Published policies</strong>. A value that a layer weakened is marked "weaker". A value that a published policy overwrote reads "Overwritten by policy …; the config says …".</p>
+<h3 id="when-a-change-reaches-a-computer">When a change reaches a computer<a class="headerlink" href="#when-a-change-reaches-a-computer" title="Permanent link">&para;</a></h3>
+<p>A change to an override, a group or a policy wakes the computers that are waiting for it at once. An app that is connected for pushes picks it up within seconds. An app without that connection, or behind a system proxy service, checks about every 30 seconds, and other agents about every 60 seconds. The times come from reading the product's code, not from a measurement. The server can send a config again at the same version if the result for a computer changed.</p>
+<h3 id="where-settings-and-policies-overlap">Where Settings and Policies overlap<a class="headerlink" href="#where-settings-and-policies-overlap" title="Permanent link">&para;</a></h3>
+<p><strong>Settings</strong> say how the agent works. <strong>Policies</strong> say what is allowed and how data is handled. For a few values you can set the same effect in both. <strong>A published policy overwrites exactly four values</strong> of a computer's settings, and nothing else.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Policy</th>
+<th>Overwritten when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>firewall.mode</code></td>
+<td>the policy's <strong>Mode</strong> (Record only, Replace, Block)</td>
+<td>any policy that applies to the computer sets a mode. Block becomes <code>protect</code></td>
+</tr>
+<tr>
+<td><code>dlp.enabledTypes</code></td>
+<td>the policy's <strong>Data types</strong></td>
+<td>any applicable policy sets data types</td>
+</tr>
+<tr>
+<td><code>policy.rules</code></td>
+<td>the policy's advanced rules</td>
+<td>always, even when the policies have no rules. The rules of the workspace, a group or an override are dropped</td>
+</tr>
+<tr>
+<td><code>policyV2</code></td>
+<td>the whole set of policies</td>
+<td>always. The server computes it for the computer</td>
+</tr>
+</tbody>
+</table>
+<p>The overwrite is only for that value. In <code>firewall</code>, only <code>mode</code> is replaced: <code>bypassDomains</code>, <code>neverRedact</code>, <code>ocrMode</code> and the rest stay as the settings say. In <code>dlp</code>, only <code>enabledTypes</code> is replaced, and <code>modelId</code> stays. Policies for people do not take part in overwriting the mode or the types of data.</p>
+<p>So <strong>a mode in a device override loses to a published policy</strong>, even when the override is stricter. To set the mode or the data types for everyone, for a group or for one computer, set them in a policy. To make a value from the settings count, take the mode and the data types out of every policy that applies to the computer. The console says "Published policies (vN) are layered last" on the device's <strong>Config</strong> tab. The <strong>Override</strong> tab does not warn.</p>
+<p>Some pairs look alike but are <strong>not</strong> linked. Both values reach the agent and work on their own.</p>
+<table>
+<thead>
+<tr>
+<th>Settings</th>
+<th>Policy</th>
+<th>The difference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>neverRedact</code>, <code>customExclusions</code></td>
+<td>Keywords</td>
+<td>The first are values that are <strong>never</strong> replaced. The second are words that are <strong>always</strong> replaced</td>
+</tr>
+<tr>
+<td><code>secrets.classes</code></td>
+<td>the data types preset <strong>Credentials</strong></td>
+<td>Secrets are a section of their own</td>
+</tr>
+<tr>
+<td><code>bypassDomains</code>, <code>extraTargetDomains</code></td>
+<td><strong>Access</strong> of a service</td>
+<td>The first says which hosts are inspected. The second says whether a service is allowed</td>
+</tr>
+<tr>
+<td><code>resilience</code></td>
+<td><strong>Access: Block</strong></td>
+<td>The first says what happens when the proxy stops. The second forbids a service</td>
+</tr>
+</tbody>
+</table>
+<p>Apps older than the policy version of the product get a smaller result: the mode, the data types, the rules and the block of a service by whole host. They do not get modes per service, upload controls, keywords or the controls of coding agents.</p>
 <h3 id="config-history">Config history<a class="headerlink" href="#config-history" title="Permanent link">&para;</a></h3>
-<p>The tab <strong>Config history</strong> shows every version of the workspace config, who made it and when.</p>
+<p>The tab <strong>Config history</strong> shows every version of the config, who made it and when. Choose a <strong>Scope</strong>: <strong>Workspace config</strong>, <strong>Groups</strong>, <strong>Device overrides</strong> or <strong>Policies</strong> (by the name of the policy).</p>
 <p><img alt="The Config history tab: a list of versions on the left and, for the selected one, what changed with the old and the new value side by side, and the button Rollback to this version." src="../../assets/screenshots/fleet-config-history.png" /></p>
-<p>Select a version to compare it with the one before. <strong>Download CSV</strong> and <strong>Download JSON</strong> export the list. <strong>Rollback to this version</strong> makes a <strong>new</strong> version that is identical to the old one, and you can add a comment that goes into the admin log. After a rollback the page opens the <strong>Config</strong> tab. History covers the workspace config only, not groups or policies.</p>
+<p><img alt="The Config history tab with the list Scope set to Workspace config, the versions v1 to v4 on the left and, for v4, the changed block before and after." src="../../assets/screenshots/fleet-config-history-scope.png" /></p>
+<p>Select a version to compare it with the one before. <strong>Download CSV</strong> and <strong>Download JSON</strong> export the list. <strong>Rollback to this version</strong> makes a <strong>new</strong> version that is identical to the old one, and you can add a comment that goes into the admin log. After a rollback the page opens the <strong>Config</strong> tab.</p>
+<table>
+<thead>
+<tr>
+<th>Scope</th>
+<th>Roll back?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Workspace config</strong></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>Groups</strong></td>
+<td>Yes. The history of a deleted group is read-only</td>
+</tr>
+<tr>
+<td><strong>Device overrides</strong></td>
+<td>Yes. A roll back to the version "no override" deletes the override</td>
+</tr>
+<tr>
+<td><strong>Policies</strong></td>
+<td><strong>No</strong>, view only. Change the policy on the <strong>Policies</strong> page and publish</td>
+</tr>
+</tbody>
+</table>
+<p>History is kept without a time limit. For a group, an override or a set of policies saved before this feature, the first change records the earlier state as version 1, with the author "not recorded", so you can roll back to it.</p>
 <h3 id="what-each-setting-does-on-this-product">What each setting does on this product<a class="headerlink" href="#what-each-setting-does-on-this-product" title="Permanent link">&para;</a></h3>
 <p>The editor shows more sections than the agent uses. These are the ones this product reads.</p>
 <table>
