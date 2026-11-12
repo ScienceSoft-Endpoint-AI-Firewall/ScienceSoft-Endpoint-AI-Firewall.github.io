@@ -1,3 +1,3 @@
-# Draft build: keep out of search engines.
 User-agent: *
-Disallow: /
+Allow: /
+Sitemap: https://sciencesoft-endpoint-ai-firewall.github.io/sitemap.xml
