@@ -2163,6 +2163,7 @@
 <li>On the device list, <strong>Groups…</strong> under the host name opens the group list of that computer. <strong>Save</strong> replaces the whole set of groups that this computer is in directly. The same is done with the pencil button on the device panel.</li>
 <li>On the <strong>Groups</strong> tab, <strong>Add devices…</strong> adds many computers to one group. It adds them one by one and stops at the first failure.</li>
 <li>The portal offers only the first 200 computers of the roster.</li>
+<li>In <strong>Add devices…</strong> a computer that is already in the group is ticked and marked "already in this group". The column <strong>Devices</strong> of the list shows a dash while it loads, and the buttons are grey. Wait, or select <strong>Refresh</strong>. To check where a computer is, open <strong>Result policy</strong>, choose <strong>A device</strong>, and read its layers.</li>
 </ul>
 <h3 id="delete-a-group">Delete a group<a class="headerlink" href="#delete-a-group" title="Permanent link">&para;</a></h3>
 <p>Select <strong>Delete</strong> and type the group name. If the group still has computers, tick <strong>Reassign members to parent group (force delete)</strong>. You cannot undo it.</p>
@@ -2176,44 +2177,54 @@
 </ol>
 <p>Then the published <a href="policies.html">policies</a> overwrite a few values. See <a href="settings.html#where-settings-and-policies-overlap">Where Settings and Policies overlap</a>.</p>
 <p>A single value comes from the nearest layer that sets it: an override beats a group, and a group beats the workspace. A layer may <strong>weaken</strong> a value from a layer below it. For example, an override can switch <code>firewall.enabled</code> off. Nothing is locked. <strong>Result policy</strong> marks such a value "weaker", and the admin log names who saved it.</p>
-<p><strong>Priority.</strong> Groups with the same priority, or none, are ordered by name, and the last name in the alphabet wins. The name does not raise a priority. It only makes the order the same on every calculation. The console warns about groups with equal priorities.</p>
+<p><strong>Priority.</strong> Priority orders the groups a computer is in <strong>directly</strong>. A group with a higher number is applied later and wins where two groups set the same value. A parent group is not compared by priority: it is laid directly under the group that inherits from it. Groups with the same priority, or none, are ordered by name, and the last name in the alphabet wins. The name does not raise a priority. It only makes the order the same on every calculation. The console warns about groups with equal priorities.</p>
 <p><strong>Inherit from parent group.</strong> Each group decides for itself. In the chain Company &gt; Department &gt; Team, the box on Team adds Department. Company is added only if the box is on Department too. The depth is not limited, and the console warns beyond 3. A group that is both a direct group and a parent of a computer is applied once, at its strongest place.</p>
-<p><strong>An example.</strong> The workspace sets <code>firewall.mode</code> to <code>mask</code>.</p>
+<p><strong>An example.</strong> Three groups, all in Field by field. One computer is directly in Engineering and in Pilot.</p>
 <table>
 <thead>
 <tr>
 <th>Group</th>
+<th>Parent</th>
 <th>Priority</th>
 <th>Inherit from parent</th>
 <th>Sets</th>
-<th>Place in the order</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Company</td>
 <td>none</td>
+<td>none</td>
 <td>no</td>
-<td><code>firewall.mode: "mask"</code></td>
-<td>under Engineering, as its parent</td>
+<td><code>ocrLanguage: "latin"</code>, and the list <code>extraTargetDomains</code> as a whole: <code>llm.corp.example.com</code></td>
 </tr>
 <tr>
-<td>Engineering (parent: Company)</td>
+<td>Engineering</td>
+<td>none</td>
 <td>10</td>
-<td>yes</td>
-<td><code>firewall.ocrMode: "monitor"</code></td>
-<td>second from the top</td>
+<td>no</td>
+<td><code>ocrLanguage: "latin"</code></td>
 </tr>
 <tr>
 <td>Pilot</td>
+<td>Company</td>
 <td>20</td>
-<td>no</td>
-<td><code>firewall.mode: "monitor"</code></td>
-<td>the strongest group</td>
+<td>yes</td>
+<td><code>ocrLanguage: "greek"</code>, and <strong>adds</strong> <code>pilot-llm.example.com</code> to <code>extraTargetDomains</code></td>
 </tr>
 </tbody>
 </table>
-<p>A computer in Engineering and Pilot, all in Field by field, gets <code>mode</code> <code>monitor</code> (from Pilot), <code>ocrMode</code> <code>monitor</code> (from Engineering) and everything else from the workspace. Its own override would win over all of these.</p>
+<p><img alt="The list of groups: Company with no priority, and Pilot under it with priority 20, which merges field by field and inherits its parent." src="../../assets/screenshots/fleet-groups-list.png" /></p>
+<p><strong>Result policy</strong> for this computer lists the layers, lowest first. Engineering comes first, then Company (as the parent of Pilot, directly under it), then Pilot.</p>
+<p><img alt="Result policy for a device: the layers Workspace config, Group Engineering (priority 10), Parent group Company inherited by Pilot, and Group Pilot (priority 20)." src="../../assets/screenshots/fleet-result-policy-device.png" /></p>
+<p>The values come out like this:</p>
+<ul>
+<li><code>ocrLanguage</code> is <code>greek</code>, from Pilot. It has the highest priority. With the priorities swapped, Engineering would win and the value would be <code>latin</code>.</li>
+<li><code>extraTargetDomains</code> holds both domains. Company set the list, and Pilot added to it. A list that no layer below sets cannot be added to: the console warns "has nothing to add to or remove from", and the add is not applied.</li>
+<li>Everything else, such as the protection mode, comes from the workspace.</li>
+</ul>
+<p><img alt="The Firewall block of Result policy: extraTargetDomains with two domains and where each one comes from, ocrLanguage greek from Group Pilot, and the mode from Workspace config." src="../../assets/screenshots/fleet-result-policy-firewall.png" /></p>
+<p>The computer's own override would win over all of these.</p>
 <h4 id="merge-modes">Merge modes<a class="headerlink" href="#merge-modes" title="Permanent link">&para;</a></h4>
 <p>Every group and every device override has a <strong>Merge</strong> mode.</p>
 <table>
